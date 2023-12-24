@@ -1,0 +1,54 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.background-container {
+    background-image: url('background_img.jpg'); /* Путь к изображению заднего фона */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.page-selector {
+    text-align: center;
+    margin-top: 50px; /* Регулируйте отступ от верхнего края страницы по необходимости */
+    color: #333; /* Очень тёмно-серый цвет для текста */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #555; /* Серый цвет для фона кнопок */
+    color: white; /* Белый цвет для текста на кнопках */
+    border: 1px solid white; /* Белая обводка */
+    border-radius: 5px;
+}
+
+.info-bar {
+    background-color: rgba(0, 0, 0, 0.9); /* Более тёмный цвет для прямоугольника с информацией */
+    padding: 20px;
+    margin-top: auto;
+    color: white; /* Цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center; /* Центрирование иконок */
+}
+
+.social-icons a {
+    margin: 0 10px; /* Отступ между иконками */
+}
+
+.social-icons img {
+    width: 30px; /* Регулируйте размер иконок по необходимости */
+    height: 30px;
+}
