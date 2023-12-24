@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Google Analytics -->
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <title>Project Cataclysm - Интерактивная карта</title>
+    <meta name="keywords" content="Интерактивная карта Project Cataclysm. Ящики с лутом Project Cataclysm. Бочки Project Cataclysm. Аномалии Project Cataclysm. Мутанты Project Cataclysm.">
+    <meta name="description" content="Интерактивная карта проекта Project Cataclysm. Ящики с лутом, аномалии, точки спавна мутантов и другие необходимые метки только здесь!.">
+    <meta name="google-site-verification" content="sWZspQnpreD9suMbMI5qVWp7h6ZfwIN6PvRzrAxhU2Y" />
+    <meta name="last-modified" content="Дата и время последнего изменения">
+    <style>
+        #map {
+        width: 100vw;
+        height: 100vh;
+        background-color: #5c5959;
+        background-size: cover;
+        background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+<div class="checkbox-overlay">
+    <div id="checkbox-container" class="checkbox-container">
+        <label class="checkbox-label">
+            <input type="checkbox" id="checkbox1" class="checkbox">
+            Ящики
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" id="checkbox2" class="checkbox">
+            Мутанты
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" id="checkbox3" class="checkbox">
+            Аномалии
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" id="checkbox4" class="checkbox">
+            Торговцы
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" id="checkbox5" class="checkbox">
+            НПС
+        </label>
+        <!-- HTML-код для кнопки "О карте" и блока с информацией -->
+        <button id="aboutButton">О карте</button>
+        <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Интерактивная карта создана для упрощения поиска различного игрового контента проекта Project Cataclysm. <br><br>
+                Карта создана игроком <span class="author">everal41</span>. <br><br>
+                Другие работы и гайды вы сможете найти на моём <a href="https://discord.gg/stDtHfQaa8" target="_blank">дискорд сервере</a>. <br><br>
+                Если захотите поблагодарить меня материально, то это можно сделать <a href="https://www.donationalerts.com/r/everal41" target="_blank">здесь</a>.
+            </p>
+        </div>
+        </div>
+
+    </div>
+</div>
+    <div id="menu1" class="menu" onmouseover="showMenu('menu1')" onmouseout="hideMenu('menu1')" style="display: none;">
+        <div class="menu-item">
+            <input type="checkbox" id="showAmmoMenu" checked>
+            <label class="checkbox-label" for="showAmmoMenu">Патроны</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showSupplyMenu" checked>
+            <label class="checkbox-label" for="showSupplyMenu">Припасы</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showToolMenu" checked>
+            <label class="checkbox-label" for="showToolMenu">Инструменты</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showBarrelMenu" checked>
+            <label class="checkbox-label" for="showBarrelMenu">Бочки</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showScienceMenu" checked>
+            <label class="checkbox-label" for="showScienceMenu">Научное оборудование</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showStashMenu" checked>
+            <label class="checkbox-label" for="showStashMenu">Тайники</label>
+        </div>
+    </div>
+
+    <div id="menu2" class="menu" onmouseover="showMenu('menu2')" onmouseout="hideMenu('menu2')" style="display: none;">
+        <div class="menu-item">
+            <input type="checkbox" id="showBDMenu" checked>
+            <label class="checkbox-label" for="showBDMenu">Слепые псы</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showPDMenu" checked>
+            <label class="checkbox-label" for="showPDMenu">Псевдособаки</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showFleshMenu" checked>
+            <label class="checkbox-label" for="showFleshMenu">Плоти</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showBoarMenu" checked>
+            <label class="checkbox-label" for="showBoarMenu">Кабаны</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showRatMenu" checked>
+            <label class="checkbox-label" for="showRatMenu">Крысы</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showSnorkMenu" checked>
+            <label class="checkbox-label" for="showSnorkMenu">Снорки</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showZombieMenu" checked>
+            <label class="checkbox-label" for="showZombieMenu">Зомби</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showBSMenu" checked>
+            <label class="checkbox-label" for="showBSMenu">Кровосос</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showSBSMenu" checked>
+            <label class="checkbox-label" for="showSBSMenu">Матёрый кровосос</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showCMenu" checked>
+            <label class="checkbox-label" for="showCMenu">Химера</label>
+        </div>
+    </div>
+    
+    <div id="menu3" class="menu" onmouseover="showMenu('menu3')" onmouseout="hideMenu('menu3')" style="display: none;">
+        <div class="menu-item">
+            <input type="checkbox" id="showGAMenu" checked>
+            <label class="checkbox-label" for="showGAMenu">Гравитационные</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showBAMenu" checked>
+            <label class="checkbox-label" for="showBAMenu">Химические</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showTAMenu" checked>
+            <label class="checkbox-label" for="showTAMenu">Термические</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showEAMenu" checked>
+            <label class="checkbox-label" for="showEAMenu">Электрические</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showTrashMenu" checked>
+            <label class="checkbox-label" for="showTrashMenu">Мусорные</label>
+        </div>
+    </div>
+    
+    <div id="menu4" class="menu" onmouseover="showMenu('menu4')" onmouseout="hideMenu('menu4')" style="display: none;">
+        <div class="menu-item">
+            <input type="checkbox" id="showDMMenu" checked>
+            <label class="checkbox-label" for="showDMMenu">Маклак</label>
+        </div>
+    </div>
+
+    <div id="menu5" class="menu" onmouseover="showMenu('menu5')" onmouseout="hideMenu('menu5')" style="display: none;">
+        <div class="menu-item">
+            <input type="checkbox" id="showZombifiedMenu" checked>
+            <label class="checkbox-label" for="showZombifiedMenu">Зомбированные</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showBanditsMenu" checked>
+            <label class="checkbox-label" for="showBanditsMenu">Бандиты</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showMilitaryMenu" checked>
+            <label class="checkbox-label" for="showMilitaryMenu">Военные</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showFreedomMenu" checked>
+            <label class="checkbox-label" for="showFreedomMenu">Свободовцы</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showDutyMenu" checked>
+            <label class="checkbox-label" for="showDutyMenu">Долговцы</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showMercsMenu" checked>
+            <label class="checkbox-label" for="showMercsMenu">Наемники</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showSinsMenu" checked>
+            <label class="checkbox-label" for="showSinsMenu">Греховцы</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showMonolithMenu" checked>
+            <label class="checkbox-label" for="showMonolithMenu">Монолитовцы</label>
+        </div>
+        <div class="menu-item">
+            <input type="checkbox" id="showObliteratorMenu" checked>
+            <label class="checkbox-label" for="showObliteratorMenu">Облитератор</label>
+        </div>
+    </div>
+    <div id="map" class="map"></div>
+    <link rel="stylesheet" href="leaflet/leaflet.css">
+    <script src="leaflet/leaflet.js"></script>
+</body>
+</html>
