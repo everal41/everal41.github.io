@@ -46,3 +46,7 @@ body {
  .red-text {
     color: #FF0000; /* Красный цвет текста */
  }
+
+ .orange-text {
+    color: orange;
+ }
