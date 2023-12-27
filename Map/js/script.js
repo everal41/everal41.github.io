@@ -2427,7 +2427,9 @@ showWormholeMenu.addEventListener('change', function() {
             // Янтарь
             
             // Поляна
-            
+
+            // Полесское
+            { coordinates: [3109, 2672], description: "Червоточина" },
         ];
 
         // Группа маркеров
