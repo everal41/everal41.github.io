@@ -2408,7 +2408,7 @@ function toggleGravityImage() {
 var gravityImagePath = 'images/Gravy.png';
 
 // Создать изображение поверх всей карты
-var gravityImageBounds = [[0, 0], [8448, 5633]]; // Размеры вашего изображения области
+var gravityImageBounds = [[0, 0], [4000, 5633]]; // Размеры вашего изображения области
 var gravityImageOverlay = L.imageOverlay(gravityImagePath, gravityImageBounds).addTo(map);
 
 // "Аномалии Мусорные"
@@ -2423,7 +2423,7 @@ function toggleTrashImage() {
     }
 }
 var trashImagePath = 'images/Trash.png';
-var trashImageBounds = [[0, 0], [8448, 5633]]; // Размеры вашего изображения области
+var trashImageBounds = [[0, 0], [4000, 5633]]; // Размеры вашего изображения области
 var trashImageOverlay = L.imageOverlay(trashImagePath, trashImageBounds).addTo(map);
 
 // "Аномалии Термические"
@@ -2438,7 +2438,7 @@ function toggleTermoImage() {
     }
 }
 var termoImagePath = 'images/Termo.png';
-var termoImageBounds = [[0, 0], [8448, 5633]];
+var termoImageBounds = [[0, 0], [4000, 5633]];
 var termoImageOverlay = L.imageOverlay(termoImagePath, termoImageBounds).addTo(map);
 
 // "Аномалии Электрические"
@@ -2453,7 +2453,7 @@ function toggleElectroImage() {
     }
 }
 var electroImagePath = 'images/Electro.png';
-var electroImageBounds = [[0, 0], [8448, 5633]]; // Размеры вашего изображения области
+var electroImageBounds = [[0, 0], [4000, 5633]]; // Размеры вашего изображения области
 var electroImageOverlay = L.imageOverlay(electroImagePath, electroImageBounds).addTo(map);
 
 // "Аномалии Химические"
@@ -2468,7 +2468,7 @@ function toggleBioImage() {
     }
 }
 var bioImagePath = 'images/Bio.png';
-var bioImageBounds = [[0, 0], [8448, 5633]]; // Размеры вашего изображения области
+var bioImageBounds = [[0, 0], [4000, 5633]]; // Размеры вашего изображения области
 var bioImageOverlay = L.imageOverlay(bioImagePath, bioImageBounds).addTo(map);
 
 
