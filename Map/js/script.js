@@ -261,7 +261,7 @@ var HearthIcon = L.icon({
 var CampfireIcon = L.icon({
     iconUrl: 'images/Campfire.png',
     iconSize: [24, 24],
-    iconAnchor: [12, 12],
+    iconAnchor: [24, 24],
     popupAnchor: [0, 0]
 });
 
@@ -883,7 +883,7 @@ showToolMenu.addEventListener('change', function() {
             { coordinates: [3006, 2802], description: "Координаты: -1052, 84, -4472" },
             { coordinates: [3036, 2749], description: "Координаты: -1155, 78, -4529" },
             { coordinates: [3041, 2791], description: "Координаты: -1071, 86, -4540" },
-            { coordinates: [3063, 2755], description: "Координаты: -1143, 86, -4583" },э
+            { coordinates: [3063, 2755], description: "Координаты: -1143, 86, -4583" },
         ];
 
         // Группа маркеров
