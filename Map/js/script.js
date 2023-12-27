@@ -547,6 +547,7 @@ showSupplyMenu.addEventListener('change', function() {
             { coordinates: [3117, 2741], description: "Координаты: -1170, 86, -4688" },
             { coordinates: [3118, 2709], description: "Координаты: -1234, 86, -4692" },
             { coordinates: [3147, 2739], description: "Координаты: -1173, 85, -4751" },
+            { coordinates: [3094, 2847], description: "Координаты: -958, 85, -4644" },
         ];
 
         // Группа маркеров
