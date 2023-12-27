@@ -244,6 +244,20 @@ var ZombifiedIcon = L.icon({
     popupAnchor: [0, 0]
 });
 
+var WormholeIcon = L.icon({
+    iconUrl: 'images/Chervo.png',
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+    popupAnchor: [0, 0]
+});
+
+var HearthIcon = L.icon({
+    iconUrl: 'images/Orange.png',
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+    popupAnchor: [0, 0]
+});
+
 showAmmoMenu.addEventListener('change', function(){
     if(showAmmoMenu.checked) {
         var AmmoCoordinates = [
@@ -1100,6 +1114,11 @@ showBDMenu.addEventListener('change', function() {
             { coordinates: [1401, 1764], description: "Слепые собаки" },
             { coordinates: [1368, 1680], description: "Слепые собаки" },
             { coordinates: [1367, 1850], description: "Слепые собаки" },
+            // Полесское
+            { coordinates: [2976, 2890], description: "Слепые собаки" },
+            { coordinates: [3053, 2709], description: "Слепые собаки" },
+            { coordinates: [3104, 2706], description: "Слепые собаки" },
+            { coordinates: [3102, 2774], description: "Слепые собаки" },
         ];
 
         // Группа маркеров
@@ -1278,6 +1297,8 @@ showFleshMenu.addEventListener('change', function() {
             // Стройплощадка
             { coordinates: [1386, 1915], description: "Плоти" },
             { coordinates: [1433, 1900], description: "Плоти" },
+            // Полесское
+            { coordinates: [3013, 2702], description: "Плоти" },
         ];
 
         // Группа маркеров
@@ -1367,7 +1388,7 @@ showBoarMenu.addEventListener('change', function() {
             // Янтарь
             { coordinates: [2889, 2537], description: "Кабаны" },
             { coordinates: [3054, 2292], description: "Кабаны" },
-            // Стройплощадка
+            // Полесское
         ];
 
         // Группа маркеров
@@ -1526,6 +1547,8 @@ showSnorkMenu.addEventListener('change', function() {
             { coordinates: [1425, 1933], description: "Снорки" },
             { coordinates: [1480, 1846], description: "Снорки" },
             { coordinates: [1570, 1922], description: "Снорки" },
+            // Полесское
+            { coordinates: [2996, 2742], description: "Снорки" },
         ];
 
         // Группа маркеров
@@ -1611,6 +1634,9 @@ showZombieMenu.addEventListener('change', function() {
             { coordinates: [1481, 1707], description: "Зомби" },
             { coordinates: [1528, 1806], description: "Зомби" },
             { coordinates: [1560, 1808], description: "Зомби" },
+            // Полесское
+            { coordinates: [2997, 2807], description: "Зомби" },
+            { coordinates: [2977, 2800], description: "Зомби" },
         ];
 
         // Группа маркеров
@@ -1695,6 +1721,8 @@ showBSMenu.addEventListener('change', function() {
             { coordinates: [3099, 2388], description: "Кровосос" },
             { coordinates: [3121, 2421], description: "Кровосос" },
             { coordinates: [2650, 2048], description: "Кровосос<br>Лаборатория X-16" },
+            // Полесское
+            { coordinates: [2986, 2831], description: "Кровосос" },
         ];
 
         // Группа маркеров
@@ -2388,6 +2416,116 @@ showZombifiedMenu.addEventListener('change', function() {
     }
 });
 
+showWormholeMenu.addEventListener('change', function() {
+    if (showWormholeMenu.checked) {
+        // Массив с координатами маркеров
+        var WormholeCoordinates = [
+            // Кордон
+            
+            // Свалка
+            
+            // Янтарь
+            
+            // Поляна
+            
+        ];
+
+        // Группа маркеров
+        WormholeGroup = L.layerGroup().addTo(map);
+
+        // Добавление маркера для каждой координаты
+        for (var i = 0; i < WormholeCoordinates.length; i++) {
+            (function() {
+                var coordinates = WormholeCoordinates[i].coordinates;
+                var description = WormholeCoordinates[i].description;
+                var imageSize = WormholeCoordinates[i].imageSize;
+                var image = WormholeCoordinates[i].image;
+
+                var Wormhole = L.marker(coordinates, { icon: WormholeIcon })
+                .bindPopup("<div class='marker-description'>" + description + "</div>")  // Текст всплывающего окна (если вдруг нужно добавить нумерацию, то можно внести после текста "Ящик с патронами" след. команду: + (i + 1) + )
+                .addTo(WormholeGroup);
+                // Добавление обработчика события нажатия для каждого маркера
+            Wormhole.on('click', function(e) {
+                // При нажатии на маркер, необходимо проверить наличие изображения и добавить его в всплывающее окно
+                if (image) {
+                    var content = "<div class='custom-popup-content'>";
+                    content += "<img src='" + image + "' width='" + imageSize[0] + "' height='" + imageSize[1] + "'<br>";
+                    content += "<p class='marker-description'>" + description + "</p>";
+                    content += "</div>";
+
+                    // Создание всплывающего окна с контентом
+                    var popup = L.popup().setContent(content);
+
+                    // Показать всплывающее окно
+                    e.target.bindPopup(popup).openPopup();
+                }
+            });
+        })();
+        }
+    } else {
+        // Удаление группы маркеров, если она существует
+        if (WormholeGroup) {
+        map.removeLayer(WormholeGroup);
+        }
+    }
+});
+
+showHearthMenu.addEventListener('change', function() {
+    if (showHearthMenu.checked) {
+        // Массив с координатами маркеров
+        var HearthCoordinates = [
+            // Кордон
+            
+            // Свалка
+            
+            // Янтарь
+            
+            // Поляна
+
+            // Полесское
+            { coordinates: [2993, 2806], description: "Очаг" },
+        ];
+
+        // Группа маркеров
+        HearthGroup = L.layerGroup().addTo(map);
+
+        // Добавление маркера для каждой координаты
+        for (var i = 0; i < HearthCoordinates.length; i++) {
+            (function() {
+                var coordinates = HearthCoordinates[i].coordinates;
+                var description = HearthCoordinates[i].description;
+                var imageSize = HearthCoordinates[i].imageSize;
+                var image = HearthCoordinates[i].image;
+
+                var Hearth = L.marker(coordinates, { icon: HearthIcon })
+                .bindPopup("<div class='marker-description'>" + description + "</div>")  // Текст всплывающего окна (если вдруг нужно добавить нумерацию, то можно внести после текста "Ящик с патронами" след. команду: + (i + 1) + )
+                .addTo(HearthGroup);
+                // Добавление обработчика события нажатия для каждого маркера
+            Hearth.on('click', function(e) {
+                // При нажатии на маркер, необходимо проверить наличие изображения и добавить его в всплывающее окно
+                if (image) {
+                    var content = "<div class='custom-popup-content'>";
+                    content += "<img src='" + image + "' width='" + imageSize[0] + "' height='" + imageSize[1] + "'<br>";
+                    content += "<p class='marker-description'>" + description + "</p>";
+                    content += "</div>";
+
+                    // Создание всплывающего окна с контентом
+                    var popup = L.popup().setContent(content);
+
+                    // Показать всплывающее окно
+                    e.target.bindPopup(popup).openPopup();
+                }
+            });
+        })();
+        }
+    } else {
+        // Удаление группы маркеров, если она существует
+        if (HearthGroup) {
+        map.removeLayer(HearthGroup);
+        }
+    }
+});
+
 // "Аномалии Гравитационные"
 document.getElementById('showGAMenu').addEventListener('change', function() {
     toggleGravityImage();
@@ -2537,4 +2675,6 @@ window.addEventListener('load', function() {
     showCheckboxWithContent('showSinsMenu');
     showCheckboxWithContent('showMonolithMenu');
     showCheckboxWithContent('showObliteratorMenu');
+    showCheckboxWithContent('showWormholeMenu');
+    showCheckboxWithContent('showHearthMenu');
 });
