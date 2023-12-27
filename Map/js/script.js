@@ -534,6 +534,9 @@ showSupplyMenu.addEventListener('change', function() {
             { coordinates: [3069, 2720], description: "Координаты: -1211, 86, -4595" },
             { coordinates: [3145, 2814], description: "Координаты: -1026, 79, -4744" },
             { coordinates: [3152, 2814], description: "Координаты: -1024, 74, -4755" },
+            { coordinates: [3065, 2661], description: "Координаты: -1332, 76, -4585" },
+            { coordinates: [3080, 2672], description: "Координаты: -1308, 76, -4618" },
+            { coordinates: [3119, 2667], description: "Координаты: -1319, 81, -4694" },
         ];
 
         // Группа маркеров
@@ -693,6 +696,8 @@ showBarrelMenu.addEventListener('change', function() {
             { coordinates: [3040, 2685], description: "Координаты: -1284, 75, -4537" },
             { coordinates: [3068, 2731], description: "Координаты: -1190, 76, -4594" },
             { coordinates: [3150, 2806], description: "Координаты: -1041, 73, -4753" },
+            { coordinates: [3068, 2677], description: "Координаты: -1299, 76, -4595" },
+            { coordinates: [3117, 2671], description: "Координаты: -1311, 76, -4689" },
         ];
 
         // Группа маркеров
