@@ -80,6 +80,9 @@ body {
 #menu5 input[type="checkbox"] {
     display: none;
 }
+#menu6 input[type="checkbox"] {
+    display: none;
+}
 
 #menu1 #showAmmoMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
@@ -206,6 +209,15 @@ body {
     color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
 }
 #menu5 #showObliteratorMenu:not(:checked) + .checkbox-label {
+    text-decoration: line-through;
+    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+}
+
+#menu6 #showWormholeMenu:not(:checked) + .checkbox-label {
+    text-decoration: line-through;
+    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+}
+#menu6 #showHearthMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
     color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
 }
