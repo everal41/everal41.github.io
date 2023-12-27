@@ -2144,7 +2144,7 @@ showBanditsMenu.addEventListener('change', function() {
             { coordinates: [2956, 2330], description: "Бандиты" },
             { coordinates: [3029, 2348], description: "Бандиты" },
             // Полесское
-            { coordinates: [3029, 2837], description: "Мародеры<br>Очень сильные" },
+            { coordinates: [3059, 2837], description: "Мародеры<br>Очень сильные" },
         ];
 
         // Группа маркеров
