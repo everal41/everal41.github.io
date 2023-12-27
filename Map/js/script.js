@@ -361,6 +361,7 @@ showAmmoMenu.addEventListener('change', function(){
             // Полесское
             { coordinates: [2991, 2787], description: "Координаты: -1080, 82, -4444" },
             { coordinates: [3036, 2774], description: "Координаты: -1105, 85, -4530" },
+            { coordinates: [3123, 2808], description: "Координаты: -1037, 85, -4703" },
         ];
 
         AmmoGroup = L.layerGroup().addTo(map);
@@ -537,6 +538,15 @@ showSupplyMenu.addEventListener('change', function() {
             { coordinates: [3065, 2661], description: "Координаты: -1332, 76, -4585" },
             { coordinates: [3080, 2672], description: "Координаты: -1308, 76, -4618" },
             { coordinates: [3119, 2667], description: "Координаты: -1319, 81, -4694" },
+            { coordinates: [3091, 2769], description: "Координаты: -1116, 93, -4639" },
+            { coordinates: [3110, 2806], description: "Координаты: -1042, 97, -4676" },
+            { coordinates: [3133, 2842], description: "Координаты: -969, 85, -4719" },
+            { coordinates: [3129, 2855], description: "Координаты: -942, 85, -4712" },
+            { coordinates: [3150, 2780], description: "Координаты: -1093, 85, -4753" },
+            { coordinates: [3151, 2767], description: "Координаты: -1118, 81, -4756" },
+            { coordinates: [3117, 2741], description: "Координаты: -1170, 86, -4688" },
+            { coordinates: [3118, 2709], description: "Координаты: -1234, 86, -4692" },
+            { coordinates: [3147, 2739], description: "Координаты: -1173, 85, -4751" },
         ];
 
         // Группа маркеров
@@ -698,6 +708,10 @@ showBarrelMenu.addEventListener('change', function() {
             { coordinates: [3150, 2806], description: "Координаты: -1041, 73, -4753" },
             { coordinates: [3068, 2677], description: "Координаты: -1299, 76, -4595" },
             { coordinates: [3117, 2671], description: "Координаты: -1311, 76, -4689" },
+            { coordinates: [3092, 2791], description: "Координаты: -1071, 77, -4642" },
+            { coordinates: [3127, 2835], description: "Координаты: -983, 79, -4709" },
+            { coordinates: [3123, 2729], description: "Координаты: -1196, 94, -4703" },
+            { coordinates: [3148, 2691], description: "Координаты: -1270, 85, -4751" },
         ];
 
         // Группа маркеров
@@ -890,6 +904,15 @@ showToolMenu.addEventListener('change', function() {
             { coordinates: [3041, 2791], description: "Координаты: -1071, 86, -4540" },
             { coordinates: [3063, 2755], description: "Координаты: -1143, 86, -4583" },
             { coordinates: [3068, 2738], description: "Координаты: -1177, 82, -4594" },
+            { coordinates: [3106, 2807], description: "Координаты: -1040, 97, -4669" },
+            { coordinates: [3122, 2776], description: "Координаты: -1099, 79, -4701" },
+            { coordinates: [3068, 2738], description: "Координаты: -1177, 82, -4594" },
+            { coordinates: [3147, 2808], description: "Координаты: -1036, 81, -4749" },
+            { coordinates: [3119, 2755], description: "Координаты: -1144, 82, -4694" },
+            { coordinates: [3121, 2714], description: "Координаты: -1224, 78, -4699" },
+            { coordinates: [3119, 2694], description: "Координаты: -1266, 83, -4694" },
+            { coordinates: [3149, 2723], description: "Координаты: -1207, 85, -4753" },
+            { coordinates: [3145, 2704], description: "Координаты: -1246, 79, -4744" },
         ];
 
         // Группа маркеров
@@ -1162,6 +1185,7 @@ showBDMenu.addEventListener('change', function() {
             { coordinates: [3102, 2774], description: "Слепые собаки" },
             { coordinates: [3019, 2638], description: "Слепые собаки" },
             { coordinates: [2986, 2814], description: "Слепые собаки" },
+            { coordinates: [3110, 2855], description: "Слепые собаки" },
         ];
 
         // Группа маркеров
@@ -1246,6 +1270,8 @@ showPDMenu.addEventListener('change', function() {
             // Стройплощадка
             { coordinates: [1456, 1876], description: "Псевдособаки" },
             { coordinates: [1566, 1883], description: "Псевдособаки" },
+            // Полесское
+            { coordinates: [3111, 2846], description: "Псевдособаки" },
         ];
 
         // Группа маркеров
@@ -2585,6 +2611,7 @@ showCampfireMenu.addEventListener('change', function() {
             // Полесское
             { coordinates: [2955, 2603], description: "Костёр" },
             { coordinates: [3064, 2779], description: "Костёр" },
+            { coordinates: [3151, 2779], description: "Костёр" },
         ];
 
         // Группа маркеров
