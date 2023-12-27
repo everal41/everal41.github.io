@@ -258,6 +258,13 @@ var HearthIcon = L.icon({
     popupAnchor: [0, 0]
 });
 
+var CampfireIcon = L.icon({
+    iconUrl: 'images/Campfire.png',
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+    popupAnchor: [0, 0]
+});
+
 showAmmoMenu.addEventListener('change', function(){
     if(showAmmoMenu.checked) {
         var AmmoCoordinates = [
@@ -351,6 +358,8 @@ showAmmoMenu.addEventListener('change', function(){
             { coordinates: [2972, 2340], description: "Координаты: -1976, 82, -4406" },
             { coordinates: [2983, 2323], description: "Координаты: -2011, 77, -4429" },
             { coordinates: [2988, 2308], description: "Координаты: -2040, 77, -4439" },
+            // Полесское
+            { coordinates: [2991, 2787], description: "Координаты: -1080, 82, -4444" },
         ];
 
         AmmoGroup = L.layerGroup().addTo(map);
@@ -514,6 +523,11 @@ showSupplyMenu.addEventListener('change', function() {
             { coordinates: [1579, 1924], description: "Координаты: -2807, 92, -1622" },
             { coordinates: [1529, 1811], description: "Координаты: -3032, 91, -1522" },
             { coordinates: [1532, 1756], description: "Координаты: -3143, 91, -1528" },
+            // Полесское
+            { coordinates: [2981, 2830], description: "Координаты: -993, 83, -4424" },
+            { coordinates: [2981, 2814], description: "Координаты: -1025, 84, -4424" },
+            { coordinates: [2979, 2791], description: "Координаты: -1071, 83, -4417" },
+            { coordinates: [2984, 2765], description: "Координаты: -1124, 100, -4428" },
         ];
 
         // Группа маркеров
@@ -665,6 +679,11 @@ showBarrelMenu.addEventListener('change', function() {
             { coordinates: [1496, 1759], description: "Координаты: -3138, 91, -1455" },
             { coordinates: [1469, 1827], description: "Координаты: -3000, 89, -1400" },
             { coordinates: [1512, 1796], description: "Координаты: -3062, 93, -1489" },
+            // Полесское
+            { coordinates: [3004, 2818], description: "Координаты: -1018, 82, -4469" },
+            { coordinates: [3009, 2791], description: "Координаты: -1072, 83, -4479" },
+            { coordinates: [2974, 2805], description: "Координаты: -1043, 82, -4409" },
+            { coordinates: [3099, 2803], description: "Координаты: -1047, 79, -4656" },
         ];
 
         // Группа маркеров
@@ -849,6 +868,11 @@ showToolMenu.addEventListener('change', function() {
             { coordinates: [1540, 1807], description: "Координаты: -3042, 92, -1543" },
             { coordinates: [1532, 1820], description: "Координаты: -3016, 91, -1527" },
             { coordinates: [1539, 1830], description: "Координаты: -2995, 91, -1540" },
+            // Полесское
+            { coordinates: [2995, 2831], description: "Координаты: -992, 84, -4451" },
+            { coordinates: [2982, 2806], description: "Координаты: -1042, 84, -4425" },
+            { coordinates: [3006, 2802], description: "Координаты: -1052, 84, -4472" },
+            { coordinates: [3036, 2749], description: "Координаты: -1155, 78, -4529" },
         ];
 
         // Группа маркеров
@@ -1119,6 +1143,7 @@ showBDMenu.addEventListener('change', function() {
             { coordinates: [3053, 2709], description: "Слепые собаки" },
             { coordinates: [3104, 2706], description: "Слепые собаки" },
             { coordinates: [3102, 2774], description: "Слепые собаки" },
+            { coordinates: [3019, 2638], description: "Слепые собаки" },
         ];
 
         // Группа маркеров
@@ -2528,6 +2553,54 @@ showHearthMenu.addEventListener('change', function() {
     }
 });
 
+showCampfireMenu.addEventListener('change', function() {
+    if (showCampfireMenu.checked) {
+        // Массив с координатами маркеров
+        var CampfireCoordinates = [
+            // Полесское
+            { coordinates: [2955, 2603], description: "Костёр" },
+        ];
+
+        // Группа маркеров
+        CampfireGroup = L.layerGroup().addTo(map);
+
+        // Добавление маркера для каждой координаты
+        for (var i = 0; i < CampfireCoordinates.length; i++) {
+            (function() {
+                var coordinates = CampfireCoordinates[i].coordinates;
+                var description = CampfireCoordinates[i].description;
+                var imageSize = CampfireCoordinates[i].imageSize;
+                var image = CampfireCoordinates[i].image;
+
+                var Campfire = L.marker(coordinates, { icon: CampfireIcon })
+                .bindPopup("<div class='marker-description'>" + description + "</div>")  // Текст всплывающего окна (если вдруг нужно добавить нумерацию, то можно внести после текста "Ящик с патронами" след. команду: + (i + 1) + )
+                .addTo(CampfireGroup);
+                // Добавление обработчика события нажатия для каждого маркера
+            Campfire.on('click', function(e) {
+                // При нажатии на маркер, необходимо проверить наличие изображения и добавить его в всплывающее окно
+                if (image) {
+                    var content = "<div class='custom-popup-content'>";
+                    content += "<img src='" + image + "' width='" + imageSize[0] + "' height='" + imageSize[1] + "'<br>";
+                    content += "<p class='marker-description'>" + description + "</p>";
+                    content += "</div>";
+
+                    // Создание всплывающего окна с контентом
+                    var popup = L.popup().setContent(content);
+
+                    // Показать всплывающее окно
+                    e.target.bindPopup(popup).openPopup();
+                }
+            });
+        })();
+        }
+    } else {
+        // Удаление группы маркеров, если она существует
+        if (CampfireGroup) {
+        map.removeLayer(CampfireGroup);
+        }
+    }
+});
+
 // "Аномалии Гравитационные"
 document.getElementById('showGAMenu').addEventListener('change', function() {
     toggleGravityImage();
@@ -2679,4 +2752,5 @@ window.addEventListener('load', function() {
     showCheckboxWithContent('showObliteratorMenu');
     showCheckboxWithContent('showWormholeMenu');
     showCheckboxWithContent('showHearthMenu');
+    showCheckboxWithContent('showCampfireMenu');
 });
