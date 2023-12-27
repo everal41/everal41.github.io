@@ -221,6 +221,10 @@ body {
     text-decoration: line-through;
     color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
 }
+#menu6 #showCampfireMenu:not(:checked) + .checkbox-label {
+    text-decoration: line-through;
+    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+}
 
 .loader-wrapper {
     position: fixed;
