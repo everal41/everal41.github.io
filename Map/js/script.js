@@ -362,6 +362,7 @@ showAmmoMenu.addEventListener('change', function(){
             { coordinates: [2991, 2787], description: "Координаты: -1080, 82, -4444" },
             { coordinates: [3036, 2774], description: "Координаты: -1105, 85, -4530" },
             { coordinates: [3123, 2808], description: "Координаты: -1037, 85, -4703" },
+            { coordinates: [3358, 2606], description: "Координаты: -1442, 84, -5164" },
         ];
 
         AmmoGroup = L.layerGroup().addTo(map);
@@ -548,6 +549,11 @@ showSupplyMenu.addEventListener('change', function() {
             { coordinates: [3118, 2709], description: "Координаты: -1234, 86, -4692" },
             { coordinates: [3147, 2739], description: "Координаты: -1173, 85, -4751" },
             { coordinates: [3094, 2847], description: "Координаты: -958, 85, -4644" },
+            { coordinates: [3239, 2566], description: "Координаты: -1523, 95, -4929" },
+            { coordinates: [3239, 2590], description: "Координаты: -1471, 96, -4929" },
+            { coordinates: [3224, 2577], description: "Координаты: -1496, 126, -4899" },
+            { coordinates: [3225, 2580], description: "Координаты: -1491, 169, -4901" },
+            { coordinates: [3289, 2616], description: "Координаты: -1419, 84, -5029" },
         ];
 
         // Группа маркеров
@@ -713,6 +719,8 @@ showBarrelMenu.addEventListener('change', function() {
             { coordinates: [3127, 2835], description: "Координаты: -983, 79, -4709" },
             { coordinates: [3123, 2729], description: "Координаты: -1196, 94, -4703" },
             { coordinates: [3148, 2691], description: "Координаты: -1270, 85, -4751" },
+            { coordinates: [3229, 2580], description: "Координаты: -1492, 144, -4910" },
+            { coordinates: [3324, 2618], description: "Координаты: -1416, 84, -5096" },
         ];
 
         // Группа маркеров
@@ -914,6 +922,9 @@ showToolMenu.addEventListener('change', function() {
             { coordinates: [3119, 2694], description: "Координаты: -1266, 83, -4694" },
             { coordinates: [3149, 2723], description: "Координаты: -1207, 85, -4753" },
             { coordinates: [3145, 2704], description: "Координаты: -1246, 79, -4744" },
+            { coordinates: [3225, 2581], description: "Координаты: -1490, 156, -4902" },
+            { coordinates: [3238, 2596], description: "Координаты: -1459, 100, -4925" },
+            { coordinates: [3293, 2636], description: "Координаты: -1382, 85, -5036" },
         ];
 
         // Группа маркеров
@@ -1187,6 +1198,7 @@ showBDMenu.addEventListener('change', function() {
             { coordinates: [3019, 2638], description: "Слепые собаки" },
             { coordinates: [2986, 2814], description: "Слепые собаки" },
             { coordinates: [3110, 2855], description: "Слепые собаки" },
+            { coordinates: [3190, 2575], description: "Слепые собаки" },
         ];
 
         // Группа маркеров
@@ -1461,6 +1473,7 @@ showBoarMenu.addEventListener('change', function() {
             { coordinates: [2889, 2537], description: "Кабаны" },
             { coordinates: [3054, 2292], description: "Кабаны" },
             // Полесское
+            { coordinates: [3378, 2636], description: "Кабаны" },
         ];
 
         // Группа маркеров
@@ -1621,6 +1634,7 @@ showSnorkMenu.addEventListener('change', function() {
             { coordinates: [1570, 1922], description: "Снорки" },
             // Полесское
             { coordinates: [2996, 2742], description: "Снорки" },
+            { coordinates: [3304, 2622], description: "Снорки" },
         ];
 
         // Группа маркеров
@@ -1709,6 +1723,7 @@ showZombieMenu.addEventListener('change', function() {
             // Полесское
             { coordinates: [2997, 2807], description: "Зомби" },
             { coordinates: [2977, 2800], description: "Зомби" },
+            { coordinates: [3295, 2608], description: "Зомби" },
         ];
 
         // Группа маркеров
@@ -2128,6 +2143,8 @@ showBanditsMenu.addEventListener('change', function() {
             { coordinates: [2951, 2428], description: "Бандиты" },
             { coordinates: [2956, 2330], description: "Бандиты" },
             { coordinates: [3029, 2348], description: "Бандиты" },
+            // Полесское
+            { coordinates: [3029, 2837], description: "Мародеры<br>Очень сильные" },
         ];
 
         // Группа маркеров
@@ -2504,6 +2521,7 @@ showWormholeMenu.addEventListener('change', function() {
 
             // Полесское
             { coordinates: [3085, 2743], description: "Червоточина" },
+            { coordinates: [3337, 2633], description: "Червоточина" },
         ];
 
         // Группа маркеров
@@ -2563,6 +2581,7 @@ showHearthMenu.addEventListener('change', function() {
             // Полесское
             { coordinates: [2993, 2806], description: "Очаг" },
             { coordinates: [3187, 2850], description: "Очаг" },
+            { coordinates: [3237, 2578], description: "Очаг" },
         ];
 
         // Группа маркеров
@@ -2613,6 +2632,7 @@ showCampfireMenu.addEventListener('change', function() {
             { coordinates: [2955, 2603], description: "Костёр" },
             { coordinates: [3064, 2779], description: "Костёр" },
             { coordinates: [3151, 2779], description: "Костёр" },
+            { coordinates: [3231, 2590], description: "Костёр" },
         ];
 
         // Группа маркеров
