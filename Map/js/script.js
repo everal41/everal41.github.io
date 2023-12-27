@@ -884,6 +884,7 @@ showToolMenu.addEventListener('change', function() {
             { coordinates: [3036, 2749], description: "Координаты: -1155, 78, -4529" },
             { coordinates: [3041, 2791], description: "Координаты: -1071, 86, -4540" },
             { coordinates: [3063, 2755], description: "Координаты: -1143, 86, -4583" },
+            { coordinates: [3068, 2738], description: "Координаты: -1177, 82, -4594" },
         ];
 
         // Группа маркеров
@@ -1155,6 +1156,7 @@ showBDMenu.addEventListener('change', function() {
             { coordinates: [3104, 2706], description: "Слепые собаки" },
             { coordinates: [3102, 2774], description: "Слепые собаки" },
             { coordinates: [3019, 2638], description: "Слепые собаки" },
+            { coordinates: [2986, 2814], description: "Слепые собаки" },
         ];
 
         // Группа маркеров
