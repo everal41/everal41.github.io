@@ -360,6 +360,7 @@ showAmmoMenu.addEventListener('change', function(){
             { coordinates: [2988, 2308], description: "Координаты: -2040, 77, -4439" },
             // Полесское
             { coordinates: [2991, 2787], description: "Координаты: -1080, 82, -4444" },
+            { coordinates: [3036, 2774], description: "Координаты: -1105, 85, -4530" },
         ];
 
         AmmoGroup = L.layerGroup().addTo(map);
@@ -528,6 +529,11 @@ showSupplyMenu.addEventListener('change', function() {
             { coordinates: [2981, 2814], description: "Координаты: -1025, 84, -4424" },
             { coordinates: [2979, 2791], description: "Координаты: -1071, 83, -4417" },
             { coordinates: [2984, 2765], description: "Координаты: -1124, 100, -4428" },
+            { coordinates: [3038, 2696], description: "Координаты: -1260, 81, -4535" },
+            { coordinates: [3034, 2785], description: "Координаты: -1084, 82, -4526" },
+            { coordinates: [3069, 2720], description: "Координаты: -1211, 86, -4595" },
+            { coordinates: [3145, 2814], description: "Координаты: -1026, 79, -4744" },
+            { coordinates: [3152, 2814], description: "Координаты: -1024, 74, -4755" },
         ];
 
         // Группа маркеров
@@ -684,6 +690,9 @@ showBarrelMenu.addEventListener('change', function() {
             { coordinates: [3009, 2791], description: "Координаты: -1072, 83, -4479" },
             { coordinates: [2974, 2805], description: "Координаты: -1043, 82, -4409" },
             { coordinates: [3099, 2803], description: "Координаты: -1047, 79, -4656" },
+            { coordinates: [3040, 2685], description: "Координаты: -1284, 75, -4537" },
+            { coordinates: [3068, 2731], description: "Координаты: -1190, 76, -4594" },
+            { coordinates: [3150, 2806], description: "Координаты: -1041, 73, -4753" },
         ];
 
         // Группа маркеров
@@ -873,6 +882,8 @@ showToolMenu.addEventListener('change', function() {
             { coordinates: [2982, 2806], description: "Координаты: -1042, 84, -4425" },
             { coordinates: [3006, 2802], description: "Координаты: -1052, 84, -4472" },
             { coordinates: [3036, 2749], description: "Координаты: -1155, 78, -4529" },
+            { coordinates: [3041, 2791], description: "Координаты: -1071, 86, -4540" },
+            { coordinates: [3063, 2755], description: "Координаты: -1143, 86, -4583" },э
         ];
 
         // Группа маркеров
@@ -1324,6 +1335,8 @@ showFleshMenu.addEventListener('change', function() {
             { coordinates: [1433, 1900], description: "Плоти" },
             // Полесское
             { coordinates: [3013, 2702], description: "Плоти" },
+            { coordinates: [3009, 2801], description: "Плоти" },
+            { coordinates: [3192, 2854], description: "Плоти" },
         ];
 
         // Группа маркеров
@@ -2448,13 +2461,15 @@ showWormholeMenu.addEventListener('change', function() {
             // Кордон
             
             // Свалка
-            
+
+            // ТД
+            { coordinates: [2259, 4073], description: "Червоточина" },
             // Янтарь
             
             // Поляна
 
             // Полесское
-            { coordinates: [3109, 2672], description: "Червоточина" },
+            { coordinates: [3085, 2743], description: "Червоточина" },
         ];
 
         // Группа маркеров
@@ -2505,12 +2520,15 @@ showHearthMenu.addEventListener('change', function() {
             
             // Свалка
             
+            // ТД
+            { coordinates: [2353, 3868], description: "Очаг" },
             // Янтарь
             
             // Поляна
 
             // Полесское
             { coordinates: [2993, 2806], description: "Очаг" },
+            { coordinates: [3187, 2850], description: "Очаг" },
         ];
 
         // Группа маркеров
@@ -2559,6 +2577,7 @@ showCampfireMenu.addEventListener('change', function() {
         var CampfireCoordinates = [
             // Полесское
             { coordinates: [2955, 2603], description: "Костёр" },
+            { coordinates: [3064, 2779], description: "Костёр" },
         ];
 
         // Группа маркеров
