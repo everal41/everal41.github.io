@@ -554,6 +554,9 @@ showSupplyMenu.addEventListener('change', function() {
             { coordinates: [3224, 2577], description: "Координаты: -1496, 126, -4899" },
             { coordinates: [3225, 2580], description: "Координаты: -1491, 169, -4901" },
             { coordinates: [3289, 2616], description: "Координаты: -1419, 84, -5029" },
+            { coordinates: [3291, 2659], description: "Координаты: -1335, 84, -5030" },
+            { coordinates: [3351, 2704], description: "Координаты: -1245, 84, -5153" },
+            { coordinates: [3384, 2726], description: "Координаты: -1202, 84, -5217" },
         ];
 
         // Группа маркеров
@@ -721,6 +724,9 @@ showBarrelMenu.addEventListener('change', function() {
             { coordinates: [3148, 2691], description: "Координаты: -1270, 85, -4751" },
             { coordinates: [3229, 2580], description: "Координаты: -1492, 144, -4910" },
             { coordinates: [3324, 2618], description: "Координаты: -1416, 84, -5096" },
+            { coordinates: [3318, 2653], description: "Координаты: -1350, 84, -5086" },
+            { coordinates: [3335, 2665], description: "Координаты: -1323, 84, -5119" },
+            { coordinates: [3371, 2738], description: "Координаты: -1178, 84, -5188" },
         ];
 
         // Группа маркеров
@@ -925,6 +931,8 @@ showToolMenu.addEventListener('change', function() {
             { coordinates: [3225, 2581], description: "Координаты: -1490, 156, -4902" },
             { coordinates: [3238, 2596], description: "Координаты: -1459, 100, -4925" },
             { coordinates: [3293, 2636], description: "Координаты: -1382, 85, -5036" },
+            { coordinates: [3319, 2712], description: "Координаты: -1228, 84, -5087" },
+            { coordinates: [3372, 2711], description: "Координаты: -1233, 84, -5192" },
         ];
 
         // Группа маркеров
@@ -1199,6 +1207,7 @@ showBDMenu.addEventListener('change', function() {
             { coordinates: [2986, 2814], description: "Слепые собаки" },
             { coordinates: [3110, 2855], description: "Слепые собаки" },
             { coordinates: [3190, 2575], description: "Слепые собаки" },
+            { coordinates: [3386, 2812], description: "Слепые собаки" },
         ];
 
         // Группа маркеров
@@ -1383,6 +1392,7 @@ showFleshMenu.addEventListener('change', function() {
             { coordinates: [3013, 2702], description: "Плоти" },
             { coordinates: [3009, 2801], description: "Плоти" },
             { coordinates: [3192, 2854], description: "Плоти" },
+            { coordinates: [3385, 2651], description: "Плоти" },
         ];
 
         // Группа маркеров
@@ -1926,6 +1936,8 @@ showCMenu.addEventListener('change', function() {
             // Стройплощадка
             { coordinates: [1402, 1818], description: "Химера" },
             { coordinates: [1439, 1672], description: "Химера" },
+            // Полесское
+            { coordinates: [3316, 2706], description: "Химера" },
         ];
 
         // Группа маркеров
@@ -2522,6 +2534,7 @@ showWormholeMenu.addEventListener('change', function() {
             // Полесское
             { coordinates: [3085, 2743], description: "Червоточина" },
             { coordinates: [3337, 2633], description: "Червоточина" },
+            { coordinates: [3337, 2734], description: "Червоточина" },
         ];
 
         // Группа маркеров
