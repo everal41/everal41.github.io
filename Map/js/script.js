@@ -557,6 +557,10 @@ showSupplyMenu.addEventListener('change', function() {
             { coordinates: [3291, 2659], description: "Координаты: -1335, 84, -5030" },
             { coordinates: [3351, 2704], description: "Координаты: -1245, 84, -5153" },
             { coordinates: [3384, 2726], description: "Координаты: -1202, 84, -5217" },
+            { coordinates: [3337, 2773], description: "Координаты: -1107, 84, -5124" },
+            { coordinates: [3338, 2757], description: "Координаты: -1140, 84, -5126" },
+            { coordinates: [3360, 2786], description: "Координаты: -1080, 84, -5168" },
+            { coordinates: [3379, 2780], description: "Координаты: -1093, 84, -5204" },
         ];
 
         // Группа маркеров
@@ -728,6 +732,9 @@ showBarrelMenu.addEventListener('change', function() {
             { coordinates: [3335, 2665], description: "Координаты: -1323, 84, -5119" },
             { coordinates: [3371, 2738], description: "Координаты: -1178, 84, -5188" },
             { coordinates: [3293, 2704], description: "Координаты: -1243, 84, -5035" },
+            { coordinates: [3315, 2780], description: "Координаты: -1093, 84, -5078" },
+            { coordinates: [3364, 2792], description: "Координаты: -1069, 84, -5177" },
+            { coordinates: [3373, 2764], description: "Координаты: -1125, 84, -5192" },
         ];
 
         // Группа маркеров
@@ -1210,6 +1217,7 @@ showBDMenu.addEventListener('change', function() {
             { coordinates: [3190, 2575], description: "Слепые собаки" },
             { coordinates: [3386, 2812], description: "Слепые собаки" },
             { coordinates: [3249, 2646], description: "Слепые собаки" },
+            { coordinates: [3357, 2760], description: "Слепые собаки" },
         ];
 
         // Группа маркеров
@@ -1824,6 +1832,7 @@ showBSMenu.addEventListener('change', function() {
             { coordinates: [2650, 2048], description: "Кровосос<br>Лаборатория X-16" },
             // Полесское
             { coordinates: [2986, 2831], description: "Кровосос" },
+            { coordinates: [3277, 2785], description: "Кровосос" },
         ];
 
         // Группа маркеров
@@ -1888,6 +1897,8 @@ showSBSMenu.addEventListener('change', function() {
             { coordinates: [3072, 2406], description: "Матёрый кровосос" },
             // Стройплощадка
             { coordinates: [1520, 1797], description: "Матёрый кровосос" },
+            // Полесское
+            { coordinates: [3371, 2800], description: "Матёрый кровосос" },
         ];
 
         // Группа маркеров
