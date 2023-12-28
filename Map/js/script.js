@@ -727,6 +727,7 @@ showBarrelMenu.addEventListener('change', function() {
             { coordinates: [3318, 2653], description: "Координаты: -1350, 84, -5086" },
             { coordinates: [3335, 2665], description: "Координаты: -1323, 84, -5119" },
             { coordinates: [3371, 2738], description: "Координаты: -1178, 84, -5188" },
+            { coordinates: [3293, 2704], description: "Координаты: -1243, 84, -5035" },
         ];
 
         // Группа маркеров
@@ -1208,6 +1209,7 @@ showBDMenu.addEventListener('change', function() {
             { coordinates: [3110, 2855], description: "Слепые собаки" },
             { coordinates: [3190, 2575], description: "Слепые собаки" },
             { coordinates: [3386, 2812], description: "Слепые собаки" },
+            { coordinates: [3249, 2646], description: "Слепые собаки" },
         ];
 
         // Группа маркеров
@@ -1484,6 +1486,7 @@ showBoarMenu.addEventListener('change', function() {
             { coordinates: [3054, 2292], description: "Кабаны" },
             // Полесское
             { coordinates: [3378, 2636], description: "Кабаны" },
+            { coordinates: [3159, 2864], description: "Кабаны" },
         ];
 
         // Группа маркеров
@@ -1645,6 +1648,7 @@ showSnorkMenu.addEventListener('change', function() {
             // Полесское
             { coordinates: [2996, 2742], description: "Снорки" },
             { coordinates: [3304, 2622], description: "Снорки" },
+            { coordinates: [3310, 2805], description: "Снорки" },
         ];
 
         // Группа маркеров
@@ -2646,6 +2650,7 @@ showCampfireMenu.addEventListener('change', function() {
             { coordinates: [3064, 2779], description: "Костёр" },
             { coordinates: [3151, 2779], description: "Костёр" },
             { coordinates: [3231, 2590], description: "Костёр" },
+            { coordinates: [3363, 2854], description: "Горящий вертолёт" },
         ];
 
         // Группа маркеров
