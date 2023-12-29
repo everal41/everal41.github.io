@@ -46,8 +46,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Чтобы клики не передавались контейнеру */
-    z-index: 1000; /* Должен быть выше, чем у карты */
+    pointer-events: none;
+    z-index: 1000;
 }
 
 .popup-content {
@@ -55,18 +55,18 @@ body {
 }
 
 .popup-content .description {
-    font-size: 16px;  /* Размер текста описания */
+    font-size: 16px;
 }
 
 .marker-description {
-    font-family: 'Montserrat', sans-serif; /* имя шрифта */
-    font-size: 16px; /* размер шрифта */
-    font-weight: bold; /* По желанию, можно добавить другие стили текста */
-    color: #fff; /* цвет текста */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
 }
 
 #menu1 input[type="checkbox"] {
-    display: none; /* Скрывает фактический чекбокс */
+    display: none;
 }
 #menu2 input[type="checkbox"] {
     display: none;
@@ -86,224 +86,142 @@ body {
 
 #menu1 #showAmmoMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu1 #showSupplyMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu1 #showToolMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu1 #showBarrelMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu1 #showScienceMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu1 #showStashMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 
 #menu2 #showBDMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu2 #showPDMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu2 #showFleshMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu2 #showBoarMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu2 #showRatMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu2 #showSnorkMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu2 #showZombieMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu2 #showBSMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu2 #showSBSMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu2 #showCMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 
 #menu3 #showGAMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu3 #showBAMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu3 #showTAMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu3 #showEAMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu3 #showTrashMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 
 #menu4 #showDMMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 
 #menu5 #showZombifiedMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu5 #showBanditsMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu5 #showMilitaryMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu5 #showFreedomMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu5 #showDutyMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu5 #showMercsMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu5 #showSinsMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu5 #showMonolithMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu5 #showObliteratorMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 
 #menu6 #showWormholeMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu6 #showHearthMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
 #menu6 #showCampfireMenu:not(:checked) + .checkbox-label {
     text-decoration: line-through;
-    color: #888; /* Можно изменить цвет зачёркнутого текста по желанию */
+    color: #888;
 }
-
-.loader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #333333; /* Тёмный фон */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.loader {
-    border: 8px solid #3498db; /* Цвет обводки */
-    border-top: 8px solid #333333; /* Цвет верхней грани */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite; /* Анимация вращения */
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Стили для модального окна */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
-    background-color: #333333;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  /* Добавьте стили для оформления текста */
-.modal-content p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  
-  .author {
-    font-weight: bold;
-  }
-  
-  /* Добавьте стили для подчёркивания и изменения цвета ссылки */
-  .modal-content a {
-    text-decoration: underline;
-    color: #007bff; /* Цвет ссылки */
-  }
-  
-  .modal-content a:hover {
-    color: #0056b3; /* Цвет ссылки при наведении */
-  }
