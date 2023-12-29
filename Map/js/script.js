@@ -2824,25 +2824,6 @@ function showCheckboxWithContent(checkboxId) {
     }
 }
 
-// Отображение/скрытие модального окна при клике на кнопку "О карте"
-document.getElementById('aboutButton').addEventListener('click', function() {
-    document.getElementById('aboutModal').style.display = 'block';
-  });
-  
-  // Закрытие модального окна при клике на кнопку закрытия (×)
-  document.getElementsByClassName('close')[0].addEventListener('click', function() {
-    document.getElementById('aboutModal').style.display = 'none';
-  });
-  
-  // Закрытие модального окна при клике вне окна
-  window.addEventListener('click', function(event) {
-    var modal = document.getElementById('aboutModal');
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-  
-
 // Автоматически вызывать функцию для нужных чекбоксов при загрузке страницы
 window.addEventListener('load', function() {
     showCheckboxWithContent('showAmmoMenu');
