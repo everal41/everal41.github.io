@@ -11,14 +11,6 @@ map.fitBounds(bounds);
 map.zoomControl.setPosition('bottomright');
 map.zoomControl.remove();
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Симуляция задержки загрузки
-    setTimeout(function() {
-        // Скрыть анимацию загрузки и отобразить основной контент
-        document.querySelector(".loader-wrapper").style.display = "none";
-    }, 2000); // Задержка в 2 секунды (вы можете изменить это значение)
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const checkboxes = document.querySelectorAll('.checkbox');
     
