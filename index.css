@@ -1,0 +1,343 @@
+.frame-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.frame-frame {
+  width: 100%;
+  height: 1080px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+.frame-frame6 {
+  gap: 10px;
+  top: 0px;
+  left: -3px;
+  width: 1920px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.frame-group6 {
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.frame-group5 {
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(30, 30, 30, 1);
+}
+.frame-rectangle2 {
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 184px;
+  position: absolute;
+}
+.frame-rectangle3 {
+  top: 980px;
+  left: 0px;
+  width: 1920px;
+  height: 100px;
+  position: absolute;
+}
+.frame-text {
+  top: 1019px;
+  left: 1591px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.frame-text02 {
+  top: 59px;
+  left: 527px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  z-index: 1;
+  position: absolute;
+  font-size: 54px;
+  font-style: ExtraBold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.frame-frame1 {
+  gap: 42px;
+  top: 1010px;
+  left: 898px;
+  width: 122px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.frame-discord1button {
+  width: 40px;
+  height: 40px;
+}
+.frame-donation-alerts1button {
+  width: 40px;
+  height: 40px;
+}
+.frame-frame2 {
+  gap: 10px;
+  top: 241px;
+  left: 165px;
+  width: 295px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.frame-group1 {
+  width: 295px;
+  height: 360px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(32, 32, 32, 1);
+}
+.frame-line1 {
+  top: 307.5px;
+  left: 295px;
+  width: 295px;
+  height: 1px;
+  position: absolute;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+.frame-map1button {
+  top: 20px;
+  left: 16px;
+  width: 262px;
+  height: 274px;
+  z-index: 1;
+  position: absolute;
+}
+.frame-text04 {
+  top: 321px;
+  left: 32px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  z-index: 2;
+  position: absolute;
+  font-size: 20px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.frame-frame3 {
+  gap: 10px;
+  top: 241px;
+  left: 588px;
+  width: 295px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.frame-group2 {
+  width: 295px;
+  height: 360px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(32, 32, 32, 1);
+}
+.frame-line2 {
+  top: 308px;
+  left: 295px;
+  width: 295px;
+  height: 1px;
+  position: absolute;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+.frame-text06 {
+  top: 321px;
+  left: 38px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  z-index: 1;
+  position: absolute;
+  font-size: 20px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.frame-table1button {
+  top: 20px;
+  left: 17px;
+  width: 262px;
+  height: 274px;
+  z-index: 2;
+  position: absolute;
+}
+.frame-frame4 {
+  gap: 10px;
+  top: 241px;
+  left: 1012px;
+  width: 295px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.frame-group3 {
+  width: 295px;
+  height: 360px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(32, 32, 32, 1);
+}
+.frame-line3 {
+  top: 308px;
+  left: 295px;
+  width: 295px;
+  height: 1px;
+  position: absolute;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+.frame-text08 {
+  top: 321px;
+  left: 109px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  z-index: 1;
+  position: absolute;
+  font-size: 20px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.frame-quests1 {
+  top: 20px;
+  left: 17px;
+  width: 262px;
+  height: 274px;
+  z-index: 2;
+  position: absolute;
+}
+.frame-text10 {
+  top: 141px;
+  left: 59px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  z-index: 3;
+  position: absolute;
+  font-size: 26px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.frame-frame5 {
+  gap: 10px;
+  top: 241px;
+  left: 1452px;
+  width: 295px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.frame-group4 {
+  width: 295px;
+  height: 360px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(32, 32, 32, 1);
+}
+.frame-line4 {
+  top: 308px;
+  left: 295px;
+  width: 295px;
+  height: 1px;
+  position: absolute;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+}
+.frame-text12 {
+  top: 321px;
+  left: 79px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  z-index: 1;
+  position: absolute;
+  font-size: 20px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.frame-gear1 {
+  top: 20px;
+  left: 17px;
+  width: 262px;
+  height: 274px;
+  z-index: 2;
+  position: absolute;
+}
+.frame-text14 {
+  top: 141px;
+  left: 59px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  z-index: 3;
+  position: absolute;
+  font-size: 26px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
