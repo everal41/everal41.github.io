@@ -1,215 +1,107 @@
 <!DOCTYPE html>
-<html lang="english">
-  <head>
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <title>Project Cataclysm Wiki</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta name="keywords" content="Project Cataclysm вики. Project Cataclysm Википедия. Project Cataclysm карта. Аномалии Project Cataclysm. Мутанты Project Cataclysm. Project Cataclysm таблица артефактов. Project cataclysm артефакты.">
-    <meta name="description" content="Project Cataclysm Wiki (Beta) - база знаний игры Project Cataclysm. Здесь вы найдёте интерактивную карту проекта и таблицу артефактов с их свойствами и ценами.">
-    <meta name="last-modified" content="Дата и время последнего изменения">
-
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
-
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
-        overflow-x: hidden
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
-  </head>
-  <body>
-    <link rel="stylesheet" href="./style.css" />
-    <div>
-      <link href="./index.css" rel="stylesheet" />
-
-      <div class="frame-container">
-        <div class="frame-frame">
-          <div class="frame-frame6">
-            <div class="frame-group6">
-              <div class="frame-group5">
-                <img
-                  alt="Rectangle226"
-                  src="public/external/rectangle226-0yh7-200h.png"
-                  class="frame-rectangle2"
-                />
-                <img
-                  alt="Rectangle328"
-                  src="public/external/rectangle328-cwfc-200h.png"
-                  class="frame-rectangle3"
-                />
+<html lang="ru">
+       <head>
+              <link rel="icon" href="favicon.png" type="image/png">
+              <link rel="shortcut icon" href="favicon.png" type="image/png">
+              <title>Project Cataclysm Wiki</title>
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <meta charset="utf-8" />
+              <meta property="twitter:card" content="summary_large_image" />
+              <meta name="keywords" content="Project Cataclysm вики. Project Cataclysm Википедия. Project Cataclysm карта. Аномалии Project Cataclysm. Мутанты Project Cataclysm. Project Cataclysm таблица артефактов. Project cataclysm артефакты.">
+              <meta name="description" content="Project Cataclysm Wiki (Beta) - база знаний игры Project Cataclysm. Здесь вы найдёте интерактивную карту проекта и таблицу артефактов с их свойствами и ценами.">
+              <meta name="last-modified" content="Дата и время последнего изменения">
+              <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+              <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+              <link href="./css/main.css" rel="stylesheet" />
+              <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+              <title>Project Cataclysm Wiki</title>
+       </head>
+       <body>
+              <div class="header">
+                     <div class="header__button_v1">
+                            <span class="header__button_quests">Квесты</span>
+                     </div>
+                     <div class="header__button_v2">
+                            <span class="header__button_equip">Снаряжение</span>
+                     </div>
+                     <a href="https://everal41.github.io/Table/table.html" style="text-decoration:none; color:inherit;">
+                            <div class="header__button_v3">
+                                   <span class="header__button_arts">Таблица артефактов</span>
+                            </div>
+                     </a>
+                     <a href="https://everal41.github.io/Map/index.html" style="text-decoration:none; color:inherit;">
+                            <div class="header__button_v4">
+                                   <span class="header__button_map">Интерактивная карта</span>
+                            </div>
+                     </a>
+                     <div class="header__logo">
+                            <span class="header__logo_href">
+                                   <a href="#!">
+                                          <img src="images/logo.svg" alt="Logo">
+                                   </a>
+                            </span>
+                     </div>
               </div>
-              <span class="frame-text">
-                <span>Сайт создан игроком everal41</span>
-              </span>
-            </div>
-            <span class="frame-text02">
-              <span>Project Cataclysm Wiki (Beta)</span>
-            </span>
-          </div>
-          <div class="frame-frame1">
-          <a href="https://discord.gg/huAAsWBpr6" target="_blank">
-            <img
-              alt="discord1button210"
-              src="public/external/discord1button210-46hsi-200h.png"
-              class="frame-discord1button"
-            />
-          </a>
-          <a href="https://www.donationalerts.com/r/everal41" target="_blank">
-            <img
-              alt="DonationAlerts1button29"
-              src="public/external/donationalerts1button29-vqw8-200h.png"
-              class="frame-donation-alerts1button"
-            />
-          </a>
-          </div>
-        <button onclick="redirectToMap()">
-          <div class="frame-frame2">
-            <div class="frame-group1">
-              <img
-                alt="Line1315"
-                src="public/external/line1315-je3.svg"
-                class="frame-line1"
-              />
-            </div>
-            <img
-              alt="Map1button311"
-              src="public/external/map1button311-uhtj-300w.png"
-              class="frame-map1button"
-            />
-            <span class="frame-text04"><span>Интерактивная карта</span></span>
-          </div>
-        </button>
-        <button onclick="redirectToWiki()">
-          <div class="frame-frame3">
-            <div class="frame-group2">
-              <img
-                alt="Line2320"
-                src="public/external/line2320-atb5.svg"
-                class="frame-line2"
-              />
-            </div>
-            <span class="frame-text06"><span>Таблица артефактов</span></span>
-            <img
-              alt="Table1button318"
-              src="public/external/table1button318-o15a-300w.png"
-              class="frame-table1button"
-            />
-        </button>
-          </div>
-          <div class="frame-frame4">
-            <div class="frame-group3">
-              <img
-                alt="Line3324"
-                src="public/external/line3324-4zaj.svg"
-                class="frame-line3"
-              />
-            </div>
-            <span class="frame-text08"><span>Квесты</span></span>
-            <img
-              alt="Quests1322"
-              src="public/external/quests1322-ke3w-300w.png"
-              class="frame-quests1"
-            />
-            <span class="frame-text10"><span>Coming soon</span></span>
-          </div>
-          <div class="frame-frame5">
-            <div class="frame-group4">
-              <img
-                alt="Line4329"
-                src="public/external/line4329-9oq.svg"
-                class="frame-line4"
-              />
-            </div>
-            <span class="frame-text12"><span>Снаряжение</span></span>
-            <img
-              alt="Gear1332"
-              src="public/external/gear1332-x93m-300w.png"
-              class="frame-gear1"
-            />
-            <span class="frame-text14"><span>Coming soon</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+              <div class="container">
+                     <div class="container__rectangle"></div>
+                     <a href="https://everal41.github.io/Map/index.html" style="text-decoration:none; color:inherit;">
+                            <div class="container__cont1">
+                                   <div class="container__cont1_rec">
+                                          <div class="container__cont1_rec-design"></div>
+                                          <div class="container__cont1_rec-line"></div>
+                                   </div>
+                                   <div class="container__cont1_image"></div>
+                                   <span class="container__cont1_text">Интерактивная карта</span>
+                            </div>
+                     </a>
+                     <a href="https://everal41.github.io/Table/table.html" style="text-decoration:none; color:inherit;">
+                            <div class="container__cont2">
+                                   <div class="container__cont2_rec">
+                                          <div class="container__cont2_rec-design"></div>
+                                          <div class="container__cont2_rec-line"></div>
+                                   </div>
+                                   <div class="container__cont2_image"></div>
+                                   <span class="container__cont2_text">Таблица артефактов</span>
+                            </div>
+                     </a>
+                     <div class="container__cont3">
+                            <div class="container__cont3_rec">
+                                   <div class="container__cont3_rec-design"></div>
+                                   <div class="container__cont3_rec-line"></div>
+                            </div>
+                            <div class="container__cont3_image"></div>
+                            <span class="container__cont3_text">Квесты</span>
+                            <span class="container__cont3_coming-soon">Coming soon</span>
+                     </div>
+
+                     <div class="container__cont4">
+                            <div class="container__cont4_rec">
+                                   <div class="container__cont4_rec-design"></div>
+                                   <div class="container__cont4_rec-line"></div>
+                            </div>
+                            <div class="container__cont4_image"></div>
+                            <span class="container__cont4_text">Снаряжение</span>
+                            <span class="container__cont4_coming-soon">Coming soon</span>
+                     </div>
+
+                     <div class="container__cont5">
+                            <div class="container__cont5_rec">
+                                   <div class="container__cont5_rec-design"></div>
+                                   <div class="container__cont5_rec-line"></div>
+                            </div>
+                            <div class="container__cont5_image"></div>
+                            <span class="container__cont5_text">Тир листы</span>
+                            <span class="container__cont5_coming-soon">Coming soon</span>
+                     </div>
+              </div>
+              <div class="hero">
+                     <span class="hero__description">
+                            Project Cataclysm Wiki (Beta) - база знаний игры Project Cataclysm. Здесь вы найдёте интерактивную карту проекта и таблицу артефактов с их свойствами и ценами.
+                            В будущем будет добавлен раздел с квестами и их подробным прохождением, а также список всего снаряжения в игре.</span>
+                            <span class="hero__updates">22 июля 2024 г. 
+                                   <br><br> 
+                                   <ul type="disc"><li>Обновлён дизайн основной страницы сайта.</li></ul></span>
+                            <span class="hero__h1">Последние обновления</span>
+              </div>
+       </body>
 </html>
