@@ -1,0 +1,127 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0e68c;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Изменено с center на flex-start, чтобы страница начиналась сверху */
+    min-height: 100vh; /* Изменено с height на min-height, чтобы блок мог расширяться по высоте */
+    overflow: auto; /* Добавлено для возможности прокрутки */
+    padding-bottom: 20px; /* Добавим отступ снизу для удобства */
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+    text-align: center;
+    color: #ffff66;
+}
+
+h2 {
+    color: #ffcc66;
+    border-bottom: 1px solid #ffcc66;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.resource {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.resource img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.resource label {
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+.resource input {
+    width: 60px;
+    padding: 5px;
+    background-color: #333333;
+    border: 1px solid #666666;
+    color: #f0e68c;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.resource input:focus {
+    outline: none;
+    border-color: #ffcc66;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #ffcc66;
+    color: #1a1a1a;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e6b800;
+}
+
+.result {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#totalCoins {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f0e68c;
+}
+
+footer {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-content span {
+    color: white;
+    font-size: 14px;
+}
+
+.footer-content .discord-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer-content .discord-link:hover {
+    color: #7289da; /* Цвет для наведения */
+}
