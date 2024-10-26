@@ -1,5 +1,5 @@
 document.getElementById('calculateBtn').addEventListener('click', function () {
-    // Получаем значения всех ресурсов
+    // Получение значений всех ресурсов
     const bolotny_kamen = parseInt(document.getElementById('bolotny_kamen').value) || 0;
     const green_plesen = parseInt(document.getElementById('green_plesen').value) || 0;
     const koren_vonyuchka = parseInt(document.getElementById('koren_vonyuchka').value) || 0;
@@ -32,7 +32,7 @@ document.getElementById('calculateBtn').addEventListener('click', function () {
     const limboplazma = parseInt(document.getElementById('limboplazma').value) || 0;
     const anomalnaya_batareya = parseInt(document.getElementById('anomalnaya_batareya').value) || 0;
 
-    // Рассчитываем общую стоимость
+    // Рассчёт общей стоимости
     let totalCoins = 0;
 
     // Болота
