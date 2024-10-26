@@ -7,10 +7,10 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    overflow: auto;
-    padding-bottom: 20px;
+    align-items: flex-start; /* Изменено с center на flex-start, чтобы страница начиналась сверху */
+    min-height: 100vh; /* Изменено с height на min-height, чтобы блок мог расширяться по высоте */
+    overflow: auto; /* Добавлено для возможности прокрутки */
+    padding-bottom: 20px; /* Добавим отступ снизу для удобства */
 }
 
 .container {
@@ -130,17 +130,14 @@ footer {
     color: #ffd700; /* Желтый цвет при наведении */
 }
 
-.footer-content .discord-link:hover {
-    color: #7289da; /* Цвет для наведения */
-}
-
-/* Данный блок убирает ползунки в Chrome, Safari, Edge, Opera */
+/* Убираем стрелки в Chrome, Safari, Edge, Opera */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-/* Для Firefox */
+
+/* Убираем стрелки в Firefox */
 input[type=number] {
     -moz-appearance: textfield;
 }
