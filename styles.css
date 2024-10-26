@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%; /* Изменено на 90% для лучшей адаптивности */
     max-width: 800px;
     padding: 20px;
     background-color: #2e2e2e;
@@ -97,14 +97,29 @@ footer {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    background-color: #2c2c2c; /* Темно-серый цвет */
+    background-color: #2c2c2c;
     padding: 10px 20px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    border: 2px solid #ffd700; /* Желтая рамка */
+    border: 2px solid #ffd700;
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 600px) {
+    footer {
+        position: static;  /* Изменено на static для предотвращения перекрытия */
+        margin-top: 20px;  /* Добавлен отступ сверху */
+        width: 90%; /* Увеличена ширина для адаптивности */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container {
+        width: 95%; /* Увеличена ширина для лучшей адаптивности */
+    }
 }
 
 .footer-content {
@@ -114,33 +129,24 @@ footer {
 }
 
 .footer-content span {
-    color: #ffffff; /* Белый цвет текста */
+    color: #ffffff;
     font-size: 14px;
     font-weight: 500;
 }
 
 .footer-content .discord-link {
-    color: #ffffff; /* Белый цвет иконки */
+    color: #ffffff;
     text-decoration: none;
     font-size: 20px;
     transition: color 0.3s;
 }
 
 .footer-content .discord-link:hover {
-    color: #ffd700; /* Желтый цвет при наведении */
+    color: #ffd700;
 }
 
 .footer-content .discord-link:hover {
-    color: #7289da; /* Цвет для наведения */
+    color: #7289da;
 }
 
-/* Данный блок убирает ползунки в Chrome, Safari, Edge, Opera */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-/* Для Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
-}
+/* Убираем ползунки
