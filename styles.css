@@ -95,14 +95,16 @@ button:hover {
 
 footer {
     position: fixed;
-    right: 10px;
-    bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 15px;
-    border-radius: 5px;
+    right: 20px;
+    bottom: 20px;
+    background-color: #2c2c2c; /* Темно-серый цвет */
+    padding: 10px 20px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ffd700; /* Желтая рамка */
 }
 
 .footer-content {
@@ -112,14 +114,20 @@ footer {
 }
 
 .footer-content span {
-    color: white;
+    color: #ffffff; /* Белый цвет текста */
     font-size: 14px;
+    font-weight: 500;
 }
 
 .footer-content .discord-link {
-    color: white;
+    color: #ffffff; /* Белый цвет иконки */
     text-decoration: none;
     font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-content .discord-link:hover {
+    color: #ffd700; /* Желтый цвет при наведении */
 }
 
 .footer-content .discord-link:hover {
