@@ -148,3 +148,118 @@ input[type=number] {
 .author {
     color: #7289da;
 }
+
+/* presets-style.css */
+
+.left-block {
+    flex: 1;  /* Занимает половину ширины */
+    margin-right: 20px; /* Отступ справа */
+    padding: 10px;
+}
+
+.right-block{
+    flex: 1;
+    padding: 10px;
+}
+
+.presets-container {
+    /* Дополнительные стили для контейнера пресетов, если нужно */
+    margin-bottom: 20px;
+}
+
+.preset-category {
+    margin-bottom: 15px;
+}
+
+.preset-category h3 {
+    color: #ffcc66; /* Горчичный цвет для заголовков категорий */
+    border-bottom: 1px solid #ffcc66;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.preset-list {
+    list-style: none;
+    padding: 0;
+}
+
+.preset-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #333333; /* Немного светлее основного фона */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.preset-item:hover {
+    background-color: #444444; /* Еще светлее при наведении */
+}
+
+.preset-item input[type="checkbox"] {
+    margin-right: 10px;
+    /* Стили для чекбокса, если нужно */
+    appearance: none;  /* Убираем стандартный вид */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #666666;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    vertical-align: middle; /* Выравнивание по центру */
+
+}
+
+
+.preset-item input[type="checkbox"]:checked {
+    background-color: #ffcc66;
+    border-color: #ffcc66;
+    /* Можно добавить изображение галочки с помощью  background-image, если хочется */
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='%231a1a1a' d='M4.5 9L1.5 6l.7-.7L4.5 7.6 9.8 2.3l.7.7z'/%3E%3C/svg%3E"); /* SVG галочка */
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+.preset-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.preset-item label {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #f0e68c; /* Или другой цвет текста */
+}
+
+/* Адаптация под общий стиль */
+
+body {
+     /*display: block;  Убираем flex, т.к. используем flex внутри .container */
+     /*justify-content: center;  Убираем, т.к. используем flex внутри .container */
+    /*align-items: flex-start; Убираем, т.к. теперь выравниваем внутри .container */
+    min-height: 100vh;
+    overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+    padding-bottom: 40px; /* Добавляем отступ снизу для футера */
+}
+.container {
+    display: flex; /* Добавляем flex-контейнер */
+    width: 90%;    /* Немного увеличил ширину*/
+    max-width: 1200px; /* Увеличил максимальную ширину */
+
+}
+
+#totalCoinsDisplay{
+    font-size: 20px;
+    font-weight: bold;
+    color: #f0e68c;
+}
