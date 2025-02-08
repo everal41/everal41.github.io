@@ -263,3 +263,36 @@ body {
     font-weight: bold;
     color: #f0e68c;
 }
+
+.coupon-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center; /* Выравнивание по центру */
+}
+
+#couponBtn {
+    /* Стили для кнопки (можно настроить) */
+    padding: 8px 12px;
+    margin-right: 10px; /* Отступ между кнопкой и селектом */
+    background-color: #4CAF50; /* Зеленый цвет */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+     width: auto; /*  Ширина по содержимому */
+    font-size: 16px;
+
+}
+#couponBtn:hover{
+  background-color: #3e8e41;
+}
+
+#couponSelect {
+    /* Стили для селекта (можно настроить) */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #f0e68c;
+    width: auto;
+}
