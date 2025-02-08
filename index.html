@@ -7,10 +7,26 @@
     <meta name="description" content="Калькулятор обменных монет STALCRAFT. Здесь вы можете посчитать стоимость бартерных ресурсов за обменные монеты.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="presets-style.css"> </head>
 <body>
     <div class="container">
-        <h1>Калькулятор обменных монет - StalMath (beta)</h1>
+        <div class="left-block">
+             <h1>Калькулятор обменных монет - StalMath (beta)</h1>
+            <h2>Пресеты</h2>
+            <div class="presets-container">
+                <div class="preset-category">
+                    <h3>Броня</h3>
+                    <ul id="armor-presets" class="preset-list">
+                        </ul>
+                </div>
+                <div class="preset-category">
+                    <h3>Оружие</h3>
+                    <ul id="weapon-presets" class="preset-list">
+                       </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right-block">
         <p>Автор: <b class="author">everal41 (Дмитрий Кварцев)</b></p>
         <form id="calculatorForm">
             <!-- Болота -->
@@ -128,38 +144,39 @@
             <div class="resource">
                 <img src="images/gorkolistnik.png" alt="Горьколистник">
                 <label for="gorkolistnik">Горьколистник</label>
-                <input type="number" id="gorkolistnik" min="0" value="0">
+                    <input type="number" id="gorkolistnik" min="0" value="0">
+                </div>
+                <div class="resource">
+                    <img src="images/lambda_fragment.png" alt="Фрагмент данных 'Лямбда'">
+                    <label for="lambda_fragment">Фрагмент данных "Лямбда"</label>
+                    <input type="number" id="lambda_fragment" min="0" value="0">
+                </div>
+                <div class="resource">
+                    <img src="images/limboplazma.png" alt="Лимбоплазма">
+                    <label for="limboplazma">Лимбоплазма</label>
+                    <input type="number" id="limboplazma" min="0" value="0">
+                </div>
+                <div class="resource">
+                    <img src="images/anomalnaya_batareya.png" alt="Аномальная батарея">
+                    <label for="anomalnaya_batareya">Аномальная батарея</label>
+                    <input type="number" id="anomalnaya_batareya" min="0" value="0">
+                </div>
+    
+                <div class="result">
+                    <button type="button" id="calculateBtn">Рассчитать</button>
+                    <p id="totalCoinsDisplay">Итоговая стоимость: 0 монет</p>
+                </div>
+            </form>
             </div>
-            <div class="resource">
-                <img src="images/lambda_fragment.png" alt="Фрагмент данных 'Лямбда'">
-                <label for="lambda_fragment">Фрагмент данных "Лямбда"</label>
-                <input type="number" id="lambda_fragment" min="0" value="0">
-            </div>
-            <div class="resource">
-                <img src="images/limboplazma.png" alt="Лимбоплазма">
-                <label for="limboplazma">Лимбоплазма</label>
-                <input type="number" id="limboplazma" min="0" value="0">
-            </div>
-            <div class="resource">
-                <img src="images/anomalnaya_batareya.png" alt="Аномальная батарея">
-                <label for="anomalnaya_batareya">Аномальная батарея</label>
-                <input type="number" id="anomalnaya_batareya" min="0" value="0">
-            </div>
-
-            <div class="result">
-                <button type="button" id="calculateBtn">Рассчитать</button>
-                <p id="totalCoinsDisplay">Итоговая стоимость: 0 монет</p>
-            </div>
-        </form>
-    </div>
-
-    <script src="script.js"></script>
-    <footer>
-        <div class="footer-content">
-            <a href="https://discord.gg/9hkdXxRSnr" target="_blank" class="discord-link">
-                <i class="fab fa-discord"></i>
-            </a>
         </div>
-    </footer>
-</body>
-</html>
+    
+        <script src="script.js"></script>
+        <footer>
+            <div class="footer-content">
+                <a href="https://discord.gg/9hkdXxRSnr" target="_blank" class="discord-link">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </footer>
+    </body>
+    </html>
