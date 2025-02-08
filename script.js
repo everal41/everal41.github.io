@@ -28,9 +28,11 @@ document.addEventListener('DOMContentLoaded', function() { // Обертка д�
     const armorPresetsList = document.getElementById('armor-presets');
     const weaponPresetsList = document.getElementById('weapon-presets');
     const calculateBtn = document.getElementById('calculateBtn');
+    const couponBtn = document.getElementById('couponBtn'); // Кнопка купона
+    const couponSelect = document.getElementById('couponSelect'); // Селект с процентами
+    let discount = 1; // Скидка по умолчанию (1 = без скидки)
 
-    // Функция для создания элемента списка пресетов
-    function createPresetElement(preset, category) {
+    function createPresetElement(preset) {
         const listItem = document.createElement('li');
         listItem.classList.add('preset-item');
 
@@ -55,28 +57,25 @@ document.addEventListener('DOMContentLoaded', function() { // Обертка д�
             if (event.target !== checkbox) {
                 checkbox.checked = !checkbox.checked;
             }
-            updateResourcesInput(); // Вызываем обновление в любом случае
+            updateResourcesInput();
         });
 
         return listItem;
     }
 
-    // Функция для отображения пресетов
     function renderPresets() {
         presetsData.armor.forEach(preset => {
-            armorPresetsList.appendChild(createPresetElement(preset, 'armor'));
+            armorPresetsList.appendChild(createPresetElement(preset));
         });
         presetsData.weapons.forEach(preset => {
-            weaponPresetsList.appendChild(createPresetElement(preset, 'weapon'));
+            weaponPresetsList.appendChild(createPresetElement(preset));
         });
     }
 
-    // Функция для обновления значений инпутов ресурсов
     function updateResourcesInput() {
         const selectedPresets = { armor: [], weapons: [] };
         const totalResources = {};
 
-        // Собираем выбранные пресеты
         document.querySelectorAll('#armor-presets input:checked').forEach(checkbox => {
             selectedPresets.armor.push(checkbox.value);
         });
@@ -84,17 +83,12 @@ document.addEventListener('DOMContentLoaded', function() { // Обертка д�
             selectedPresets.weapons.push(checkbox.value);
         });
 
-        // Вспомогательная функция для ДОБАВЛЕНИЯ ресурсов
         function addResources(presets, type) {
             presets.forEach(presetId => {
                 const preset = presetsData[type].find(p => p.id === presetId);
                 if (preset) {
                     for (const res in preset.resources) {
-                        if (totalResources[res]) {
-                            totalResources[res] += preset.resources[res];
-                        } else {
-                            totalResources[res] = preset.resources[res];
-                        }
+                        totalResources[res] = (totalResources[res] || 0) + preset.resources[res];
                     }
                 }
             });
@@ -103,21 +97,20 @@ document.addEventListener('DOMContentLoaded', function() { // Обертка д�
         addResources(selectedPresets.armor, 'armor');
         addResources(selectedPresets.weapons, 'weapons');
 
-        // Устанавливаем значения в инпуты ИЛИ обнуляем, если ресурс не выбран
-        const allResourceIds = getAllResourceIds(); // Получаем ID всех ресурсов
+        const allResourceIds = getAllResourceIds();
         allResourceIds.forEach(resId => {
             const inputElement = document.getElementById(resId);
             if (inputElement) {
-                inputElement.value = totalResources[resId] || 0; // Устанавливаем значение или 0
+                // Применяем скидку ПЕРЕД установкой значения
+                inputElement.value = Math.max(0, Math.round((totalResources[resId] || 0) * discount)); // Округляем и не допускаем отрицательных значений
             }
         });
-
-        calculate(); // вызываем функцию подсчета
+        calculate(); // Добавил вызов calculate() после обновления значений
     }
-    // Функция возвращает массив всех возможных ID ресурсов
+
+
     function getAllResourceIds() {
         const ids = new Set();
-
         for (const category in presetsData) {
             presetsData[category].forEach(preset => {
                 for (const resId in preset.resources) {
@@ -125,18 +118,15 @@ document.addEventListener('DOMContentLoaded', function() { // Обертка д�
                 }
             });
         }
-
-        // Получение id всех input и сразу добавляем в ids:
-          document.querySelectorAll('#calculatorForm input[type="number"]').forEach(input => {
-              ids.add(input.id)
-          });
-
+        document.querySelectorAll('#calculatorForm input[type="number"]').forEach(input => {
+            ids.add(input.id);
+        });
         return Array.from(ids);
     }
 
-    // Функция calculate (ВАШ КОД, без изменений)
+
     function calculate() {
- // Получение значений всех ресурсов
+        // Получение значений всех ресурсов
         const bolotny_kamen = parseInt(document.getElementById('bolotny_kamen').value) || 0;
         const green_plesen = parseInt(document.getElementById('green_plesen').value) || 0;
         const koren_vonyuchka = parseInt(document.getElementById('koren_vonyuchka').value) || 0;
@@ -169,14 +159,13 @@ document.addEventListener('DOMContentLoaded', function() { // Обертка д�
         const limboplazma = parseInt(document.getElementById('limboplazma').value) || 0;
         const anomalnaya_batareya = parseInt(document.getElementById('anomalnaya_batareya').value) || 0;
 
-
-
         // Рассчёт общей стоимости
         let totalCoins = 0;
 
         // Болота
         totalCoins += bolotny_kamen * 2;
         totalCoins += green_plesen * 1;
+
         // Обочина
         totalCoins += koren_vonyuchka * 3;
         totalCoins += srachnik * 4;
@@ -207,15 +196,22 @@ document.addEventListener('DOMContentLoaded', function() { // Обертка д�
         totalCoins += lambda_fragment * 86;
         totalCoins += limboplazma * 200;
         totalCoins += anomalnaya_batareya * 240;
-
+    
         // Отображение общей стоимости на странице
         document.getElementById('totalCoinsDisplay').innerText = 'Общая стоимость: ' + totalCoins + ' монет';
     }
 
+    // Обработчик для кнопки купона
+    couponBtn.addEventListener('click', function() {
+        const selectedDiscount = parseFloat(couponSelect.value); // Получаем значение из селекта
+        if (!isNaN(selectedDiscount)) {  // Проверяем, что выбрано число
+            discount = selectedDiscount;
+            updateResourcesInput(); // Обновляем значения с учетом скидки
+        }
+    });
 
-    // Навешиваем обработчик на кнопку
-    calculateBtn.addEventListener('click', calculate);
 
-    // Инициализация
+    calculateBtn.addEventListener('click', calculate); // calculate вызываем отдельно
+
     renderPresets();
 });
