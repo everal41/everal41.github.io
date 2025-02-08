@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() { // Обертка д�
         ],
         weapons: [
             { id: "weapon1", name: "А-545", image: "images/545.webp", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1534, gamma_fragment: 1023, kvantovaya_batareya: 1011 } },
-            { id: "weapon2", name: "АК-15", image: "images/AK-15.webp", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1292, gamma_fragment: 1215, kvantovaya_batareya: 1011 } },
+            { id: "weapon2", name: "АК-15", image: "images/ak15.webp", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1292, gamma_fragment: 1215, kvantovaya_batareya: 1011 } },
             { id: "weapon3", name: "АМБ-17", image: "images/amb.webp", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1534, gamma_fragment: 1023, kvantovaya_batareya: 1011 } },
             { id: "weapon4", name: "АШ-12", image: "images/ash.webp", resources: { gorkolistnik: 2043, limb: 2114, lambda_fragment: 382, anomalnaya_batareya: 68, limboplazma: 31 } },
             { id: "weapon5", name: "FN F2000 Tactical", image: "images/fnt.webp", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1292, gamma_fragment: 1215, kvantovaya_batareya: 1011 } }
