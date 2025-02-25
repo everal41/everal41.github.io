@@ -7,11 +7,44 @@
     <meta name="description" content="Калькулятор обменных монет STALCRAFT. Здесь вы можете посчитать стоимость бартерных ресурсов за обменные монеты.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="presets-style.css"> </head>
+    <link rel="stylesheet" href="presets-style.css">
+</head>
 <body>
+    <!-- Шапка -->
+    <header class="site-header">
+        <!-- Левая часть (ссылки) -->
+        <nav class="header-links">
+            <a href="#about">О сайте</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    
+        <!-- Логотип -->
+        <div class="header-logo">
+            <h1>StalMath</h1>
+            <span class="beta-label">Beta</span>
+        </div>
+    
+        <!-- Правая часть (ссылки) -->
+        <nav class="header-links">
+            <a href="#calculator">Калькулятор обменных монет</a>
+            <a href="#tier-lists">Тир листы</a>
+            <a href="#dps-table">Таблица ДПС</a>
+            <a href="#economics">Экономические расчёты</a>
+        </nav>
+    </header>
+
+    <!-- Централизованный текст -->
+<div class="main-title">
+    Калькулятор обменных монет
+</div>
+
+<div class="author-container">
+    Автор: <a href="https://vk.com/everal41" target="_blank">everal41 (Дмитрий Кварцев)</a>
+</div>
+
+    <!-- Основной контент -->
     <div class="container">
         <div class="left-block">
-             <h1>Калькулятор обменных монет - StalMath (beta)</h1>
             <h2>Купоны</h2>
             <div class="coupon-container">
                 <button type="button" id="couponBtn">Применить купон</button>
@@ -26,19 +59,16 @@
             <div class="presets-container">
                 <div class="preset-category">
                     <h3>Броня</h3>
-                    <ul id="armor-presets" class="preset-list">
-                        </ul>
+                    <ul id="armor-presets" class="preset-list"></ul>
                 </div>
                 <div class="preset-category">
                     <h3>Оружие</h3>
-                    <ul id="weapon-presets" class="preset-list">
-                       </ul>
+                    <ul id="weapon-presets" class="preset-list"></ul>
                 </div>
             </div>
         </div>
         <div class="right-block">
-        <p>Автор: <b class="author">everal41 (Дмитрий Кварцев)</b></p>
-        <form id="calculatorForm">
+            <form id="calculatorForm">
             <!-- Болота -->
             <h2>Болота</h2>
             <div class="resource">
@@ -177,16 +207,16 @@
                     <p id="totalCoinsDisplay">Итоговая стоимость: 0 монет</p>
                 </div>
             </form>
-            </div>
         </div>
-    
-        <script src="script.js"></script>
-        <footer>
-            <div class="footer-content">
-                <a href="https://discord.gg/9hkdXxRSnr" target="_blank" class="discord-link">
-                    <i class="fab fa-discord"></i>
-                </a>
-            </div>
-        </footer>
-    </body>
-    </html>
+    </div>
+
+    <script src="script.js"></script>
+    <footer>
+        <div class="footer-content">
+            <a href="https://discord.gg/9hkdXxRSnr" target="_blank" class="discord-link">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
