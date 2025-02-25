@@ -5,26 +5,28 @@ body {
     color: #f0e68c;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     min-height: 100vh;
-    overflow: auto;
-    padding-bottom: 20px;
+    overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+    padding-bottom: 40px; /* Отступ снизу для футера */
 }
 
 .container {
-    width: 80%;
-    max-width: 800px;
+    display: flex; /* Flex для разделения на левый и правый блоки */
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1200px;
     padding: 20px;
     background-color: #2e2e2e;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+    margin: 20px auto; /* Центрируем контейнер */
 }
 
 h1 {
     text-align: center;
     color: #ffff66;
+    margin: 0 0 20px 0; /* Добавлен отступ снизу */
 }
 
 h2 {
@@ -44,11 +46,13 @@ h2 {
     width: 40px;
     height: 40px;
     margin-right: 10px;
+    border-radius: 5px;
 }
 
 .resource label {
     flex-grow: 1;
     font-size: 16px;
+    color: #f0e68c;
 }
 
 .resource input {
@@ -76,6 +80,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -87,12 +92,13 @@ button:hover {
     text-align: center;
 }
 
-#totalCoins {
+#totalCoinsDisplay {
     font-size: 20px;
     font-weight: bold;
     color: #f0e68c;
 }
 
+/* Стили для футера */
 footer {
     position: fixed;
     right: 20px;
@@ -127,43 +133,37 @@ footer {
 }
 
 .footer-content .discord-link:hover {
-    color: #ffd700; /* Желтый цвет при наведении */
+    color: #7289da; /* Цвет при наведении */
 }
 
-.footer-content .discord-link:hover {
-    color: #7289da; /* Цвет для наведения */
-}
-
-/* Данный блок убирает ползунки в Chrome, Safari, Edge, Opera */
+/* Убираем ползунки в разных браузерах */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-/* Для Firefox */
+
 input[type=number] {
-    -moz-appearance: textfield;
+    -moz-appearance: textfield; /* Для Firefox */
 }
 
 .author {
     color: #7289da;
 }
 
-/* presets-style.css */
-
+/* Стили для левого и правого блоков */
 .left-block {
-    flex: 1;  /* Занимает половину ширины */
-    margin-right: 20px; /* Отступ справа */
+    flex: 1; /* Занимает половину ширины */
+    margin-right: 20px;
     padding: 10px;
 }
 
-.right-block{
+.right-block {
     flex: 1;
     padding: 10px;
 }
 
 .presets-container {
-    /* Дополнительные стили для контейнера пресетов, если нужно */
     margin-bottom: 20px;
 }
 
@@ -172,7 +172,7 @@ input[type=number] {
 }
 
 .preset-category h3 {
-    color: #ffcc66; /* Горчичный цвет для заголовков категорий */
+    color: #ffcc66;
     border-bottom: 1px solid #ffcc66;
     padding-bottom: 5px;
     margin-bottom: 10px;
@@ -188,20 +188,19 @@ input[type=number] {
     align-items: center;
     margin-bottom: 8px;
     padding: 8px;
-    background-color: #333333; /* Немного светлее основного фона */
+    background-color: #333333;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 .preset-item:hover {
-    background-color: #444444; /* Еще светлее при наведении */
+    background-color: #444444;
 }
 
 .preset-item input[type="checkbox"] {
     margin-right: 10px;
-    /* Стили для чекбокса, если нужно */
-    appearance: none;  /* Убираем стандартный вид */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 16px;
@@ -210,22 +209,17 @@ input[type=number] {
     border-radius: 3px;
     outline: none;
     cursor: pointer;
-    vertical-align: middle; /* Выравнивание по центру */
-
+    vertical-align: middle;
 }
-
 
 .preset-item input[type="checkbox"]:checked {
     background-color: #ffcc66;
     border-color: #ffcc66;
-    /* Можно добавить изображение галочки с помощью  background-image, если хочется */
-     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='%231a1a1a' d='M4.5 9L1.5 6l.7-.7L4.5 7.6 9.8 2.3l.7.7z'/%3E%3C/svg%3E"); /* SVG галочка */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='%231a1a1a' d='M4.5 9L1.5 6l.7-.7L4.5 7.6 9.8 2.3l.7.7z'/%3E%3C/svg%3E");
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
-
 }
-
 
 .preset-item img {
     width: 40px;
@@ -238,61 +232,127 @@ input[type=number] {
 .preset-item label {
     flex-grow: 1;
     font-size: 16px;
-    color: #f0e68c; /* Или другой цвет текста */
-}
-
-/* Адаптация под общий стиль */
-
-body {
-     /*display: block;  Убираем flex, т.к. используем flex внутри .container */
-     /*justify-content: center;  Убираем, т.к. используем flex внутри .container */
-    /*align-items: flex-start; Убираем, т.к. теперь выравниваем внутри .container */
-    min-height: 100vh;
-    overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
-    padding-bottom: 40px; /* Добавляем отступ снизу для футера */
-}
-.container {
-    display: flex; /* Добавляем flex-контейнер */
-    width: 90%;    /* Немного увеличил ширину*/
-    max-width: 1200px; /* Увеличил максимальную ширину */
-
-}
-
-#totalCoinsDisplay{
-    font-size: 20px;
-    font-weight: bold;
     color: #f0e68c;
 }
 
+/* Стили для купонов */
 .coupon-container {
     margin-top: 10px;
     display: flex;
-    align-items: center; /* Выравнивание по центру */
+    align-items: center;
 }
 
 #couponBtn {
-    /* Стили для кнопки (можно настроить) */
     padding: 8px 12px;
-    margin-right: 10px; /* Отступ между кнопкой и селектом */
-    background-color: #4CAF50; /* Зеленый цвет */
+    margin-right: 10px;
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-     width: auto; /*  Ширина по содержимому */
     font-size: 16px;
-
+    transition: background-color 0.3s;
 }
-#couponBtn:hover{
-  background-color: #3e8e41;
+
+#couponBtn:hover {
+    background-color: #3e8e41;
 }
 
 #couponSelect {
-    /* Стили для селекта (можно настроить) */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #333333;
     color: #f0e68c;
-    width: auto;
+}
+
+/* Стили для шапки */
+.site-header {
+    display: flex;
+    justify-content: center; /* Центрируем всё содержимое шапки */
+    align-items: center; /* Выравниваем по вертикали */
+    position: sticky; /* Закрепляем шапку при прокрутке */
+    top: 0;
+    z-index: 1000;
+    background-color: #2b2b2b; /* Темный фон */
+    color: #ffffff;
+    padding: 10px 20px; /* Пространство вокруг контента */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Тень */
+    gap: 50px; /* Расстояние между логотипом и ссылками */
+}
+
+/* Логотип */
+.header-logo {
+    text-align: center;
+}
+
+.header-logo h1 {
+    font-size: 28px; /* Размер логотипа */
+    margin: 0;
+    color: #ffff66; /* Цвет логотипа */
+    font-weight: bold;
+    text-shadow: 0px 2px 5px rgba(255, 255, 102, 0.7); /* Светящийся эффект */
+    transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+.header-logo h1:hover {
+    transform: scale(1.1); /* Легкое увеличение при наведении */
+}
+
+.beta-label {
+    font-size: 14px; /* Размер текста для Beta */
+    color: #aaa; /* Серый цвет */
+    margin-top: 5px;
+}
+
+/* Левые и правые ссылки */
+.header-links {
+    display: flex; /* Устанавливаем flex для ссылок */
+    gap: 20px; /* Отступ между ссылками */
+}
+
+.header-links a {
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px; /* Внутренние отступы для рамки */
+    border: 1px solid #ffff66; /* Желтая рамка */
+    border-radius: 5px; /* Скругленные углы */
+    background-color: transparent; /* Прозрачный фон */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.header-links a:hover {
+    background-color: #ffff66; /* Желтый фон при наведении */
+    color: #2b2b2b; /* Темный цвет текста при наведении */
+    transform: scale(1.1); /* Увеличение ссылки при наведении */
+}
+
+/* Централизованный текст на странице */
+.main-title {
+    text-align: center;
+    margin: 20px 0;
+    color: #e0e0a0; /* Более нейтральный цвет */
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.author-container {
+    text-align: center;
+    margin-top: 10px;
+    color: #cccccc; /* Более нейтральный цвет */
+    font-size: 16px;
+}
+
+.author-container a {
+    color: #7289da; /* Цвет ссылки */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.author-container a:hover {
+    color: #ffff66; /* Цвет при наведении */
+    transform: scale(1.1); /* Легкое увеличение */
 }
