@@ -363,6 +363,7 @@ input[type=number] {
 .rank-blue { color: #6699ff; font-weight: bold; } /* Светло-синий */
 .rank-purple { color: #cc66ff; font-weight: bold; } /* Светло-фиолетовый */
 .rank-red { color: #ff6666; font-weight: bold; } /* Светло-красный */
+.rank-orange { color: orange; font-weight: bold; }
 
 /* Стили для раскрывающихся списков */
 details {
@@ -443,4 +444,33 @@ details[open] {
     border-bottom: 1px solid #ffcc66;
     padding-bottom: 5px;
     font-size: 18px;
+}
+
+/*  Стили для изображения и заголовка секции пресетов  */
+.preset-section-image {
+    width: 30px;  /*  Подберите размер  (уменьшил, т.к. теперь внутри) */
+    height: 30px; /*  Подберите размер  (уменьшил) */
+    margin-right: 10px; /*  Отступ справа от картинки */
+    border-radius: 5px; /*  Скругление углов */
+    object-fit: cover; /*  Чтобы изображение не искажалось */
+    vertical-align: middle; /*  Выравнивание по центру (важно!) */
+}
+
+summary { /*  Добавляем стили для summary */
+    display: flex;
+    align-items: center; /*  Выравниваем содержимое по центру */
+    /*  Остальные стили summary (cursor, padding, etc.) остаются */
+}
+
+summary span { /* Стили для текста внутри summary*/
+    display: inline-block; /* Чтобы span занимал только нужную ширину */
+    vertical-align: middle; /*  Выравнивание по центру  */
+}
+
+/* Стили для названий контейнеров (добавим классы в JS) */
+.hive-color {
+    color: red;
+}
+.kokon-color, .dobytchik-color { /*  Для нескольких классов сразу */
+    color: purple;
 }
