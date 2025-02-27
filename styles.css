@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+    overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
     padding-bottom: 40px; /* Отступ снизу для футера */
 }
 
@@ -20,13 +20,13 @@ body {
     background-color: #2e2e2e;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
-    margin: 20px auto; /* Центрируем контейнер */
+    margin: 20px auto; /* Центрирует контейнер */
 }
 
 h1 {
     text-align: center;
     color: #ffff66;
-    margin: 0 0 20px 0; /* Добавлен отступ снизу */
+    margin: 0 0 20px 0; /* Добавляет отступ снизу */
 }
 
 h2 {
@@ -355,4 +355,92 @@ input[type=number] {
 .author-container a:hover {
     color: #ffff66; /* Цвет при наведении */
     transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Стили для рангов брони и оружия */
+.rank-gray { color: gray; font-weight: bold; }
+.rank-green { color: #66cc66; font-weight: bold; } /* Светло-зелёный */
+.rank-blue { color: #6699ff; font-weight: bold; } /* Светло-синий */
+.rank-purple { color: #cc66ff; font-weight: bold; } /* Светло-фиолетовый */
+.rank-red { color: #ff6666; font-weight: bold; } /* Светло-красный */
+
+/* Стили для раскрывающихся списков */
+details {
+    background-color: #333333; /* Тёмный фон */
+    border: 1px solid #444444; /* Граница */
+    border-radius: 5px;
+    margin-bottom: 8px;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+summary {
+    cursor: pointer;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    list-style: none; /* Убираем стандартный треугольник */
+    transition: background 0.3s, color 0.3s;
+}
+
+summary:hover {
+    background-color: #444444;
+}
+
+/* Стили для списка брони и оружия внутри details */
+.preset-list {
+    list-style: none;
+    padding: 5px 10px;
+    margin: 0;
+}
+
+.preset-list li {
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.preset-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Анимация открытия details */
+details[open] {
+    background-color: #444444;
+    border-color: #ffcc66;
+}
+
+/* Улучшенная кнопка "Применить купон" */
+#couponBtn {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#couponBtn:hover {
+    background-color: #45a049;
+}
+
+/* Улучшенный выпадающий список купонов */
+#couponSelect {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #222;
+    color: #f0e68c;
+}
+
+/* Исправленные стили для preset-категорий */
+.preset-category {
+    margin-bottom: 10px;
+}
+
+.preset-category h3 {
+    color: #ffcc66;
+    border-bottom: 1px solid #ffcc66;
+    padding-bottom: 5px;
+    font-size: 18px;
 }
