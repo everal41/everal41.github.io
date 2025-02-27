@@ -6,7 +6,92 @@ document.addEventListener('DOMContentLoaded', function() {
         "Новичок": "rank-green",
         "Сталкер": "rank-blue",
         "Ветеран": "rank-purple",
-        "Мастер": "rank-red"
+        "Мастер": "rank-red",
+        "Контейнеры": "rank-orange",
+        "Рюкзаки": "rank-orange",
+        "Ветка 7.62 глушителей": "rank-orange", "Ветка 7.62 глушителей на отдачу": "rank-orange", "Ветка 7.62 надульников на разброс": "rank-orange", "Ветка сбалансированных 7.62 надульников": "rank-orange", "Ветка 7.62 надульников на гориз. отдачу": "rank-orange", "Ветка 7.62 надульников на отдачу": "rank-orange",
+        "Ветка 5.56 глушителей": "rank-orange", "Ветка 5.56 надульников на разброс": "rank-orange", "Ветка сбалансированных 5.56 надульников": "rank-orange",
+        "Ветка 5.45 глушителей": "rank-orange", "Ветка 5.45 надульников на разброс": "rank-orange", "Ветка сбалансированных 5.45 надульников": "rank-orange",
+        "Ветка сбалансированных 9 мм надульников": "rank-orange", "Ветка 9 мм надульников на разброс": "rank-orange", "Ветка 9 мм глушителей": "rank-orange",
+        "Ветка надульника на АШ-12": "rank-orange", "Ветка глушителя на АШ-12": "rank-orange",
+        "Ствол на D-Eagle": "rank-orange"
+    };
+
+    // Цвета для названий контейнеров (объект, а не классы)
+    const containerNameColors = {
+        "Контейнер «Улей»": "#EA9D9E",
+        "Контейнер «Берлога-6»": "#EA9D9E",
+        "Контейнер «Кокон»": "#BF5BAD",
+        "Контейнер «Добытчик»": "#BF5BAD",
+        "Контейнер «Берлога-4»": "#9F9FED",
+        "«КЗС-5»": "#9F9FED",
+        "«КЗС-4»": "#9F9FED",
+        "«КЗС-3»": "#9F9FED",
+        "«КЗС-2»": "#9DEB9D",
+        "Контейнер «КЗС-1»": "#9DEB9D"
+    };
+
+    const backpackNameColors = {
+        "Рюкзак «Hellboy»": "#9F9FED",
+        "Штурмовой рюкзак Tri-Zip": "#9F9FED",
+        "Рюкзак MBSS": "#9DEB9D",
+        "Рюкзак Errand Junior": "#9DEB9D",
+        "Спортивная сумка": "#9DEB9D",
+        "Сумка-трансформер": "#EEEEEE"
+    };
+
+    const attachmentNameColors = {
+        "SIG Sauer SRD762Ti": "#BF5BAD",
+        "Глушитель SCAR-SD": "#9F9FED",
+        "CMMG SV Brake 7.62x51": "#9F9FED",
+        "Пламегаситель Noveske KX3": "#9DEB9D",
+        "VG6 EPSILON 762 Muzzle Brake": "#BF5BAD",
+        "Keeno Arms SHREWD 7.62x51": "#9F9FED",
+        "Odin Works ATLAS 7.62x51": "#BF5BAD",
+        "SureFire Pro Comp 7.62x51": "#9F9FED",
+        "Precision Armament M11 Severe Duty 7.62x51": "#9F9FED",
+        "Resistance Armament Compensator": "#9DEB9D",
+        "Venom Tactical Antidote": "#BF5BAD",
+        "SPRV 7.62": "#9F9FED",
+        "Spikes Tactical Dynacomp": "#9F9FED",
+        "Пламегаситель AKademia Тьма": "#9DEB9D",
+        "Jmac Customs RDC 4C 7.62": "#BF5BAD",
+        "ДТК «Косой»": "#9F9FED",
+        "АКМЛ": "#9F9FED",
+        "ДТК-2": "#9DEB9D",
+        "Глушитель KAC Style QD": "#BF5BAD",
+        "Глушитель SureFire SOCOM556-RC2": "#9F9FED",
+        "Diamondhead Compensator": "#9F9FED",
+        "VG6 EPSILON 556 Muzzle Brake": "#BF5BAD",
+        "HK BLITZ 5.56": "#9F9FED",
+        "Bulletec ST-6012": "#BF5BAD",
+        "AlienTech 5.56": "#9F9FED",
+        "Hera Arms CC Compensator": "#9F9FED",
+        "Имкас ПСУЗВ–11ТМ.12": "#BF5BAD",
+        "ПБС-4": "#9F9FED",
+        "ДТК «Вихрь»": "#9F9FED",
+        "Глушитель АТГ": "#BF5BAD",
+        "ПБС-1": "#9F9FED",
+        "ДТК Цитадель 5.45": "#BF5BAD",
+        "SPRV MBR Jet": "#9F9FED",
+        "Jmac Customs RDC 4C 5.45": "#BF5BAD",
+        "PWS CQB 74": "#9F9FED",
+        "ДТК-1": "#9F9FED",
+        "GE-OCTO Gunethics": "#BF5BAD",
+        "Hi-Point Razor": "#9F9FED",
+        "3 Port Mini Compensator": "#9F9FED",
+        "VR-09": "#9DEB9D",
+        "Удлиненный ствол 9 мм": "#BF5BAD",
+        "Custom Guns Doncaster": "#9F9FED",
+        "Пламегаситель LoneWolf": "#9F9FED",
+        "MICRO BADGER": "#9DEB9D",
+        "Глушитель Osprey": "#BF5BAD",
+        "Глушитель С.К.О.С. МДУ SUPRA K-8 Integral": "#9F9FED",
+        "ДТК АШ-12": "#EA9D9E",
+        "Рукоятка для ОЦ-14 «Гроза»": "#BF5BAD",
+        "Глушитель АШ-12/МЦ-558": "#EA9D9E",
+        "Глушитель для ОЦ-14 «Гроза»": "#BF5BAD",
+        "Удлиненный ствол D-Eagle": "#BF5BAD"
     };
 
     // Пресеты брони и оружия с рангами
@@ -195,13 +280,122 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon109", name: "ТТ", image: "images/weapon/tt.webp", rank: "Новичок", resources: { green_plesen: 11, bolotny_kamen: 12 } },
             { id: "weapon110", name: "Нож 6Х9", image: "images/weapon/6x9.webp", rank: "Новичок", resources: { green_plesen: 32 } },
             { id: "weapon111", name: "КО-1", image: "images/weapon/ko1.webp", rank: "Новичок", resources: { green_plesen: 6, bolotny_kamen: 3 } },
-            { id: "weapon112", name: "Молоток", image: "images/weapon/hammer.webp", rank: "Новичок", resources: { green_plesen: 4, bolotny_kamen: 5 } },
+            { id: "weapon112", name: "Молоток", image: "images/weapon/hammer.webp", rank: "Новичок", resources: { green_plesen: 4, bolotny_kamen: 5 } }
+        ],
+        containers: [
+            { id: "container1", name: "Контейнер «Улей»", image: "images/container/hive.webp", rank: "Контейнеры", resources: { ryzhiy_paporotnik: 565, veshestvo_07270: 1465, psi_mayachok: 599, gamma_fragment: 738, kvantovaya_batareya: 312 } },
+            { id: "container2", name: "Контейнер «Берлога-6»", image: "images/container/ber6.webp", rank: "Контейнеры", resources: { ryzhiy_paporotnik: 643, veshestvo_07270: 1667, psi_mayachok: 681, gamma_fragment: 839, kvantovaya_batareya: 355 } },
+            { id: "container3", name: "Контейнер «Кокон»", image: "images/container/cocoon.webp", rank: "Контейнеры", resources: { ryzhiy_paporotnik: 397, veshestvo_07270: 1028, psi_mayachok: 420, gamma_fragment: 514 } },
+            { id: "container4", name: "Контейнер «Добытчик»", image: "images/container/forager.webp", rank: "Контейнеры", resources: { gorkolistnik: 609, limb: 537, lambda_fragment: 165, limboplazma: 17 } },
+            { id: "container5", name: "Контейнер «Берлога-4»", image: "images/container/ber4.webp", rank: "Контейнеры", resources: { romashka: 123, rassolnik: 61, radioperedatchik: 63, alfa_fragment: 29 } },
+            { id: "container6", name: "«КЗС-5»", image: "images/container/kzs5.webp", rank: "Контейнеры", resources: { romashka: 54, rassolnik: 26, radioperedatchik: 28, alfa_fragment: 13 } },
+            { id: "container7", name: "«КЗС-4»", image: "images/container/kzs4.webp", rank: "Контейнеры", resources: { romashka: 69, rassolnik: 34, radioperedatchik: 35, alfa_fragment: 16 } },
+            { id: "container8", name: "«КЗС-3»", image: "images/container/kzs3.webp", rank: "Контейнеры", resources: { romashka: 66, rassolnik: 33, radioperedatchik: 49 } },
+            { id: "container9", name: "«КЗС-2»", image: "images/container/kzs2.webp", rank: "Контейнеры", resources: { koren_vonyuchka: 25, srachnik: 15, mednaya_provoloka: 30 } },
+            { id: "container10", name: "Контейнер «КЗС-1»", image: "images/container/kzs1.webp", rank: "Контейнеры", resources: { koren_vonyuchka: 44, srachnik: 27 } }
+        ],
+        backpacks: [
+            { id: "backpack1", name: "Рюкзак «Hellboy»", image: "images/backpack/hellboy.webp", rank: "Рюкзаки", resources: { romashka: 103, rassolnik: 34, radioperedatchik: 29 } },
+            { id: "backpack2", name: "Штурмовой рюкзак Tri-Zip", image: "images/backpack/zip.webp", rank: "Рюкзаки", resources: { romashka: 103, rassolnik: 34, radioperedatchik: 29 } },
+            { id: "backpack3", name: "Рюкзак MBSS", image: "images/backpack/mbss.webp", rank: "Рюкзаки", resources: { koren_vonyuchka: 39, srachnik: 16, mednaya_provoloka: 18 } },
+            { id: "backpack4", name: "Рюкзак Errand Junior", image: "images/backpack/errand.webp", rank: "Рюкзаки", resources: { koren_vonyuchka: 38, srachnik: 15 } },
+            { id: "backpack5", name: "Спортивная сумка", image: "images/backpack/sports.webp", rank: "Рюкзаки", resources: { koren_vonyuchka: 38, srachnik: 15 } },
+            { id: "backpack6", name: "Сумка-трансформер", image: "images/backpack/transformer.webp", rank: "Рюкзаки", resources: { green_plesen: 18, bolotny_kamen: 13 } }
+        ],
+        attachments: [
+            // 7.62 глушаки
+            { id: "attachment1", name: "SIG Sauer SRD762Ti", image: "images/attachment/srd762.webp", rank: "Ветка 7.62 глушителей", resources: { veshestvo_07270: 185, psi_mayachok: 151, gamma_fragment: 60 } },
+            { id: "attachment2", name: "Глушитель SCAR-SD", image: "images/attachment/scarsd.webp", rank: "Ветка 7.62 глушителей", resources: { durman_kamen: 74, ostatki_akkumulyatora: 91, beta_fragment: 16 } },
+            { id: "attachment3", name: "CMMG SV Brake 7.62x51", image: "images/attachment/cmmg762.webp", rank: "Ветка 7.62 глушителей", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment4", name: "Пламегаситель Noveske KX3", image: "images/attachment/noveske.webp", rank: "Ветка 7.62 глушителей", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 7.62 разброс
+            { id: "attachment5", name: "VG6 EPSILON 762 Muzzle Brake", image: "images/attachment/vg6762.webp", rank: "Ветка 7.62 надульников на разброс", resources: { ryzhiy_paporotnik: 57, veshestvo_07270: 148, psi_mayachok: 121, gamma_fragment: 48 } },
+            { id: "attachment6", name: "Keeno Arms SHREWD 7.62x51", image: "images/attachment/cmmg762.webp", rank: "Ветка 7.62 надульников на разброс", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment7", name: "CMMG SV Brake 7.62x51", image: "images/attachment/cmmg762.webp", rank: "Ветка 7.62 надульников на разброс", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment8", name: "Пламегаситель Noveske KX3", image: "images/attachment/noveske.webp", rank: "Ветка 7.62 надульников на разброс", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 7.62 баланс
+            { id: "attachment9", name: "Odin Works ATLAS 7.62x51", image: "images/attachment/atlas762.webp", rank: "Ветка сбалансированных 7.62 надульников", resources: { ryzhiy_paporotnik: 57, veshestvo_07270: 148, psi_mayachok: 121, gamma_fragment: 48 } },
+            { id: "attachment10", name: "SureFire Pro Comp 7.62x51", image: "images/attachment/atlas762.webp", rank: "Ветка сбалансированных 7.62 надульников", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment11", name: "Precision Armament M11 Severe Duty 7.62x51", image: "images/attachment/atlas762.webp", rank: "Ветка сбалансированных 7.62 надульников", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment12", name: "Resistance Armament Compensator", image: "images/attachment/atlas762.webp", rank: "Ветка сбалансированных 7.62 надульников", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 7.62 горизонталка
+            { id: "attachment13", name: "Venom Tactical Antidote", image: "images/attachment/venom.webp", rank: "Ветка 7.62 надульников на гориз. отдачу", resources: { ryzhiy_paporotnik: 57, veshestvo_07270: 148, psi_mayachok: 121, gamma_fragment: 48 } },
+            { id: "attachment14", name: "SPRV 7.62", image: "images/attachment/venom.webp", rank: "Ветка 7.62 надульников на гориз. отдачу", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment15", name: "Spikes Tactical Dynacomp", image: "images/attachment/venom.webp", rank: "Ветка 7.62 надульников на гориз. отдачу", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment16", name: "Пламегаситель AKademia Тьма", image: "images/attachment/venom.webp", rank: "Ветка 7.62 надульников на гориз. отдачу", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 7.62 отдача
+            { id: "attachment17", name: "Jmac Customs RDC 4C 7.62", image: "images/attachment/rdc762.webp", rank: "Ветка 7.62 надульников на отдачу", resources: { ryzhiy_paporotnik: 57, veshestvo_07270: 148, psi_mayachok: 121, gamma_fragment: 48 } },
+            { id: "attachment18", name: "ДТК «Косой»", image: "images/attachment/akml.webp", rank: "Ветка 7.62 надульников на отдачу", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment19", name: "АКМЛ", image: "images/attachment/akml.webp", rank: "Ветка 7.62 надульников на отдачу", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment20", name: "ДТК-2", image: "images/attachment/dtk2.webp", rank: "Ветка 7.62 надульников на отдачу", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 7.62 глушаки на отдачу
+            { id: "attachment21", name: "Глушитель АТГ", image: "images/attachment/atg.webp", rank: "Ветка 7.62 глушителей на отдачу", resources: { veshestvo_07270: 185, psi_mayachok: 151, gamma_fragment: 60 } },
+            { id: "attachment22", name: "ПБС-1", image: "images/attachment/atg.webp", rank: "Ветка 7.62 глушителей на отдачу", resources: { durman_kamen: 123, ostatki_akkumulyatora: 152, beta_fragment: 26 } },
+            // 5.56 глушаки
+            { id: "attachment23", name: "Глушитель KAC Style QD", image: "images/attachment/kacqd.webp", rank: "Ветка 5.56 глушителей", resources: { veshestvo_07270: 185, psi_mayachok: 151, gamma_fragment: 60 } },
+            { id: "attachment24", name: "Глушитель SureFire SOCOM556-RC2", image: "images/attachment/socom556.webp", rank: "Ветка 5.56 глушителей", resources: { durman_kamen: 74, ostatki_akkumulyatora: 91, beta_fragment: 16 } },
+            { id: "attachment25", name: "Diamondhead Compensator", image: "images/attachment/diamond.webp", rank: "Ветка 5.56 глушителей", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment26", name: "Пламегаситель Noveske KX3", image: "images/attachment/noveske.webp", rank: "Ветка 5.56 глушителей", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 5.56 разброс
+            { id: "attachment27", name: "VG6 EPSILON 556 Muzzle Brake", image: "images/attachment/vg6556.webp", rank: "Ветка 5.56 надульников на разброс", resources: { ryzhiy_paporotnik: 57, veshestvo_07270: 148, psi_mayachok: 121, gamma_fragment: 48 } },
+            { id: "attachment28", name: "HK BLITZ 5.56", image: "images/attachment/diamond.webp", rank: "Ветка 5.56 надульников на разброс", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment29", name: "Diamondhead Compensator", image: "images/attachment/diamond.webp", rank: "Ветка 5.56 надульников на разброс", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment30", name: "Пламегаситель Noveske KX3", image: "images/attachment/noveske.webp", rank: "Ветка 5.56 надульников на разброс", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 5.56 баланс
+            { id: "attachment31", name: "Bulletec ST-6012", image: "images/attachment/bulletec.webp", rank: "Ветка сбалансированных 5.56 надульников", resources: { ryzhiy_paporotnik: 57, veshestvo_07270: 148, psi_mayachok: 121, gamma_fragment: 48 } },
+            { id: "attachment32", name: "AlienTech 5.56", image: "images/attachment/bulletec.webp", rank: "Ветка сбалансированных 5.56 надульников", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment33", name: "Hera Arms CC Compensator", image: "images/attachment/bulletec.webp", rank: "Ветка сбалансированных 5.56 надульников", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment34", name: "Resistance Armament Compensator", image: "images/attachment/atlas762.webp", rank: "Ветка сбалансированных 5.56 надульников", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 5.45 глушаки
+            { id: "attachment35", name: "Имкас ПСУЗВ–11ТМ.12", image: "images/attachment/imkas.webp", rank: "Ветка 5.45 глушителей", resources: { veshestvo_07270: 185, psi_mayachok: 151, gamma_fragment: 60 } },
+            { id: "attachment36", name: "ПБС-4", image: "images/attachment/pbs.webp", rank: "Ветка 5.45 глушителей", resources: { durman_kamen: 74, ostatki_akkumulyatora: 91, beta_fragment: 16 } },
+            { id: "attachment37", name: "ДТК «Вихрь»", image: "images/attachment/dtkvihr.webp", rank: "Ветка 5.45 глушителей", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment38", name: "Пламегаситель AKademia Тьма", image: "images/attachment/venom.webp", rank: "Ветка 5.45 глушителей", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 5.45 разброс
+            { id: "attachment39", name: "ДТК Цитадель 5.45", image: "images/attachment/dtk545.webp", rank: "Ветка 5.45 надульников на разброс", resources: { ryzhiy_paporotnik: 57, veshestvo_07270: 148, psi_mayachok: 121, gamma_fragment: 48 } },
+            { id: "attachment40", name: "SPRV MBR Jet", image: "images/attachment/dtkvihr.webp", rank: "Ветка 5.45 надульников на разброс", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment41", name: "ДТК «Вихрь»", image: "images/attachment/dtkvihr.webp", rank: "Ветка 5.45 надульников на разброс", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment42", name: "Пламегаситель AKademia Тьма", image: "images/attachment/venom.webp", rank: "Ветка 5.45 надульников на разброс", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 5.45 баланс
+            { id: "attachment43", name: "Jmac Customs RDC 4C 5.45", image: "images/attachment/dtk2.webp", rank: "Ветка сбалансированных 5.45 надульников", resources: { ryzhiy_paporotnik: 57, veshestvo_07270: 148, psi_mayachok: 121, gamma_fragment: 48 } },
+            { id: "attachment44", name: "PWS CQB 74", image: "images/attachment/dtk2.webp", rank: "Ветка сбалансированных 5.45 надульников", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment45", name: "ДТК-1", image: "images/attachment/dtk2.webp", rank: "Ветка сбалансированных 5.45 надульников", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment46", name: "ДТК-2", image: "images/attachment/dtk2.webp", rank: "Ветка сбалансированных 5.45 надульников", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 9 мм баланс
+            { id: "attachment47", name: "GE-OCTO Gunethics", image: "images/attachment/octo.webp", rank: "Ветка сбалансированных 9 мм надульников", resources: { ryzhiy_paporotnik: 57, veshestvo_07270: 148, psi_mayachok: 121, gamma_fragment: 48 } },
+            { id: "attachment48", name: "Hi-Point Razor", image: "images/attachment/razor.webp", rank: "Ветка сбалансированных 9 мм надульников", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment49", name: "3 Port Mini Compensator", image: "images/attachment/octo.webp", rank: "Ветка сбалансированных 9 мм надульников", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment50", name: "VR-09", image: "images/attachment/octo.webp", rank: "Ветка сбалансированных 9 мм надульников", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 9 мм разброс
+            { id: "attachment51", name: "Удлиненный ствол 9 мм", image: "images/attachment/long9.webp", rank: "Ветка 9 мм надульников на разброс", resources: { ryzhiy_paporotnik: 57, veshestvo_07270: 148, psi_mayachok: 121, gamma_fragment: 48 } },
+            { id: "attachment52", name: "Custom Guns Doncaster", image: "images/attachment/customg.webp", rank: "Ветка 9 мм надульников на разброс", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment53", name: "Пламегаситель LoneWolf", image: "images/attachment/customg.webp", rank: "Ветка 9 мм надульников на разброс", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment54", name: "MICRO BADGER", image: "images/attachment/customg.webp", rank: "Ветка 9 мм надульников на разброс", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // 9 мм глушители
+            { id: "attachment55", name: "Глушитель Osprey", image: "images/attachment/osprey.webp", rank: "Ветка 9 мм глушителей", resources: { veshestvo_07270: 185, psi_mayachok: 151, gamma_fragment: 60 } },
+            { id: "attachment56", name: "Глушитель С.К.О.С. МДУ SUPRA K-8 Integral", image: "images/attachment/supra.webp", rank: "Ветка 9 мм глушителей", resources: { durman_kamen: 74, ostatki_akkumulyatora: 91, beta_fragment: 16 } },
+            { id: "attachment57", name: "Пламегаситель LoneWolf", image: "images/attachment/customg.webp", rank: "Ветка 9 мм глушителей", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment58", name: "MICRO BADGER", image: "images/attachment/customg.webp", rank: "Ветка 9 мм глушителей", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // АШ-12 надульник
+            { id: "attachment59", name: "ДТК АШ-12", image: "images/attachment/dtkash.webp", rank: "Ветка надульника на АШ-12", resources: { ryzhiy_paporotnik: 610, veshestvo_07270: 900, psi_mayachok: 460, gamma_fragment: 124, kvantovaya_batareya: 198 } },
+            { id: "attachment60", name: "Рукоятка для ОЦ-14 «Гроза»", image: "images/attachment/rukgroza.webp", rank: "Ветка надульника на АШ-12", resources: { ryzhiy_paporotnik: 149, veshestvo_07270: 359, psi_mayachok: 129, gamma_fragment: 136 } },
+            { id: "attachment61", name: "SPRV 7.62", image: "images/attachment/venom.webp", rank: "Ветка надульника на АШ-12", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment62", name: "Spikes Tactical Dynacomp", image: "images/attachment/venom.webp", rank: "Ветка надульника на АШ-12", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment63", name: "Пламегаситель AKademia Тьма", image: "images/attachment/venom.webp", rank: "Ветка надульника на АШ-12", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // АШ-12 глушитель
+            { id: "attachment64", name: "Глушитель АШ-12/МЦ-558", image: "images/attachment/sash.webp", rank: "Ветка глушителя на АШ-12", resources: { ryzhiy_paporotnik: 615, veshestvo_07270: 875, psi_mayachok: 450, gamma_fragment: 121, kvantovaya_batareya: 193 } },
+            { id: "attachment65", name: "Глушитель для ОЦ-14 «Гроза»", image: "images/attachment/sgroza.webp", rank: "Ветка глушителя на АШ-12", resources: { veshestvo_07270: 185, psi_mayachok: 151, gamma_fragment: 60 } },
+            { id: "attachment66", name: "ПБС-1", image: "images/attachment/atg.webp", rank: "Ветка глушителя на АШ-12", resources: { durman_kamen: 123, ostatki_akkumulyatora: 152, beta_fragment: 26 } },
+            // Ствол на дигл
+            { id: "attachment67", name: "Удлиненный ствол D-Eagle", image: "images/attachment/lgdeagle.webp", rank: "Ствол на D-Eagle", resources: { ryzhiy_paporotnik: 289, veshestvo_07270: 870, psi_mayachok: 276, gamma_fragment: 135 } },
         ]
     };
 
     // DOM-элементы
     const armorPresetsContainer = document.getElementById('armor-presets');
     const weaponPresetsContainer = document.getElementById('weapon-presets');
+    const containerPresetsContainer = document.getElementById('container-presets');
+    const attachmentPresetsContainer = document.getElementById('attachment-presets');
     const calculateBtn = document.getElementById('calculateBtn');
     const couponBtn = document.getElementById('couponBtn');
     const couponSelect = document.getElementById('couponSelect');
@@ -210,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Создание элементов для пресетов рангов
     function renderRankedPresets(container, data) {
         const rankGroups = {};
-
+    
         // Группировка предметов по рангам
         data.forEach(preset => {
             if (!rankGroups[preset.rank]) {
@@ -218,22 +412,188 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             rankGroups[preset.rank].push(preset);
         });
-
+    
         // Создание структурированных списков
         for (const rank in rankGroups) {
             const details = document.createElement('details');
             const summary = document.createElement('summary');
-            summary.textContent = rank;
-            summary.classList.add(armorRanks[rank]); // Добавляем цвет ранга
-            details.appendChild(summary);
+    
+            //  Добавляем изображение, если это ветка контейнеров
+            if (rank === "Контейнеры") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/container/hive.webp"; //  Путь к изображению
+                img.alt = "Изображение контейнеры";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
 
+            if (rank === "Рюкзаки") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/backpack/hellboy.webp"; //  Путь к изображению
+                img.alt = "Изображение рюкзака";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 7.62 глушителей") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/srd762.webp"; //  Путь к изображению
+                img.alt = "Изображение глушителя";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 7.62 глушителей на отдачу") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/atg.webp"; //  Путь к изображению
+                img.alt = "Изображение глушителя";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 7.62 надульников на разброс") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/vg6762.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка сбалансированных 7.62 надульников") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/atlas762.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 7.62 надульников на гориз. отдачу") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/venom.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 7.62 надульников на отдачу") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/rdc762.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 5.56 глушителей") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/kacqd.webp"; //  Путь к изображению
+                img.alt = "Изображение глушителя";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 5.56 надульников на разброс") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/vg6556.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка сбалансированных 5.56 надульников") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/bulletec.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 5.45 глушителей") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/imkas.webp"; //  Путь к изображению
+                img.alt = "Изображение глушителя";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 5.45 надульников на разброс") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/dtk545.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка сбалансированных 5.45 надульников") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/dtk2.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка сбалансированных 9 мм надульников") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/octo.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 9 мм надульников на разброс") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/long9.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 9 мм глушителей") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/osprey.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка надульника на АШ-12") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/dtkash.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка глушителя на АШ-12") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/sash.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ствол на D-Eagle") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/attachment/lgdeagle.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+    
+            const rankSpan = document.createElement('span'); // Добавляем span для текста ранга
+            rankSpan.textContent = rank;
+            rankSpan.classList.add(armorRanks[rank]);
+            summary.appendChild(rankSpan);
+    
+    
+            details.appendChild(summary);
+    
             const list = document.createElement('ul');
             list.classList.add('preset-list');
-
+    
             rankGroups[rank].forEach(preset => {
                 list.appendChild(createPresetElement(preset));
             });
-
+    
             details.appendChild(list);
             container.appendChild(details);
         }
@@ -257,6 +617,19 @@ document.addEventListener('DOMContentLoaded', function() {
         label.htmlFor = preset.id;
         label.textContent = preset.name;
 
+        // Добавляем цвет для названия контейнера, если он есть
+        if (containerNameColors[preset.name]) {
+            label.style.color = containerNameColors[preset.name];
+        }
+
+        if (backpackNameColors[preset.name]) {
+            label.style.color = backpackNameColors[preset.name];
+        }
+
+        if (attachmentNameColors[preset.name]) {
+            label.style.color = attachmentNameColors[preset.name];
+        }
+
         listItem.appendChild(checkbox);
         listItem.appendChild(img);
         listItem.appendChild(label);
@@ -273,7 +646,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Обновление ресурсов при выборе пресетов
     function updateResourcesInput() {
-        const selectedPresets = { armor: [], weapons: [] };
+        const selectedPresets = { armor: [], weapons: [], containers: [], backpacks: [], attachments: [] };
         const totalResources = {};
 
         document.querySelectorAll('#armor-presets input:checked').forEach(checkbox => {
@@ -281,6 +654,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         document.querySelectorAll('#weapon-presets input:checked').forEach(checkbox => {
             selectedPresets.weapons.push(checkbox.value);
+        });
+        document.querySelectorAll('#container-presets input:checked').forEach(checkbox => {
+            selectedPresets.containers.push(checkbox.value);
+        });
+        document.querySelectorAll('#container-presets input:checked').forEach(checkbox => {
+            selectedPresets.backpacks.push(checkbox.value);
+        });
+        document.querySelectorAll('#attachment-presets input:checked').forEach(checkbox => {
+            selectedPresets.attachments.push(checkbox.value);
         });
 
         function addResources(presets, type) {
@@ -296,6 +678,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         addResources(selectedPresets.armor, 'armor');
         addResources(selectedPresets.weapons, 'weapons');
+        addResources(selectedPresets.containers, 'containers');
+        addResources(selectedPresets.backpacks, 'backpacks');
+        addResources(selectedPresets.attachments, 'attachments');
 
         const allResourceIds = getAllResourceIds();
         allResourceIds.forEach(resId => {
@@ -412,4 +797,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Рендер пресетов с разделением по рангам
     renderRankedPresets(armorPresetsContainer, presetsData.armor);
     renderRankedPresets(weaponPresetsContainer, presetsData.weapons);
+    renderRankedPresets(containerPresetsContainer, presetsData.containers);
+    renderRankedPresets(containerPresetsContainer, presetsData.backpacks);
+    renderRankedPresets(attachmentPresetsContainer, presetsData.attachments)
 });
