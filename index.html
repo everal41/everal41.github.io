@@ -12,19 +12,14 @@
 <body>
     <!-- Шапка -->
     <header class="site-header">
-        <!-- Левая часть (ссылки) -->
         <nav class="header-links">
             <a href="#about">О сайте</a>
             <a href="#contacts">Контакты</a>
         </nav>
-    
-        <!-- Логотип -->
         <div class="header-logo">
             <h1>StalMath</h1>
             <span class="beta-label">Beta</span>
         </div>
-    
-        <!-- Правая часть (ссылки) -->
         <nav class="header-links">
             <a href="#calculator">Калькулятор обменных монет</a>
             <a href="#tier-lists">Тир листы</a>
@@ -33,14 +28,11 @@
         </nav>
     </header>
 
-    <!-- Централизованный текст -->
-<div class="main-title">
-    Калькулятор обменных монет
-</div>
+    <div class="main-title">Калькулятор обменных монет</div>
 
-<div class="author-container">
-    Автор: <a href="https://vk.com/everal41" target="_blank">everal41 (Дмитрий Кварцев)</a>
-</div>
+    <div class="author-container">
+        Автор: <a href="https://vk.com/everal41" target="_blank">everal41 (Дмитрий Кварцев)</a>
+    </div>
 
     <!-- Основной контент -->
     <div class="container">
@@ -59,25 +51,61 @@
             <div class="presets-container">
                 <div class="preset-category">
                     <h3>Броня</h3>
-                    <ul id="armor-presets" class="preset-list"></ul>
+                        <ul id="armor-presets" class="preset-list"></ul>
                 </div>
+
                 <div class="preset-category">
                     <h3>Оружие</h3>
-                    <ul id="weapon-presets" class="preset-list"></ul>
+                    <details>
+                        <summary class="rank-gray">Отмычка</summary>
+                        <ul class="preset-list">
+                            <li>Обрез</li>
+                            <li>Тозик</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary class="rank-green">Новичок</summary>
+                        <ul class="preset-list">
+                            <li>АК-74У</li>
+                            <li>МР-5</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary class="rank-blue">Сталкер</summary>
+                        <ul class="preset-list">
+                            <li>АК-74М</li>
+                            <li>ВСС "Винторез"</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary class="rank-purple">Ветеран</summary>
+                        <ul class="preset-list">
+                            <li>Гроза</li>
+                            <li>СВД</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary class="rank-red">Мастер</summary>
+                        <ul class="preset-list">
+                            <li>Гаусс-пушка</li>
+                            <li>АС "Вал"</li>
+                        </ul>
+                    </details>
                 </div>
             </div>
         </div>
+
         <div class="right-block">
             <form id="calculatorForm">
-            <!-- Болота -->
+                <!-- Болота -->
             <h2>Болота</h2>
             <div class="resource">
-                <img src="images/bolotny_kamen.png" alt="Болотный камень">
+                <img src="images/barter/bolotny_kamen.png" alt="Болотный камень">
                 <label for="bolotny_kamen">Болотный камень</label>
                 <input type="number" id="bolotny_kamen" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/green_plesen.png" alt="Зеленая плесень">
+                <img src="images/barter/green_plesen.png" alt="Зеленая плесень">
                 <label for="green_plesen">Зеленая плесень</label>
                 <input type="number" id="green_plesen" min="0" value="0">
             </div>
@@ -85,17 +113,17 @@
             <!-- Обочина -->
             <h2>Обочина</h2>
             <div class="resource">
-                <img src="images/koren_vonyuchka.png" alt="Корень-вонючка">
+                <img src="images/barter/koren_vonyuchka.png" alt="Корень-вонючка">
                 <label for="koren_vonyuchka">Корень-вонючка</label>
                 <input type="number" id="koren_vonyuchka" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/srachnik.png" alt="Срачник">
+                <img src="images/barter/srachnik.png" alt="Срачник">
                 <label for="srachnik">Срачник</label>
                 <input type="number" id="srachnik" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/mednaya_provoloka.png" alt="Остатки медной проволоки">
+                <img src="images/barter/mednaya_provoloka.png" alt="Остатки медной проволоки">
                 <label for="mednaya_provoloka">Остатки медной проволоки</label>
                 <input type="number" id="mednaya_provoloka" min="0" value="0">
             </div>
@@ -103,22 +131,22 @@
             <!-- Бар -->
             <h2>Бар</h2>
             <div class="resource">
-                <img src="images/romashka.png" alt="Росток чернобыльской ромашки">
+                <img src="images/barter/romashka.png" alt="Росток чернобыльской ромашки">
                 <label for="romashka">Росток чернобыльской ромашки</label>
                 <input type="number" id="romashka" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/radioperedatchik.png" alt="Остатки радиопередатчика">
+                <img src="images/barter/radioperedatchik.png" alt="Остатки радиопередатчика">
                 <label for="radioperedatchik">Остатки радиопередатчика</label>
                 <input type="number" id="radioperedatchik" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/rassolnik.png" alt="Рассольник">
+                <img src="images/barter/rassolnik.png" alt="Рассольник">
                 <label for="rassolnik">Рассольник</label>
                 <input type="number" id="rassolnik" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/alpha_fragment.png" alt="Фрагмент данных Альфа">
+                <img src="images/barter/alpha_fragment.png" alt="Фрагмент данных Альфа">
                 <label for="alfa_fragment">Фрагмент данных Альфа</label>
                 <input type="number" id="alfa_fragment" min="0" value="0">
             </div>
@@ -126,22 +154,22 @@
             <!-- Полесское/ПД -->
             <h2>Полесское/ПД</h2>
             <div class="resource">
-                <img src="images/beta_fragment.png" alt="Фрагмент данных 'Бета'">
+                <img src="images/barter/beta_fragment.png" alt="Фрагмент данных 'Бета'">
                 <label for="beta_fragment">Фрагмент данных "Бета"</label>
                 <input type="number" id="beta_fragment" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/durman_kamen.png" alt="Дурман-камень">
+                <img src="images/barter/durman_kamen.png" alt="Дурман-камень">
                 <label for="durman_kamen">Дурман-камень</label>
                 <input type="number" id="durman_kamen" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/severny_moh.png" alt="Северный мох">
+                <img src="images/barter/severny_moh.png" alt="Северный мох">
                 <label for="severny_moh">Северный мох</label>
                 <input type="number" id="severny_moh" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/ostatki_akkumulyatora.png" alt="Остатки аккумулятора">
+                <img src="images/barter/ostatki_akkumulyatora.png" alt="Остатки аккумулятора">
                 <label for="ostatki_akkumulyatora">Остатки аккумулятора</label>
                 <input type="number" id="ostatki_akkumulyatora" min="0" value="0">
             </div>
@@ -149,27 +177,27 @@
             <!-- Север -->
             <h2>Север</h2>
             <div class="resource">
-                <img src="images/gamma_fragment.png" alt="Фрагмент данных 'Гамма'">
+                <img src="images/barter/gamma_fragment.png" alt="Фрагмент данных 'Гамма'">
                 <label for="gamma_fragment">Фрагмент данных "Гамма"</label>
                 <input type="number" id="gamma_fragment" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/veshestvo_07270.png" alt="Вещество 07270">
+                <img src="images/barter/veshestvo_07270.png" alt="Вещество 07270">
                 <label for="veshestvo_07270">Вещество 07270</label>
                 <input type="number" id="veshestvo_07270" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/ryzhiy_paporotnik.png" alt="Рыжий папоротник">
+                <img src="images/barter/ryzhiy_paporotnik.png" alt="Рыжий папоротник">
                 <label for="ryzhiy_paporotnik">Рыжий папоротник</label>
                 <input type="number" id="ryzhiy_paporotnik" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/psi_mayachok.png" alt="Остатки пси-маячка">
+                <img src="images/barter/psi_mayachok.png" alt="Остатки пси-маячка">
                 <label for="psi_mayachok">Остатки пси-маячка</label>
                 <input type="number" id="psi_mayachok" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/kvantovaya_batareya.png" alt="Квантовая батарея">
+                <img src="images/barter/kvantovaya_batareya.png" alt="Квантовая батарея">
                 <label for="kvantovaya_batareya">Квантовая батарея</label>
                 <input type="number" id="kvantovaya_batareya" min="0" value="0">
             </div>
@@ -177,27 +205,27 @@
             <!-- Любеч-3 -->
             <h2>Любеч-3</h2>
             <div class="resource">
-                <img src="images/limb.png" alt="Лимб">
+                <img src="images/barter/limb.png" alt="Лимб">
                 <label for="limb">Лимб</label>
                 <input type="number" id="limb" min="0" value="0">
             </div>
             <div class="resource">
-                <img src="images/gorkolistnik.png" alt="Горьколистник">
+                <img src="images/barter/gorkolistnik.png" alt="Горьколистник">
                 <label for="gorkolistnik">Горьколистник</label>
                     <input type="number" id="gorkolistnik" min="0" value="0">
                 </div>
                 <div class="resource">
-                    <img src="images/lambda_fragment.png" alt="Фрагмент данных 'Лямбда'">
+                    <img src="images/barter/lambda_fragment.png" alt="Фрагмент данных 'Лямбда'">
                     <label for="lambda_fragment">Фрагмент данных "Лямбда"</label>
                     <input type="number" id="lambda_fragment" min="0" value="0">
                 </div>
                 <div class="resource">
-                    <img src="images/limboplazma.png" alt="Лимбоплазма">
+                    <img src="images/barter/limboplazma.png" alt="Лимбоплазма">
                     <label for="limboplazma">Лимбоплазма</label>
                     <input type="number" id="limboplazma" min="0" value="0">
                 </div>
                 <div class="resource">
-                    <img src="images/anomalnaya_batareya.png" alt="Аномальная батарея">
+                    <img src="images/barter/anomalnaya_batareya.png" alt="Аномальная батарея">
                     <label for="anomalnaya_batareya">Аномальная батарея</label>
                     <input type="number" id="anomalnaya_batareya" min="0" value="0">
                 </div>
