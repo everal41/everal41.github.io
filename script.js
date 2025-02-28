@@ -1,3 +1,42 @@
+// Модальное окно "О сайте"
+const aboutModal = document.getElementById('about-modal');
+const openAboutModalBtn = document.getElementById('open-about');
+const closeAboutModalBtn = document.querySelector('#about-modal .close-button'); // Селектор по ID и классу
+
+
+// Модальное окно "Контакты"
+const contactsModal = document.getElementById('contacts-modal');
+const openContactsModalBtn = document.getElementById('open-contacts');
+const closeContactsModalBtn = document.querySelector('#contacts-modal .close-button'); // и здесь
+
+
+// Функции открытия и закрытия (общие, используем параметр)
+function openModal(modalElement) {
+    modalElement.style.display = 'block';
+}
+
+function closeModal(modalElement) {
+    modalElement.style.display = 'none';
+}
+
+// Обработчики событий для "О сайте"
+openAboutModalBtn.addEventListener('click', () => openModal(aboutModal));
+closeAboutModalBtn.addEventListener('click', () => closeModal(aboutModal));
+
+// Обработчики событий для "Контакты"
+openContactsModalBtn.addEventListener('click', () => openModal(contactsModal));
+closeContactsModalBtn.addEventListener('click', () => closeModal(contactsModal));
+
+// Закрытие при клике вне окна (общее)
+window.addEventListener('click', (event) => {
+    if (event.target === aboutModal) {
+        closeModal(aboutModal);
+    }
+    if (event.target === contactsModal) {
+        closeModal(contactsModal);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // Ранговые категории
