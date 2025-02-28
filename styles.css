@@ -147,10 +147,6 @@ input[type=number] {
     -moz-appearance: textfield; /* Для Firefox */
 }
 
-.author {
-    color: #7289da;
-}
-
 /* Стили для левого и правого блоков */
 .left-block {
     flex: 1; /* Занимает половину ширины */
@@ -321,25 +317,6 @@ input[type=number] {
     background-color: #ffff66; /* Желтый фон при наведении */
     color: #2b2b2b; /* Темный цвет текста при наведении */
     transform: scale(1.1); /* Увеличение ссылки при наведении */
-}
-
-.author-container {
-    text-align: center;
-    margin-top: 10px;
-    color: #cccccc; /* Более нейтральный цвет */
-    font-size: 16px;
-}
-
-.author-container a {
-    color: #7289da; /* Цвет ссылки */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.author-container a:hover {
-    color: #ffff66; /* Цвет при наведении */
-    transform: scale(1.1); /* Легкое увеличение */
 }
 
 /* Стили для рангов брони и оружия */
