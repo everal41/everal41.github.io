@@ -113,29 +113,6 @@ footer {
     border: 2px solid #ffd700; /* Желтая рамка */
 }
 
-.footer-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-content span {
-    color: #ffffff; /* Белый цвет текста */
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.footer-content .discord-link {
-    color: #ffffff; /* Белый цвет иконки */
-    text-decoration: none;
-    font-size: 20px;
-    transition: color 0.3s;
-}
-
-.footer-content .discord-link:hover {
-    color: #7289da; /* Цвет при наведении */
-}
-
 /* Убираем ползунки в разных браузерах */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -441,13 +418,12 @@ summary span { /* Стили для текста внутри summary*/
 .modal {
     display: none; /* Скрыто по умолчанию */
     position: fixed;
-    z-index: 1000;
+    z-index: 1000; /* Достаточно высокий z-index */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    /* overflow: auto;  УДАЛЯЕМ отсюда */
-    overflow: hidden; /* Добавляем hidden */
+    overflow: auto; /*  Возвращаем auto для прокрутки */
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -457,12 +433,12 @@ summary span { /* Стили для текста внутри summary*/
     /* margin: 15% auto;  УДАЛЯЕМ */
     padding: 20px;
     border: 1px solid #444;
-    width: 80%;
+    width: 90%;       /*  Уменьшаем ширину для мобильных */
     max-width: 600px;
     border-radius: 5px;
-    position: relative;
+    position: relative; /* Важно для позиционирования кнопки закрытия */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    overflow: auto;
+    /* overflow: auto;  Переносим в .modal */
 
     /* Центрирование */
     top: 50%;
@@ -471,43 +447,43 @@ summary span { /* Стили для текста внутри summary*/
 }
 
 .modal-content h2 {
-    color: #fff;         /* Белый цвет для заголовков */
+    color: #fff;
     margin-top: 0;
-    border-bottom: 1px solid #444; /* Подчеркивание заголовка */
+    border-bottom: 1px solid #444;
     padding-bottom: 10px;
 }
 
 .modal-content p {
-    line-height: 1.6;    /* Увеличенный межстрочный интервал */
+    line-height: 1.6;
     margin-bottom: 15px;
 }
-.modal-content ul {
- list-style: disc;
- margin-left: 20px;
-}
 
+.modal-content ul {
+    list-style: disc;
+    margin-left: 20px;
+}
 
 .close-button {
     color: #aaa;
-    /*float: right;  Убираем float, используем absolute позиционирование */
     font-size: 28px;
     font-weight: bold;
-    position: absolute; /* Абсолютное позиционирование */
-    top: 5px;
-    right: 10px;
+    position: absolute;
+    top: 10px;        /*  Отступ сверху */
+    right: 15px;      /*  Отступ справа */
     cursor: pointer;
+    z-index: 1001;    /*  Еще более высокий z-index, чем у .modal */
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: white; /* Более яркий цвет при наведении */
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
 
-/* Стили для ссылки в модальном окне (если нужно) */
+/*  Стили для ссылки (остаются без изменений) */
 .modal-content a {
-    color: #4CAF50; /* Зеленый цвет для ссылок */
+    color: #4CAF50;
     text-decoration: none;
 }
 
@@ -539,16 +515,6 @@ summary span { /* Стили для текста внутри summary*/
         justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    footer {
-        position: static;
-        margin-top: 20px;
     }
 }
 
