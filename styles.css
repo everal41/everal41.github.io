@@ -514,3 +514,51 @@ summary span { /* Стили для текста внутри summary*/
 .modal-content a:hover {
     text-decoration: underline;
 }
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+    }
+
+    .left-block, .right-block {
+        flex: 1 1 100%;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .site-header {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .header-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+/* Адаптивные стили для планшетов и десктопов */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+
+    .left-block, .right-block {
+        margin: 10px 0;
+    }
+}
