@@ -1,6 +1,6 @@
 /* Общие стили */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #1a1a1a;
     color: #f0e68c;
     margin: 0;
@@ -299,12 +299,6 @@ input[type=number] {
     transform: scale(1.1); /* Легкое увеличение при наведении */
 }
 
-.beta-label {
-    font-size: 14px; /* Размер текста для Beta */
-    color: #aaa; /* Серый цвет */
-    margin-top: 5px;
-}
-
 /* Левые и правые ссылки */
 .header-links {
     display: flex; /* Устанавливаем flex для ссылок */
@@ -327,15 +321,6 @@ input[type=number] {
     background-color: #ffff66; /* Желтый фон при наведении */
     color: #2b2b2b; /* Темный цвет текста при наведении */
     transform: scale(1.1); /* Увеличение ссылки при наведении */
-}
-
-/* Централизованный текст на странице */
-.main-title {
-    text-align: center;
-    margin: 20px 0;
-    color: #e0e0a0; /* Более нейтральный цвет */
-    font-size: 34px;
-    font-weight: bold;
 }
 
 .author-container {
@@ -473,4 +458,82 @@ summary span { /* Стили для текста внутри summary*/
 }
 .kokon-color, .dobytchik-color { /*  Для нескольких классов сразу */
     color: purple;
+}
+
+/* Модальное окно */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* overflow: auto;  УДАЛЯЕМ отсюда */
+    overflow: hidden; /* Добавляем hidden */
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #2e2e2e;
+    color: #ddd;
+    /* margin: 15% auto;  УДАЛЯЕМ */
+    padding: 20px;
+    border: 1px solid #444;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+
+    /* Центрирование */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content h2 {
+    color: #fff;         /* Белый цвет для заголовков */
+    margin-top: 0;
+    border-bottom: 1px solid #444; /* Подчеркивание заголовка */
+    padding-bottom: 10px;
+}
+
+.modal-content p {
+    line-height: 1.6;    /* Увеличенный межстрочный интервал */
+    margin-bottom: 15px;
+}
+.modal-content ul {
+ list-style: disc;
+ margin-left: 20px;
+}
+
+
+.close-button {
+    color: #aaa;
+    /*float: right;  Убираем float, используем absolute позиционирование */
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: white; /* Более яркий цвет при наведении */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Стили для ссылки в модальном окне (если нужно) */
+.modal-content a {
+    color: #4CAF50; /* Зеленый цвет для ссылок */
+    text-decoration: none;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
 }
