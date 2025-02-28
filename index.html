@@ -3,32 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STALCRAFT - Калькулятор обменных монет</title>
-    <meta name="description" content="Калькулятор обменных монет STALCRAFT. Здесь вы можете посчитать стоимость бартерных ресурсов за обменные монеты.">
+    <title>Калькулятор обменных монет STALCRAFT</title>
+    <meta name="description" content="Калькулятор, Сталкрафт, STALCRAFT, StalMath, бартерные ресурсы, обменки.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="presets-style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Шапка -->
     <header class="site-header">
         <nav class="header-links">
-            <a href="#about">О сайте</a>
-            <a href="#contacts">Контакты</a>
+            <a href="#" id="open-about">О сайте</a>
+            <a href="#" id="open-contacts">Контакты</a>
         </nav>
         <div class="header-logo">
             <h1>StalMath</h1>
-            <span class="beta-label">Beta</span>
         </div>
         <nav class="header-links">
-            <a href="#calculator">Калькулятор обменных монет</a>
+            <a href="index.html">Калькулятор обменных монет</a>
+            <!-- Ссылки на другие страницы для будущих обновлений 
             <a href="#tier-lists">Тир листы</a>
             <a href="#dps-table">Таблица ДПС</a>
             <a href="#economics">Экономические расчёты</a>
+            -->
         </nav>
     </header>
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>О сайте StalMath</h2>
+            <h3>Что это такое?</h3>
+            <p>Этот сайт предназначен для помощи игрокам STALCRAFT в расчёте стоимости бартерных ресурсов. Он предоставляет удобный калькулятор, который позволяет быстро определить, сколько обменных монет потребуется для получения желаемых предметов.</p>
+            <h3>Можно ли как-то помочь?</h3>
+             <p>
+                Да, вы можете помочь посредством сбора обратной информации об использовании сайта.
+             </p>
+             <ul>
+                 <li>Если вы найдёте недочёты.</li>
+                 <li>Если у вас будут здравые идеи по улучшению сайта.</li>
+             </ul>
+            <p>Смело можете писать мне.</p>
+            <p>Создатель: <a href="https://vk.com/everal41" target="_blank">everal41</a></p>
+        </div>
+    </div>
 
-    <div class="main-title">Калькулятор обменных монет</div>
+    <!-- Модальное окно "Контакты" -->
+    <div id="contacts-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Контакты</h2>
+            <p>Вы можете связаться со мной следующими способами:</p>
+            <ul>
+                <li>ВКонтакте: <a href="https://vk.com/everal41" target="_blank">everal41</a></li>
+                <li>Сервер в Discord:  <a href="https://discord.gg/9hkdXxRSnr" target="_blank" class="discord-link">
+                <i class="fab fa-discord"></i></a></li>
+                <li>Ник активного персонажа в игре: <span style="color: #4CAF50;">VoidWalker_</span></li>
+            </ul>
+        </div>
+    </div>
 
     <div class="author-container">
         Автор: <a href="https://vk.com/everal41" target="_blank">everal41 (Дмитрий Кварцев)</a>
