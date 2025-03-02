@@ -8,6 +8,10 @@ body {
     min-height: 100vh;
     overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
     padding-bottom: 40px; /* Отступ снизу для футера */
+    background-image: url('background.jpg'); /* Замените на фактический путь к вашему изображению */
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 .container {
