@@ -37,6 +37,16 @@ window.addEventListener('click', (event) => {
     }
 });
 
+// Функция форматирования чисел (разделитель — пробел)
+function formatNumber(number) {
+    return number.toLocaleString('ru-RU'); // Для русского формата (разделитель — пробел)
+}
+
+// Альтернативный вариант с точкой вместо пробела:
+// function formatNumber(number) {
+//     return number.toLocaleString('de-DE'); // Немецкий формат (разделитель — точка)
+// }
+
 document.addEventListener('DOMContentLoaded', function() {
 
     // DOM-элементы
@@ -178,20 +188,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
     
             // Обновляем DOM
-            cheapPartsTotal.textContent = totalCheapParts;
-            cheapPartsGuaranteed.textContent = guaranteedCheapParts;
-            cheapToolsTotal.textContent = totalCheapTools;
-            cheapToolsGuaranteed.textContent = guaranteedCheapTools;
-    
-            standardPartsTotal.textContent = totalStandardParts;
-            standardPartsGuaranteed.textContent = guaranteedStandardParts;
-            standardToolsTotal.textContent = totalStandardTools;
-            standardToolsGuaranteed.textContent = guaranteedStandardTools;
-    
-            advancedPartsTotal.textContent = totalAdvancedParts;
-            advancedPartsGuaranteed.textContent = guaranteedAdvancedParts;
-            advancedToolsTotal.textContent = totalAdvancedTools;
-            advancedToolsGuaranteed.textContent = guaranteedAdvancedTools;
+            cheapPartsTotal.textContent = formatNumber(totalCheapParts);
+            cheapPartsGuaranteed.textContent = formatNumber(guaranteedCheapParts);
+            cheapToolsTotal.textContent = formatNumber(totalCheapTools);
+            cheapToolsGuaranteed.textContent = formatNumber(guaranteedCheapTools);
+        
+            standardPartsTotal.textContent = formatNumber(totalStandardParts);
+            standardPartsGuaranteed.textContent = formatNumber(guaranteedStandardParts);
+            standardToolsTotal.textContent = formatNumber(totalStandardTools);
+            standardToolsGuaranteed.textContent = formatNumber(guaranteedStandardTools);
+        
+            advancedPartsTotal.textContent = formatNumber(totalAdvancedParts);
+            advancedPartsGuaranteed.textContent = formatNumber(guaranteedAdvancedParts);
+            advancedToolsTotal.textContent = formatNumber(totalAdvancedTools);
+            advancedToolsGuaranteed.textContent = formatNumber(guaranteedAdvancedTools);
     
     
             //Расчет стоимости
@@ -203,8 +213,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                    guaranteedStandardParts * prices.standardPart + guaranteedStandardTools * prices.standardTool +
                                    guaranteedAdvancedParts * prices.advancedPart + guaranteedAdvancedTools * prices.advancedTool;
     
-            totalCostSpan.textContent = totalCost;
-            guaranteedCostSpan.textContent = guaranteedCost;
+            totalCostSpan.textContent = formatNumber(totalCost);
+            guaranteedCostSpan.textContent = formatNumber(guaranteedCost);
     
         }
 
