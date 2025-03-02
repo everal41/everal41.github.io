@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор заточки STALCRAFT</title>
+    <meta name="description" content="Калькулятор заточки, Сталкрафт, STALCRAFT, StalMath, заточка снаряжения.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sharpening.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="header-links">
+            <a href="#" id="open-about">О сайте</a>
+            <a href="#" id="open-contacts">Связь</a>
+        </nav>
+        <div class="header-logo">
+            <h1>StalMath</h1>
+        </div>
+        <nav class="header-links">
+            <a href="index.html">Калькулятор обменных монет</a>
+            <a href="sharpening.html">Калькулятор заточки</a> <!-- Ссылка на страницу заточки -->
+        </nav>
+    </header>
+
+    <!-- Модальные окна (скопированы из index.html, без изменений) -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>О сайте StalMath</h2>
+            <p>Этот сайт предназначен для помощи игрокам STALCRAFT в расчёте стоимости бартерных ресурсов и заточки снаряжения. Он предоставляет удобные калькуляторы.</p>
+            <h3>Можно ли как-то помочь?</h3>
+             <p>
+                Да, вы можете помочь посредством сбора обратной информации об использовании сайта.
+             </p>
+             <ul>
+                 <li>Если вы найдёте недочёты.</li>
+                 <li>Если у вас будут здравые идеи по улучшению сайта.</li>
+             </ul>
+            <p>Создатель: <a href="https://vk.com/everal41" target="_blank">everal41</a></p>
+        </div>
+    </div>
+
+    <div id="contacts-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Как с тобой связаться?</h2>
+            <p>Вы можете связаться со мной следующими способами:</p>
+            <ul>
+                <li>ВКонтакте: <a href="https://vk.com/everal41" target="_blank">everal41</a></li>
+                <li>Сервер в Discord:  <a href="https://discord.gg/9hkdXxRSnr" target="_blank" class="discord-link">
+                <i class="fab fa-discord"></i></a></li>
+                <li>Ник активного персонажа в игре: <span style="color: #4CAF50;">VoidWalker_</span></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Конец модальных окон -->
+
+    <div class="container sharpening-container">
+        <h1>Калькулятор заточки STALCRAFT</h1>
+
+        <div class="sharpening-settings">
+            <div class="level-select">
+                <label for="start-level">С уровня:</label>
+                <select id="start-level">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                </select>
+            </div>
+
+            <div class="level-select">
+                <label for="end-level">До уровня:</label>
+                <select id="end-level">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
+
+            <div class="current-attempt">
+                <label for="current-attempt">Текущая попытка:</label>
+                <input type="number" id="current-attempt" min="0" value="0">
+            </div>
+        </div>
+        <h2>Цены ресурсов</h2>
+        <div class="price-inputs">
+                <div class="resource-price">
+                    <label for="cheap-part-price" class="cheap-part-price">Дешёвые запчасти:</label>
+                    <input type="number" id="cheap-part-price" min="0" value="100">  <!-- Пример цены -->
+                </div>
+                <div class="resource-price">
+                    <label for="cheap-tool-price">Дешёвые инструменты:</label>
+                    <input type="number" id="cheap-tool-price" min="0" value="200"> <!-- Пример цены -->
+                </div>
+                <div class="resource-price">
+                    <label for="standard-part-price">Стандартные запчасти:</label>
+                    <input type="number" id="standard-part-price" min="0" value="500"> <!-- Пример цены -->
+                </div>
+                <div class="resource-price">
+                    <label for="standard-tool-price">Стандартные инструменты:</label>
+                    <input type="number" id="standard-tool-price" min="0" value="1000"> <!-- Пример цены -->
+                </div>
+                <div class="resource-price">
+                     <label for="advanced-part-price">Продвинутые запчасти:</label>
+                     <input type="number" id="advanced-part-price" min="0" value="2000"> <!-- Пример цены -->
+                </div>
+                <div class="resource-price">
+                    <label for="advanced-tool-price">Продвинутые инструменты:</label>
+                    <input type="number" id="advanced-tool-price" min="0" value="4000"> <!-- Пример цены -->
+                </div>
+        </div>
+
+        <h2>Необходимые ресурсы</h2>
+        <div class="resource-display">
+            <div class="resource-block cheap-resources">
+                <img src="images/sharpening/cheap_part.webp" alt="Дешевые запчасти">
+                <div class="resource-info">
+                    <span class="resource-name cheap">Дешевые запчасти</span>
+                    <div>
+                        <span class="total-label">Всего:</span>
+                        <span class="total-amount cheap-parts-total">0</span>
+                    </div>
+                    <div>
+                        <span class="guaranteed-label">До гаранта:</span>
+                        <span class="guaranteed-amount cheap-parts-guaranteed">0</span>
+                    </div>
+                </div>
+            </div>
+             <div class="resource-block cheap-resources">
+                <img src="images/sharpening/cheap_tool.webp" alt="Дешевые инструменты">
+                <div class="resource-info">
+                    <span class="resource-name cheap">Дешевые инструменты</span>
+                    <div>
+                        <span class="total-label">Всего:</span>
+                            <span class="total-amount cheap-tools-total">0</span>
+                        </div>
+                        <div>
+                            <span class="guaranteed-label">До гаранта:</span>
+                            <span class="guaranteed-amount cheap-tools-guaranteed">0</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="resource-block standard-resources">
+                    <img src="images/sharpening/standard_part.webp" alt="Стандартные запчасти">
+                    <div class="resource-info">
+                        <span class="resource-name standard">Стандартные запчасти</span>
+                        <div>
+                            <span class="total-label">Всего:</span>
+                            <span class="total-amount standard-parts-total">0</span>
+                        </div>
+                        <div>
+                            <span class="guaranteed-label">До гаранта:</span>
+                            <span class="guaranteed-amount standard-parts-guaranteed">0</span>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="resource-block standard-resources">
+                    <img src="images/sharpening/standard_tool.webp" alt="Стандартные инструменты">
+                    <div class="resource-info">
+                        <span class="resource-name standard">Стандартные инструменты</span>
+                        <div>
+                            <span class="total-label">Всего:</span>
+                            <span class="total-amount standard-tools-total">0</span>
+                        </div>
+                        <div>
+                            <span class="guaranteed-label">До гаранта:</span>
+                            <span class="guaranteed-amount standard-tools-guaranteed">0</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="resource-block advanced-resources">
+                    <img src="images/sharpening/advanced_part.webp" alt="Продвинутые запчасти">
+                    <div class="resource-info">
+                        <span class="resource-name advanced">Продвинутые запчасти</span>
+                        <div>
+                            <span class="total-label">Всего:</span>
+                            <span class="total-amount advanced-parts-total">0</span>
+                        </div>
+                        <div>
+                            <span class="guaranteed-label">До гаранта:</span>
+                            <span class="guaranteed-amount advanced-parts-guaranteed">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="resource-block advanced-resources">
+                    <img src="images/sharpening/advanced_tool.webp" alt="Продвинутые инструменты">
+                    <div class="resource-info">
+                        <span class="resource-name advanced">Продвинутые инструменты</span>
+                        <div>
+                            <span class="total-label">Всего:</span>
+                            <span class="total-amount advanced-tools-total">0</span>
+                        </div>
+                        <div>
+                            <span class="guaranteed-label">До гаранта:</span>
+                            <span class="guaranteed-amount advanced-tools-guaranteed">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="cost-display">
+                <h2>Стоимость заточки</h2>
+                <div>
+                    <span class="total-label">Общая стоимость:</span>
+                    <span class="total-cost">0</span>
+                </div>
+                <div>
+                    <span class="guaranteed-label">Стоимость до гаранта:</span>
+                    <span class="guaranteed-cost">0</span>
+                </div>
+            </div>
+    
+            <button id="calculate-sharpening">Рассчитать</button>
+             <div class="error-message" style="display: none;"></div>
+        </div>
+    
+        <script src="sharpening.js"></script>
+    </body>
+    </html>

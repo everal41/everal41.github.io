@@ -1,0 +1,120 @@
+/* Переиспользуем стили из styles.css, добавляя специфичные для sharpening */
+
+.sharpening-container {
+    /* Специфичные стили для контейнера калькулятора заточки, если нужны */
+    flex-direction: column; /* Элементы располагаются в колонку */
+}
+
+.sharpening-settings {
+    display: flex;
+    justify-content: space-around; /* Равномерное распределение */
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Перенос на новую строку, если не помещается */
+}
+
+.level-select, .current-attempt {
+    margin: 10px; /* Отступы */
+}
+.price-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Создаёт две колонки одинаковой ширины */
+    grid-gap: 1px; /* Добавляет пространство между элементами */
+    margin-bottom: 10px;
+}
+.resource-price{
+     margin: 10px; /* Отступы */
+}
+
+.level-select label, .current-attempt label, .resource-price label {
+    margin-right: 5px;
+}
+
+.level-select select, .current-attempt input, .resource-price input {
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #333;
+    color: #f0e68c;
+    border: 1px solid #666;
+}
+
+.resource-display {
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос на новую строку */
+    margin-bottom: 20px;
+}
+
+.resource-block {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    min-width: 250px; /* Минимальная ширина блока */
+}
+
+.resource-block img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.resource-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.cheap {
+    color: #9DEB9D;
+}
+.standard {
+    color: #9F9FED;
+}
+.advanced {
+    color: #EA9D9E;
+}
+
+.total-label, .guaranteed-label {
+    margin-right: 5px;
+}
+
+.total-amount, .guaranteed-amount {
+    font-weight: bold;
+}
+/* Стили для дешёвых, стандартных, продвинутых */
+.cheap-resources, .standard-resources, .advanced-resources {
+     border: 1px solid #666;
+}
+
+.cost-display {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.total-cost, .guaranteed-cost {
+    font-weight: bold;
+    margin-left: 5px;
+}
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .sharpening-settings, .price-inputs {
+        flex-direction: column; /* Перестраиваем в колонку */
+        align-items: stretch; /* Растягиваем на всю ширину */
+    }
+    .resource-block{
+        min-width: auto; /* Убираем ограничение ширины */
+        width: 100%; /* Растягиваем на всю ширину */
+    }
+}
