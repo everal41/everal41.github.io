@@ -307,6 +307,9 @@ input[type=number] {
 .rank-purple { color: #cc66ff; font-weight: bold; } /* Светло-фиолетовый */
 .rank-red { color: #ff6666; font-weight: bold; } /* Светло-красный */
 .rank-orange { color: orange; font-weight: bold; }
+.rank-yellow { color: #e6d09c; font-weight: bold; }
+.rank-darkolivegreen { color: #7c7d60; font-weight: bold; }
+.rank-brown { color: #9c6d54; font-weight: bold; }
 
 /* Стили для раскрывающихся списков */
 details {
