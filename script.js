@@ -51,9 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "Ветка 7.62 глушителей": "rank-darkolivegreen", "Ветка 7.62 глушителей на отдачу": "rank-darkolivegreen", "Ветка 7.62 надульников на разброс": "rank-darkolivegreen", "Ветка сбалансированных 7.62 надульников": "rank-darkolivegreen", "Ветка 7.62 надульников на гориз. отдачу": "rank-darkolivegreen", "Ветка 7.62 надульников на отдачу": "rank-darkolivegreen",
         "Ветка 5.56 глушителей": "rank-yellow", "Ветка 5.56 надульников на разброс": "rank-yellow", "Ветка сбалансированных 5.56 надульников": "rank-yellow",
         "Ветка 5.45 глушителей": "rank-green", "Ветка 5.45 надульников на разброс": "rank-green", "Ветка сбалансированных 5.45 надульников": "rank-green",
-        "Ветка сбалансированных 9 мм надульников": "rank-orange", "Ветка 9 мм надульников на разброс": "rank-orange", "Ветка 9 мм глушителей": "rank-orange",
+        "Ветка сбалансированных 9 мм надульников": "rank-yellowlight", "Ветка 9 мм надульников на разброс": "rank-yellowlight", "Ветка 9 мм глушителей": "rank-yellowlight", "Ствол на D-Eagle": "rank-yellowlight",
         "Ветка надульника на АШ-12": "rank-orange", "Ветка глушителя на АШ-12": "rank-orange",
-        "Ствол на D-Eagle": "rank-orange",
         "Ветка А-545": "rank-green",
         "Ветка FN F2000 Tactical": "rank-yellow",
         "Ветка АК-15": "rank-darkolivegreen",
@@ -62,6 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
         "Ветка СВД-М": "rank-darkolivegreen",
         "Ветка Mk 14 EBR": "rank-darkolivegreen",
         "Ветка АМБ-17": "rank-brown",
+        "Ветка СР-3М": "rank-brown",
+        "Ветка ВСС-М «Винторез»": "rank-brown",
+        "Ветка ППК-20": "rank-yellowlight",
+        "Ветка TDI KRISS Vector": "rank-yellowlight",
+        "Ветка ОЦ-33 «Пернач»": "rank-yellowlight",
+        "Ветка Desert Eagle Mark XIX": "rank-yellowlight",
     };
 
     // Цвета для названий контейнеров (объект, а не классы)
@@ -188,6 +193,39 @@ document.addEventListener('DOMContentLoaded', function() {
         "АМБ-17": "#EA9D9E",
         "АС «Вал»": "#BF5BAD",
         "АКМ «Тишина»": "#BF5BAD",
+        "СР-3М": "#EA9D9E",
+        "СР-3 «Вихрь»": "#BF5BAD",
+        "СР-2М «Вереск»": "#BF5BAD",
+        "ПП-2000": "#9F9FED",
+        "«Гепард»": "#9DEB9D",
+        "ПП-91 «Кедр»": "#9DEB9D",
+        "ВСС-М «Винторез»": "#EA9D9E",
+        "ВСС «Винторез»": "#BF5BAD",
+        "ППК-20": "#EA9D9E",
+        "«Витязь-СН»": "#BF5BAD",
+        "ПП-19-01 «Витязь»": "#BF5BAD",
+        "АЕК-919К «Каштан»": "#9F9FED",
+        "TDI KRISS Vector": "#EA9D9E",
+        "FN P90": "#BF5BAD",
+        "Beretta Mx4 Storm": "#BF5BAD",
+        "HK MP5": "#BF5BAD",
+        "ПП-19 «Бизон-2-01»": "#BF5BAD",
+        "HK UMP45": "#BF5BAD",
+        "Spectre M4": "#9F9FED",
+        "Vz.68 Scorpion": "#9DEB9D",
+        "IMI Uzi": "#9DEB9D",
+        "ОЦ-33 «Пернач»": "#EA9D9E",
+        "Glock 17": "#BF5BAD",
+        "Beretta 93R": "#BF5BAD",
+        "Beretta 92FS": "#BF5BAD",
+        "Форт-12": "#9F9FED",
+        "Walther P99": "#9F9FED",
+        "Mauser C96": "#9F9FED",
+        "ТТ": "#9DEB9D",
+        "Desert Eagle Mark XIX": "#EA9D9E",
+        "Desert Eagle Mark VII": "#BF5BAD",
+        "SW1911": "#BF5BAD",
+        "Browning Hi-Power": "#9F9FED",
     };
 
     // Пресеты брони и оружия с рангами
@@ -273,14 +311,14 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon6", name: "СВД-М", image: "images/weapon/svdm.webp", rank: "Ветка СВД-М", resources: { veshestvo_07270: 4763, psi_mayachok: 1295, gamma_fragment: 1040, kvantovaya_batareya: 1016 } },
             { id: "weapon7", name: "Mk 14 EBR", image: "images/weapon/ebr.webp", rank: "Ветка Mk 14 EBR", resources: { veshestvo_07270: 4763, psi_mayachok: 1295, gamma_fragment: 1040, kvantovaya_batareya: 1016 } },
             { id: "weapon8", name: "АМБ-17", image: "images/weapon/amb.webp", rank: "Ветка АМБ-17", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1534, gamma_fragment: 1023, kvantovaya_batareya: 1011 } },
-            { id: "weapon9", name: "АШ-12", image: "images/weapon/ash.webp", rank: "Мастер", resources: { gorkolistnik: 2043, limb: 2114, lambda_fragment: 382, anomalnaya_batareya: 68, limboplazma: 31 } },
-            { id: "weapon10", name: "СР-3М", image: "images/weapon/cp3m.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 1044, veshestvo_07270: 4234, psi_mayachok: 1312, gamma_fragment: 888, kvantovaya_batareya: 867 } },
-            { id: "weapon11", name: "ППК-20", image: "images/weapon/ppk.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 1044, veshestvo_07270: 4234, psi_mayachok: 1312, gamma_fragment: 888, kvantovaya_batareya: 867 } },
-            { id: "weapon12", name: "TDI KRISS Vector", image: "images/weapon/vector.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 1044, veshestvo_07270: 4234, psi_mayachok: 1105, gamma_fragment: 1054, kvantovaya_batareya: 867 } },
-            { id: "weapon13", name: "ВССК «Выхлоп»", image: "images/weapon/vssk.webp", rank: "Мастер", resources: { limb: 2348, lambda_fragment: 402, anomalnaya_batareya: 73, limboplazma: 15 } },
-            { id: "weapon14", name: "ВСС-М «Винторез»", image: "images/weapon/vssm.webp", rank: "Мастер", resources: { veshestvo_07270: 4763, psi_mayachok: 1476, gamma_fragment: 999, kvantovaya_batareya: 975 } },
-            { id: "weapon15", name: "ОЦ-33 «Пернач»", image: "images/weapon/pernach.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 943, veshestvo_07270: 2444, psi_mayachok: 1469, gamma_fragment: 1163, kvantovaya_batareya: 490 } },
-            { id: "weapon16", name: "Desert Eagle Mark XIX", image: "images/weapon/deagle.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 943, veshestvo_07270: 2444, psi_mayachok: 1469, gamma_fragment: 1163, kvantovaya_batareya: 490 } },
+            { id: "weapon9", name: "СР-3М", image: "images/weapon/cp3m.webp", rank: "Ветка СР-3М", resources: { ryzhiy_paporotnik: 1044, veshestvo_07270: 4234, psi_mayachok: 1312, gamma_fragment: 888, kvantovaya_batareya: 867 } },
+            { id: "weapon10", name: "ВСС-М «Винторез»", image: "images/weapon/vssm.webp", rank: "Ветка ВСС-М «Винторез»", resources: { veshestvo_07270: 4763, psi_mayachok: 1476, gamma_fragment: 999, kvantovaya_batareya: 975 } },
+            { id: "weapon11", name: "ППК-20", image: "images/weapon/ppk.webp", rank: "Ветка ППК-20", resources: { ryzhiy_paporotnik: 1044, veshestvo_07270: 4234, psi_mayachok: 1312, gamma_fragment: 888, kvantovaya_batareya: 867 } },
+            { id: "weapon12", name: "TDI KRISS Vector", image: "images/weapon/vector.webp", rank: "Ветка TDI KRISS Vector", resources: { ryzhiy_paporotnik: 1044, veshestvo_07270: 4234, psi_mayachok: 1105, gamma_fragment: 1054, kvantovaya_batareya: 867 } },
+            { id: "weapon13", name: "ОЦ-33 «Пернач»", image: "images/weapon/pernach.webp", rank: "Ветка ОЦ-33 «Пернач»", resources: { ryzhiy_paporotnik: 943, veshestvo_07270: 2444, psi_mayachok: 1469, gamma_fragment: 1163, kvantovaya_batareya: 490 } },
+            { id: "weapon14", name: "Desert Eagle Mark XIX", image: "images/weapon/deagle.webp", rank: "Ветка Desert Eagle Mark XIX", resources: { ryzhiy_paporotnik: 943, veshestvo_07270: 2444, psi_mayachok: 1469, gamma_fragment: 1163, kvantovaya_batareya: 490 } },
+            { id: "weapon15", name: "АШ-12", image: "images/weapon/ash.webp", rank: "Мастер", resources: { gorkolistnik: 2043, limb: 2114, lambda_fragment: 382, anomalnaya_batareya: 68, limboplazma: 31 } },
+            { id: "weapon16", name: "ВССК «Выхлоп»", image: "images/weapon/vssk.webp", rank: "Мастер", resources: { limb: 2348, lambda_fragment: 402, anomalnaya_batareya: 73, limboplazma: 15 } },
             { id: "weapon17", name: "РШ-12", image: "images/weapon/rsh.webp", rank: "Мастер", resources: { gorkolistnik: 1487, limb: 1310, lambda_fragment: 387, anomalnaya_batareya: 40, limboplazma: 15 } },
             { id: "weapon18", name: "Кукри", image: "images/weapon/kukri.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 635, psi_mayachok: 449, gamma_fragment: 533, kvantovaya_batareya: 234 } },
             { id: "weapon19", name: "Антитеррор", image: "images/weapon/anti.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 960, veshestvo_07270: 1040, psi_mayachok: 450, gamma_fragment: 320, kvantovaya_batareya: 350 } },
@@ -289,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon22", name: "АН-94М «Абакан»", image: "images/weapon/abakan.webp", rank: "Ветка А-545", resources: { severny_moh: 867, durman_kamen: 899, ostatki_akkumulyatora: 450, beta_fragment: 125 } },
             { id: "weapon23", name: "АС «Вал»", image: "images/weapon/val.webp", rank: "Ветка АМБ-17", resources: { ryzhiy_paporotnik: 586, veshestvo_07270: 2373, psi_mayachok: 737, gamma_fragment: 492, kvantovaya_batareya: 486 } },
             { id: "weapon24", name: "АКМ «Тишина»", image: "images/weapon/akmt.webp", rank: "Ветка АМБ-17", resources: { severny_moh: 867, durman_kamen: 899, ostatki_akkumulyatora: 450, beta_fragment: 125 } },
-            { id: "weapon25", name: "ВСС «Винторез»", image: "images/weapon/vss.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 564, veshestvo_07270: 2288, psi_mayachok: 709, gamma_fragment: 480, kvantovaya_batareya: 469 } },
+            { id: "weapon25", name: "ВСС «Винторез»", image: "images/weapon/vss.webp", rank: "Ветка ВСС-М «Винторез»", resources: { ryzhiy_paporotnik: 564, veshestvo_07270: 2288, psi_mayachok: 709, gamma_fragment: 480, kvantovaya_batareya: 469 } },
             { id: "weapon26", name: "АК-203", image: "images/weapon/203.webp", rank: "Ветка АК-15", resources: { ryzhiy_paporotnik: 586, veshestvo_07270: 2373, psi_mayachok: 737, gamma_fragment: 492, kvantovaya_batareya: 486 } },
             { id: "weapon27", name: "АК-103", image: "images/weapon/103.webp", rank: "Ветка АК-15", resources: { severny_moh: 867, durman_kamen: 899, ostatki_akkumulyatora: 450, beta_fragment: 125 } },
             { id: "weapon28", name: "ОЦ-14 «Гроза»", image: "images/weapon/groza.webp", rank: "Ветеран", resources: { gorkolistnik: 982, limb: 1015, lambda_fragment: 184, anomalnaya_batareya: 33, limboplazma: 14 } },
@@ -304,15 +342,15 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon37", name: "L86A1", image: "images/weapon/l86a1.webp", rank: "Ветка FN F2000 Tactical", resources: { severny_moh: 908, durman_kamen: 941, ostatki_akkumulyatora: 381, beta_fragment: 163 } },
             { id: "weapon38", name: "M4A1 CQC", image: "images/weapon/cqc.webp", rank: "Ветка FN F2000 Tactical", resources: { severny_moh: 867, durman_kamen: 899, ostatki_akkumulyatora: 364, beta_fragment: 155 } },
             { id: "weapon39", name: "L85A1", image: "images/weapon/l85a1.webp", rank: "Ветка FN F2000 Tactical", resources: { severny_moh: 867, durman_kamen: 899, ostatki_akkumulyatora: 364, beta_fragment: 155 } },
-            { id: "weapon40", name: "СР-2М «Вереск»", image: "images/weapon/veresk.webp", rank: "Ветеран", resources: { severny_moh: 770, durman_kamen: 799, ostatki_akkumulyatora: 400, beta_fragment: 111 } },
-            { id: "weapon41", name: "СР-3 «Вихрь»", image: "images/weapon/vihr.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 630, gamma_fragment: 426, kvantovaya_batareya: 416 } },
-            { id: "weapon42", name: "ПП-19-01 «Витязь»", image: "images/weapon/pp19.webp", rank: "Ветеран", resources: { severny_moh: 770, durman_kamen: 799, ostatki_akkumulyatora: 400, beta_fragment: 111 } },
-            { id: "weapon43", name: "«Витязь-СН»", image: "images/weapon/vityaz.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 630, gamma_fragment: 426, kvantovaya_batareya: 416 } },
-            { id: "weapon44", name: "ПП-19 «Бизон-2-01»", image: "images/weapon/bizon.webp", rank: "Ветеран", resources: { severny_moh: 770, durman_kamen: 799, ostatki_akkumulyatora: 400, beta_fragment: 111 } },
-            { id: "weapon45", name: "FN P90", image: "images/weapon/p90.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 531, gamma_fragment: 506, kvantovaya_batareya: 416 } },
-            { id: "weapon46", name: "HK UMP45", image: "images/weapon/ump45.webp", rank: "Ветеран", resources: { severny_moh: 770, durman_kamen: 799, ostatki_akkumulyatora: 323, beta_fragment: 138 } },
-            { id: "weapon47", name: "Beretta Mx4 Storm", image: "images/weapon/mx4.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 531, gamma_fragment: 506, kvantovaya_batareya: 416 } },
-            { id: "weapon48", name: "HK MP5", image: "images/weapon/mp5.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 531, gamma_fragment: 506, kvantovaya_batareya: 416 } },
+            { id: "weapon40", name: "СР-3 «Вихрь»", image: "images/weapon/vihr.webp", rank: "Ветка СР-3М", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 630, gamma_fragment: 426, kvantovaya_batareya: 416 } },
+            { id: "weapon41", name: "СР-2М «Вереск»", image: "images/weapon/veresk.webp", rank: "Ветка СР-3М", resources: { severny_moh: 770, durman_kamen: 799, ostatki_akkumulyatora: 400, beta_fragment: 111 } },
+            { id: "weapon42", name: "«Витязь-СН»", image: "images/weapon/vityaz.webp", rank: "Ветка ППК-20", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 630, gamma_fragment: 426, kvantovaya_batareya: 416 } },
+            { id: "weapon43", name: "ПП-19-01 «Витязь»", image: "images/weapon/pp19.webp", rank: "Ветка ППК-20", resources: { severny_moh: 770, durman_kamen: 799, ostatki_akkumulyatora: 400, beta_fragment: 111 } },
+            { id: "weapon44", name: "FN P90", image: "images/weapon/p90.webp", rank: "Ветка TDI KRISS Vector", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 531, gamma_fragment: 506, kvantovaya_batareya: 416 } },
+            { id: "weapon45", name: "Beretta Mx4 Storm", image: "images/weapon/mx4.webp", rank: "Ветка TDI KRISS Vector", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 531, gamma_fragment: 506, kvantovaya_batareya: 416 } },
+            { id: "weapon46", name: "HK MP5", image: "images/weapon/mp5.webp", rank: "Ветка TDI KRISS Vector", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 531, gamma_fragment: 506, kvantovaya_batareya: 416 } },
+            { id: "weapon47", name: "ПП-19 «Бизон-2-01»", image: "images/weapon/bizon.webp", rank: "Ветка TDI KRISS Vector", resources: { severny_moh: 770, durman_kamen: 799, ostatki_akkumulyatora: 400, beta_fragment: 111 } },
+            { id: "weapon48", name: "HK UMP45", image: "images/weapon/ump45.webp", rank: "Ветка TDI KRISS Vector", resources: { severny_moh: 770, durman_kamen: 799, ostatki_akkumulyatora: 323, beta_fragment: 138 } },
             { id: "weapon49", name: "M40A5", image: "images/weapon/m40a5.webp", rank: "Ветка L96A1", resources: { veshestvo_07270: 2288, psi_mayachok: 622, gamma_fragment: 500, kvantovaya_batareya: 488 } },
             { id: "weapon50", name: "Поношенная M40A5", image: "images/weapon/m40a5.webp", rank: "Ветка L96A1", resources: { durman_kamen: 983, ostatki_akkumulyatora: 419, beta_fragment: 144 } },
             { id: "weapon51", name: "СВД-С", image: "images/weapon/svds.webp", rank: "Ветка СВД-М", resources: { veshestvo_07270: 2288, psi_mayachok: 622, gamma_fragment: 500, kvantovaya_batareya: 488 } },
@@ -323,11 +361,11 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon56", name: "M1A", image: "images/weapon/m1a.webp", rank: "Ветка Mk 14 EBR", resources: { durman_kamen: 983, ostatki_akkumulyatora: 419, beta_fragment: 144 } },
             { id: "weapon57", name: "Сайга-12К", image: "images/weapon/saiga.webp", rank: "Ветеран", resources: { severny_moh: 1613, ostatki_akkumulyatora: 428, beta_fragment: 233 } },
             { id: "weapon58", name: "Protecta", image: "images/weapon/protecta.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 1066, psi_mayachok: 713, gamma_fragment: 894 } },
-            { id: "weapon59", name: "Beretta 92FS", image: "images/weapon/92fs.webp", rank: "Ветеран", resources: { severny_moh: 294, durman_kamen: 200, ostatki_akkumulyatora: 171, beta_fragment: 59 } },
-            { id: "weapon60", name: "Glock 17", image: "images/weapon/glock17.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 235, veshestvo_07270: 609, psi_mayachok: 344, gamma_fragment: 272 } },
-            { id: "weapon61", name: "Beretta 93R", image: "images/weapon/93r.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 235, veshestvo_07270: 609, psi_mayachok: 344, gamma_fragment: 272 } },
-            { id: "weapon62", name: "SW1911", image: "images/weapon/1911.webp", rank: "Ветеран", resources: { severny_moh: 294, durman_kamen: 200, ostatki_akkumulyatora: 171, beta_fragment: 59 } },
-            { id: "weapon63", name: "Desert Eagle Mark VII", image: "images/weapon/deagle.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 235, veshestvo_07270: 609, psi_mayachok: 344, gamma_fragment: 272 } },
+            { id: "weapon59", name: "Glock 17", image: "images/weapon/glock17.webp", rank: "Ветка ОЦ-33 «Пернач»", resources: { ryzhiy_paporotnik: 235, veshestvo_07270: 609, psi_mayachok: 344, gamma_fragment: 272 } },
+            { id: "weapon60", name: "Beretta 93R", image: "images/weapon/93r.webp", rank: "Ветка ОЦ-33 «Пернач»", resources: { ryzhiy_paporotnik: 235, veshestvo_07270: 609, psi_mayachok: 344, gamma_fragment: 272 } },
+            { id: "weapon61", name: "Beretta 92FS", image: "images/weapon/92fs.webp", rank: "Ветка ОЦ-33 «Пернач»", resources: { severny_moh: 294, durman_kamen: 200, ostatki_akkumulyatora: 171, beta_fragment: 59 } },
+            { id: "weapon62", name: "Desert Eagle Mark VII", image: "images/weapon/deagle.webp", rank: "Ветка Desert Eagle Mark XIX", resources: { ryzhiy_paporotnik: 235, veshestvo_07270: 609, psi_mayachok: 344, gamma_fragment: 272 } },
+            { id: "weapon63", name: "SW1911", image: "images/weapon/1911.webp", rank: "Ветка Desert Eagle Mark XIX", resources: { severny_moh: 294, durman_kamen: 200, ostatki_akkumulyatora: 171, beta_fragment: 59 } },
             { id: "weapon64", name: "Поношенный Colt Python", image: "images/weapon/python.webp", rank: "Ветеран", resources: { severny_moh: 294, durman_kamen: 200, ostatki_akkumulyatora: 171, beta_fragment: 59 } },
             { id: "weapon65", name: "Colt Python", image: "images/weapon/python.webp", rank: "Ветеран", resources: { gorkolistnik: 391, limb: 333, lambda_fragment: 100, limboplazma: 6 } },
             { id: "weapon66", name: "Охотничий мачете", image: "images/weapon/hmachet.webp", rank: "Ветеран", resources: { severny_moh: 370, ostatki_akkumulyatora: 98, beta_fragment: 53 } },
@@ -340,18 +378,18 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon73", name: "Поношенная L86A1", image: "images/weapon/l86a1.webp", rank: "Ветка FN F2000 Tactical", resources: { romashka: 201, rassolnik: 153, radioperedatchik: 103, alfa_fragment: 31 } },
             { id: "weapon74", name: "M4A1", image: "images/weapon/m4a1.webp", rank: "Ветка FN F2000 Tactical", resources: { romashka: 220, rassolnik: 166, radioperedatchik: 113, alfa_fragment: 42 } },
             { id: "weapon75", name: "Поношенная L85A1", image: "images/weapon/pl85a1.webp", rank: "Ветка FN F2000 Tactical", resources: { romashka: 220, rassolnik: 166, radioperedatchik: 113, alfa_fragment: 42 } },
-            { id: "weapon76", name: "ПП-2000", image: "images/weapon/2000.webp", rank: "Сталкер", resources: { romashka: 182, rassolnik: 137, radioperedatchik: 116, alfa_fragment: 28 } },
-            { id: "weapon77", name: "АЕК-919К «Каштан»", image: "images/weapon/919k.webp", rank: "Сталкер", resources: { romashka: 182, rassolnik: 137, radioperedatchik: 116, alfa_fragment: 28 } },
-            { id: "weapon78", name: "Spectre M4", image: "images/weapon/spectrem4.webp", rank: "Сталкер", resources: { romashka: 182, rassolnik: 137, radioperedatchik: 93, alfa_fragment: 35 } },
+            { id: "weapon76", name: "ПП-2000", image: "images/weapon/2000.webp", rank: "Ветка СР-3М", resources: { romashka: 182, rassolnik: 137, radioperedatchik: 116, alfa_fragment: 28 } },
+            { id: "weapon77", name: "АЕК-919К «Каштан»", image: "images/weapon/919k.webp", rank: "Ветка ППК-20", resources: { romashka: 182, rassolnik: 137, radioperedatchik: 116, alfa_fragment: 28 } },
+            { id: "weapon78", name: "Spectre M4", image: "images/weapon/spectrem4.webp", rank: "Ветка TDI KRISS Vector", resources: { romashka: 182, rassolnik: 137, radioperedatchik: 93, alfa_fragment: 35 } },
             { id: "weapon79", name: "Winchester M70", image: "images/weapon/m70.webp", rank: "Ветка L96A1", resources: { rassolnik: 169, radioperedatchik: 121, alfa_fragment: 36 } },
             { id: "weapon80", name: "СВТ-40", image: "images/weapon/cbt40.webp", rank: "Ветка СВД-М", resources: { rassolnik: 169, radioperedatchik: 121, alfa_fragment: 36 } },
             { id: "weapon81", name: "СКС-Т", image: "images/weapon/skst.webp", rank: "Ветка Mk 14 EBR", resources: { rassolnik: 169, radioperedatchik: 121, alfa_fragment: 36 } },
             { id: "weapon82", name: "Franchi SPAS-12", image: "images/weapon/spas.webp", rank: "Сталкер", resources: { romashka: 268, radioperedatchik: 87, alfa_fragment: 41 } },
             { id: "weapon83", name: "МР-153", image: "images/weapon/153.webp", rank: "Сталкер", resources: { severny_moh: 783, ostatki_akkumulyatora: 207, beta_fragment: 113 } },
-            { id: "weapon84", name: "Mauser C96", image: "images/weapon/c96.webp", rank: "Сталкер", resources: { koren_vonyuchka: 31, srachnik: 19 } },
-            { id: "weapon85", name: "Форт-12", image: "images/weapon/fort.webp", rank: "Сталкер", resources: { koren_vonyuchka: 75, srachnik: 46, mednaya_provoloka: 77 } },
-            { id: "weapon86", name: "Walther P99", image: "images/weapon/p99.webp", rank: "Сталкер", resources: { koren_vonyuchka: 75, srachnik: 46, mednaya_provoloka: 77 } },
-            { id: "weapon87", name: "Browning Hi-Power", image: "images/weapon/power.webp", rank: "Сталкер", resources: { koren_vonyuchka: 75, srachnik: 46, mednaya_provoloka: 77 } },
+            { id: "weapon84", name: "Форт-12", image: "images/weapon/fort.webp", rank: "Ветка ОЦ-33 «Пернач»", resources: { koren_vonyuchka: 75, srachnik: 46, mednaya_provoloka: 77 } },
+            { id: "weapon85", name: "Walther P99", image: "images/weapon/p99.webp", rank: "Ветка ОЦ-33 «Пернач»", resources: { koren_vonyuchka: 75, srachnik: 46, mednaya_provoloka: 77 } },
+            { id: "weapon86", name: "Mauser C96", image: "images/weapon/c96.webp", rank: "Ветка ОЦ-33 «Пернач»", resources: { koren_vonyuchka: 31, srachnik: 19 } },
+            { id: "weapon87", name: "Browning Hi-Power", image: "images/weapon/power.webp", rank: "Ветка Desert Eagle Mark XIX", resources: { koren_vonyuchka: 75, srachnik: 46, mednaya_provoloka: 77 } },
             { id: "weapon88", name: "Охотничий нож", image: "images/weapon/hunterk.webp", rank: "Сталкер", resources: { koren_vonyuchka: 81, mednaya_provoloka: 45 } },
             { id: "weapon89", name: "Тактический нож Ka-Bar BKR3", image: "images/weapon/bkr3.webp", rank: "Сталкер", resources: { romashka: 125, radioperedatchik: 41, alfa_fragment: 19 } },
             { id: "weapon90", name: "Glock Feldmesser 78", image: "images/weapon/gf78.webp", rank: "Сталкер", resources: { koren_vonyuchka: 125, srachnik: 101, mednaya_provoloka: 40 } },
@@ -361,10 +399,10 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon94", name: "АКС-74", image: "images/weapon/aks.webp", rank: "Ветка А-545", resources: { green_plesen: 33, bolotny_kamen: 42 } },
             { id: "weapon95", name: "M16A3", image: "images/weapon/16a3.webp", rank: "Ветка FN F2000 Tactical", resources: { koren_vonyuchka: 41, srachnik: 38, mednaya_provoloka: 40 } },
             { id: "weapon96", name: "M16A2", image: "images/weapon/16a2.webp", rank: "Ветка FN F2000 Tactical", resources: { green_plesen: 33, bolotny_kamen: 42 } },
-            { id: "weapon97", name: "ПП-91 «Кедр»", image: "images/weapon/kedr.webp", rank: "Новичок", resources: { green_plesen: 29, bolotny_kamen: 38 } },
-            { id: "weapon98", name: "«Гепард»", image: "images/weapon/gepard.webp", rank: "Новичок", resources: { koren_vonyuchka: 58, srachnik: 53, mednaya_provoloka: 57 } },
-            { id: "weapon99", name: "Vz.68 Scorpion", image: "images/weapon/scorp.webp", rank: "Новичок", resources: { green_plesen: 29, bolotny_kamen: 38 } },
-            { id: "weapon100", name: "IMI Uzi", image: "images/weapon/uzi.webp", rank: "Новичок", resources: { koren_vonyuchka: 58, srachnik: 53, mednaya_provoloka: 57 } },
+            { id: "weapon97", name: "«Гепард»", image: "images/weapon/gepard.webp", rank: "Ветка СР-3М", resources: { koren_vonyuchka: 58, srachnik: 53, mednaya_provoloka: 57 } },
+            { id: "weapon98", name: "ПП-91 «Кедр»", image: "images/weapon/kedr.webp", rank: "Ветка СР-3М", resources: { green_plesen: 29, bolotny_kamen: 38 } },
+            { id: "weapon99", name: "IMI Uzi", image: "images/weapon/uzi.webp", rank: "Ветка TDI KRISS Vector", resources: { koren_vonyuchka: 58, srachnik: 53, mednaya_provoloka: 57 } },
+            { id: "weapon100", name: "Vz.68 Scorpion", image: "images/weapon/scorp.webp", rank: "Ветка TDI KRISS Vector", resources: { green_plesen: 29, bolotny_kamen: 38 } },
             { id: "weapon101", name: "Поношенный Winchester M70", image: "images/weapon/m70.webp", rank: "Ветка L96A1", resources: { srachnik: 73, mednaya_provoloka: 66 } },
             { id: "weapon102", name: "Винтовка Мосина", image: "images/weapon/mosin.webp", rank: "Ветка L96A1", resources: { bolotny_kamen: 64 } },
             { id: "weapon103", name: "СКТ-40", image: "images/weapon/skt40.webp", rank: "Ветка СВД-М", resources: { srachnik: 73, mednaya_provoloka: 66 } },
@@ -373,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon106", name: "ТОЗ-34", image: "images/weapon/toz.webp", rank: "Новичок", resources: { koren_vonyuchka: 96 } },
             { id: "weapon107", name: "МР-133", image: "images/weapon/133.webp", rank: "Новичок", resources: { koren_vonyuchka: 136, mednaya_provoloka: 75 } },
             { id: "weapon108", name: "Mossberg 590A1", image: "images/weapon/590a1.webp", rank: "Новичок", resources: { koren_vonyuchka: 136, mednaya_provoloka: 75 } },
-            { id: "weapon109", name: "ТТ", image: "images/weapon/tt.webp", rank: "Новичок", resources: { green_plesen: 11, bolotny_kamen: 12 } },
+            { id: "weapon109", name: "ТТ", image: "images/weapon/tt.webp", rank: "Ветка ОЦ-33 «Пернач»", resources: { green_plesen: 11, bolotny_kamen: 12 } },
             { id: "weapon110", name: "Нож 6Х9", image: "images/weapon/6x9.webp", rank: "Новичок", resources: { green_plesen: 32 } },
             { id: "weapon111", name: "КО-1", image: "images/weapon/ko1.webp", rank: "Новичок", resources: { green_plesen: 6, bolotny_kamen: 3 } },
             { id: "weapon112", name: "Молоток", image: "images/weapon/hammer.webp", rank: "Новичок", resources: { green_plesen: 4, bolotny_kamen: 5 } },
@@ -387,6 +425,17 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon120", name: "АКС-74", image: "images/weapon/aks.webp", rank: "Ветка ПКП", resources: { green_plesen: 33, bolotny_kamen: 42 } },
             { id: "weapon121", name: "Винтовка Мосина", image: "images/weapon/mosin.webp", rank: "Ветка СВД-М", resources: { bolotny_kamen: 64 } },
             { id: "weapon122", name: "Винтовка Мосина", image: "images/weapon/mosin.webp", rank: "Ветка Mk 14 EBR", resources: { bolotny_kamen: 64 } },
+            { id: "weapon123", name: "АКМ «Тишина»", image: "images/weapon/akmt.webp", rank: "Ветка ВСС-М «Винторез»", resources: { severny_moh: 867, durman_kamen: 899, ostatki_akkumulyatora: 450, beta_fragment: 125 } },
+            { id: "weapon124", name: "АКМ", image: "images/weapon/akm.webp", rank: "Ветка ВСС-М «Винторез»", resources: { romashka: 220, rassolnik: 166, radioperedatchik: 140, alfa_fragment: 34 } },
+            { id: "weapon125", name: "АК-74М", image: "images/weapon/74m.webp", rank: "Ветка ВСС-М «Винторез»", resources: { koren_vonyuchka: 41, srachnik: 38, mednaya_provoloka: 40 } },
+            { id: "weapon126", name: "АКС-74", image: "images/weapon/aks.webp", rank: "Ветка ВСС-М «Винторез»", resources: { green_plesen: 33, bolotny_kamen: 42 } },
+            { id: "weapon127", name: "«Гепард»", image: "images/weapon/gepard.webp", rank: "Ветка ППК-20", resources: { koren_vonyuchka: 58, srachnik: 53, mednaya_provoloka: 57 } },
+            { id: "weapon128", name: "ПП-91 «Кедр»", image: "images/weapon/kedr.webp", rank: "Ветка ППК-20", resources: { green_plesen: 29, bolotny_kamen: 38 } },
+            { id: "weapon129", name: "АЕК-919К «Каштан»", image: "images/weapon/919k.webp", rank: "Ветка TDI KRISS Vector", resources: { romashka: 182, rassolnik: 137, radioperedatchik: 116, alfa_fragment: 28 } },
+            { id: "weapon130", name: "«Гепард»", image: "images/weapon/gepard.webp", rank: "Ветка TDI KRISS Vector", resources: { koren_vonyuchka: 58, srachnik: 53, mednaya_provoloka: 57 } },
+            { id: "weapon131", name: "ПП-91 «Кедр»", image: "images/weapon/kedr.webp", rank: "Ветка TDI KRISS Vector", resources: { green_plesen: 29, bolotny_kamen: 38 } },
+            { id: "weapon132", name: "Mauser C96", image: "images/weapon/c96.webp", rank: "Ветка Desert Eagle Mark XIX", resources: { koren_vonyuchka: 31, srachnik: 19 } },
+            { id: "weapon133", name: "ТТ", image: "images/weapon/tt.webp", rank: "Ветка Desert Eagle Mark XIX", resources: { green_plesen: 11, bolotny_kamen: 12 } },
         ],
         containers: [
             { id: "container1", name: "Контейнер «Улей»", image: "images/container/hive.webp", rank: "Контейнеры", resources: { ryzhiy_paporotnik: 565, veshestvo_07270: 1465, psi_mayachok: 599, gamma_fragment: 738, kvantovaya_batareya: 312 } },
@@ -482,18 +531,18 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "attachment56", name: "Глушитель С.К.О.С. МДУ SUPRA K-8 Integral", image: "images/attachment/supra.webp", rank: "Ветка 9 мм глушителей", resources: { durman_kamen: 74, ostatki_akkumulyatora: 91, beta_fragment: 16 } },
             { id: "attachment57", name: "Пламегаситель LoneWolf", image: "images/attachment/customg.webp", rank: "Ветка 9 мм глушителей", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
             { id: "attachment58", name: "MICRO BADGER", image: "images/attachment/customg.webp", rank: "Ветка 9 мм глушителей", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
-            // АШ-12 надульник
-            { id: "attachment59", name: "ДТК АШ-12", image: "images/attachment/dtkash.webp", rank: "Ветка надульника на АШ-12", resources: { ryzhiy_paporotnik: 610, veshestvo_07270: 900, psi_mayachok: 460, gamma_fragment: 124, kvantovaya_batareya: 198 } },
-            { id: "attachment60", name: "Рукоятка для ОЦ-14 «Гроза»", image: "images/attachment/rukgroza.webp", rank: "Ветка надульника на АШ-12", resources: { ryzhiy_paporotnik: 149, veshestvo_07270: 359, psi_mayachok: 129, gamma_fragment: 136 } },
-            { id: "attachment61", name: "SPRV 7.62", image: "images/attachment/venom.webp", rank: "Ветка надульника на АШ-12", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
-            { id: "attachment62", name: "Spikes Tactical Dynacomp", image: "images/attachment/venom.webp", rank: "Ветка надульника на АШ-12", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
-            { id: "attachment63", name: "Пламегаситель AKademia Тьма", image: "images/attachment/venom.webp", rank: "Ветка надульника на АШ-12", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
-            // АШ-12 глушитель
-            { id: "attachment64", name: "Глушитель АШ-12/МЦ-558", image: "images/attachment/sash.webp", rank: "Ветка глушителя на АШ-12", resources: { ryzhiy_paporotnik: 615, veshestvo_07270: 875, psi_mayachok: 450, gamma_fragment: 121, kvantovaya_batareya: 193 } },
-            { id: "attachment65", name: "Глушитель для ОЦ-14 «Гроза»", image: "images/attachment/sgroza.webp", rank: "Ветка глушителя на АШ-12", resources: { veshestvo_07270: 185, psi_mayachok: 151, gamma_fragment: 60 } },
-            { id: "attachment66", name: "ПБС-1", image: "images/attachment/atg.webp", rank: "Ветка глушителя на АШ-12", resources: { durman_kamen: 123, ostatki_akkumulyatora: 152, beta_fragment: 26 } },
             // Ствол на дигл
-            { id: "attachment67", name: "Удлиненный ствол D-Eagle", image: "images/attachment/lgdeagle.webp", rank: "Ствол на D-Eagle", resources: { ryzhiy_paporotnik: 289, veshestvo_07270: 870, psi_mayachok: 276, gamma_fragment: 135 } },
+            { id: "attachment59", name: "Удлиненный ствол D-Eagle", image: "images/attachment/lgdeagle.webp", rank: "Ствол на D-Eagle", resources: { ryzhiy_paporotnik: 289, veshestvo_07270: 870, psi_mayachok: 276, gamma_fragment: 135 } },
+            // АШ-12 надульник
+            { id: "attachment60", name: "ДТК АШ-12", image: "images/attachment/dtkash.webp", rank: "Ветка надульника на АШ-12", resources: { ryzhiy_paporotnik: 610, veshestvo_07270: 900, psi_mayachok: 460, gamma_fragment: 124, kvantovaya_batareya: 198 } },
+            { id: "attachment61", name: "Рукоятка для ОЦ-14 «Гроза»", image: "images/attachment/rukgroza.webp", rank: "Ветка надульника на АШ-12", resources: { ryzhiy_paporotnik: 149, veshestvo_07270: 359, psi_mayachok: 129, gamma_fragment: 136 } },
+            { id: "attachment62", name: "SPRV 7.62", image: "images/attachment/venom.webp", rank: "Ветка надульника на АШ-12", resources: { severny_moh: 87, durman_kamen: 59, ostatki_akkumulyatora: 73, beta_fragment: 13 } },
+            { id: "attachment63", name: "Spikes Tactical Dynacomp", image: "images/attachment/venom.webp", rank: "Ветка надульника на АШ-12", resources: { romashka: 29, rassolnik: 14, radioperedatchik: 30, alfa_fragment: 4 } },
+            { id: "attachment64", name: "Пламегаситель AKademia Тьма", image: "images/attachment/venom.webp", rank: "Ветка надульника на АШ-12", resources: { koren_vonyuchka: 18, srachnik: 11, mednaya_provoloka: 30 } },
+            // АШ-12 глушитель
+            { id: "attachment65", name: "Глушитель АШ-12/МЦ-558", image: "images/attachment/sash.webp", rank: "Ветка глушителя на АШ-12", resources: { ryzhiy_paporotnik: 615, veshestvo_07270: 875, psi_mayachok: 450, gamma_fragment: 121, kvantovaya_batareya: 193 } },
+            { id: "attachment66", name: "Глушитель для ОЦ-14 «Гроза»", image: "images/attachment/sgroza.webp", rank: "Ветка глушителя на АШ-12", resources: { veshestvo_07270: 185, psi_mayachok: 151, gamma_fragment: 60 } },
+            { id: "attachment67", name: "ПБС-1", image: "images/attachment/atg.webp", rank: "Ветка глушителя на АШ-12", resources: { durman_kamen: 123, ostatki_akkumulyatora: 152, beta_fragment: 26 } },
         ]
     };
 
@@ -744,6 +793,54 @@ document.addEventListener('DOMContentLoaded', function() {
             if (rank === "Ветка АМБ-17") {  //  Или другое условие, если у вас будет несколько веток с картинками
                 const img = document.createElement('img');
                 img.src = "images/weapon/amb.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка СР-3М") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/weapon/cp3m.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка ВСС-М «Винторез»") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/weapon/vssm.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка ППК-20") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/weapon/ppk.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка TDI KRISS Vector") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/weapon/vector.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка ОЦ-33 «Пернач»") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/weapon/pernach.webp"; //  Путь к изображению
+                img.alt = "Изображение надульника";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка Desert Eagle Mark XIX") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/weapon/deagle.webp"; //  Путь к изображению
                 img.alt = "Изображение надульника";
                 img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
                 summary.appendChild(img);
