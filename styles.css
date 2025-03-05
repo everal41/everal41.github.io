@@ -311,6 +311,8 @@ input[type=number] {
 .rank-darkolivegreen { color: #7c7d60; font-weight: bold; }
 .rank-brown { color: #9c6d54; font-weight: bold; }
 .rank-yellowlight { color: #fff2c9; font-weight: bold; }
+.rank-mustard { color: #b69540; font-weight: bold; }
+.rank-silver { color: #C0C0C0; font-weight: bold; }
 
 /* Стили для раскрывающихся списков */
 details {
