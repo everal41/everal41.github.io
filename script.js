@@ -75,6 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
         "Ножи": "rank-silver",
         "Сюжетные": "rank-green",
         "Ветка Центуриона": "rank-red",
+        "Ветка Зверобоя": "rank-red",
+        "Ветка Экзоскелета": "rank-red",
+        "Ветка Скифа": "rank-green",
+        "Ветка АО": "rank-green",
+        "Ветка Сатурна": "rank-blue",
+        "Фракционная броня": "rank-orange",
     };
 
     // Цвета для названий контейнеров (объект, а не классы)
@@ -270,6 +276,37 @@ document.addEventListener('DOMContentLoaded', function() {
         "Бронекостюм «Страйкер»": "#9F9FED",
         "Бронекостюм «Червь/Комбат-5М»": "#9DEB9D",
         "Костюм «Скаут»": "#9DEB9D",
+        "Экзоброня «Зверобой»": "#EA9D9E",
+        "Экзоброня «Егерь»": "#BF5BAD",
+        "Защитный костюм «Ош»": "#BF5BAD",
+        "Защитный костюм «Ворса»": "#9F9FED",
+        "Костюм «Траппер»": "#9DEB9D",
+        "Защитный костюм «Псарь»": "#9DEB9D",
+        "Экзоскелет «Туз/Мул»": "#EA9D9E",
+        "Экзоскелет «Масть/Самсон»": "#BF5BAD",
+        "Tяжелый бронекостюм «Громила/Восход»": "#BF5BAD",
+        "Бронекостюм «Пересмешник/Сокол»": "#9F9FED",
+        "Костюм «Клептоман/Грибник»": "#9DEB9D",
+        "Бандитский костюм/Аврора с противогазом": "#9DEB9D",
+        "Бронекостюм «Скиф-5»": "#EA9D9E",
+        "Бронекостюм «Скиф-4»": "#BF5BAD",
+        "Бронекостюм «Пахан/Скиф-2м»": "#BF5BAD",
+        "УКАЗ АО-6 «Кочевник»": "#EA9D9E",
+        "УКАЗ АО-5 «Пилигрим»": "#BF5BAD",
+        "УКАЗ АО-4 «Рейдер»": "#BF5BAD",
+        "Костюм АО-3 «Искатель»": "#9F9FED",
+        "Костюм АО-2 «Странник»": "#9DEB9D",
+        "ИП-4м": "#e6e6e6",
+        "Комбинезон «Сатурн»": "#EA9D9E",
+        "Комбинезон «Жнец/Уран»": "#BF5BAD",
+        "КИМ-99М «Малахит»": "#BF5BAD",
+        "КИМ-99 «Янтарь»": "#9F9FED",
+        "Бандитский костюм с баллонами/Аврора-Б": "#9DEB9D",
+        "Сверхтяжелый бронекостюм": "#EA9D9E",
+        "Бронекостюм «Авангард»": "#EA9D9E",
+        "Бронекостюм «Каратель»": "#EA9D9E",
+        "Экзокостюм «Гончий»": "#EA9D9E",
+        "Комбинезон «Пересвет»": "#EA9D9E",
     };
 
     // Пресеты брони и оружия с рангами
@@ -281,65 +318,41 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "armor4", name: "Бронекостюм «Страйкер»", image: "images/armor/striker.webp", rank: "Ветка Центуриона", resources: { romashka: 206, rassolnik: 209, radioperedatchik: 106, alfa_fragment: 38 } },
             { id: "armor5", name: "Бронекостюм «Червь/Комбат-5М»", image: "images/armor/worm.webp", rank: "Ветка Центуриона", resources: { koren_vonyuchka: 67, srachnik: 81, mednaya_provoloka: 55 } },
             { id: "armor6", name: "Костюм «Скаут»", image: "images/armor/scout.webp", rank: "Ветка Центуриона", resources: { green_plesen: 27, bolotny_kamen: 57 } },
-            { id: "armor7", name: "Экзоброня «Зверобой»", image: "images/armor/furryeb.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 2511, veshestvo_07270: 3170, psi_mayachok: 1568, gamma_fragment: 1026 } },
-            { id: "armor5", name: "Поношенный «Туз/Мул»", image: "images/armor/tuz.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 708, veshestvo_07270: 1835, psi_mayachok: 750, gamma_fragment: 594, kvantovaya_batareya: 391 } },
-            { id: "armor6", name: "Экзоскелет «Туз/Мул»", image: "images/armor/tuz.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 1287, veshestvo_07270: 3337, psi_mayachok: 1364, gamma_fragment: 1080, kvantovaya_batareya: 711 } },
-            { id: "armor7", name: "Сверхтяжелый бронекостюм", image: "images/armor/banka.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 1755, veshestvo_07270: 9099, psi_mayachok: 1859, gamma_fragment: 1683, kvantovaya_batareya: 1940 } },
-            { id: "armor8", name: "Бронекостюм «Авангард»", image: "images/armor/avangard.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 2508, veshestvo_07270: 6499, psi_mayachok: 2656, gamma_fragment: 2104, kvantovaya_batareya: 1386 } },
-            { id: "armor9", name: "Поношенный АО-6 «Кочевник»", image: "images/armor/aoshka.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 850, veshestvo_07270: 1560, psi_mayachok: 637, gamma_fragment: 743, kvantovaya_batareya: 333 } },
-            { id: "armor10", name: "УКАЗ АО-6 «Кочевник»", image: "images/armor/aoshka.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 1545, veshestvo_07270: 2836, psi_mayachok: 1159, gamma_fragment: 1350, kvantovaya_batareya: 605 } },
-            { id: "armor11", name: "Бронекостюм «Скиф-4/4б»", image: "images/armor/skif4.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 602, veshestvo_07270: 2202, psi_mayachok: 637, gamma_fragment: 505, kvantovaya_batareya: 489 } },
-            { id: "armor12", name: "Бронекостюм «Скиф-5»", image: "images/armor/skuf.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 1094, veshestvo_07270: 4004, psi_mayachok: 1159, gamma_fragment: 918, kvantovaya_batareya: 889 } },
-            { id: "armor13", name: "Бронекостюм «Каратель»", image: "images/armor/karatel.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 2132, veshestvo_07270: 7799, psi_mayachok: 2258, gamma_fragment: 1788, kvantovaya_batareya: 1732 } },
-            { id: "armor14", name: "Экзокостюм «Гончий»", image: "images/armor/kust.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 2132, veshestvo_07270: 7799, psi_mayachok: 2258, gamma_fragment: 1788, kvantovaya_batareya: 1732 } },
-            { id: "armor15", name: "Поношенный комбинезон «Сатурн»", image: "images/armor/paket.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 920, veshestvo_07270: 918, psi_mayachok: 975, gamma_fragment: 1129 } },
-            { id: "armor16", name: "Комбинезон «Сатурн»", image: "images/armor/paket.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 1674, veshestvo_07270: 1668, psi_mayachok: 1773, gamma_fragment: 2052 } },
-            { id: "armor17", name: "Комбинезон «Пересвет»", image: "images/armor/peresvet.webp", rank: "Мастер", resources: { ryzhiy_paporotnik: 3260, veshestvo_07270: 3250, psi_mayachok: 3453, gamma_fragment: 3997 } },
-            { id: "armor21", name: "Поношенный защитный костюм «Ош»", image: "images/armor/osh.webp", rank: "Ветеран", resources: { severny_moh: 856, durman_kamen: 284, ostatki_akkumulyatora: 212, beta_fragment: 60 } },
-            { id: "armor22", name: "Защитный костюм «Ош»", image: "images/armor/osh.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 417, veshestvo_07270: 527, psi_mayachok: 261, gamma_fragment: 171 } },
-            { id: "armor23", name: "Экзоброня «Егерь»", image: "images/armor/eger.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 759, veshestvo_07270: 959, psi_mayachok: 474, gamma_fragment: 310 } },
-            { id: "armor24", name: "Tяжелый бронекостюм «Громила/Восход»", image: "images/armor/gromila.webp", rank: "Ветеран", resources: { severny_moh: 549, durman_kamen: 373, ostatki_akkumulyatora: 230, beta_fragment: 79 } },
-            { id: "armor25", name: "Поношенная «Масть/Самсон»", image: "images/armor/mast.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 268, veshestvo_07270: 693, psi_mayachok: 283, gamma_fragment: 224 } },
-            { id: "armor26", name: "Экзоскелет «Масть/Самсон»", image: "images/armor/mast.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 487, veshestvo_07270: 1261, psi_mayachok: 515, gamma_fragment: 408 } },
-            { id: "armor27", name: "Поношенный АО-4 «Рейдер»", image: "images/armor/ao4.webp", rank: "Ветеран", resources: { severny_moh: 659, durman_kamen: 299, ostatki_akkumulyatora: 184, beta_fragment: 95 } },
-            { id: "armor28", name: "УКАЗ АО-4 «Рейдер»", image: "images/armor/ao4.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 321, veshestvo_07270: 555, psi_mayachok: 227, gamma_fragment: 269 } },
-            { id: "armor29", name: "УКАЗ АО-5 «Пилигрим»", image: "images/armor/ao5.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 584, veshestvo_07270: 1009, psi_mayachok: 412, gamma_fragment: 490 } },
-            { id: "armor30", name: "Поношенный «Пахан/Скиф-2м»", image: "images/armor/pahan.webp", rank: "Ветеран", resources: { severny_moh: 483, durman_kamen: 508, ostatki_akkumulyatora: 203, beta_fragment: 70 } },
-            { id: "armor31", name: "Бронекостюм «Пахан/Скиф-2м»", image: "images/armor/pahan.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 235, veshestvo_07270: 943, psi_mayachok: 249, gamma_fragment: 198 } },
-            { id: "armor32", name: "Поношенный «Скиф-4/4б»", image: "images/armor/skif4.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 428, veshestvo_07270: 1715, psi_mayachok: 454, gamma_fragment: 359 } },
-            { id: "armor33", name: "Поношенный комбинезон «Жнец/Уран»", image: "images/armor/znec.webp", rank: "Ветеран", resources: { severny_moh: 571, durman_kamen: 149, ostatki_akkumulyatora: 240, beta_fragment: 121 } },
-            { id: "armor34", name: "Комбинезон «Жнец/Уран»", image: "images/armor/znec.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 278, veshestvo_07270: 277, psi_mayachok: 295, gamma_fragment: 341 } },
-            { id: "armor35", name: "КИМ-122 «Аметист»", image: "images/armor/ametist.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 366, veshestvo_07270: 365, psi_mayachok: 388, gamma_fragment: 449 } },
-            { id: "armor36", name: "Поврежденный комбинезон «Сатурн»", image: "images/armor/paket.webp", rank: "Ветеран", resources: { ryzhiy_paporotnik: 506, veshestvo_07270: 505, psi_mayachok: 536, gamma_fragment: 621 } },
-            { id: "armor39", name: "Поношенный защитный костюм «Ворса»", image: "images/armor/vorsa.webp", rank: "Сталкер", resources: { romashka: 182, rassolnik: 44, radioperedatchik: 55, alfa_fragment: 14 } },
-            { id: "armor40", name: "Защитный костюм «Ворса»", image: "images/armor/vorsa.webp", rank: "Сталкер", resources: { romashka: 331, rassolnik: 80, radioperedatchik: 100, alfa_fragment: 25 } },
-            { id: "armor41", name: "Поношенный бронекостюм «Пересмешник/Сокол»", image: "images/armor/peresm.webp", rank: "Сталкер", resources: { romashka: 103, rassolnik: 79, radioperedatchik: 53, alfa_fragment: 16 } },
-            { id: "armor42", name: "Поношенный тяжелый бронекостюм «Громила/Восход»", image: "images/armor/gromila.webp", rank: "Сталкер", resources: { romashka: 212, rassolnik: 105, radioperedatchik: 109, alfa_fragment: 32 } },
-            { id: "armor43", name: "Бронекостюм «Пересмешник/Сокол»", image: "images/armor/peresm.webp", rank: "Сталкер", resources: { romashka: 187, rassolnik: 143, radioperedatchik: 96, alfa_fragment: 29 } },
-            { id: "armor44", name: "Поношенный костюм АО-3 «Искатель»", image: "images/armor/ao3.webp", rank: "Сталкер", resources: { romashka: 140, rassolnik: 46, radioperedatchik: 48, alfa_fragment: 21 } },
-            { id: "armor45", name: "Костюм АО-3 «Искатель»", image: "images/armor/ao3.webp", rank: "Сталкер", resources: { romashka: 254, rassolnik: 84, radioperedatchik: 87, alfa_fragment: 39 } },
-            { id: "armor46", name: "Поношенный КИМ-99М «Малахит»", image: "images/armor/kim.webp", rank: "Сталкер", resources: { romashka: 121, rassolnik: 23, radioperedatchik: 62, alfa_fragment: 27 } },
-            { id: "armor47", name: "КИМ-99М «Малахит»", image: "images/armor/kim.webp", rank: "Сталкер", resources: { romashka: 221, rassolnik: 42, radioperedatchik: 113, alfa_fragment: 49 } },
-            { id: "armor48", name: "КИМ-113 «Иолит/Изумруд/Топаз»", image: "images/armor/iolit.webp", rank: "Сталкер", resources: { severny_moh: 929, durman_kamen: 243, ostatki_akkumulyatora: 390, beta_fragment: 196 } },
-            { id: "armor52", name: "Защитный костюм «Псарь»", image: "images/armor/psar.webp", rank: "Новичок", resources: { koren_vonyuchka: 118, srachnik: 35 } },
-            { id: "armor53", name: "Поношенный костюм «Траппер»", image: "images/armor/trapper.webp", rank: "Новичок", resources: { koren_vonyuchka: 87, srachnik: 26, mednaya_provoloka: 36 } },
-            { id: "armor54", name: "Костюм «Траппер»", image: "images/armor/trapper.webp", rank: "Новичок", resources: { koren_vonyuchka: 157, srachnik: 48, mednaya_provoloka: 65 } },
-            { id: "armor55", name: "Костюм АО-1 «Бродяга»", image: "images/armor/ao1.webp", rank: "Новичок", resources: { koren_vonyuchka: 106, srachnik: 43 } },
-            { id: "armor56", name: "Поношенный АО-2 «Странник»", image: "images/armor/ao2.webp", rank: "Новичок", resources: { koren_vonyuchka: 69, srachnik: 28, mednaya_provoloka: 47 } },
-            { id: "armor57", name: "Костюм АО-2 «Странник»", image: "images/armor/ao2.webp", rank: "Новичок", resources: { koren_vonyuchka: 126, srachnik: 51, mednaya_provoloka: 86 } },
-            { id: "armor58", name: "Бандитский костюм/Аврора с противогазом", image: "images/armor/bksp.webp", rank: "Новичок", resources: { koren_vonyuchka: 70, srachnik: 64 } },
-            { id: "armor59", name: "Поношенный «Клептоман/Грибник»", image: "images/armor/kleptoman.webp", rank: "Новичок", resources: { koren_vonyuchka: 50, srachnik: 44, mednaya_provoloka: 41 } },
-            { id: "armor60", name: "Костюм «Клептоман/Грибник»", image: "images/armor/kleptoman.webp", rank: "Новичок", resources: { koren_vonyuchka: 91, srachnik: 80, mednaya_provoloka: 75 } },
-            { id: "armor61", name: "Бандитский костюм с баллонами/Аврора-Б", image: "images/armor/bksb.webp", rank: "Новичок", resources: { koren_vonyuchka: 176 } },
-            { id: "armor62", name: "Поношенный КИМ-99 «Янтарь»", image: "images/armor/yantar.webp", rank: "Новичок", resources: { koren_vonyuchka: 87, mednaya_provoloka: 72 } },
-            { id: "armor63", name: "КИМ-99 «Янтарь»", image: "images/armor/yantar.webp", rank: "Новичок", resources: { koren_vonyuchka: 157, mednaya_provoloka: 130 } },
-            { id: "armor64", name: "Куртка с бронежилетом", image: "images/armor/ksb.webp", rank: "Отмычка", resources: { green_plesen: 20, bolotny_kamen: 42 } },
-            { id: "armor65", name: "Маскировочный костюм «Смородина»", image: "images/armor/smorodina.webp", rank: "Отмычка", resources: { green_plesen: 28, bolotny_kamen: 59 } },
-            { id: "armor66", name: "Плащ", image: "images/armor/coat.webp", rank: "Отмычка", resources: { green_plesen: 40, bolotny_kamen: 21 } },
-            { id: "armor67", name: "Охотничий плащ", image: "images/armor/hcoat.webp", rank: "Отмычка", resources: { green_plesen: 56, bolotny_kamen: 29 } },
-            { id: "armor68", name: "ЗК-1 «Отмычка»", image: "images/armor/zk1.webp", rank: "Отмычка", resources: { green_plesen: 37, bolotny_kamen: 26 } },
-            { id: "armor69", name: "Бандитский костюм/Комбинезон «Аврора»", image: "images/armor/bandcost.webp", rank: "Отмычка", resources: { green_plesen: 44, bolotny_kamen: 69 } },
-            { id: "armor70", name: "ИП-4м", image: "images/armor/ip4m.webp", rank: "Отмычка", resources: { green_plesen: 82 } }
+            { id: "armor7", name: "Экзоброня «Зверобой»", image: "images/armor/furryeb.webp", rank: "Ветка Зверобоя", resources: { ryzhiy_paporotnik: 3303, veshestvo_07270: 4171, psi_mayachok: 2063, gamma_fragment: 1350 } },
+            { id: "armor8", name: "Экзоброня «Егерь»", image: "images/armor/eger.webp", rank: "Ветка Зверобоя", resources: { ryzhiy_paporotnik: 1587, veshestvo_07270: 2004, psi_mayachok: 991, gamma_fragment: 649 } },
+            { id: "armor9", name: "Защитный костюм «Ош»", image: "images/armor/osh.webp", rank: "Ветка Зверобоя", resources: { severny_moh: 1788, durman_kamen: 593, ostatki_akkumulyatora: 443, beta_fragment: 126 } },
+            { id: "armor10", name: "Защитный костюм «Ворса»", image: "images/armor/vorsa.webp", rank: "Ветка Зверобоя", resources: { romashka: 423, rassolnik: 102, radioperedatchik: 128, alfa_fragment: 32 } },
+            { id: "armor11", name: "Костюм «Траппер»", image: "images/armor/trapper.webp", rank: "Ветка Зверобоя", resources: { koren_vonyuchka: 134, srachnik: 41, mednaya_provoloka: 55 } },
+            { id: "armor12", name: "Защитный костюм «Псарь»", image: "images/armor/psar.webp", rank: "Ветка Зверобоя", resources: { green_plesen: 55, bolotny_kamen: 28 } },
+            { id: "armor13", name: "Экзоскелет «Туз/Мул»", image: "images/armor/tuz.webp", rank: "Ветка Экзоскелета", resources: { ryzhiy_paporotnik: 1609, veshestvo_07270: 4171, psi_mayachok: 1705, gamma_fragment: 1350, kvantovaya_batareya: 1123 } },
+            { id: "armor14", name: "Экзоскелет «Масть/Самсон»", image: "images/armor/mast.webp", rank: "Ветка Экзоскелета", resources: { ryzhiy_paporotnik: 773, veshestvo_07270: 2004, psi_mayachok: 819, gamma_fragment: 649, kvantovaya_batareya: 540 } },
+            { id: "armor15", name: "Tяжелый бронекостюм «Громила/Восход»", image: "images/armor/gromila.webp", rank: "Ветка Экзоскелета", resources: { severny_moh: 1146, durman_kamen: 780, ostatki_akkumulyatora: 481, beta_fragment: 166 } },
+            { id: "armor16", name: "Бронекостюм «Пересмешник/Сокол»", image: "images/armor/peresm.webp", rank: "Ветка Экзоскелета", resources: { romashka: 239, rassolnik: 182, radioperedatchik: 122, alfa_fragment: 37 } },
+            { id: "armor17", name: "Костюм «Клептоман/Грибник»", image: "images/armor/kleptoman.webp", rank: "Ветка Экзоскелета", resources: { koren_vonyuchka: 78, srachnik: 68, mednaya_provoloka: 64 } },
+            { id: "armor18", name: "Бандитский костюм/Аврора с противогазом", image: "images/armor/bksp.webp", rank: "Ветка Экзоскелета", resources: { green_plesen: 33, bolotny_kamen: 51 } },
+            { id: "armor19", name: "Бронекостюм «Скиф-5»", image: "images/armor/skuf.webp", rank: "Ветка Скифа", resources: { ryzhiy_paporotnik: 1525, veshestvo_07270: 5269, psi_mayachok: 1615, gamma_fragment: 1279, kvantovaya_batareya: 1030 } },
+            { id: "armor20", name: "Бронекостюм «Скиф-4»", image: "images/armor/skif4.webp", rank: "Ветка Скифа", resources: { ryzhiy_paporotnik: 732, veshestvo_07270: 2531, psi_mayachok: 776, gamma_fragment: 614, kvantovaya_batareya: 495 } },
+            { id: "armor21", name: "Бронекостюм «Пахан/Скиф-2м»", image: "images/armor/pahan.webp", rank: "Ветка Скифа", resources: { severny_moh: 1009, durman_kamen: 1061, ostatki_akkumulyatora: 423, beta_fragment: 146 } },
+            { id: "armor22", name: "Бронекостюм «Пересмешник/Сокол»", image: "images/armor/peresm.webp", rank: "Ветка Скифа", resources: { romashka: 239, rassolnik: 182, radioperedatchik: 122, alfa_fragment: 37 } },
+            { id: "armor23", name: "Костюм «Клептоман/Грибник»", image: "images/armor/kleptoman.webp", rank: "Ветка Скифа", resources: { koren_vonyuchka: 78, srachnik: 68, mednaya_provoloka: 64 } },
+            { id: "armor24", name: "Бандитский костюм/Аврора с противогазом", image: "images/armor/bksp.webp", rank: "Ветка Скифа", resources: { green_plesen: 33, bolotny_kamen: 51 } },
+            { id: "armor25", name: "УКАЗ АО-6 «Кочевник»", image: "images/armor/aoshka.webp", rank: "Ветка АО", resources: { ryzhiy_paporotnik: 2202, veshestvo_07270: 3512, psi_mayachok: 1435, gamma_fragment: 1848, kvantovaya_batareya: 749 } },
+            { id: "armor26", name: "УКАЗ АО-5 «Пилигрим»", image: "images/armor/ao5.webp", rank: "Ветка АО", resources: { ryzhiy_paporotnik: 1058, veshestvo_07270: 1687, psi_mayachok: 690, gamma_fragment: 887, kvantovaya_batareya: 360 } },
+            { id: "armor27", name: "УКАЗ АО-4 «Рейдер»", image: "images/armor/ao4.webp", rank: "Ветка АО", resources: { severny_moh: 1376, durman_kamen: 624, ostatki_akkumulyatora: 385, beta_fragment: 199 } },
+            { id: "armor28", name: "Костюм АО-3 «Искатель»", image: "images/armor/ao3.webp", rank: "Ветка АО", resources: { romashka: 325, rassolnik: 107, radioperedatchik: 111, alfa_fragment: 50 } },
+            { id: "armor29", name: "Костюм АО-2 «Странник»", image: "images/armor/ao2.webp", rank: "Ветка АО", resources: { koren_vonyuchka: 107, srachnik: 44, mednaya_provoloka: 73 } },
+            { id: "armor30", name: "ИП-4м", image: "images/armor/ip4m.webp", rank: "Ветка АО", resources: { green_plesen: 82 } },
+            { id: "armor31", name: "Комбинезон «Сатурн»", image: "images/armor/paket.webp", rank: "Ветка Сатурна", resources: { ryzhiy_paporotnik: 2202, veshestvo_07270: 2195, psi_mayachok: 2333, gamma_fragment: 2700 } },
+            { id: "armor32", name: "Комбинезон «Жнец/Уран»", image: "images/armor/znec.webp", rank: "Ветка Сатурна", resources: { ryzhiy_paporotnik: 1058, veshestvo_07270: 1055, psi_mayachok: 1120, gamma_fragment: 1297 } },
+            { id: "armor33", name: "КИМ-99М «Малахит»", image: "images/armor/kim.webp", rank: "Ветка Сатурна", resources: { severny_moh: 1192, durman_kamen: 312, ostatki_akkumulyatora: 500, beta_fragment: 252 } },
+            { id: "armor34", name: "КИМ-99 «Янтарь»", image: "images/armor/yantar.webp", rank: "Ветка Сатурна", resources: { romashka: 282, rassolnik: 54, radioperedatchik: 145, alfa_fragment: 63 } },
+            { id: "armor35", name: "Бандитский костюм с баллонами/Аврора-Б", image: "images/armor/bksb.webp", rank: "Ветка Сатурна", resources: { koren_vonyuchka: 134, mednaya_provoloka: 111 } },
+            { id: "armor36", name: "ИП-4м", image: "images/armor/ip4m.webp", rank: "Ветка Сатурна", resources: { green_plesen: 82 } },
+            { id: "armor37", name: "Сверхтяжелый бронекостюм", image: "images/armor/banka.webp", rank: "Фракционная броня", resources: { ryzhiy_paporotnik: 1755, veshestvo_07270: 9099, psi_mayachok: 1859, gamma_fragment: 1683, kvantovaya_batareya: 1940 } },
+            { id: "armor38", name: "Бронекостюм «Авангард»", image: "images/armor/avangard.webp", rank: "Фракционная броня", resources: { ryzhiy_paporotnik: 2508, veshestvo_07270: 6499, psi_mayachok: 2656, gamma_fragment: 2104, kvantovaya_batareya: 1386 } },
+            { id: "armor39", name: "Бронекостюм «Каратель»", image: "images/armor/karatel.webp", rank: "Фракционная броня", resources: { ryzhiy_paporotnik: 2132, veshestvo_07270: 7799, psi_mayachok: 2258, gamma_fragment: 1788, kvantovaya_batareya: 1732 } },
+            { id: "armor40", name: "Экзокостюм «Гончий»", image: "images/armor/kust.webp", rank: "Фракционная броня", resources: { ryzhiy_paporotnik: 2132, veshestvo_07270: 7799, psi_mayachok: 2258, gamma_fragment: 1788, kvantovaya_batareya: 1732 } },
+            { id: "armor41", name: "Комбинезон «Пересвет»", image: "images/armor/peresvet.webp", rank: "Фракционная броня", resources: { ryzhiy_paporotnik: 3260, veshestvo_07270: 3250, psi_mayachok: 3453, gamma_fragment: 3997 } },
         ],
         weapons: [
             { id: "weapon1", name: "А-545", image: "images/weapon/545.webp", rank: "Ветка А-545", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1534, gamma_fragment: 1023, kvantovaya_batareya: 1011 } },
@@ -931,7 +944,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (rank === "Ветка Кукри") {  //  Или другое условие, если у вас будет несколько веток с картинками
                 const img = document.createElement('img');
                 img.src = "images/weapon/kukri.webp"; //  Путь к изображению
-                img.alt = "Изображение надульника";
+                img.alt = "Изображение оружия";
                 img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
                 summary.appendChild(img);
             }
@@ -939,7 +952,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (rank === "Ножи") {  //  Или другое условие, если у вас будет несколько веток с картинками
                 const img = document.createElement('img');
                 img.src = "images/weapon/anti.webp"; //  Путь к изображению
-                img.alt = "Изображение надульника";
+                img.alt = "Изображение оружия";
                 img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
                 summary.appendChild(img);
             }
@@ -947,7 +960,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (rank === "Сюжетные") {  //  Или другое условие, если у вас будет несколько веток с картинками
                 const img = document.createElement('img');
                 img.src = "images/weapon/aks.webp"; //  Путь к изображению
-                img.alt = "Изображение надульника";
+                img.alt = "Изображение оружия";
                 img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
                 summary.appendChild(img);
             }
@@ -955,7 +968,55 @@ document.addEventListener('DOMContentLoaded', function() {
             if (rank === "Ветка Центуриона") {  //  Или другое условие, если у вас будет несколько веток с картинками
                 const img = document.createElement('img');
                 img.src = "images/armor/centurion.webp"; //  Путь к изображению
-                img.alt = "Изображение надульника";
+                img.alt = "Изображение брони";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка Зверобоя") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/armor/furryeb.webp"; //  Путь к изображению
+                img.alt = "Изображение брони";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка Экзоскелета") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/armor/tuz.webp"; //  Путь к изображению
+                img.alt = "Изображение брони";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка Скифа") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/armor/skuf.webp"; //  Путь к изображению
+                img.alt = "Изображение брони";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка АО") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/armor/aoshka.webp"; //  Путь к изображению
+                img.alt = "Изображение брони";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка Сатурна") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/armor/paket.webp"; //  Путь к изображению
+                img.alt = "Изображение брони";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Фракционная броня") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/armor/kust.webp"; //  Путь к изображению
+                img.alt = "Изображение брони";
                 img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
                 summary.appendChild(img);
             }
