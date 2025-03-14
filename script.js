@@ -81,6 +81,16 @@ document.addEventListener('DOMContentLoaded', function() {
         "Ветка АО": "rank-green",
         "Ветка Сатурна": "rank-blue",
         "Фракционная броня": "rank-orange",
+        "9 мм Магазины": "rank-yellowlight",
+        "7.62 Магазины": "rank-darkolivegreen",
+        "Ветка Барабана G3/M1A": "rank-darkolivegreen",
+        "Ветка 7.62 эргомагов": "rank-darkolivegreen",
+        "Ветка 5.56 эргомагов": "rank-yellow",
+        "Ветка 60-патронника 5.56": "rank-yellow",
+        "Ветка Увеличенного магазина для ВСС/Вал": "rank-brown",
+        "Ветка Увеличенного магазина АШ-12": "rank-mustard",
+        "Ветка 60-патронника 5.45": "rank-green",
+        "Ветка 5.45 эргомагов": "rank-green",
     };
 
     // Цвета для названий контейнеров (объект, а не классы)
@@ -307,6 +317,38 @@ document.addEventListener('DOMContentLoaded', function() {
         "Бронекостюм «Каратель»": "#EA9D9E",
         "Экзокостюм «Гончий»": "#EA9D9E",
         "Комбинезон «Пересвет»": "#EA9D9E",
+    };
+
+    const magNameColors = {
+        "Увеличенный магазин Beretta": "#9F9FED",
+        "Барабанный магазин X-5": "#9F9FED",
+        "Увеличенный магазин Colt": "#9F9FED",
+        "Увеличенный магазин Browning": "#9F9FED",
+        "Увеличенный магазин Форт-12": "#9DEB9D",
+        "Увеличенный магазин «Кобра»": "#BF5BAD",
+        "Барабанный магазин G3/M1A": "#EA9D9E",
+        "Магазин 7.62 пластиковый": "#BF5BAD",
+        "Магазин 7.62 бакелитовый": "#9F9FED",
+        "Магазин 5.45 PMAG, черный": "#9F9FED",
+        "Магазин Magpul PMAG 7.62x39": "#BF5BAD",
+        "Магазин АКМ десантный": "#BF5BAD",
+        "Магазин PMAG GEN2 M2 MOE": "#BF5BAD",
+        "Магазин 5.56 Pufgun, черный": "#BF5BAD",
+        "Магазин 5.56 NATO PMAG, черный": "#9F9FED",
+        "Магазин 5.56 NATO STANAG": "#9F9FED",
+        "Магазин 5.56 NATO STANAG (20 пт.)": "#9DEB9D",
+        "Магазин 5.56 NATO STANAG (60 пт.)": "#BF5BAD",
+        "Магазин EMAG": "#BF5BAD",
+        "Магазин 5.56 NATO STANAG (45 пт.)": "#BF5BAD",
+        "Увеличенный магазин для ВСС/Вал": "#BF5BAD",
+        "Магазин эргономичный для ВСС/Вал": "#BF5BAD",
+        "Увеличенный магазин АШ-12": "#EA9D9E",
+        "Увеличенный магазин ОЦ-14": "#BF5BAD",
+        "Магазин 5.45": "#BF5BAD",
+        "Магазин 5.45 пластиковый": "#BF5BAD",
+        "Магазин 5.45 бакелитовый": "#9F9FED",
+        "Магазин MAG SG545": "#BF5BAD",
+        "Магазин 5.45 «Вафля»": "#BF5BAD",
     };
 
     // Пресеты брони и оружия с рангами
@@ -605,7 +647,60 @@ document.addEventListener('DOMContentLoaded', function() {
             // АШ-12 глушитель
             { id: "attachment65", name: "Глушитель АШ-12/МЦ-558", image: "images/attachment/sash.webp", rank: "Ветка глушителя на АШ-12", resources: { ryzhiy_paporotnik: 615, veshestvo_07270: 875, psi_mayachok: 450, gamma_fragment: 121, kvantovaya_batareya: 193 } },
             { id: "attachment66", name: "Глушитель для ОЦ-14 «Гроза»", image: "images/attachment/sgroza.webp", rank: "Ветка глушителя на АШ-12", resources: { veshestvo_07270: 185, psi_mayachok: 151, gamma_fragment: 60 } },
-            { id: "attachment67", name: "ПБС-1", image: "images/attachment/atg.webp", rank: "Ветка глушителя на АШ-12", resources: { durman_kamen: 123, ostatki_akkumulyatora: 152, beta_fragment: 26 } },
+            { id: "attachment67", name: "ПБС-1", image: "images/attachment/atg.webp", rank: "Ветка глушителя на АШ-12", resources: { durman_kamen: 123, ostatki_akkumulyatora: 152, beta_fragment: 26 } }
+        ],
+        mags: [
+            // 9 мм магазины
+            { id: "mag1", name: "Увеличенный магазин Beretta", image: "images/mag/magBeretta.webp", rank: "9 мм Магазины", resources: { romashka: 38, rassolnik: 9, radioperedatchik: 10, alfa_fragment: 3 } },
+            { id: "mag2", name: "Барабанный магазин X-5", image: "images/mag/magX5.webp", rank: "9 мм Магазины", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
+            { id: "mag3", name: "Увеличенный магазин Colt", image: "images/mag/magColt.webp", rank: "9 мм Магазины", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
+            { id: "mag4", name: "Увеличенный магазин Browning", image: "images/mag/magBrowning.webp", rank: "9 мм Магазины", resources: { koren_vonyuchka: 19, srachnik: 6, mednaya_provoloka: 8 } },
+            { id: "mag5", name: "Увеличенный магазин Форт-12", image: "images/mag/magFort.webp", rank: "9 мм Магазины", resources: { koren_vonyuchka: 19, srachnik: 6, mednaya_provoloka: 8 } },
+            // 7.62 магазины
+            { id: "mag6", name: "Увеличенный магазин «Кобра»", image: "images/mag/magKobra.webp", rank: "7.62 Магазины", resources: { ryzhiy_paporotnik: 259, veshestvo_07270: 335, psi_mayachok: 137, gamma_fragment: 109 } },
+            // Барабанный магазин G3/M1A
+            { id: "mag7", name: "Барабанный магазин G3/M1A", image: "images/mag/magG3.webp", rank: "Ветка Барабана G3/M1A", resources: { ryzhiy_paporotnik: 293, veshestvo_07270: 403, psi_mayachok: 165, gamma_fragment: 131, kvantovaya_batareya: 86 } },
+            { id: "mag8", name: "Магазин 7.62 пластиковый", image: "images/mag/magPlastic762.webp", rank: "Ветка Барабана G3/M1A", resources: { severny_moh: 275, durman_kamen: 94, ostatki_akkumulyatora: 58, beta_fragment: 20 } },
+            { id: "mag9", name: "Магазин 7.62 бакелитовый", image: "images/mag/magBakelite762.webp", rank: "Ветка Барабана G3/M1A", resources: { romashka: 38, rassolnik: 9, radioperedatchik: 10, alfa_fragment: 3 } },
+            { id: "mag10", name: "Магазин 5.45 PMAG, черный", image: "images/mag/PMAG545.webp", rank: "Ветка Барабана G3/M1A", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
+            // Ветка эргомагов 7.62
+            { id: "mag11", name: "Магазин Magpul PMAG 7.62x39", image: "images/mag/PMAG762.webp", rank: "Ветка 7.62 эргомагов", resources: { ryzhiy_paporotnik: 154, veshestvo_07270: 199, psi_mayachok: 81, gamma_fragment: 64 } },
+            { id: "mag12", name: "Магазин АКМ десантный", image: "images/mag/PMAG762.webp", rank: "Ветка 7.62 эргомагов", resources: { severny_moh: 329, durman_kamen: 112, ostatki_akkumulyatora: 69, beta_fragment: 24 } },
+            { id: "mag13", name: "Магазин 5.45 PMAG, черный", image: "images/mag/PMAG545.webp", rank: "Ветка 7.62 эргомагов", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
+            // Ветка эргомагов 5.56
+            { id: "mag14", name: "Магазин PMAG GEN2 M2 MOE", image: "images/mag/PMAG556.webp", rank: "Ветка 5.56 эргомагов", resources: { ryzhiy_paporotnik: 154, veshestvo_07270: 199, psi_mayachok: 81, gamma_fragment: 64 } },
+            { id: "mag15", name: "Магазин 5.56 Pufgun, черный", image: "images/mag/PMAG556.webp", rank: "Ветка 5.56 эргомагов", resources: { severny_moh: 275, durman_kamen: 94, ostatki_akkumulyatora: 58, beta_fragment: 20 } },
+            { id: "mag16", name: "Магазин 5.56 NATO PMAG, черный", image: "images/mag/PMAGNATO556.webp", rank: "Ветка 5.56 эргомагов", resources: { romashka: 38, rassolnik: 9, radioperedatchik: 10, alfa_fragment: 3 } },
+            { id: "mag17", name: "Магазин 5.56 NATO STANAG", image: "images/mag/magSTANAG.webp", rank: "Ветка 5.56 эргомагов", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
+            { id: "mag18", name: "Магазин 5.56 NATO STANAG (20 пт.)", image: "images/mag/magSTANAG20.webp", rank: "Ветка 5.56 эргомагов", resources: { koren_vonyuchka: 19, srachnik: 6, mednaya_provoloka: 8 } },
+            // Ветка барабана 5.56
+            { id: "mag19", name: "Магазин 5.56 NATO STANAG (60 пт.)", image: "images/mag/magNATO556.webp", rank: "Ветка 60-патронника 5.56", resources: { ryzhiy_paporotnik: 154, veshestvo_07270: 199, psi_mayachok: 81, gamma_fragment: 64 } },
+            { id: "mag20", name: "Магазин EMAG", image: "images/mag/EMAG.webp", rank: "Ветка 60-патронника 5.56", resources: { severny_moh: 275, durman_kamen: 94, ostatki_akkumulyatora: 58, beta_fragment: 20 } },
+            { id: "mag21", name: "Магазин 5.56 NATO STANAG (45 пт.)", image: "images/mag/mag45STANAG.webp", rank: "Ветка 60-патронника 5.56", resources: { severny_moh: 275, durman_kamen: 94, ostatki_akkumulyatora: 58, beta_fragment: 20 } },
+            { id: "mag22", name: "Магазин 5.56 NATO PMAG, черный", image: "images/mag/PMAGNATO556.webp", rank: "Ветка 60-патронника 5.56", resources: { romashka: 38, rassolnik: 9, radioperedatchik: 10, alfa_fragment: 3 } },
+            { id: "mag23", name: "Магазин 5.56 NATO STANAG", image: "images/mag/magSTANAG.webp", rank: "Ветка 60-патронника 5.56", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
+            { id: "mag24", name: "Магазин 5.56 NATO STANAG (20 пт.)", image: "images/mag/magSTANAG20.webp", rank: "Ветка 60-патронника 5.56", resources: { koren_vonyuchka: 19, srachnik: 6, mednaya_provoloka: 8 } },
+            // Ветка увел. 9.39
+            { id: "mag25", name: "Увеличенный магазин для ВСС/Вал", image: "images/mag/magVSS.webp", rank: "Ветка Увеличенного магазина для ВСС/Вал", resources: { ryzhiy_paporotnik: 170, veshestvo_07270: 234, psi_mayachok: 96, gamma_fragment: 76, kvantovaya_batareya: 50 } },
+            { id: "mag26", name: "Магазин эргономичный для ВСС/Вал", image: "images/mag/magErgoVSS.webp", rank: "Ветка Увеличенного магазина для ВСС/Вал", resources: { ryzhiy_paporotnik: 154, veshestvo_07270: 199, psi_mayachok: 81, gamma_fragment: 64 } },
+            { id: "mag27", name: "Магазин 7.62 пластиковый", image: "images/mag/magPlastic762.webp", rank: "Ветка Увеличенного магазина для ВСС/Вал", resources: { severny_moh: 275, durman_kamen: 94, ostatki_akkumulyatora: 58, beta_fragment: 20 } },
+            { id: "mag28", name: "Магазин 7.62 бакелитовый", image: "images/mag/magBakelite762.webp", rank: "Ветка Увеличенного магазина для ВСС/Вал", resources: { romashka: 38, rassolnik: 9, radioperedatchik: 10, alfa_fragment: 3 } },
+            { id: "mag29", name: "Магазин 5.45 PMAG, черный", image: "images/mag/PMAG545.webp", rank: "Ветка Увеличенного магазина для ВСС/Вал", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
+            // Ветка увел. 12.7 АШ-12
+            { id: "mag30", name: "Увеличенный магазин АШ-12", image: "images/mag/magASH.webp", rank: "Ветка Увеличенного магазина АШ-12", resources: { ryzhiy_paporotnik: 170, veshestvo_07270: 234, psi_mayachok: 96, gamma_fragment: 76, kvantovaya_batareya: 50 } },
+            { id: "mag31", name: "Увеличенный магазин ОЦ-14", image: "images/mag/magGroza.webp", rank: "Ветка Увеличенного магазина АШ-12", resources: { ryzhiy_paporotnik: 154, veshestvo_07270: 199, psi_mayachok: 81, gamma_fragment: 64 } },
+            { id: "mag32", name: "Магазин 7.62 пластиковый", image: "images/mag/magPlastic762.webp", rank: "Ветка Увеличенного магазина АШ-12", resources: { severny_moh: 275, durman_kamen: 94, ostatki_akkumulyatora: 58, beta_fragment: 20 } },
+            { id: "mag33", name: "Магазин 7.62 бакелитовый", image: "images/mag/magBakelite762.webp", rank: "Ветка Увеличенного магазина АШ-12", resources: { romashka: 38, rassolnik: 9, radioperedatchik: 10, alfa_fragment: 3 } },
+            { id: "mag34", name: "Магазин 5.45 PMAG, черный", image: "images/mag/PMAG545.webp", rank: "Ветка Увеличенного магазина АШ-12", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
+            // Ветка барабана 5.45
+            { id: "mag35", name: "Магазин 5.45", image: "images/mag/mag545.webp", rank: "Ветка 60-патронника 5.45", resources: { ryzhiy_paporotnik: 154, veshestvo_07270: 199, psi_mayachok: 81, gamma_fragment: 64 } },
+            { id: "mag36", name: "Магазин 5.45 пластиковый", image: "images/mag/magPlastic545.webp", rank: "Ветка 60-патронника 5.45", resources: { severny_moh: 275, durman_kamen: 94, ostatki_akkumulyatora: 58, beta_fragment: 20 } },
+            { id: "mag37", name: "Магазин 5.45 бакелитовый", image: "images/mag/magBakelite545.webp", rank: "Ветка 60-патронника 5.45", resources: { romashka: 38, rassolnik: 9, radioperedatchik: 10, alfa_fragment: 3 } },
+            { id: "mag38", name: "Магазин 5.45 PMAG, черный", image: "images/mag/PMAG545.webp", rank: "Ветка 60-патронника 5.45", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
+            // Ветка эргомагов 5.45
+            { id: "mag39", name: "Магазин MAG SG545", image: "images/mag/PMAG545.webp", rank: "Ветка 5.45 эргомагов", resources: { ryzhiy_paporotnik: 154, veshestvo_07270: 199, psi_mayachok: 81, gamma_fragment: 64 } },
+            { id: "mag40", name: "Магазин 5.45 «Вафля»", image: "images/mag/PMAG545.webp", rank: "Ветка 5.45 эргомагов", resources: { severny_moh: 329, durman_kamen: 112, ostatki_akkumulyatora: 69, beta_fragment: 24 } },
+            { id: "mag41", name: "Магазин 5.45 PMAG, черный", image: "images/mag/PMAG545.webp", rank: "Ветка 5.45 эргомагов", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } }
         ]
     };
 
@@ -614,6 +709,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const weaponPresetsContainer = document.getElementById('weapon-presets');
     const containerPresetsContainer = document.getElementById('container-presets');
     const attachmentPresetsContainer = document.getElementById('attachment-presets');
+    const magPresetsContainer = document.getElementById('mag-presets');
     const calculateBtn = document.getElementById('calculateBtn');
     const couponBtn = document.getElementById('couponBtn');
     const couponSelect = document.getElementById('couponSelect');
@@ -1020,6 +1116,86 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
                 summary.appendChild(img);
             }
+
+            if (rank === "9 мм Магазины") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/magBeretta.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "7.62 Магазины") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/magKobra.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка Барабана G3/M1A") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/magG3.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 7.62 эргомагов") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/PMAG762.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 5.56 эргомагов") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/PMAG556.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 60-патронника 5.56") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/magNATO556.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка Увеличенного магазина для ВСС/Вал") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/magVSS.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка Увеличенного магазина АШ-12") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/magASH.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 60-патронника 5.45") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/mag545.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка 5.45 эргомагов") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/PMAG545.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
     
             const rankSpan = document.createElement('span'); // Добавляем span для текста ранга
             rankSpan.textContent = rank;
@@ -1072,6 +1248,10 @@ document.addEventListener('DOMContentLoaded', function() {
             label.style.color = attachmentNameColors[preset.name];
         }
 
+        if (magNameColors[preset.name]) {
+            label.style.color = magNameColors[preset.name];
+        }
+
         listItem.appendChild(checkbox);
         listItem.appendChild(img);
         listItem.appendChild(label);
@@ -1088,7 +1268,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Обновление ресурсов при выборе пресетов
     function updateResourcesInput() {
-        const selectedPresets = { armor: [], weapons: [], containers: [], backpacks: [], attachments: [] };
+        const selectedPresets = { armor: [], weapons: [], containers: [], backpacks: [], attachments: [], mags: [] };
         const totalResources = {};
 
         document.querySelectorAll('#armor-presets input:checked').forEach(checkbox => {
@@ -1105,6 +1285,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         document.querySelectorAll('#attachment-presets input:checked').forEach(checkbox => {
             selectedPresets.attachments.push(checkbox.value);
+        });
+        document.querySelectorAll('#mag-presets input:checked').forEach(checkbox => {
+            selectedPresets.mags.push(checkbox.value);
         });
 
         function addResources(presets, type) {
@@ -1123,6 +1306,7 @@ document.addEventListener('DOMContentLoaded', function() {
         addResources(selectedPresets.containers, 'containers');
         addResources(selectedPresets.backpacks, 'backpacks');
         addResources(selectedPresets.attachments, 'attachments');
+        addResources(selectedPresets.mags, 'mags');
 
         const allResourceIds = getAllResourceIds();
         allResourceIds.forEach(resId => {
@@ -1241,5 +1425,6 @@ document.addEventListener('DOMContentLoaded', function() {
     renderRankedPresets(weaponPresetsContainer, presetsData.weapons);
     renderRankedPresets(containerPresetsContainer, presetsData.containers);
     renderRankedPresets(containerPresetsContainer, presetsData.backpacks);
-    renderRankedPresets(attachmentPresetsContainer, presetsData.attachments)
+    renderRankedPresets(attachmentPresetsContainer, presetsData.attachments);
+    renderRankedPresets(magPresetsContainer, presetsData.mags);
 });
