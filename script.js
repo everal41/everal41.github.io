@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Ветка Увеличенного магазина АШ-12": "rank-mustard",
         "Ветка 60-патронника 5.45": "rank-green",
         "Ветка 5.45 эргомагов": "rank-green",
+        "Магазины для дробовиков": "rank-red",
     };
 
     // Цвета для названий контейнеров (объект, а не классы)
@@ -349,6 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Магазин 5.45 бакелитовый": "#9F9FED",
         "Магазин MAG SG545": "#BF5BAD",
         "Магазин 5.45 «Вафля»": "#BF5BAD",
+        "Удлинитель магазина МР-133/МР-153": "#9DEB9D",
     };
 
     // Пресеты брони и оружия с рангами
@@ -700,7 +702,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ветка эргомагов 5.45
             { id: "mag39", name: "Магазин MAG SG545", image: "images/mag/PMAG545.webp", rank: "Ветка 5.45 эргомагов", resources: { ryzhiy_paporotnik: 154, veshestvo_07270: 199, psi_mayachok: 81, gamma_fragment: 64 } },
             { id: "mag40", name: "Магазин 5.45 «Вафля»", image: "images/mag/PMAG545.webp", rank: "Ветка 5.45 эргомагов", resources: { severny_moh: 329, durman_kamen: 112, ostatki_akkumulyatora: 69, beta_fragment: 24 } },
-            { id: "mag41", name: "Магазин 5.45 PMAG, черный", image: "images/mag/PMAG545.webp", rank: "Ветка 5.45 эргомагов", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } }
+            { id: "mag41", name: "Магазин 5.45 PMAG, черный", image: "images/mag/PMAG545.webp", rank: "Ветка 5.45 эргомагов", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
+            // Магазины для дробовиков
+            { id: "mag42", name: "Удлинитель магазина МР-133/МР-153", image: "images/mag/magShotgun.webp", rank: "Магазины для дробовиков", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } }
         ]
     };
 
@@ -1192,6 +1196,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (rank === "Ветка 5.45 эргомагов") {  //  Или другое условие, если у вас будет несколько веток с картинками
                 const img = document.createElement('img');
                 img.src = "images/mag/PMAG545.webp"; //  Путь к изображению
+                img.alt = "Изображение магазина";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Магазины для дробовиков") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/mag/magShotgun.webp"; //  Путь к изображению
                 img.alt = "Изображение магазина";
                 img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
                 summary.appendChild(img);
