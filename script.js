@@ -92,6 +92,17 @@ document.addEventListener('DOMContentLoaded', function() {
         "Ветка 60-патронника 5.45": "rank-green",
         "Ветка 5.45 эргомагов": "rank-green",
         "Магазины для дробовиков": "rank-red",
+        "Цевья": "rank-orange",
+        "Крепления": "rank-orange",
+        "Ветка ЛЦУ": "rank-orange",
+        "Ветка рукояток на отдачу": "rank-orange",
+        "Ветка снайперских рукояток": "rank-orange",
+        "Ветка эргономичных рукояток": "rank-orange",
+        "Подствольные гранатометы": "rank-orange",
+        "ПНВ": "rank-orange",
+        "Детекторы": "rank-orange",
+        "Металлоискатели": "rank-orange",
+        "Оптические прицелы": "rank-orange",
     };
 
     // Цвета для названий контейнеров (объект, а не классы)
@@ -351,6 +362,47 @@ document.addEventListener('DOMContentLoaded', function() {
         "Магазин MAG SG545": "#BF5BAD",
         "Магазин 5.45 «Вафля»": "#BF5BAD",
         "Удлинитель магазина МР-133/МР-153": "#9DEB9D",
+    };
+
+    const forendNameColors = {
+        "Цевье для Сайга-12К": "#BF5BAD",
+    };
+
+    const bracketNameColors = {
+        "Боковой кронштейн с планкой Пикатинни": "#9F9FED",
+        "Повышающая RIS-планка": "#9F9FED",
+        "Направляющая RIS для дробовиков": "#9DEB9D",
+        "Планка с базой Пикатинни": "#9DEB9D",
+    };
+
+    const otherNameColors = {
+        "Тактический блок Зенит «Перст-3»": "#BF5BAD",
+        "HQ ISSUE Low-Profile Laser Sight (красный лазер)": "#9F9FED",
+        "Лазерный целеуказатель «Клещ-2ПС»": "#9F9FED",
+        "HQ ISSUE Mini Laser Sight (зеленый лазер)": "#9DEB9D",
+        "РК-1": "#BF5BAD",
+        "РК-0": "#9F9FED",
+        "Вертикальная рукоятка ANG4": "#9F9FED",
+        "РК-5": "#9DEB9D",
+        "Magpul RVG": "#BF5BAD",
+        "Вертикальная рукоятка Tapco": "#9F9FED",
+        "Тактическая рукоятка KAC Vertical Foregrip": "#9F9FED",
+        "Рукоять переноса огня FMA DARK EARTH": "#9DEB9D",
+        "Тактическая рукоятка Fortis SHIFT Vertical, черная": "#BF5BAD",
+        "FX PTKB FAB Defense": "#9F9FED",
+        "Тактическая рукоятка Magpul AFG": "#9F9FED",
+        "Тактическая рукоятка FMA TD Grip": "#9DEB9D",
+        "ГП-25 «Костер»": "#BF5BAD",
+        "M203": "#BF5BAD",
+    };
+
+    const deviceNameColors = {
+        "Штурмовой ПНВ (синий/белый/зеленый)": "#EA9D9E",
+        "Штурмовой ПНВ": "#BF5BAD",
+        "Штурмовой ПНВ ": "#9F9FED",
+        "Детектор узкого диапазона «Свеча»": "#9DEB9D",
+        "СН-1 «Блин»": "#e6e6e6",
+        "СН-1у «Блинчик»": "#e6e6e6",
     };
 
     // Пресеты брони и оружия с рангами
@@ -705,6 +757,48 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "mag41", name: "Магазин 5.45 PMAG, черный", image: "images/mag/PMAG545.webp", rank: "Ветка 5.45 эргомагов", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } },
             // Магазины для дробовиков
             { id: "mag42", name: "Удлинитель магазина МР-133/МР-153", image: "images/mag/magShotgun.webp", rank: "Магазины для дробовиков", resources: { romashka: 56, rassolnik: 14, radioperedatchik: 14 } }
+        ],
+        forends: [
+            { id: "forend1", name: "Цевье для Сайга-12К", image: "images/forend/forendSaiga.webp", rank: "Цевья", resources: { severny_moh: 372, ostatki_akkumulyatora: 99, beta_fragment: 54 } },
+        ],
+        brackets: [
+            { id: "bracket1", name: "Боковой кронштейн с планкой Пикатинни", image: "images/brackets/picatinnyrail.webp", rank: "Крепления", resources: { romashka: 30, rassolnik: 23, radioperedatchik: 18 } },
+            { id: "bracket2", name: "Повышающая RIS-планка", image: "images/brackets/ris.webp", rank: "Крепления", resources: { romashka: 30, rassolnik: 23, radioperedatchik: 18 } },
+            { id: "bracket3", name: "Направляющая RIS для дробовиков", image: "images/brackets/risShotgun.webp", rank: "Крепления", resources: { koren_vonyuchka: 31, mednaya_provoloka: 17 } },
+            { id: "bracket4", name: "Планка с базой Пикатинни", image: "images/brackets/pikatini.webp", rank: "Крепления", resources: { koren_vonyuchka: 26 } },
+        ],
+        others: [
+            // ЛЦУ
+            { id: "other1", name: "Тактический блок Зенит «Перст-3»", image: "images/others/perst3.webp", rank: "Ветка ЛЦУ", resources: { ryzhiy_paporotnik: 46, veshestvo_07270: 120, psi_mayachok: 49, gamma_fragment: 60 } },
+            { id: "other2", name: "HQ ISSUE Low-Profile Laser Sight (красный лазер)", image: "images/others/hqissue.webp", rank: "Ветка ЛЦУ", resources: { severny_moh: 71, durman_kamen: 48, ostatki_akkumulyatora: 30, beta_fragment: 16 } },
+            { id: "other3", name: "Лазерный целеуказатель «Клещ-2ПС»", image: "images/others/kleshch.webp", rank: "Ветка ЛЦУ", resources: { romashka: 24, rassolnik: 12, radioperedatchik: 12, alfa_fragment: 6 } },
+            { id: "other4", name: "HQ ISSUE Mini Laser Sight (зеленый лазер)", image: "images/others/hqmini.webp", rank: "Ветка ЛЦУ", resources: { koren_vonyuchka: 16, srachnik: 10, mednaya_provoloka: 16 } },
+            // Ветка рукояток на отдачу
+            { id: "other5", name: "РК-1", image: "images/others/rk1.webp", rank: "Ветка рукояток на отдачу", resources: { ryzhiy_paporotnik: 46, veshestvo_07270: 120, psi_mayachok: 76, gamma_fragment: 39 } },
+            { id: "other6", name: "РК-0", image: "images/others/rk0.webp", rank: "Ветка рукояток на отдачу", resources: { severny_moh: 71, durman_kamen: 48, ostatki_akkumulyatora: 46, beta_fragment: 10 } },
+            { id: "other7", name: "Вертикальная рукоятка ANG4", image: "images/others/ang4.webp", rank: "Ветка рукояток на отдачу", resources: { romashka: 24, rassolnik: 12, radioperedatchik: 19, alfa_fragment: 4 } },
+            { id: "other8", name: "РК-5", image: "images/others/rk5.webp", rank: "Ветка рукояток на отдачу", resources: { koren_vonyuchka: 15, srachnik: 9, mednaya_provoloka: 18 } },
+            // Ветка снайперских рукояток
+            { id: "other9", name: "Magpul RVG", image: "images/others/magpulrvg.webp", rank: "Ветка снайперских рукояток", resources: { ryzhiy_paporotnik: 46, veshestvo_07270: 120, psi_mayachok: 76, gamma_fragment: 39 } },
+            { id: "other10", name: "Вертикальная рукоятка Tapco", image: "images/others/magpulrvg.webp", rank: "Ветка снайперских рукояток", resources: { severny_moh: 71, durman_kamen: 48, ostatki_akkumulyatora: 46, beta_fragment: 10 } },
+            { id: "other11", name: "Тактическая рукоятка KAC Vertical Foregrip", image: "images/others/VerticalForegrip.webp", rank: "Ветка снайперских рукояток", resources: { romashka: 24, rassolnik: 12, radioperedatchik: 19, alfa_fragment: 4 } },
+            { id: "other12", name: "Рукоять переноса огня FMA DARK EARTH", image: "images/others/FMA.webp", rank: "Ветка снайперских рукояток", resources: { koren_vonyuchka: 15, srachnik: 9, mednaya_provoloka: 18 } },
+            // Ветка эргономичных рукояток
+            { id: "other13", name: "Тактическая рукоятка Fortis SHIFT Vertical, черная", image: "images/others/shift.webp", rank: "Ветка эргономичных рукояток", resources: { ryzhiy_paporotnik: 46, veshestvo_07270: 120, psi_mayachok: 76, gamma_fragment: 39 } },
+            { id: "other14", name: "FX PTKB FAB Defense", image: "images/others/pktb.webp", rank: "Ветка эргономичных рукояток", resources: { severny_moh: 71, durman_kamen: 48, ostatki_akkumulyatora: 46, beta_fragment: 10 } },
+            { id: "other15", name: "Тактическая рукоятка Magpul AFG", image: "images/others/pktb.webp", rank: "Ветка эргономичных рукояток", resources: { romashka: 24, rassolnik: 12, radioperedatchik: 19, alfa_fragment: 4 } },
+            { id: "other16", name: "Тактическая рукоятка FMA TD Grip", image: "images/others/FMATDGrip.webp", rank: "Ветка эргономичных рукояток", resources: { koren_vonyuchka: 15, srachnik: 9, mednaya_provoloka: 18 } },
+            // Подствольные гранатометы
+            { id: "other17", name: "ГП-25 «Костер»", image: "images/others/koster.webp", rank: "Подствольные гранатометы", resources: { ryzhiy_paporotnik: 78, veshestvo_07270: 202, psi_mayachok: 128, gamma_fragment: 66 } },
+            { id: "other18", name: "M203", image: "images/others/m203.webp", rank: "Подствольные гранатометы", resources: { ryzhiy_paporotnik: 78, veshestvo_07270: 202, psi_mayachok: 128, gamma_fragment: 66 } },
+        ],
+        devices: [
+            { id: "device1", name: "Штурмовой ПНВ (синий/белый/зеленый)", image: "images/devices/AssaultNVG.webp", rank: "ПНВ", resources: { ryzhiy_paporotnik: 263, veshestvo_07270: 1414, psi_mayachok: 578, gamma_fragment: 221, kvantovaya_batareya: 145 } },
+            { id: "device2", name: "Штурмовой ПНВ", image: "images/devices/AssaultNVG.webp", rank: "ПНВ", resources: { severny_moh: 156, durman_kamen: 206, ostatki_akkumulyatora: 127, beta_fragment: 23 } },
+            { id: "device3", name: "Штурмовой ПНВ ", image: "images/devices/AssaultNVG.webp", rank: "ПНВ", resources: { koren_vonyuchka: 12, srachnik: 7, mednaya_provoloka: 21 } },
+            { id: "device4", name: "Детектор узкого диапазона «Свеча»", image: "images/devices/candle.webp", rank: "Детекторы", resources: { romashka: 28, rassolnik: 14, radioperedatchik: 29 } },
+            { id: "device5", name: "СН-1 «Блин»", image: "images/devices/pancake.webp", rank: "Металлоискатели", resources: { koren_vonyuchka: 36, srachnik: 22 } },
+            { id: "device6", name: "СН-1у «Блинчик»", image: "images/devices/minipancake.webp", rank: "Металлоискатели", resources: { koren_vonyuchka: 13, srachnik: 8 } },
         ]
     };
 
@@ -714,6 +808,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const containerPresetsContainer = document.getElementById('container-presets');
     const attachmentPresetsContainer = document.getElementById('attachment-presets');
     const magPresetsContainer = document.getElementById('mag-presets');
+    const forendPresetsContainer = document.getElementById('forend-presets');
+    const bracketPresetsContainer = document.getElementById('bracket-presets');
+    const otherPresetsContainer = document.getElementById('other-presets');
+    const devicePresetsContainer = document.getElementById('device-presets');
     const calculateBtn = document.getElementById('calculateBtn');
     const couponBtn = document.getElementById('couponBtn');
     const couponSelect = document.getElementById('couponSelect');
@@ -1208,6 +1306,86 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
                 summary.appendChild(img);
             }
+
+            if (rank === "Цевья") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/forend/forendSaiga.webp"; //  Путь к изображению
+                img.alt = "Изображение цевья";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Крепления") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/brackets/picatinnyrail.webp"; //  Путь к изображению
+                img.alt = "Изображение крепления";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка ЛЦУ") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/others/perst3.webp"; //  Путь к изображению
+                img.alt = "Изображение крепления";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка рукояток на отдачу") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/others/rk1.webp"; //  Путь к изображению
+                img.alt = "Изображение крепления";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка снайперских рукояток") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/others/magpulrvg.webp"; //  Путь к изображению
+                img.alt = "Изображение крепления";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка эргономичных рукояток") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/others/shift.webp"; //  Путь к изображению
+                img.alt = "Изображение крепления";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Подствольные гранатометы") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/others/koster.webp"; //  Путь к изображению
+                img.alt = "Изображение крепления";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "ПНВ") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/devices/AssaultNVG.webp"; //  Путь к изображению
+                img.alt = "Изображение ПНВ";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Детекторы") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/devices/candle.webp"; //  Путь к изображению
+                img.alt = "Изображение ПНВ";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Металлоискатели") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/devices/pancake.webp"; //  Путь к изображению
+                img.alt = "Изображение ПНВ";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
     
             const rankSpan = document.createElement('span'); // Добавляем span для текста ранга
             rankSpan.textContent = rank;
@@ -1264,6 +1442,22 @@ document.addEventListener('DOMContentLoaded', function() {
             label.style.color = magNameColors[preset.name];
         }
 
+        if (forendNameColors[preset.name]) {
+            label.style.color = forendNameColors[preset.name];
+        }
+
+        if (bracketNameColors[preset.name]) {
+            label.style.color = bracketNameColors[preset.name];
+        }
+
+        if (otherNameColors[preset.name]) {
+            label.style.color = otherNameColors[preset.name];
+        }
+
+        if (deviceNameColors[preset.name]) {
+            label.style.color = deviceNameColors[preset.name];
+        }
+
         listItem.appendChild(checkbox);
         listItem.appendChild(img);
         listItem.appendChild(label);
@@ -1280,7 +1474,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Обновление ресурсов при выборе пресетов
     function updateResourcesInput() {
-        const selectedPresets = { armor: [], weapons: [], containers: [], backpacks: [], attachments: [], mags: [] };
+        const selectedPresets = { armor: [], weapons: [], containers: [], backpacks: [], attachments: [], mags: [], forends: [], brackets: [], others: [], devices: [] };
         const totalResources = {};
 
         document.querySelectorAll('#armor-presets input:checked').forEach(checkbox => {
@@ -1301,6 +1495,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('#mag-presets input:checked').forEach(checkbox => {
             selectedPresets.mags.push(checkbox.value);
         });
+        document.querySelectorAll('#forend-presets input:checked').forEach(checkbox => {
+            selectedPresets.forends.push(checkbox.value);
+        });
+        document.querySelectorAll('#bracket-presets input:checked').forEach(checkbox => {
+            selectedPresets.brackets.push(checkbox.value);
+        });
+        document.querySelectorAll('#other-presets input:checked').forEach(checkbox => {
+            selectedPresets.others.push(checkbox.value);
+        });
+        document.querySelectorAll('#device-presets input:checked').forEach(checkbox => {
+            selectedPresets.devices.push(checkbox.value);
+        });
 
         function addResources(presets, type) {
             presets.forEach(presetId => {
@@ -1319,6 +1525,10 @@ document.addEventListener('DOMContentLoaded', function() {
         addResources(selectedPresets.backpacks, 'backpacks');
         addResources(selectedPresets.attachments, 'attachments');
         addResources(selectedPresets.mags, 'mags');
+        addResources(selectedPresets.forends, 'forends');
+        addResources(selectedPresets.brackets, 'brackets');
+        addResources(selectedPresets.others, 'others');
+        addResources(selectedPresets.devices, 'devices');
 
         const allResourceIds = getAllResourceIds();
         allResourceIds.forEach(resId => {
@@ -1439,4 +1649,8 @@ document.addEventListener('DOMContentLoaded', function() {
     renderRankedPresets(containerPresetsContainer, presetsData.backpacks);
     renderRankedPresets(attachmentPresetsContainer, presetsData.attachments);
     renderRankedPresets(magPresetsContainer, presetsData.mags);
+    renderRankedPresets(forendPresetsContainer, presetsData.forends);
+    renderRankedPresets(bracketPresetsContainer, presetsData.brackets);
+    renderRankedPresets(otherPresetsContainer, presetsData.others);
+    renderRankedPresets(devicePresetsContainer, presetsData.devices);
 });
