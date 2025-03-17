@@ -103,6 +103,9 @@ document.addEventListener('DOMContentLoaded', function() {
         "Детекторы": "rank-orange",
         "Металлоискатели": "rank-orange",
         "Оптические прицелы": "rank-orange",
+        "Коллиматорные прицелы": "rank-orange",
+        "Краски": "rank-gray",
+        "Прочее": "rank-gray",
     };
 
     // Цвета для названий контейнеров (объект, а не классы)
@@ -403,6 +406,45 @@ document.addEventListener('DOMContentLoaded', function() {
         "Детектор узкого диапазона «Свеча»": "#9DEB9D",
         "СН-1 «Блин»": "#e6e6e6",
         "СН-1у «Блинчик»": "#e6e6e6",
+    };
+
+    const sightNameColors = {
+        "Прицел оптический Trijicon AccuPoint": "#BF5BAD",
+        "Прицел оптический Trijicon ACOG": "#9F9FED",
+        "Прицел оптический Elcan": "#9F9FED",
+        "Прицел оптический ПОСП": "#9F9FED",
+        "Прицел оптический ПСО": "#9F9FED",
+        "Прицел оптический Elcan M145": "#9F9FED",
+        "Прицел оптический Барс": "#9F9FED",
+        "Прицел оптический Пилад 3.5х20": "#9F9FED",
+        "Прицел оптический 1П77": "#9DEB9D",
+        "Прицел оптический Trijicon ACOG ": "#9DEB9D",
+        "Прицел оптический ПСО ": "#9DEB9D",
+        "Прицел оптический Leupold": "#9DEB9D",
+        "Прицел оптический SUSAT": "#9DEB9D",
+        "Прицел оптический «Тюльпан»": "#9DEB9D",
+        "Прицел оптический ПУ на боковой кронштейн": "#e6e6e6",
+        "Прицел оптический ПУ для СВТ": "#e6e6e6",
+        "Прицел коллиматорный «Bering OPTICS»": "#9F9FED",
+        "Прицел коллиматорный Vortex": "#9F9FED",
+        "Прицел коллиматорный Trijicon": "#9F9FED",
+        "Прицел коллиматорный Sig Sauer": "#9F9FED",
+        "Прицел коллиматорный «ПК-АС»": "#9F9FED",
+        "Прицел коллиматорный Trijicon ": "#9DEB9D",
+        "Прицел коллиматорный BSA Reflex": "#9DEB9D",
+        "Прицел широкоугольный «Ракурс»": "#9DEB9D",
+        "Прицел коллиматорный LaRue": "#9DEB9D",
+        "Прицел коллиматорный «Валдай»": "#9DEB9D",
+        "Прицел коллиматорный «Кобра»": "#9DEB9D",
+        "Прицел коллиматорный EoTech": "#9DEB9D",
+    };
+
+    const skinNameColors = {
+        "«Лимб»": "#e6e6e6",
+    };
+
+    const skanNameColors = {
+        "Детектор широкого диапазона САК-1": "#9DEB9D",
     };
 
     // Пресеты брони и оружия с рангами
@@ -799,6 +841,46 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "device4", name: "Детектор узкого диапазона «Свеча»", image: "images/devices/candle.webp", rank: "Детекторы", resources: { romashka: 28, rassolnik: 14, radioperedatchik: 29 } },
             { id: "device5", name: "СН-1 «Блин»", image: "images/devices/pancake.webp", rank: "Металлоискатели", resources: { koren_vonyuchka: 36, srachnik: 22 } },
             { id: "device6", name: "СН-1у «Блинчик»", image: "images/devices/minipancake.webp", rank: "Металлоискатели", resources: { koren_vonyuchka: 13, srachnik: 8 } },
+        ],
+        sights: [
+            { id: "sight1", name: "Прицел оптический Trijicon AccuPoint", image: "images/sights/AccuPoint.webp", rank: "Оптические прицелы", resources: { severny_moh: 118, durman_kamen: 124, ostatki_akkumulyatora: 49, beta_fragment: 17 } },
+            { id: "sight2", name: "Прицел оптический Trijicon ACOG", image: "images/sights/acog.webp", rank: "Оптические прицелы", resources: { romashka: 45, rassolnik: 35, radioperedatchik: 23, alfa_fragment: 7 } },
+            { id: "sight3", name: "Прицел оптический Elcan", image: "images/sights/elcan.webp", rank: "Оптические прицелы", resources: { romashka: 45, rassolnik: 35, radioperedatchik: 23, alfa_fragment: 7 } },
+            { id: "sight4", name: "Прицел оптический ПОСП", image: "images/sights/posp.webp", rank: "Оптические прицелы", resources: { romashka: 33, rassolnik: 25, radioperedatchik: 17, alfa_fragment: 5 } },
+            { id: "sight5", name: "Прицел оптический ПСО", image: "images/sights/pso.webp", rank: "Оптические прицелы", resources: { romashka: 33, rassolnik: 25, radioperedatchik: 17, alfa_fragment: 5 } },
+            { id: "sight6", name: "Прицел оптический Elcan", image: "images/sights/elcansand.webp", rank: "Оптические прицелы", resources: { romashka: 33, rassolnik: 25, radioperedatchik: 17, alfa_fragment: 5 } },
+            { id: "sight7", name: "Прицел оптический Барс", image: "images/sights/bars.webp", rank: "Оптические прицелы", resources: { romashka: 33, rassolnik: 25, radioperedatchik: 17, alfa_fragment: 5 } },
+            { id: "sight8", name: "Прицел оптический Пилад 3.5х20", image: "images/sights/pilad.webp", rank: "Оптические прицелы", resources: { koren_vonyuchka: 29, srachnik: 25, mednaya_provoloka: 24 } },
+            { id: "sight9", name: "Прицел оптический Elcan M145", image: "images/sights/m145.webp", rank: "Оптические прицелы", resources: { koren_vonyuchka: 29, srachnik: 25, mednaya_provoloka: 24 } },
+            { id: "sight10", name: "Прицел оптический 1П77", image: "images/sights/1p77.webp", rank: "Оптические прицелы", resources: { koren_vonyuchka: 21, srachnik: 18, mednaya_provoloka: 17 } },
+            { id: "sight11", name: "Прицел оптический Trijicon ACOG ", image: "images/sights/triacog.webp", rank: "Оптические прицелы", resources: { koren_vonyuchka: 21, srachnik: 18, mednaya_provoloka: 17 } },
+            { id: "sight12", name: "Прицел оптический ПСО ", image: "images/sights/opso.webp", rank: "Оптические прицелы", resources: { koren_vonyuchka: 15, srachnik: 13, mednaya_provoloka: 13 } },
+            { id: "sight13", name: "Прицел оптический Leupold", image: "images/sights/leupold.webp", rank: "Оптические прицелы", resources: { koren_vonyuchka: 15, srachnik: 13, mednaya_provoloka: 13 } },
+            { id: "sight14", name: "Прицел оптический SUSAT", image: "images/sights/susat.webp", rank: "Оптические прицелы", resources: { koren_vonyuchka: 11, srachnik: 10, mednaya_provoloka: 9 } },
+            { id: "sight15", name: "Прицел оптический «Тюльпан»", image: "images/sights/tulip.webp", rank: "Оптические прицелы", resources: { koren_vonyuchka: 11, srachnik: 10 } },
+            { id: "sight16", name: "Прицел оптический ПУ на боковой кронштейн", image: "images/sights/mosscope.webp", rank: "Оптические прицелы", resources: { green_plesen: 6, bolotny_kamen: 9 } },
+            { id: "sight17", name: "Прицел оптический ПУ для СВТ", image: "images/sights/pusvt.webp", rank: "Оптические прицелы", resources: { green_plesen: 6, bolotny_kamen: 9 } },
+            { id: "sight18", name: "Прицел коллиматорный «Bering OPTICS»", image: "images/sights/bering.webp", rank: "Коллиматорные прицелы", resources: { romashka: 61, rassolnik: 47, radioperedatchik: 31, alfa_fragment: 9 } },
+            { id: "sight19", name: "Прицел коллиматорный Vortex", image: "images/sights/kvortex.webp", rank: "Коллиматорные прицелы", resources: { romashka: 61, rassolnik: 47, radioperedatchik: 31, alfa_fragment: 9 } },
+            { id: "sight20", name: "Прицел коллиматорный Vortex", image: "images/sights/vortex.webp", rank: "Коллиматорные прицелы", resources: { romashka: 61, rassolnik: 47, radioperedatchik: 31, alfa_fragment: 9 } },
+            { id: "sight21", name: "Прицел коллиматорный Trijicon", image: "images/sights/trijicon.webp", rank: "Коллиматорные прицелы", resources: { romashka: 61, rassolnik: 47, radioperedatchik: 31, alfa_fragment: 9 } },
+            { id: "sight22", name: "Прицел коллиматорный Sig Sauer", image: "images/sights/SigSauer.webp", rank: "Коллиматорные прицелы", resources: { romashka: 32, rassolnik: 23, radioperedatchik: 17 } },
+            { id: "sight23", name: "Прицел коллиматорный «ПК-АС»", image: "images/sights/pkas.webp", rank: "Коллиматорные прицелы", resources: { romashka: 32, rassolnik: 23, radioperedatchik: 17 } },
+            { id: "sight24", name: "Прицел коллиматорный Trijicon ", image: "images/sights/trij.webp", rank: "Коллиматорные прицелы", resources: { koren_vonyuchka: 15, srachnik: 13, mednaya_provoloka: 13 } },
+            { id: "sight25", name: "Прицел коллиматорный Trijicon ", image: "images/sights/tri.webp", rank: "Коллиматорные прицелы", resources: { koren_vonyuchka: 15, srachnik: 13, mednaya_provoloka: 13 } },
+            { id: "sight26", name: "Прицел коллиматорный BSA Reflex", image: "images/sights/reflex.webp", rank: "Коллиматорные прицелы", resources: { koren_vonyuchka: 11, srachnik: 10, mednaya_provoloka: 9 } },
+            { id: "sight27", name: "Прицел широкоугольный «Ракурс»", image: "images/sights/rakurs.webp", rank: "Коллиматорные прицелы", resources: { koren_vonyuchka: 11, srachnik: 10, mednaya_provoloka: 9 } },
+            { id: "sight28", name: "Прицел коллиматорный LaRue", image: "images/sights/LaRue.webp", rank: "Коллиматорные прицелы", resources: { koren_vonyuchka: 11, srachnik: 10, mednaya_provoloka: 9 } },
+            { id: "sight29", name: "Прицел коллиматорный «Валдай»", image: "images/sights/valdai.webp", rank: "Коллиматорные прицелы", resources: { koren_vonyuchka: 11, srachnik: 10 } },
+            { id: "sight30", name: "Прицел коллиматорный «Кобра»", image: "images/sights/kobra.webp", rank: "Коллиматорные прицелы", resources: { koren_vonyuchka: 11, srachnik: 10 } },
+            { id: "sight31", name: "Прицел коллиматорный EoTech", image: "images/sights/EoTech.webp", rank: "Коллиматорные прицелы", resources: { koren_vonyuchka: 11, srachnik: 10 } },
+            { id: "sight32", name: "Прицел коллиматорный EoTech", image: "images/sights/EoTechB.webp", rank: "Коллиматорные прицелы", resources: { koren_vonyuchka: 11, srachnik: 10 } }
+        ],
+        skins: [
+            { id: "skin1", name: "«Лимб»", image: "images/skins/limb.webp", rank: "Краски", resources: { limb: 2500 } },
+        ],
+        skans: [
+            { id: "skan1", name: "Детектор широкого диапазона САК-1", image: "images/skans/sak.webp", rank: "Прочее", resources: { romashka: 28, rassolnik: 14, radioperedatchik: 29 } },
         ]
     };
 
@@ -812,6 +894,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const bracketPresetsContainer = document.getElementById('bracket-presets');
     const otherPresetsContainer = document.getElementById('other-presets');
     const devicePresetsContainer = document.getElementById('device-presets');
+    const sightPresetsContainer = document.getElementById('sight-presets');
+    const skinPresetsContainer = document.getElementById('skin-presets');
+    const skanPresetsContainer = document.getElementById('skan-presets');
     const calculateBtn = document.getElementById('calculateBtn');
     const couponBtn = document.getElementById('couponBtn');
     const couponSelect = document.getElementById('couponSelect');
@@ -1386,6 +1471,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
                 summary.appendChild(img);
             }
+
+            if (rank === "Оптические прицелы") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/sights/AccuPoint.webp"; //  Путь к изображению
+                img.alt = "Изображение прицела";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Коллиматорные прицелы") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/sights/vortex.webp"; //  Путь к изображению
+                img.alt = "Изображение прицела";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Краски") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/skins/limb.webp"; //  Путь к изображению
+                img.alt = "Изображение краски";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Прочее") {  //  Или другое условие, если у вас будет несколько веток с картинками
+                const img = document.createElement('img');
+                img.src = "images/skans/sak.webp"; //  Путь к изображению
+                img.alt = "Изображение прочего";
+                img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
     
             const rankSpan = document.createElement('span'); // Добавляем span для текста ранга
             rankSpan.textContent = rank;
@@ -1458,6 +1575,18 @@ document.addEventListener('DOMContentLoaded', function() {
             label.style.color = deviceNameColors[preset.name];
         }
 
+        if (sightNameColors[preset.name]) {
+            label.style.color = sightNameColors[preset.name];
+        }
+
+        if (skinNameColors[preset.name]) {
+            label.style.color = skinNameColors[preset.name];
+        }
+
+        if (skanNameColors[preset.name]) {
+            label.style.color = skanNameColors[preset.name];
+        }
+
         listItem.appendChild(checkbox);
         listItem.appendChild(img);
         listItem.appendChild(label);
@@ -1474,7 +1603,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Обновление ресурсов при выборе пресетов
     function updateResourcesInput() {
-        const selectedPresets = { armor: [], weapons: [], containers: [], backpacks: [], attachments: [], mags: [], forends: [], brackets: [], others: [], devices: [] };
+        const selectedPresets = { armor: [], weapons: [], containers: [], backpacks: [], attachments: [], mags: [], forends: [], brackets: [], others: [], devices: [], sights:[], skins: [], skans: [] };
         const totalResources = {};
 
         document.querySelectorAll('#armor-presets input:checked').forEach(checkbox => {
@@ -1507,6 +1636,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('#device-presets input:checked').forEach(checkbox => {
             selectedPresets.devices.push(checkbox.value);
         });
+        document.querySelectorAll('#sight-presets input:checked').forEach(checkbox => {
+            selectedPresets.sights.push(checkbox.value);
+        });
+        document.querySelectorAll('#skin-presets input:checked').forEach(checkbox => {
+            selectedPresets.skins.push(checkbox.value);
+        });
+        document.querySelectorAll('#skan-presets input:checked').forEach(checkbox => {
+            selectedPresets.skans.push(checkbox.value);
+        });
 
         function addResources(presets, type) {
             presets.forEach(presetId => {
@@ -1529,6 +1667,9 @@ document.addEventListener('DOMContentLoaded', function() {
         addResources(selectedPresets.brackets, 'brackets');
         addResources(selectedPresets.others, 'others');
         addResources(selectedPresets.devices, 'devices');
+        addResources(selectedPresets.sights, 'sights');
+        addResources(selectedPresets.skins, 'skins');
+        addResources(selectedPresets.skans, 'skans');
 
         const allResourceIds = getAllResourceIds();
         allResourceIds.forEach(resId => {
@@ -1653,4 +1794,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderRankedPresets(bracketPresetsContainer, presetsData.brackets);
     renderRankedPresets(otherPresetsContainer, presetsData.others);
     renderRankedPresets(devicePresetsContainer, presetsData.devices);
+    renderRankedPresets(sightPresetsContainer, presetsData.sights);
+    renderRankedPresets(skinPresetsContainer, presetsData.skins);
+    renderRankedPresets(skanPresetsContainer, presetsData.skans);
 });
