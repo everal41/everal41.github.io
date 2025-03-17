@@ -56,7 +56,6 @@ h2 {
 .resource label {
     flex-grow: 1;
     font-size: 16px;
-    color: #f0e68c;
 }
 
 .resource input {
@@ -313,6 +312,11 @@ input[type=number] {
 .rank-yellowlight { color: #fff2c9; font-weight: bold; }
 .rank-mustard { color: #b69540; font-weight: bold; }
 .rank-silver { color: #C0C0C0; font-weight: bold; }
+.rank-noob { color: #e6e6e6; }
+.rank-new { color: #9DEB9D; }
+.rank-mid { color: #9F9FED; }
+.rank-high { color: #BF5BAD; }
+.rank-mast { color: #EA9D9E; }
 
 /* Стили для раскрывающихся списков */
 details {
