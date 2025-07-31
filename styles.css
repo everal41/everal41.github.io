@@ -1,3 +1,10 @@
+/* --- Универсальный сброс модели блока для предсказуемой верстки --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 /* Общие стили */
 body {
     font-family: 'Montserrat', sans-serif;
