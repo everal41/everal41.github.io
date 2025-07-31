@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Ветка надульника на АШ-12": "rank-mustard", "Ветка глушителя на АШ-12": "rank-mustard",
         "Ветка А-545": "rank-green",
         "Ветка FN F2000 Tactical": "rank-yellow",
+        "Ветка KS-1": "rank-yellow",
         "Ветка АК-15": "rank-darkolivegreen",
         "Ветка ПКП": "rank-darkolivegreen",
         "Ветка L96A1": "rank-darkolivegreen",
@@ -190,11 +191,13 @@ document.addEventListener('DOMContentLoaded', function() {
         "АЕК-971": "#BF5BAD",
         "А-545": "#EA9D9E",
         "FN F2000 Tactical": "#EA9D9E",
+        "KS-1": "#EA9D9E",
+        "LWRC M6": "#BF5BAD",
         "FN F2000": "#BF5BAD",
         "HK G36C": "#BF5BAD",
         "SIG SG 550": "#BF5BAD",
         "L86A1": "#BF5BAD",
-        "M4A1 CQC": "#BF5BAD",
+        "SIG 516": "#BF5BAD",
         "L85A1": "#BF5BAD",
         "Поношенный SIG SG 550": "#9F9FED",
         "Поношенная L86A1": "#9F9FED",
@@ -511,6 +514,7 @@ document.addEventListener('DOMContentLoaded', function() {
         weapons: [
             { id: "weapon1", name: "А-545", image: "images/weapon/545.webp", rank: "Ветка А-545", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1534, gamma_fragment: 1023, kvantovaya_batareya: 1011 } },
             { id: "weapon2", name: "FN F2000 Tactical", image: "images/weapon/fnt.webp", rank: "Ветка FN F2000 Tactical", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1292, gamma_fragment: 1215, kvantovaya_batareya: 1011 } },
+            { id: "weapon145", name: "KS-1", image: "images/weapon/ks1.webp", rank: "Ветка KS-1", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1534, gamma_fragment: 1023, kvantovaya_batareya: 1011 } },
             { id: "weapon3", name: "АК-15", image: "images/weapon/ak15.webp", rank: "Ветка АК-15", resources: { ryzhiy_paporotnik: 1220, veshestvo_07270: 4939, psi_mayachok: 1292, gamma_fragment: 1215, kvantovaya_batareya: 1011 } },
             { id: "weapon4", name: "ПКП «Печенег»", image: "images/weapon/pkp.webp", rank: "Ветка ПКП", resources: { ryzhiy_paporotnik: 1152, veshestvo_07270: 4390, psi_mayachok: 1220, gamma_fragment: 966, kvantovaya_batareya: 899 } },
             { id: "weapon5", name: "L96A1", image: "images/weapon/l96.webp", rank: "Ветка L96A1", resources: { veshestvo_07270: 4763, psi_mayachok: 1295, gamma_fragment: 1040, kvantovaya_batareya: 1016 } },
@@ -546,7 +550,8 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon35", name: "HK G36C", image: "images/weapon/g36c.webp", rank: "Ветка FN F2000 Tactical", resources: { ryzhiy_paporotnik: 586, veshestvo_07270: 2373, psi_mayachok: 621, gamma_fragment: 584, kvantovaya_batareya: 486 } },
             { id: "weapon36", name: "SIG SG 550", image: "images/weapon/sig.webp", rank: "Ветка FN F2000 Tactical", resources: { severny_moh: 867, durman_kamen: 899, ostatki_akkumulyatora: 364, beta_fragment: 155 } },
             { id: "weapon37", name: "L86A1", image: "images/weapon/l86a1.webp", rank: "Ветка FN F2000 Tactical", resources: { severny_moh: 908, durman_kamen: 941, ostatki_akkumulyatora: 381, beta_fragment: 163 } },
-            { id: "weapon38", name: "M4A1 CQC", image: "images/weapon/cqc.webp", rank: "Ветка FN F2000 Tactical", resources: { severny_moh: 867, durman_kamen: 899, ostatki_akkumulyatora: 364, beta_fragment: 155 } },
+            { id: "weapon38", name: "SIG 516", image: "images/weapon/sig516.webp", rank: "Ветка KS-1", resources: { ryzhiy_paporotnik: 586, veshestvo_07270: 2373, psi_mayachok: 737, gamma_fragment: 492, kvantovaya_batareya: 486 } },
+            { id: "weapon146", name: "LWRC M6", image: "images/weapon/lwrcm6.webp", rank: "Ветка KS-1", resources: { severny_moh: 867, durman_kamen: 899, ostatki_akkumulyatora: 364, beta_fragment: 155 } },
             { id: "weapon39", name: "L85A1", image: "images/weapon/l85a1.webp", rank: "Ветка FN F2000 Tactical", resources: { severny_moh: 867, durman_kamen: 899, ostatki_akkumulyatora: 364, beta_fragment: 155 } },
             { id: "weapon40", name: "СР-3 «Вихрь»", image: "images/weapon/vihr.webp", rank: "Ветка СР-3М", resources: { ryzhiy_paporotnik: 501, veshestvo_07270: 2034, psi_mayachok: 630, gamma_fragment: 426, kvantovaya_batareya: 416 } },
             { id: "weapon41", name: "СР-2М «Вереск»", image: "images/weapon/veresk.webp", rank: "Ветка СР-3М", resources: { severny_moh: 770, durman_kamen: 799, ostatki_akkumulyatora: 400, beta_fragment: 111 } },
@@ -582,7 +587,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon71", name: "АКМ", image: "images/weapon/akm.webp", rank: "Ветка АК-15", resources: { romashka: 220, rassolnik: 166, radioperedatchik: 140, alfa_fragment: 34 } },
             { id: "weapon72", name: "Поношенный SIG SG 550", image: "images/weapon/sig.webp", rank: "Ветка FN F2000 Tactical", resources: { romashka: 220, rassolnik: 166, radioperedatchik: 113, alfa_fragment: 42 } },
             { id: "weapon73", name: "Поношенная L86A1", image: "images/weapon/l86a1.webp", rank: "Ветка FN F2000 Tactical", resources: { romashka: 201, rassolnik: 153, radioperedatchik: 103, alfa_fragment: 31 } },
-            { id: "weapon74", name: "M4A1", image: "images/weapon/m4a1.webp", rank: "Ветка FN F2000 Tactical", resources: { romashka: 220, rassolnik: 166, radioperedatchik: 113, alfa_fragment: 42 } },
+            { id: "weapon74", name: "M4A1", image: "images/weapon/m4a1.webp", rank: "Ветка KS-1", resources: { romashka: 220, rassolnik: 166, radioperedatchik: 113, alfa_fragment: 42 } },
             { id: "weapon75", name: "Поношенная L85A1", image: "images/weapon/pl85a1.webp", rank: "Ветка FN F2000 Tactical", resources: { romashka: 220, rassolnik: 166, radioperedatchik: 113, alfa_fragment: 42 } },
             { id: "weapon76", name: "ПП-2000", image: "images/weapon/2000.webp", rank: "Ветка СР-3М", resources: { romashka: 182, rassolnik: 137, radioperedatchik: 116, alfa_fragment: 28 } },
             { id: "weapon77", name: "АЕК-919К «Каштан»", image: "images/weapon/919k.webp", rank: "Ветка ППК-20", resources: { romashka: 182, rassolnik: 137, radioperedatchik: 116, alfa_fragment: 28 } },
@@ -653,6 +658,8 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: "weapon142", name: "Browning Hi-Power", image: "images/weapon/power.webp", rank: "Ветка РШ-12", resources: { koren_vonyuchka: 75, srachnik: 46, mednaya_provoloka: 77 } },
             { id: "weapon143", name: "Mauser C96", image: "images/weapon/c96.webp", rank: "Ветка РШ-12", resources: { koren_vonyuchka: 31, srachnik: 19 } },
             { id: "weapon144", name: "ТТ", image: "images/weapon/tt.webp", rank: "Ветка РШ-12", resources: { green_plesen: 11, bolotny_kamen: 12 } },
+            { id: "weapon147", name: "M16A3", image: "images/weapon/16a3.webp", rank: "Ветка KS-1", resources: { koren_vonyuchka: 41, srachnik: 38, mednaya_provoloka: 40 } },
+            { id: "weapon148", name: "M16A2", image: "images/weapon/16a2.webp", rank: "Ветка KS-1", resources: { green_plesen: 33, bolotny_kamen: 42 } },
         ],
         containers: [
             { id: "container1", name: "Контейнер «Улей»", image: "images/container/hive.webp", rank: "Контейнеры", resources: { ryzhiy_paporotnik: 565, veshestvo_07270: 1465, psi_mayachok: 599, gamma_fragment: 738, kvantovaya_batareya: 312 } },
@@ -1109,6 +1116,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.src = "images/weapon/fnt.webp"; //  Путь к изображению
                 img.alt = "Изображение надульника";
                 img.classList.add('preset-section-image'); //  Используем тот же класс для стилей
+                summary.appendChild(img);
+            }
+
+            if (rank === "Ветка KS-1") {
+                const img = document.createElement('img');
+                img.src = "images/weapon/ks1.webp";
+                img.alt = "Изображение KS-1";
+                img.classList.add('preset-section-image');
                 summary.appendChild(img);
             }
 
@@ -1778,11 +1793,11 @@ document.addEventListener('DOMContentLoaded', function() {
         totalCoins += kvantovaya_batareya * 42;
 
         // Любеч-3
-        totalCoins += limb * 15;
-        totalCoins += gorkolistnik * 12;
-        totalCoins += lambda_fragment * 86;
-        totalCoins += limboplazma * 200;
-        totalCoins += anomalnaya_batareya * 240;
+        totalCoins += limb * 20;
+        totalCoins += gorkolistnik * 15;
+        totalCoins += lambda_fragment * 100;
+        totalCoins += limboplazma * 800;
+        totalCoins += anomalnaya_batareya * 500;
     
         // Отображение общей стоимости на странице
         document.getElementById('totalCoinsDisplay').innerText = 'Общая стоимость: ' + totalCoins + ' монет';
