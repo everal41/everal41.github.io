@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Руководства по STALCRAFT | StalMath</title>
+    <meta name="description" content="Полезные гайды и руководства для игроков STALCRAFT: фарм, прохождения, советы и хитрости.">
+    <meta name="keywords" content="STALCRAFT, Сталкрафт, гайды, руководства, фарм, советы, StalMath">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="guides-style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <nav class="header-links">
+            <a href="#" id="open-about">О сайте</a>
+            <a href="#" id="open-contacts">Связь</a>
+        </nav>
+        <div class="header-logo">
+            <h1>StalMath</h1>
+        </div>
+        <nav class="header-links">
+            <a href="index.html">Калькулятор обменных монет</a>
+            <a href="sharpening.html">Калькулятор заточки</a>
+            <a href="guides.html">Руководства</a>
+        </nav>
+    </header>
+<div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>О сайте StalMath</h2>
+            <p>Этот сайт предназначен для помощи игрокам STALCRAFT в расчёте стоимости бартерных ресурсов. Он предоставляет удобный калькулятор, который позволяет быстро определить, сколько обменных монет потребуется для получения желаемых предметов.</p>
+            <h3>Можно ли как-то помочь?</h3>
+             <p>
+                Да, вы можете помочь посредством сбора обратной информации об использовании сайта.
+             </p>
+             <ul>
+                 <li>Если вы найдёте недочёты.</li>
+                 <li>Если у вас будут здравые идеи по улучшению сайта.</li>
+             </ul>
+            <p>Создатель: <a href="https://vk.com/hxteevery1" target="_blank">everal41</a></p>
+        </div>
+    </div>
+
+    <!-- Модальное окно "Контакты" -->
+    <div id="contacts-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Как с тобой связаться?</h2>
+            <p>Вы можете связаться со мной следующими способами:</p>
+            <ul>
+                <li>ВКонтакте: <a href="https://vk.com/hxteevery1" target="_blank">everal41</a></li>
+                <li>Сервер в Discord:  <a href="https://discord.gg/9hkdXxRSnr" target="_blank" class="discord-link">
+                <i class="fab fa-discord"></i></a></li>
+                <li>Ник активного персонажа в игре: <span style="color: #4CAF50;">X_Solitude</span></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Основной контейнер страницы гайдов -->
+    <div class="guides-hub-container">
+        <h2>Руководства по игре</h2>
+        <p>Здесь собраны полезные гайды, которые помогут вам в выживании в Зоне.</p>
+
+        <!-- Сетка для карточек с гайдами -->
+        <div class="guides-grid">
+            
+            <!-- Карточка для гайда по броне -->
+            <a href="guide-armor-review.html" class="guide-card">
+                <img src="images/guides/armor-review/armor-guide-header.jpg" alt="Обзор всех бронекостюмов">
+                <div class="guide-card-content">
+                    <h3>Обзор всех бронекостюмов</h3>
+                    <p>Подробный разбор всей брони в игре, от научных до боевых. Оптимальные сборки и советы по применению.</p>
+                    <!-- Новая структура с датой -->
+                    <div class="guide-card-meta">
+                        <span class="guide-card-date">
+                            <i class="far fa-calendar-alt"></i> Обновлено: 01.08.2025
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!--
+            Карточка для сборника радио -->
+            <a href="guide-custom-radio.html" class="guide-card">
+                <img src="images/guides/radio.jpg" alt="Кастомное радио">
+                <div class="guide-card-content">
+                    <h3>Кастомные сборники Радио</h3>
+                    <p>Подборка уникальных радиостанций для вашей игры. От классики S.T.A.L.K.E.R. до рока. Скачайте и установите.</p>
+                    <div class="guide-card-meta">
+                    <span class="guide-card-date">
+                        <i class="far fa-calendar-alt"></i> Обновлено: 01.08.2025
+                    </span>
+                    </div>
+                </div>
+            </a>
+            
+           <!-- Карточка 1: Экран отладки -->
+            <a href="#" class="guide-card disabled">
+                <img src="images/guides/debug-screen.jpg" alt="Экран отладки">
+                <div class="guide-card-content">
+                    <!-- Добавляем пометку "Скоро" -->
+                    <span class="card-status-badge">Скоро</span>
+                    <h3>Экран отладки или как понять, что сервера в пиве</h3>
+                    <p>Разбираемся в значениях экрана отладки. Учимся читать пинг, FPS, и определять причину лагов: ваш ПК, интернет или сервера игры.</p>
+                </div>
+            </a>
+
+            <!-- Карточка 2: Фарм валюты -->
+            <a href="#" class="guide-card disabled">
+                <img src="images/guides/currency-farm.jpg" alt="Фарм валюты">
+                <div class="guide-card-content">
+                    <span class="card-status-badge">Скоро</span>
+                    <h3>Все способы фарма валюты от мала до велика</h3>
+                    <p>Полное руководство по заработку в STALCRAFT. От фарма спотов и квестов для новичков до торговли и ивентов.</p>
+                </div>
+            </a>
+
+            <!-- Карточка 3: Прохождение сюжета -->
+            <a href="#" class="guide-card disabled">
+                <img src="images/guides/story-guide.jpg" alt="Прохождение сюжета">
+                <div class="guide-card-content">
+                    <span class="card-status-badge">Скоро</span>
+                    <h3>Прохождение сюжета на 100%</h3>
+                    <p>Гайд по основной сюжетной линии с разбором всех наград и скрытых достижений. Как не упустить ничего важного и получить максимум.</p>
+                </div>
+            </a>
+            
+            <!-- Добавляй сюда новые карточки по этому же шаблону -->
+
+        </div>
+    </div>
+
+    <!-- Модальные окна (остаются без изменений) -->
+    <div id="about-modal" class="modal">
+        <!-- Содержимое модального окна "О сайте" -->
+    </div>
+    <div id="contacts-modal" class="modal">
+        <!-- Содержимое модального окна "Контакты" -->
+    </div>
+    
+    <!-- Основной скрипт для модальных окон -->
+    <script src="script.js"></script> 
+</body>
+</html>
