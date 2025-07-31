@@ -1557,80 +1557,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Создание элемента пресета
     function createPresetElement(preset) {
-        const listItem = document.createElement('li');
-        listItem.classList.add('preset-item');
+    const listItem = document.createElement('li');
+    listItem.classList.add('preset-item');
 
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = preset.id;
-        checkbox.value = preset.id;
+    // 1. Создаем label, который будет нашим главным кликабельным элементом
+    const label = document.createElement('label');
+    // Мы не используем `htmlFor` здесь, т.к. input будет ВНУТРИ label
 
-        const img = document.createElement('img');
-        img.src = preset.image;
-        img.alt = preset.name;
+    // 2. Создаем checkbox, картинку и текст (внутри span)
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = preset.id; // ID всё еще полезен для уникальности
+    checkbox.value = preset.id;
 
-        const label = document.createElement('label');
-        label.htmlFor = preset.id;
-        label.textContent = preset.name;
+    const img = document.createElement('img');
+    img.src = preset.image;
+    img.alt = preset.name;
 
-        // Добавляем цвет для названия контейнера, если он есть
-        if (containerNameColors[preset.name]) {
-            label.style.color = containerNameColors[preset.name];
-        }
+    const textSpan = document.createElement('span');
+    textSpan.textContent = preset.name;
 
-        if (backpackNameColors[preset.name]) {
-            label.style.color = backpackNameColors[preset.name];
-        }
+    // 3. СКЛАДЫВАЕМ ВСЁ ВНУТРЬ LABEL
+    // Это делает всю область (чекбокс, картинку, текст) кликабельной по-умолчанию
+    label.appendChild(checkbox);
+    label.appendChild(img);
+    label.appendChild(textSpan);
 
-        if (attachmentNameColors[preset.name]) {
-            label.style.color = attachmentNameColors[preset.name];
-        }
+    // 4. Добавляем готовый label в элемент списка
+    listItem.appendChild(label);
 
-        if (magNameColors[preset.name]) {
-            label.style.color = magNameColors[preset.name];
-        }
+    // 5. УДАЛЯЕМ СТАРЫЙ обработчик с listItem.
+    // Новый вешаем на СОБЫТИЕ ИЗМЕНЕНИЯ чекбокса - это самый правильный способ.
+    checkbox.addEventListener('change', updateResourcesInput);
 
-        if (forendNameColors[preset.name]) {
-            label.style.color = forendNameColors[preset.name];
-        }
+    // 6. Применяем стили цвета к тексту (textSpan), а не ко всему label
+    const colorMap = {
+        ...containerNameColors, ...backpackNameColors, ...attachmentNameColors,
+        ...magNameColors, ...forendNameColors, ...bracketNameColors, ...otherNameColors,
+        ...deviceNameColors, ...sightNameColors, ...skinNameColors, ...skanNameColors
+    };
 
-        if (bracketNameColors[preset.name]) {
-            label.style.color = bracketNameColors[preset.name];
-        }
-
-        if (otherNameColors[preset.name]) {
-            label.style.color = otherNameColors[preset.name];
-        }
-
-        if (deviceNameColors[preset.name]) {
-            label.style.color = deviceNameColors[preset.name];
-        }
-
-        if (sightNameColors[preset.name]) {
-            label.style.color = sightNameColors[preset.name];
-        }
-
-        if (skinNameColors[preset.name]) {
-            label.style.color = skinNameColors[preset.name];
-        }
-
-        if (skanNameColors[preset.name]) {
-            label.style.color = skanNameColors[preset.name];
-        }
-
-        listItem.appendChild(checkbox);
-        listItem.appendChild(img);
-        listItem.appendChild(label);
-
-        listItem.addEventListener('click', (event) => {
-            if (event.target !== checkbox) {
-                checkbox.checked = !checkbox.checked;
-            }
-            updateResourcesInput();
-        });
-
-        return listItem;
+    if (colorMap[preset.name]) {
+        textSpan.style.color = colorMap[preset.name];
     }
+
+    return listItem;
+}
 
     // Обновление ресурсов при выборе пресетов
     function updateResourcesInput() {
