@@ -166,23 +166,44 @@ input[type=number] {
     padding: 0;
 }
 
-.preset-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    padding: 8px;
-    background-color: #333333;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+/* Стили для списка пресетов */
+.preset-list {
+    list-style: none;
+    padding: 0; /* Убираем лишние отступы, они будут у элементов */
+    margin: 0;
 }
 
-.preset-item:hover {
-    background-color: #444444;
+/* li - теперь это просто невидимая обертка, убираем с него все стили */
+.preset-list li.preset-item {
+    margin-bottom: 8px; /* Оставляем только отступ между элементами */
+    padding: 0;
+    background: none;
+    cursor: default; /* Убираем курсор-руку, он будет на label */
 }
 
+/* label - становится ГЛАВНЫМ видимым и интерактивным элементом */
+.preset-item label {
+    display: flex;         /* Выстраиваем элементы (чекбокс, картинка, текст) в ряд */
+    align-items: center;   /* Выравниваем их по вертикали */
+    width: 100%;           /* Растягиваем на всю ширину родителя */
+    padding: 8px;          /* Внутренние отступы для красоты */
+    background-color: #333333; /* Фон элемента */
+    border-radius: 5px;    /* Скругление углов */
+    cursor: pointer;       /* ВОТ ЗДЕСЬ должен быть курсор-рука */
+    transition: border-color 0.2s;
+    border: 1px solid #333333;
+}
+
+/* Эффект наведения теперь тоже на label */
+.preset-item label:hover {
+    /*background-color: #444444;*/
+    border-color: #ffcc66;
+}
+
+/* Стили для кастомного чекбокса, который теперь внутри label */
 .preset-item input[type="checkbox"] {
-    margin-right: 10px;
+    flex-shrink: 0; /* Запрещаем чекбоксу сжиматься */
+    /* Ваши старые стили для чекбокса можно скопировать сюда */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -191,7 +212,6 @@ input[type=number] {
     border: 2px solid #666666;
     border-radius: 3px;
     outline: none;
-    cursor: pointer;
     vertical-align: middle;
 }
 
@@ -204,16 +224,20 @@ input[type=number] {
     background-repeat: no-repeat;
 }
 
+/* Стили для картинки внутри label */
 .preset-item img {
+    flex-shrink: 0; /* Запрещаем картинке сжиматься */
+    margin: 0 10px; /* Отступы слева и справа от картинки */
+    /* Ваши старые стили для картинки (размер, радиус) остаются */
     width: 40px;
     height: 40px;
-    margin-right: 10px;
     border-radius: 5px;
     object-fit: cover;
 }
 
-.preset-item label {
-    flex-grow: 1;
+/* Стили для текста (span) внутри label */
+.preset-item label span {
+    flex-grow: 1; /* Текст занимает всё оставшееся место */
     font-size: 16px;
     color: #f0e68c;
 }
@@ -353,17 +377,6 @@ summary:hover {
     list-style: none;
     padding: 5px 10px;
     margin: 0;
-}
-
-.preset-list li {
-    padding: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
-}
-
-.preset-list li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Анимация открытия details */
