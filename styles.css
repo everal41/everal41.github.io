@@ -564,3 +564,109 @@ summary span { /* Стили для текста внутри summary*/
     }
 }
 
+/* =================================================== */
+/* Стили для групп ресурсов (fieldset и legend)       */
+/* =================================================== */
+
+fieldset {
+    border: none;       /* Убирает рамку по умолчанию */
+    padding: 0;         /* Убирает внутренние отступы */
+    margin: 0 0 30px 0; /* Отступ только снизу, чтобы отделить группы друг от друга */
+}
+
+/* Стилизует последний fieldset, чтобы у него не было лишнего отступа снизу */
+fieldset:last-of-type {
+    margin-bottom: 0;
+}
+
+legend {
+    color: #ffcc66;
+    border-bottom: 1px solid #ffcc66;
+    padding-bottom: 5px;
+    margin-bottom: 15px; /* Этот отступ создает пространство между заголовком и первым ресурсом в группе */
+    width: 100%;         /* Растягивает legend на всю ширину, чтобы линия border-bottom была полной */
+    font-size: 20px;     /* Задает явный размер шрифта, как у подзаголовка */
+    font-weight: bold;   /* Делает текст жирным, как у заголовка */
+}
+
+/* =================================================== */
+/* Стили для иерархии раскрывающихся списков (details) */
+/* =================================================== */
+
+/* Общие стили для ВСЕХ <details> верхнего уровня */
+.preset-category > details {
+    background-color: #333333;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* При открытии <details> верхнего уровня */
+.preset-category > details[open] {
+    background-color: #444444; /* Фон контейнера становится чуть светлее */
+    border-color: #ffcc66;
+}
+
+/* Стили для ЗАГОЛОВКА <summary> верхнего уровня */
+.preset-category > details > summary {
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+}
+
+/* Стили для содержимого ВНУТРИ <details> верхнего уровня */
+.preset-category > details > .preset-list {
+    list-style: none;
+    padding: 5px 10px 10px 10px;
+    margin: 0;
+}
+
+
+/* --- ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ ВЛОЖЕННЫХ <details> --- */
+
+/* Находим <details>, которые являются потомками других <details> */
+details details {
+    /* 
+     * КЛЮЧЕВОЕ ИЗМЕНЕНИЕ: 
+     * Фон теперь темнее (#3a3a3a), а не светлее.
+     * Он чуть-чуть светлее ячеек с предметами (#333333),
+     * но заметно темнее фона открытого родителя (#444444).
+     * Это создает правильный эффект "глубины".
+    */
+    background-color: #3a3a3a; 
+    
+    /* 
+     * ВТОРОЕ ИЗМЕНЕНИЕ: 
+     * Делаем акцентную линию менее яркой, используя полупрозрачность.
+    */
+    border-left: 3px solid rgba(255, 204, 102, 0.5); /* Полупрозрачный желтый */
+
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0 5px 5px 0;
+    margin: 10px 0 10px 15px; /* Отступ слева для иерархии */
+    padding-left: 10px;
+}
+
+/* При открытии вложенного <details> фон НЕ МЕНЯЕТСЯ, чтобы не было путаницы */
+details details[open] {
+    background-color: #3a3a3a;
+}
+
+/* Стили для заголовка ВЛОЖЕННОГО <summary> */
+details details > summary {
+    font-size: 15px; /* Можно сделать шрифт чуть меньше */
+}
+
+/* Убираем лишний отступ у последнего вложенного элемента */
+details details:last-child {
+    margin-bottom: 0;
+}
