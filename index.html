@@ -38,7 +38,7 @@
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2>О сайте StalMath</h2>
-            <p>Этот сайт предназначен для помощи игрокам STALCRAFT в расчёте стоимости бартерных ресурсов. Он предоставляет удобный калькулятор, который позволяет быстро определить, сколько обменных монет потребуется для получения желаемых предметов.</p>
+            <p>Этот сайт предназначен для расчёта стоимости бартерных ресурсов. Он предоставляет удобный калькулятор, который позволяет быстро определить, сколько обменных монет потребуется для получения желаемых предметов.</p>
             <h3>Можно ли как-то помочь?</h3>
              <p>
                 Да, вы можете помочь посредством сбора обратной информации об использовании сайта.
@@ -70,94 +70,73 @@
     <main>
     <div class="container">
         <div class="left-block">
-            <h2>Купоны</h2>
-            <div class="coupon-container">
-                <button type="button" id="couponBtn">Применить купон</button>
-                <select id="couponSelect">
-                    <option value="1">Без скидки</option>
-                    <option value="0.5">Скидка 50%</option>
-                    <option value="0.7">Скидка 30%</option>
-                    <option value="0.8">Скидка 20%</option>
-                    <option value="0.9">Скидка 10%</option>
-                </select>
-            </div>
             <div class="presets-container">
+                <!-- Категория: Броня -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Броня</span>
-                    </summary>
+                    <summary><span>Броня</span></summary>
                     <ul id="armor-presets" class="preset-list"></ul>
                 </details>
 
+                <!-- Категория: Оружие -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Оружие</span>
-                    </summary>
-                    <ul id="weapon-presets" class="preset-list"></ul>
+                    <summary><span>Оружие</span></summary>
+                    <ul id="weapons-presets" class="preset-list"></ul>
                 </details>
 
+                <!-- Категория: Рюкзаки и Контейнеры -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Рюкзаки и Контейнеры</span>
-                    </summary>
-                    <ul id="container-presets" class="preset-list"></ul>
+                    <summary><span>Рюкзаки и Контейнеры</span></summary>
+                    <ul id="containers-presets" class="preset-list"></ul>
+                    <ul id="backpacks-presets" class="preset-list"></ul>
                 </details>
 
+                <!-- Категория: Надульники и глушители -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Надульники и глушители</span>
-                    </summary>
-                    <ul id="attachment-presets" class="preset-list"></ul>
+                    <summary><span>Надульники и глушители</span></summary>
+                    <ul id="attachments-presets" class="preset-list"></ul>
                 </details>
 
+                <!-- Категория: Магазины -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Магазины</span>
-                    </summary>
-                    <ul id="mag-presets" class="preset-list"></ul>
+                    <summary><span>Магазины</span></summary>
+                    <ul id="mags-presets" class="preset-list"></ul>
                 </details>
 
+                <!-- Категория: Цевья и крепления -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Цевья и крепления</span>
-                    </summary>
-                    <ul id="forend-presets" class="preset-list"></ul>
-                    <ul id="bracket-presets" class="preset-list"></ul>
+                    <summary><span>Цевья и крепления</span></summary>
+                    <ul id="forends-presets" class="preset-list"></ul>
+                    <ul id="brackets-presets" class="preset-list"></ul>
                 </details>
 
+                <!-- Категория: Прочие обвесы -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Прочие обвесы</span>
-                    </summary>
-                    <ul id="other-presets" class="preset-list"></ul>
+                    <summary><span>Прочие обвесы</span></summary>
+                    <ul id="others-presets" class="preset-list"></ul>
                 </details>
 
+                <!-- Категория: Устройства -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Устройства</span>
-                    </summary>
-                    <ul id="device-presets" class="preset-list"></ul>
+                    <summary><span>Устройства</span></summary>
+                    <ul id="devices-presets" class="preset-list"></ul>
                 </details>
 
+                <!-- Категория: Прицелы -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Прицелы</span>
-                    </summary>
-                    <ul id="sight-presets" class="preset-list"></ul>
+                    <summary><span>Прицелы</span></summary>
+                    <ul id="sights-presets" class="preset-list"></ul>
                 </details>
 
+                <!-- Категория: Скины и Краски -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Скины и Краски</span>
-                    </summary>
-                    <ul id="skin-presets" class="preset-list"></ul>
+                    <summary><span>Скины и Краски</span></summary>
+                    <ul id="skins-presets" class="preset-list"></ul>
                 </details>
 
+                <!-- Категория: Прочее -->
                 <details class="preset-category">
-                    <summary>
-                        <span>Прочее</span>
-                    </summary>
-                    <ul id="skan-presets" class="preset-list"></ul>
+                    <summary><span>Прочее</span></summary>
+                    <ul id="skans-presets" class="preset-list"></ul>
                 </details>
             </div>
         </div>
@@ -307,14 +286,23 @@
             </fieldset>
                 
     
-                <div class="result">
-                    <button type="button" id="calculateBtn">Рассчитать</button>
-                    <p id="totalCoinsDisplay">Итоговая стоимость: 0 монет</p>
+                <div class="result-block">
+                    <!-- Этот блок теперь будет заполняться динамически через JS -->
+                    <div id="couponApplyBlock" class="coupon-apply-container"></div>
+
+                    <div class="total-cost-block">
+                        <p id="totalCoinsDisplay">Выберите предметы для расчета</p>
+                        <button type="button" id="resetBtn" title="Сбросить все">
+                            <i class="fas fa-undo"></i>
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
     </main>
-    <script src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="calculator.js"></script>
+    <script src="global.js"></script>
 </body>
 </html>
