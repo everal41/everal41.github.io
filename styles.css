@@ -17,6 +17,7 @@ body {
     padding-bottom: 40px; /* Отступ снизу для футера */
     background-image: url('background.jpg'); /* Замените на фактический путь к вашему изображению */
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
     position: relative;
 }
@@ -562,3 +563,4 @@ summary span { /* Стили для текста внутри summary*/
         margin: 10px 0;
     }
 }
+
