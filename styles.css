@@ -670,3 +670,122 @@ details details > summary {
 details details:last-child {
     margin-bottom: 0;
 }
+
+/* =================================================== */
+/* Стили для нового блока расчета и купонов            */
+/* =================================================== */
+
+.result-block {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #252525;
+    border-radius: 8px;
+    border-top: 2px solid #ffcc66;
+}
+
+/* Контейнер для всех строк с купонами */
+.coupon-apply-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Расстояние между строками купонов */
+    margin-bottom: 15px;
+}
+
+/* Одна строка: Название предмета + выбор скидки */
+.coupon-item-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coupon-item-row label {
+    flex-basis: 50%; /* Название предмета занимает половину ширины */
+    font-size: 14px;
+    color: #cccccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавляем троеточие, если имя не влезает */
+}
+
+.coupon-item-row select {
+    flex-basis: 50%; /* Выбор скидки занимает вторую половину */
+    padding: 8px;
+    background-color: #333333;
+    color: #f0e68c;
+    border: 1px solid #666666;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* styles.css */
+
+/* Добавьте этот новый стиль */
+.remove-preset-btn {
+    background: #555;
+    color: #ccc;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    padding-bottom: 2px;
+}
+
+.remove-preset-btn:hover {
+    background: #B22222; /* Красный цвет при наведении */
+    color: white;
+}
+
+/* Немного изменим существующий стиль, чтобы всё поместилось */
+.coupon-item-row label {
+    flex-basis: auto; /* Убираем жесткую ширину */
+    flex-grow: 1;     /* Позволяем занимать все доступное место */
+    margin-right: 10px;
+}
+
+.coupon-item-row select {
+    flex-basis: 150px; /* Задаем фиксированную ширину для селекта */
+    flex-shrink: 0;
+}
+
+.total-cost-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#totalCoinsDisplay {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f0e68c;
+    margin: 0;
+}
+
+#resetBtn {
+    background-color: #8B0000; /* Темно-красный */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Круглая кнопка */
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+#resetBtn:hover {
+    background-color: #B22222; /* Ярко-красный при наведении */
+    transform: rotate(-45deg);
+}
