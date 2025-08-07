@@ -1,39 +1,42 @@
-// Модальное окно "О сайте"
-const aboutModal = document.getElementById('about-modal');
-const openAboutModalBtn = document.getElementById('open-about');
-const closeAboutModalBtn = document.querySelector('#about-modal .close-button'); // Селектор по ID и классу
+// --- УНИВЕРСАЛЬНЫЙ КОД ДЛЯ МОДАЛЬНЫХ ОКОН ---
 
+// Находит все кнопки, которые должны открывать модальные окна
+const openModalButtons = document.querySelectorAll('[data-modal-target]');
+// Находит все кнопки для закрытия
+const closeModalButtons = document.querySelectorAll('.close-button');
 
-// Модальное окно "Контакты"
-const contactsModal = document.getElementById('contacts-modal');
-const openContactsModalBtn = document.getElementById('open-contacts');
-const closeContactsModalBtn = document.querySelector('#contacts-modal .close-button'); // и здесь
-
-
-// Функции открытия и закрытия (общие, используем параметр)
-function openModal(modalElement) {
-    modalElement.style.display = 'block';
+// Функция открытия
+function openModal(modal) {
+    if (modal == null) return;
+    modal.style.display = 'block';
 }
 
-function closeModal(modalElement) {
-    modalElement.style.display = 'none';
+// Функция закрытия
+function closeModal(modal) {
+    if (modal == null) return;
+    modal.style.display = 'none';
 }
 
-// Обработчики событий для "О сайте"
-openAboutModalBtn.addEventListener('click', () => openModal(aboutModal));
-closeAboutModalBtn.addEventListener('click', () => closeModal(aboutModal));
+// Добавляет обработчик на КАЖДУЮ кнопку открытия
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget); // Находит окно по data-атрибуту
+        openModal(modal);
+    });
+});
 
-// Обработчики событий для "Контакты"
-openContactsModalBtn.addEventListener('click', () => openModal(contactsModal));
-closeContactsModalBtn.addEventListener('click', () => closeModal(contactsModal));
+// Добавляет обработчик на КАЖДУЮ кнопку закрытия
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal'); // Находит родительское модальное окно
+        closeModal(modal);
+    });
+});
 
-// Закрытие при клике вне окна (общее)
+// Закрытие при клике вне окна (работает для любого окна)
 window.addEventListener('click', (event) => {
-    if (event.target === aboutModal) {
-        closeModal(aboutModal);
-    }
-    if (event.target === contactsModal) {
-        closeModal(contactsModal);
+    if (event.target.classList.contains('modal')) {
+        closeModal(event.target);
     }
 });
 
