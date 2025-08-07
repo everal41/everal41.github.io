@@ -17,8 +17,8 @@
 <body>
     <header class="site-header">
         <nav class="header-links">
-            <a href="#" id="open-about">О сайте</a>
-            <a href="#" id="open-contacts">Связь</a>
+            <a href="#" data-modal-target="#about-modal">О сайте</a>
+            <a href="#" data-modal-target="#contacts-modal">Связь</a>
         </nav>
         <div class="header-logo">
             <h1>StalMath</h1>
@@ -67,6 +67,7 @@
     </div>
 
     <!-- Основной контент -->
+    <main>
     <div class="container">
         <div class="left-block">
             <h2>Купоны</h2>
@@ -81,198 +82,230 @@
                 </select>
             </div>
             <div class="presets-container">
-                <div class="preset-category">
-                    <h3>Броня</h3>
-                        <ul id="armor-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Броня</span>
+                    </summary>
+                    <ul id="armor-presets" class="preset-list"></ul>
+                </details>
 
-                <div class="preset-category">
-                    <h3>Оружие</h3>
-                        <ul id="weapon-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Оружие</span>
+                    </summary>
+                    <ul id="weapon-presets" class="preset-list"></ul>
+                </details>
 
-                <div class="preset-category">
-                    <h3>Рюкзаки и Контейнеры</h3>
-                        <ul id="container-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Рюкзаки и Контейнеры</span>
+                    </summary>
+                    <ul id="container-presets" class="preset-list"></ul>
+                </details>
 
-                <div class="preset-category">
-                    <h3>Надульники и глушители</h3>
-                        <ul id="attachment-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Надульники и глушители</span>
+                    </summary>
+                    <ul id="attachment-presets" class="preset-list"></ul>
+                </details>
 
-                <div class="preset-category">
-                    <h3>Магазины</h3>
-                        <ul id="mag-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Магазины</span>
+                    </summary>
+                    <ul id="mag-presets" class="preset-list"></ul>
+                </details>
 
-                <div class="preset-category">
-                    <h3>Цевья и крепления</h3>
-                        <ul id="forend-presets" class="preset-list"></ul>
-                        <ul id="bracket-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Цевья и крепления</span>
+                    </summary>
+                    <ul id="forend-presets" class="preset-list"></ul>
+                    <ul id="bracket-presets" class="preset-list"></ul>
+                </details>
 
-                <div class="preset-category">
-                    <h3>Прочие обвесы</h3>
-                        <ul id="other-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Прочие обвесы</span>
+                    </summary>
+                    <ul id="other-presets" class="preset-list"></ul>
+                </details>
 
-                <div class="preset-category">
-                    <h3>Устройства</h3>
-                        <ul id="device-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Устройства</span>
+                    </summary>
+                    <ul id="device-presets" class="preset-list"></ul>
+                </details>
 
-                <div class="preset-category">
-                    <h3>Прицелы</h3>
-                        <ul id="sight-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Прицелы</span>
+                    </summary>
+                    <ul id="sight-presets" class="preset-list"></ul>
+                </details>
 
-                <div class="preset-category">
-                    <h3>Скины и Краски</h3>
-                        <ul id="skin-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Скины и Краски</span>
+                    </summary>
+                    <ul id="skin-presets" class="preset-list"></ul>
+                </details>
 
-                <div class="preset-category">
-                    <h3>Прочее</h3>
-                        <ul id="skan-presets" class="preset-list"></ul>
-                </div>
+                <details class="preset-category">
+                    <summary>
+                        <span>Прочее</span>
+                    </summary>
+                    <ul id="skan-presets" class="preset-list"></ul>
+                </details>
             </div>
         </div>
 
         <div class="right-block">
             <form id="calculatorForm">
                 <!-- Болота -->
-            <h2>Болота</h2>
-            <div class="resource rank-noob">
-                <img src="images/barter/bolotny_kamen.png" alt="Болотный камень">
-                <label for="bolotny_kamen">Болотный камень</label>
-                <input type="number" id="bolotny_kamen" min="0" value="0">
-            </div>
-            <div class="resource rank-noob">
-                <img src="images/barter/green_plesen.png" alt="Зеленая плесень">
-                <label for="green_plesen">Зеленая плесень</label>
-                <input type="number" id="green_plesen" min="0" value="0">
-            </div>
+            <fieldset>
+                <legend>Болота</legend>
+                <div class="resource rank-noob">
+                    <img src="images/barter/bolotny_kamen.png" alt="Болотный камень" loading="lazy">
+                    <label for="bolotny_kamen">Болотный камень</label>
+                    <input type="number" id="bolotny_kamen" min="0" value="0">
+                </div>
+                <div class="resource rank-noob">
+                    <img src="images/barter/green_plesen.png" alt="Зеленая плесень" loading="lazy">
+                    <label for="green_plesen">Зеленая плесень</label>
+                    <input type="number" id="green_plesen" min="0" value="0">
+                </div>
+            </fieldset>
+            
 
             <!-- Обочина -->
-            <h2>Южная Зона</h2>
-            <div class="resource rank-new">
-                <img src="images/barter/koren_vonyuchka.png" alt="Корень-вонючка">
-                <label for="koren_vonyuchka">Корень-вонючка</label>
-                <input type="number" id="koren_vonyuchka" min="0" value="0">
-            </div>
-            <div class="resource rank-new">
-                <img src="images/barter/srachnik.png" alt="Срачник">
-                <label for="srachnik">Срачник</label>
-                <input type="number" id="srachnik" min="0" value="0">
-            </div>
-            <div class="resource rank-new">
-                <img src="images/barter/mednaya_provoloka.png" alt="Остатки медной проволоки">
-                <label for="mednaya_provoloka">Остатки медной проволоки</label>
-                <input type="number" id="mednaya_provoloka" min="0" value="0">
-            </div>
-
+            <fieldset>
+                <legend>Южная Зона</legend>
+                <div class="resource rank-new">
+                    <img src="images/barter/koren_vonyuchka.png" alt="Корень-вонючка" loading="lazy">
+                    <label for="koren_vonyuchka">Корень-вонючка</label>
+                    <input type="number" id="koren_vonyuchka" min="0" value="0">
+                </div>
+                <div class="resource rank-new">
+                    <img src="images/barter/srachnik.png" alt="Срачник" loading="lazy">
+                    <label for="srachnik">Срачник</label>
+                    <input type="number" id="srachnik" min="0" value="0">
+                </div>
+                <div class="resource rank-new">
+                    <img src="images/barter/mednaya_provoloka.png" alt="Остатки медной проволоки" loading="lazy">
+                    <label for="mednaya_provoloka">Остатки медной проволоки</label>
+                    <input type="number" id="mednaya_provoloka" min="0" value="0">
+                </div>
+            </fieldset>
             <!-- Бар -->
-            <h2>Окрестности Завода</h2>
-            <div class="resource rank-mid">
-                <img src="images/barter/romashka.png" alt="Росток чернобыльской ромашки">
-                <label for="romashka">Росток чернобыльской ромашки</label>
-                <input type="number" id="romashka" min="0" value="0">
-            </div>
-            <div class="resource rank-mid">
-                <img src="images/barter/radioperedatchik.png" alt="Остатки радиопередатчика">
-                <label for="radioperedatchik">Остатки радиопередатчика</label>
-                <input type="number" id="radioperedatchik" min="0" value="0">
-            </div>
-            <div class="resource rank-mid">
-                <img src="images/barter/rassolnik.png" alt="Рассольник">
-                <label for="rassolnik">Рассольник</label>
-                <input type="number" id="rassolnik" min="0" value="0">
-            </div>
-            <div class="resource rank-mid">
-                <img src="images/barter/alpha_fragment.png" alt="Фрагмент данных Альфа">
-                <label for="alfa_fragment">Фрагмент данных Альфа</label>
-                <input type="number" id="alfa_fragment" min="0" value="0">
-            </div>
-
+            <fieldset>
+                <legend>Окрестности Завода</legend>
+                <div class="resource rank-mid">
+                    <img src="images/barter/romashka.png" alt="Росток чернобыльской ромашки" loading="lazy">
+                    <label for="romashka">Росток чернобыльской ромашки</label>
+                    <input type="number" id="romashka" min="0" value="0">
+                </div>
+                <div class="resource rank-mid">
+                    <img src="images/barter/radioperedatchik.png" alt="Остатки радиопередатчика" loading="lazy">
+                    <label for="radioperedatchik">Остатки радиопередатчика</label>
+                    <input type="number" id="radioperedatchik" min="0" value="0">
+                </div>
+                <div class="resource rank-mid">
+                    <img src="images/barter/rassolnik.png" alt="Рассольник" loading="lazy">
+                    <label for="rassolnik">Рассольник</label>
+                    <input type="number" id="rassolnik" min="0" value="0">
+                </div>
+                <div class="resource rank-mid">
+                    <img src="images/barter/alpha_fragment.png" alt="Фрагмент данных Альфа" loading="lazy">
+                    <label for="alfa_fragment">Фрагмент данных Альфа</label>
+                    <input type="number" id="alfa_fragment" min="0" value="0">
+                </div>
+            </fieldset>
             <!-- Полесское/ПД -->
-            <h2>Полесское/ПД</h2>
-            <div class="resource rank-high">
-                <img src="images/barter/beta_fragment.png" alt="Фрагмент данных 'Бета'">
-                <label for="beta_fragment">Фрагмент данных "Бета"</label>
-                <input type="number" id="beta_fragment" min="0" value="0">
-            </div>
-            <div class="resource rank-high">
-                <img src="images/barter/durman_kamen.png" alt="Дурман-камень">
-                <label for="durman_kamen">Дурман-камень</label>
-                <input type="number" id="durman_kamen" min="0" value="0">
-            </div>
-            <div class="resource rank-high">
-                <img src="images/barter/severny_moh.png" alt="Северный мох">
-                <label for="severny_moh">Северный мох</label>
-                <input type="number" id="severny_moh" min="0" value="0">
-            </div>
-            <div class="resource rank-high">
-                <img src="images/barter/ostatki_akkumulyatora.png" alt="Остатки аккумулятора">
-                <label for="ostatki_akkumulyatora">Остатки аккумулятора</label>
-                <input type="number" id="ostatki_akkumulyatora" min="0" value="0">
-            </div>
-
+            <fieldset>
+                <legend>Полесское/ПД</legend>
+                <div class="resource rank-high">
+                    <img src="images/barter/beta_fragment.png" alt="Фрагмент данных 'Бета'" loading="lazy">
+                    <label for="beta_fragment">Фрагмент данных "Бета"</label>
+                    <input type="number" id="beta_fragment" min="0" value="0">
+                </div>
+                <div class="resource rank-high">
+                    <img src="images/barter/durman_kamen.png" alt="Дурман-камень" loading="lazy">
+                    <label for="durman_kamen">Дурман-камень</label>
+                    <input type="number" id="durman_kamen" min="0" value="0">
+                </div>
+                <div class="resource rank-high">
+                    <img src="images/barter/severny_moh.png" alt="Северный мох" loading="lazy">
+                    <label for="severny_moh">Северный мох</label>
+                    <input type="number" id="severny_moh" min="0" value="0">
+                </div>
+                <div class="resource rank-high">
+                    <img src="images/barter/ostatki_akkumulyatora.png" alt="Остатки аккумулятора" loading="lazy">
+                    <label for="ostatki_akkumulyatora">Остатки аккумулятора</label>
+                    <input type="number" id="ostatki_akkumulyatora" min="0" value="0">
+                </div>
+            </fieldset>
             <!-- Север -->
-            <h2>Север</h2>
-            <div class="resource rank-mast">
-                <img src="images/barter/gamma_fragment.png" alt="Фрагмент данных 'Гамма'">
-                <label for="gamma_fragment">Фрагмент данных "Гамма"</label>
-                <input type="number" id="gamma_fragment" min="0" value="0">
-            </div>
-            <div class="resource rank-mast">
-                <img src="images/barter/veshestvo_07270.png" alt="Вещество 07270">
-                <label for="veshestvo_07270">Вещество 07270</label>
-                <input type="number" id="veshestvo_07270" min="0" value="0">
-            </div>
-            <div class="resource rank-mast">
-                <img src="images/barter/ryzhiy_paporotnik.png" alt="Рыжий папоротник">
-                <label for="ryzhiy_paporotnik">Рыжий папоротник</label>
-                <input type="number" id="ryzhiy_paporotnik" min="0" value="0">
-            </div>
-            <div class="resource rank-mast">
-                <img src="images/barter/psi_mayachok.png" alt="Остатки пси-маячка">
-                <label for="psi_mayachok">Остатки пси-маячка</label>
-                <input type="number" id="psi_mayachok" min="0" value="0">
-            </div>
-            <div class="resource rank-mast">
-                <img src="images/barter/kvantovaya_batareya.png" alt="Квантовая батарея">
-                <label for="kvantovaya_batareya">Квантовая батарея</label>
-                <input type="number" id="kvantovaya_batareya" min="0" value="0">
-            </div>
-
+            <fieldset>
+                <legend>Север</legend>
+                <div class="resource rank-mast">
+                    <img src="images/barter/gamma_fragment.png" alt="Фрагмент данных 'Гамма'" loading="lazy">
+                    <label for="gamma_fragment">Фрагмент данных "Гамма"</label>
+                    <input type="number" id="gamma_fragment" min="0" value="0">
+                </div>
+                <div class="resource rank-mast">
+                    <img src="images/barter/veshestvo_07270.png" alt="Вещество 07270" loading="lazy">
+                    <label for="veshestvo_07270">Вещество 07270</label>
+                    <input type="number" id="veshestvo_07270" min="0" value="0">
+                </div>
+                <div class="resource rank-mast">
+                    <img src="images/barter/ryzhiy_paporotnik.png" alt="Рыжий папоротник" loading="lazy">
+                    <label for="ryzhiy_paporotnik">Рыжий папоротник</label>
+                    <input type="number" id="ryzhiy_paporotnik" min="0" value="0">
+                </div>
+                <div class="resource rank-mast">
+                    <img src="images/barter/psi_mayachok.png" alt="Остатки пси-маячка" loading="lazy">
+                    <label for="psi_mayachok">Остатки пси-маячка</label>
+                    <input type="number" id="psi_mayachok" min="0" value="0">
+                </div>
+                <div class="resource rank-mast">
+                    <img src="images/barter/kvantovaya_batareya.png" alt="Квантовая батарея" loading="lazy">
+                    <label for="kvantovaya_batareya">Квантовая батарея</label>
+                    <input type="number" id="kvantovaya_batareya" min="0" value="0">
+                </div>
+            </fieldset>
             <!-- Любеч-3 -->
-            <h2>Любеч-3</h2>
-            <div class="resource rank-mast">
-                <img src="images/barter/limb.png" alt="Лимб">
-                <label for="limb">Лимб</label>
-                <input type="number" id="limb" min="0" value="0">
-            </div>
-            <div class="resource rank-mast">
-                <img src="images/barter/gorkolistnik.png" alt="Горьколистник">
-                <label for="gorkolistnik">Горьколистник</label>
-                    <input type="number" id="gorkolistnik" min="0" value="0">
+            <fieldset>
+                <legend>Любеч-3</legend>
+                <div class="resource rank-mast">
+                    <img src="images/barter/limb.png" alt="Лимб" loading="lazy">
+                    <label for="limb">Лимб</label>
+                    <input type="number" id="limb" min="0" value="0">
                 </div>
                 <div class="resource rank-mast">
-                    <img src="images/barter/lambda_fragment.png" alt="Фрагмент данных 'Лямбда'">
-                    <label for="lambda_fragment">Фрагмент данных "Лямбда"</label>
-                    <input type="number" id="lambda_fragment" min="0" value="0">
-                </div>
-                <div class="resource rank-mast">
-                    <img src="images/barter/limboplazma.png" alt="Лимбоплазма">
-                    <label for="limboplazma">Лимбоплазма</label>
-                    <input type="number" id="limboplazma" min="0" value="0">
-                </div>
-                <div class="resource rank-mast">
-                    <img src="images/barter/anomalnaya_batareya.png" alt="Аномальная батарея">
-                    <label for="anomalnaya_batareya">Аномальная батарея</label>
-                    <input type="number" id="anomalnaya_batareya" min="0" value="0">
-                </div>
+                    <img src="images/barter/gorkolistnik.png" alt="Горьколистник" loading="lazy">
+                    <label for="gorkolistnik">Горьколистник</label>
+                        <input type="number" id="gorkolistnik" min="0" value="0">
+                    </div>
+                    <div class="resource rank-mast">
+                        <img src="images/barter/lambda_fragment.png" alt="Фрагмент данных 'Лямбда'" loading="lazy">
+                        <label for="lambda_fragment">Фрагмент данных "Лямбда"</label>
+                        <input type="number" id="lambda_fragment" min="0" value="0">
+                    </div>
+                    <div class="resource rank-mast">
+                        <img src="images/barter/limboplazma.png" alt="Лимбоплазма" loading="lazy">
+                        <label for="limboplazma">Лимбоплазма</label>
+                        <input type="number" id="limboplazma" min="0" value="0">
+                    </div>
+                    <div class="resource rank-mast">
+                        <img src="images/barter/anomalnaya_batareya.png" alt="Аномальная батарея" loading="lazy">
+                        <label for="anomalnaya_batareya">Аномальная батарея</label>
+                        <input type="number" id="anomalnaya_batareya" min="0" value="0">
+                    </div>
+            </fieldset>
+                
     
                 <div class="result">
                     <button type="button" id="calculateBtn">Рассчитать</button>
@@ -281,7 +314,7 @@
             </form>
         </div>
     </div>
-
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
