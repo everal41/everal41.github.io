@@ -400,6 +400,7 @@ legend {
     grid-template-columns: auto 1fr auto;
     align-items: stretch;
     gap: 6px;
+    max-width: 100%;
 }
 .step-btn {
     width: 32px; height: 32px;
@@ -898,4 +899,7 @@ body.modal-open { overflow-y: auto; }
   display: block;
 }
 
-
+@media (max-width: 380px){
+  .step-btn{ width: 28px; }    /* было 32px */
+  .resource{ gap: 8px; }       /* было 10px */
+}
