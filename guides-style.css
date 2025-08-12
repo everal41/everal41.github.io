@@ -1,535 +1,675 @@
-/* --- СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ ГАЙДОВ (guides.html) --- */
+/* =========================================================
+   Стили для страницы Руководства (guides.html) и страниц гайдов
+   ========================================================= */
+
+/* Фон только для страницы гайдов */
+body.page-guides {
+  /* Укажи свой путь к картинке при необходимости */
+  --bg-image: url('guides-bg.jpg');
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ===== ХАБ ГАЙДОВ (guides.html) ===== */
 
 .guides-hub-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
+  width: min(1100px, 92%);
+  margin: 20px auto 28px;
+  padding: 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
 }
 
 .guides-hub-container h2 {
-    text-align: center;
-    color: #ffcc66;
-    border-bottom: 1px solid #ffcc66;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+  position: relative;
+  padding-left: 12px;
+}
+.guides-hub-container h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4px;
+  height: 1.2em;
+  transform: translateY(-50%);
+  background: var(--accent);
+  border-radius: 3px;
 }
 
 .guides-hub-container > p {
-    text-align: center;
-    color: #cccccc;
-    margin-bottom: 40px;
-    font-size: 16px;
+  margin: 0 0 20px;
+  color: var(--text-dim);
 }
 
-/* Сетка для карточек */
+/* Сетка карточек */
 .guides-grid {
-    display: grid;
-    /* Создаем колонки: минимум 300px, максимум 1fr. Браузер сам подберет количество. */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px; /* Расстояние между карточками */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
 }
 
-/* Стили для одной карточки */
+/* Карточка гайда — единый стиль сайта */
 .guide-card {
-    background-color: #2e2e2e;
-    border-radius: 10px;
-    overflow: hidden; /* Обрезает все, что выходит за рамки скругленных углов */
-    text-decoration: none; /* Убираем подчеркивание у ссылки */
-    color: #dcdcdc;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-    border: 1px solid #444;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
 .guide-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(255, 204, 102, 0.2);
-    border-color: #ffcc66;
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 28px rgba(0,0,0,.28);
 }
 
-/* Картинка в карточке */
+/* Картинка карточки с лёгкой анимацией */
 .guide-card img {
-    width: 100%;
-    height: 180px; /* Фиксированная высота для всех картинок */
-    object-fit: cover; /* Картинка будет обрезаться, а не сжиматься, сохраняя пропорции */
-    display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform .25s ease, filter .25s ease;
+  filter: saturate(1.02) contrast(1.02);
+}
+.guide-card:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.08) contrast(1.06);
 }
 
-/* Контентная часть карточки (заголовок и описание) */
+/* Контент карточки */
 .guide-card-content {
-    padding: 20px;
-    flex-grow: 1; /* Позволяет блоку растягиваться, чтобы все карточки были одной высоты */
+  padding: 14px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .guide-card-content h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #f0f0f0;
-    font-size: 20px;
+  margin: 0;
+  font-size: 18px;
+  color: var(--text);
 }
 
 .guide-card-content p {
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 1.6;
+  margin: 0;
+  color: var(--text-dim);
+  line-height: 1.55;
 }
 
-/* Стиль для неактивной/будущей карточки */
+/* Метаданные (дата обновления) */
+.guide-card-meta {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.guide-card-date {
+  color: var(--text-dim);
+  font-size: 13px;
+}
+.guide-card-date i { margin-right: 6px; }
+
+/* Бейдж “Скоро” */
+.card-status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 26px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 999px;
+  color: #1a1a1a;
+  background: linear-gradient(90deg, #ffcc66, #ff9d56);
+  border: none;
+}
+
+/* Неактивные карточки */
 .guide-card.disabled {
-    cursor: not-allowed;
-    filter: grayscale(80%);
-}
-.guide-card.disabled:hover {
-    transform: none;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-    border-color: #444;
+  cursor: not-allowed;
+  filter: grayscale(.8) opacity(.95);
+  pointer-events: none;
+  border-color: var(--border);
+  box-shadow: 0 8px 18px rgba(0,0,0,.2);
 }
 
+/* Адаптив для карточек */
+@media (max-width: 600px) {
+  .guide-card img { height: 150px; }
+}
 
-/* --- СТИЛИ ДЛЯ СТРАНИЦЫ ОДНОГО ГАЙДА (guide-*.html) --- */
+/* Уважение настроек “уменьшить анимации” */
+@media (prefers-reduced-motion: reduce) {
+  .guide-card,
+  .guide-card img {
+    transition: none !important;
+  }
+}
+
+/* ===== СТРАНИЦЫ ОТДЕЛЬНЫХ ГАЙДОВ (guide-*.html) ===== */
 
 .guide-article-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 30px;
-    background-color: #2e2e2e;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
-    color: #dcdcdc;
-    font-size: 17px;
-    line-height: 1.7;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+  color: #dcdcdc;
+  font-size: 17px;
+  line-height: 1.7;
+  position: relative;
 }
 
 .guide-article-container h1 {
-    color: #ffcc66;
-    text-align: left;
-    border-bottom: 1px solid #555;
-    padding-bottom: 15px;
-    margin-bottom: 25px;
+  color: #ffcc66;
+  text-align: left;
+  border-bottom: 1px solid #555;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
 }
 
-.guide-article-container h2, .guide-article-container h3 {
-    color: #e0e0e0;
-    margin-top: 30px;
+.guide-article-container h2,
+.guide-article-container h3 {
+  color: #e0e0e0;
+  margin-top: 30px;
 }
 
 .guide-article-container p {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
-.guide-article-container ul, .guide-article-container ol {
-    padding-left: 25px;
+.guide-article-container ul,
+.guide-article-container ol {
+  padding-left: 25px;
 }
 
-.guide-article-container b, .guide-article-container strong {
-    color: #ffcc66;
+.guide-article-container b,
+.guide-article-container strong {
+  color: #ffcc66;
 }
 
 .guide-article-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-/* --- СТИЛИ ДЛЯ КНОПОК СКАЧИВАНИЯ НА СТРАНИЦЕ ГАЙДА --- */
-
-.download-links-container {
-    display: flex;
-    flex-wrap: wrap; /* Позволяет кнопкам переноситься на новую строку на маленьких экранах */
-    gap: 15px; /* Расстояние между кнопками */
-    margin-top: 15px;
-}
-
-.download-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 20px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: transform 0.2s ease, filter 0.2s ease;
-    font-size: 16px;
-    border: none;
-}
-
-.download-button:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-}
-
-.download-button i {
-    font-size: 20px;
-    margin-right: 10px;
-}
-
-/* Стили для кнопки Google Drive */
-.google-drive-btn {
-    background-color: #4285F4; /* Фирменный синий цвет Google */
-}
-
-/* Стили для кнопки Yandex Disk */
-.yandex-disk-btn {
-    background-color: #E52620; /* Фирменный красный цвет Yandex */
-}
-
-/* Стили для блока с обновлениями (патчноутами) */
-.patch-note {
-    background-color: #252525;
-    border-left: 4px solid #ffcc66;
-    padding: 15px 20px;
-    margin-top: 20px;
-    border-radius: 0 5px 5px 0;
-}
-
-.patch-note h4 {
-    margin: 0 0 10px 0;
-    color: #f0f0f0;
-}
-
-.patch-note strong {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.patch-note ul {
-    margin: 0;
-}
-
-/* --- СТИЛИ ДЛЯ ЭЛЕМЕНТОВ ВНУТРИ ГАЙДА --- */
-
-/* Разделитель между секциями */
-.section-divider {
-    border: none;
-    border-top: 1px solid #444;
-    margin: 40px 0;
-}
-
-/* Стили для списка назначения брони */
-.purpose-list {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 20px;
-}
-
-.purpose-list li {
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.purpose-icon {
-    font-size: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-.purpose-icon.green { color: #4CAF50; }
-.purpose-icon.yellow { color: #ffcc66; }
-
-/* Стили для информационных блоков */
-.note-warning, .note-info {
-    display: flex;
-    align-items: flex-start;
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 8px;
-    border-left-width: 5px;
-    border-left-style: solid;
-}
-
-.note-warning {
-    background-color: rgba(255, 204, 102, 0.1);
-    border-left-color: #ffcc66;
-    color: #ffde99;
-}
-
-.note-info {
-    background-color: rgba(100, 150, 255, 0.1);
-    border-left-color: #6496ff;
-    color: #a8c5ff;
-}
-
-.note-warning i, .note-info i {
-    font-size: 20px;
-    margin-right: 15px;
-    margin-top: 2px;
-}
-
-.note-warning i { color: #ffcc66; }
-.note-info i { color: #6496ff; }
-
-/* --- НОВЫЕ СТИЛИ (добавить в конец guides-style.css) --- */
-
-/* Блок с датой на карточке гайда */
-.guide-card-meta {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px solid #444;
-}
-.guide-card-date {
-    color: #999;
-    font-size: 13px;
-}
-.guide-card-date i {
-    margin-right: 5px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
 }
 
 /* Блок с датой под заголовком статьи */
 .article-meta {
-    color: #999;
-    font-size: 14px;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #444;
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #444;
 }
-.article-meta i {
-    margin-right: 8px;
-}
+.article-meta i { margin-right: 8px; }
 
-/* Блок для расположения "картинка слева, текст справа" */
-.armor-intro-block {
-    display: flex;
-    gap: 25px; /* Пространство между картинкой и текстом */
-    align-items: flex-start; /* Выравнивание по верху */
-    margin-bottom: 20px;
-}
-
-.armor-image-container {
-    flex: 0 0 250px; /* Фиксированная ширина блока с картинкой */
-}
-
-.armor-image-container img {
-    width: 100%;
-    margin: 0; /* Убираем стандартные отступы у картинки */
-}
-
-.armor-description-container {
-    flex: 1; /* Текстовый блок займет оставшееся место */
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    .armor-intro-block {
-        flex-direction: column; /* Картинка будет над текстом */
-    }
-
-    .armor-image-container {
-        flex: 0 0 auto; /* Сбрасываем фиксированную ширину */
-        width: 100%;
-        max-width: 300px; /* Ограничиваем максимальную ширину на мобильных */
-        margin: 0 auto 20px; /* Центрируем картинку и добавляем отступ снизу */
-    }
-}
-
-/* --- Стили для галереи из нескольких изображений --- */
-.armor-gallery {
-    display: flex;
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.armor-gallery img {
-    flex: 1;
-    width: 50%; /* Каждое изображение займет половину ширины */
-    height: auto;
-    object-fit: contain; /* Чтобы изображение полностью помещалось */
-    max-height: 400px;
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
-    .armor-gallery {
-        flex-direction: column;
-    }
-    .armor-gallery img {
-        width: 100%;
-    }
-}
-
-/* --- СТИЛИ ДЛЯ ЛИПКОГО ЗАГОЛОВКА ВНУТРИ СТАТЬИ (v4 - Final) --- */
-
-.guide-article-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 30px; /* Убедитесь, что padding задан здесь */
-    background-color: #2e2e2e;
-    border-radius: 10px;
-    position: relative; 
-}
-
-/* Контейнер для липкого заголовка */
+/* Липкий заголовок внутри статьи */
 .article-sticky-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 950;
-    background-color: #2e2e2e; /* Такой же фон, как у родителя */
-    /* Важно! Padding должен совпадать с родительским, чтобы текст был на одной линии */
-    padding: 15px 30px; 
-    
-    opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 950;
+  background-color: #2e2e2e;
+  padding: 15px 30px; /* совпадает с паддингом родителя */
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Класс для фиксации хедера */
 .article-sticky-header.is-fixed {
-    position: fixed;
-    border-radius: 0; /* Убираем скругление, когда панель прилипает к верху */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Добавляем тень для отделения от контента */
+  position: fixed;
+  border-radius: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Состояние, когда заголовок видим */
 .article-sticky-header.is-active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 #sticky-header-title {
-    margin: 0 0 10px 0;
-    font-size: 24px;
-    transition: color 0.3s ease;
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  transition: color 0.3s ease;
 }
 
 .progress-container-sticky {
-    height: 4px;
-    width: 100%;
-    background-color: #444;
-    border-radius: 2px;
+  height: 4px;
+  width: 100%;
+  background-color: #444;
+  border-radius: 2px;
 }
 
 .progress-bar-fill-sticky {
-    height: 100%;
-    width: 0%;
-    background-color: #ffcc66;
-    border-radius: 2px;
-    transition: width 0.1s linear;
+  height: 100%;
+  width: 0%;
+  background-color: #ffcc66;
+  border-radius: 2px;
+  transition: width 0.1s linear;
 }
 
 .original-h2-hidden {
-    opacity: 0;
-    transition: opacity 0.2s ease;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-.guide-article-container h1 {
-    color: #ffcc66;
-    /* ...остальные стили h1... */
+/* Разделитель между секциями */
+.section-divider {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 40px 0;
 }
 
-.guide-article-container h2 {
-    scroll-margin-top: 150px;
-    color: #ffcc66;
+/* Список назначения брони */
+.purpose-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+.purpose-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.purpose-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.purpose-icon.green { color: #4CAF50; }
+.purpose-icon.yellow { color: #ffcc66; }
+
+/* Информационные блоки */
+.note-warning,
+.note-info {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border-left-width: 5px;
+  border-left-style: solid;
 }
 
-/* --- Стили для блока с видеогайдом --- */
-.video-guide-link {
-    background-color: rgba(255, 0, 0, 0.1); /* Красный оттенок, как у YouTube */
-    border: 1px solid rgba(255, 0, 0, 0.3);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 30px 0;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: background-color 0.3s, border-color 0.3s;
+.note-warning {
+  background-color: rgba(255, 204, 102, 0.1);
+  border-left-color: #ffcc66;
+  color: #ffde99;
+}
+.note-info {
+  background-color: rgba(100, 150, 255, 0.1);
+  border-left-color: #6496ff;
+  color: #a8c5ff;
 }
 
-.video-guide-link:hover {
-    background-color: rgba(255, 0, 0, 0.2);
-    border-color: rgba(255, 0, 0, 0.5);
+.note-warning i,
+.note-info i {
+  font-size: 20px;
+  margin-right: 15px;
+  margin-top: 2px;
+}
+.note-warning i { color: #ffcc66; }
+.note-info i { color: #6496ff; }
+
+/* Блок “картинка слева, текст справа” */
+.armor-intro-block {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  margin-bottom: 20px;
 }
 
-.video-guide-link .fab.fa-youtube {
-    font-size: 48px;
-    color: #ff0000;
+.armor-image-container {
+  flex: 0 0 250px;
+}
+.armor-image-container img {
+  width: 100%;
+  margin: 0;
 }
 
-.video-guide-link-text h4 {
-    margin: 0 0 5px 0;
-    color: #f0f0f0;
-    font-size: 18px;
+.armor-description-container {
+  flex: 1;
 }
 
-.video-guide-link-text p {
-    margin: 0;
-    color: #ccc;
-    font-size: 15px;
+/* Галерея из нескольких изображений */
+.armor-gallery {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+.armor-gallery img {
+  flex: 1;
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  max-height: 400px;
 }
 
-/* --- Стили для плавающей кнопки "Назад" --- */
+/* Кнопки скачивания */
+.download-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  font-size: 16px;
+  border: none;
+}
+.download-button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+.download-button i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+/* Варианты */
+.google-drive-btn { background-color: #4285F4; }
+.yandex-disk-btn  { background-color: #E52620; }
+
+/* Плашка для “патчноутов” в статьях */
+.patch-note {
+  background-color: #252525;
+  border-left: 4px solid #ffcc66;
+  padding: 15px 20px;
+  margin-top: 20px;
+  border-radius: 0 5px 5px 0;
+}
+.patch-note h4 {
+  margin: 0 0 10px 0;
+  color: #f0f0f0;
+}
+.patch-note strong { display: block; margin-bottom: 10px; }
+.patch-note ul { margin: 0; }
+
+/* Плавающая кнопка “Назад к руководствам” */
 .back-to-guides-floating {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    z-index: 999; /* Выше контента, но ниже модальных окон */
-
-    width: 50px;
-    height: 50px;
-    background-color: #3a3a3a;
-    color: #f0f0f0;
-    border: 1px solid #555;
-    border-radius: 50%; /* Делаем кнопку круглой */
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    font-size: 20px;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+  border: 1px solid #555;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
 }
-
 .back-to-guides-floating:hover {
-    background-color: #4a4a4a;
-    border-color: #ffcc66;
-    transform: scale(1.1); /* Легкое увеличение при наведении */
+  background-color: #4a4a4a;
+  border-color: #ffcc66;
+  transform: scale(1.1);
 }
 
-/* На мобильных устройствах делаем кнопку немного меньше и ближе к краю */
-@media (max-width: 768px) {
-    .back-to-guides-floating {
-        width: 45px;
-        height: 45px;
-        bottom: 20px;
-        left: 20px;
-        font-size: 18px;
-    }
-}
-
-/* --- Стили для кнопки-ссылки на Discord --- */
+/* Кнопка-ссылка на Discord */
 .discord-cta-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 25px;
-    margin: 20px auto;
-    max-width: 450px;
-    background-color: #5865F2; /* Фирменный цвет Discord */
-    color: #ffffff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, filter 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  margin: 20px auto;
+  max-width: 450px;
+  background-color: #5865F2;
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
-
 .discord-cta-button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+.discord-cta-button .fab.fa-discord {
+  font-size: 24px;
+  margin-right: 15px;
 }
 
-.discord-cta-button .fab.fa-discord {
-    font-size: 24px;
-    margin-right: 15px;
+/* Адаптивность */
+@media (max-width: 768px) {
+  .armor-intro-block { flex-direction: column; }
+  .armor-image-container {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+  .armor-gallery { flex-direction: column; }
+  .armor-gallery img { width: 100%; }
+  .back-to-guides-floating {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    left: 20px;
+    font-size: 18px;
+  }
+}
+
+/* ===== Страница одного гайда (theme-aware) ===== */
+
+/* Контейнер статьи */
+.guide-article-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 26px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  line-height: 1.7;
+}
+
+/* Заголовки */
+.guide-article-container h1 {
+  margin: 0 0 18px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+.guide-article-container h2,
+.guide-article-container h3 {
+  color: var(--text);
+  margin-top: 26px;
+}
+
+/* Текстовые элементы */
+.guide-article-container p { margin: 0 0 14px; }
+.guide-article-container ul,
+.guide-article-container ol { padding-left: 22px; }
+.guide-article-container b,
+.guide-article-container strong { color: var(--accent); }
+
+/* Картинки в статье */
+.guide-article-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 18px 0;
+}
+
+/* Метаданные под заголовком */
+.article-meta {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-bottom: 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.article-meta i { margin-right: 6px; }
+
+/* Разделитель секций */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+
+/* Информационные блоки */
+.note-warning,
+.note-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  margin: 18px 0;
+  border-radius: 10px;
+  border-left: 5px solid transparent;
+}
+.note-warning {
+  background: linear-gradient(0deg, rgba(255,204,102,.14), rgba(255,204,102,.08));
+  border-left-color: var(--accent);
+  color: var(--text);
+}
+.note-info {
+  background: linear-gradient(0deg, rgba(100,150,255,.12), rgba(100,150,255,.08));
+  border-left-color: #6496ff;
+  color: var(--text);
+}
+.note-warning i, .note-info i {
+  font-size: 20px;
+  margin-top: 2px;
+  flex: 0 0 auto;
+}
+.note-warning i { color: var(--accent); }
+.note-info i { color: #6496ff; }
+
+/* Список «назначение брони» */
+.purpose-list { list-style: none; padding-left: 0; margin: 16px 0 0; }
+.purpose-list li { margin-bottom: 10px; font-size: 16px; }
+.purpose-icon { font-size: 18px; margin-right: 10px; vertical-align: middle; }
+.purpose-icon.green { color: #4CAF50; }
+.purpose-icon.yellow { color: var(--accent); }
+
+/* Блок «картинка слева — текст справа» */
+.armor-intro-block {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.armor-image-container { flex: 0 0 250px; }
+.armor-image-container img { width: 100%; margin: 0; }
+.armor-description-container { flex: 1; }
+
+/* Галерея */
+.armor-gallery {
+  display: flex;
+  gap: 18px;
+  margin: 18px 0;
+}
+.armor-gallery img {
+  flex: 1;
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  max-height: 420px;
+}
+
+/* Кнопка/панель ссылки на YouTube — сохраняем стиль, делаем темо‑нейтральной */
+.video-guide-link {
+  background-color: rgba(255, 0, 0, 0.10);
+  border: 1px solid rgba(255, 0, 0, 0.28);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 24px 0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: background-color .25s, border-color .25s, transform .15s;
+  color: var(--text);
+}
+.video-guide-link:hover {
+  background-color: rgba(255, 0, 0, 0.16);
+  border-color: rgba(255, 0, 0, 0.45);
+  transform: translateY(-1px);
+}
+.video-guide-link .fab.fa-youtube { font-size: 42px; color: #ff0000; }
+.video-guide-link-text h4 { margin: 0 0 4px; color: var(--text); font-size: 18px; }
+.video-guide-link-text p { margin: 0; color: var(--text-dim); font-size: 15px; }
+
+/* Плавающая кнопка «назад» — темо‑нейтральная */
+.back-to-guides-floating {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,.25);
+  transition: background-color .25s, transform .2s, border-color .25s;
+}
+.back-to-guides-floating:hover {
+  border-color: var(--accent);
+  transform: scale(1.06);
+}
+
+/* Принудительно скрыть старую липкую панель глав на всякий случай */
+.article-sticky-header { display: none !important; }
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .armor-intro-block { flex-direction: column; }
+  .armor-image-container { flex: 0 0 auto; width: 100%; max-width: 320px; margin: 0 auto 14px; }
+  .armor-gallery { flex-direction: column; }
+  .armor-gallery img { width: 100%; }
+  .back-to-guides-floating { width: 46px; height: 46px; bottom: 20px; left: 20px; font-size: 18px; }
+}
+
+/* Уважение настроек «уменьшить анимации» */
+@media (prefers-reduced-motion: reduce) {
+  .video-guide-link, .back-to-guides-floating { transition: none !important; }
 }
