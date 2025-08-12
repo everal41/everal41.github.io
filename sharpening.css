@@ -1,120 +1,193 @@
-/* Переиспользуем стили из styles.css, добавляя специфичные для sharpening */
-
-.sharpening-container {
-    /* Специфичные стили для контейнера калькулятора заточки, если нужны */
-    flex-direction: column; /* Элементы располагаются в колонку */
+/* ===== Фон только для страницы заточки ===== */
+body.page-sharpening {
+  --bg-image: url('sharpening-bg.jpg'); /* поставь свой путь, если другой */
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.sharpening-settings {
-    display: flex;
-    justify-content: space-around; /* Равномерное распределение */
-    align-items: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* Перенос на новую строку, если не помещается */
+/* Контейнер: отключаем грид .container со страницы бартера — здесь одна колонка */
+.container.sharpening-container {
+  display: block;               /* важно: поверх .container { display: grid } */
+  width: min(1100px, 92%);
+  margin: 20px auto;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
 }
 
-.level-select, .current-attempt {
-    margin: 10px; /* Отступы */
+/* Заголовки секций — акцентная планка слева */
+.sharpening-container h2 {
+  margin: 18px 0 12px;
+  font-size: 20px;
+  font-weight: 800;
+  position: relative;
+  padding-left: 12px;
 }
-.price-inputs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Создаёт две колонки одинаковой ширины */
-    grid-gap: 1px; /* Добавляет пространство между элементами */
-    margin-bottom: 10px;
-}
-.resource-price{
-     margin: 10px; /* Отступы */
-}
-
-.level-select label, .current-attempt label, .resource-price label {
-    margin-right: 5px;
+.sharpening-container h2::before{
+  content:"";
+  position:absolute; left:0; top:50%;
+  width:4px; height:1.2em; transform:translateY(-50%);
+  background:var(--accent); border-radius:3px;
 }
 
-.level-select select, .current-attempt input, .resource-price input {
-    padding: 5px;
-    border-radius: 4px;
-    background-color: #333;
-    color: #f0e68c;
-    border: 1px solid #666;
+/* Карточки секций */
+.sh-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
 }
 
-.resource-display {
-    display: flex;
-    flex-wrap: wrap; /* Разрешаем перенос на новую строку */
-    margin-bottom: 20px;
+/* --- Блок настроек заточки --- */
+.sharpening-settings{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:12px;
+  margin-bottom:16px;
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+}
+.level-select, .current-attempt{ margin:0; }
+.level-select label, .current-attempt label{
+  display:block; margin:0 0 6px; color:var(--text-dim); font-size:13px; font-weight:700;
+}
+.level-select select, .current-attempt input{
+  width:100%;
+  height:40px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--surface-2);
+  color:var(--text);
+  padding:6px 10px;
+  transition:.15s;
+}
+.level-select select:focus-visible, .current-attempt input:focus-visible{
+  outline:2px solid var(--accent); outline-offset:2px;
 }
 
-.resource-block {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-    padding: 10px;
-    background-color: #333;
-    border-radius: 5px;
-    min-width: 250px; /* Минимальная ширина блока */
+/* --- Цены ресурсов --- */
+.price-inputs{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:12px;
+  margin:12px 0 16px;
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+}
+.resource-price{ margin:0; }
+.resource-price label{
+  display:block; margin:0 0 6px; color:var(--text-dim); font-size:13px; font-weight:700;
+}
+.resource-price input{
+  width:100%;
+  height:40px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--surface-2);
+  color:var(--text);
+  padding:6px 10px;
+  transition:.15s;
+}
+.resource-price input:focus-visible{
+  outline:2px solid var(--accent); outline-offset:2px;
 }
 
-.resource-block img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    border-radius: 5px;
+/* Спрятать встроенные спиннеры у number — оставим чистые поля */
+.sharpening-container input[type="number"]::-webkit-outer-spin-button,
+.sharpening-container input[type="number"]::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+.sharpening-container input[type="number"]{ -moz-appearance:textfield; }
+
+/* --- Необходимые ресурсы (карточки) --- */
+.resource-display{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:12px;
+  margin-bottom:16px;
+}
+.resource-block{
+  display:grid;
+  grid-template-columns: 44px 1fr;
+  align-items:center;
+  gap:10px;
+  margin:0;
+  padding:12px;
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.resource-block img{
+  width:44px; height:44px; border-radius:8px; object-fit:cover;
+}
+.resource-name{ font-weight:800; margin:0 0 6px; color:var(--text); }
+.cheap{ color:#9DEB9D; } .standard{ color:#9F9FED; } .advanced{ color:#EA9D9E; }
+
+.resource-info{ display:flex; flex-direction:column; gap:6px; }
+.total-label, .guaranteed-label{ color:var(--text-dim); margin-right:6px; }
+.total-amount, .guaranteed-amount{
+  display:inline-block;
+  min-width:64px; text-align:right;
+  padding:4px 8px; border-radius:8px;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  font-weight:800; color:var(--text);
 }
 
-.resource-info {
-    display: flex;
-    flex-direction: column;
+/* --- Итоговая стоимость --- */
+.cost-display{
+  display:grid; gap:10px;
+  margin:0 0 10px;
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+}
+.cost-display .total-label, .cost-display .guaranteed-label{ color:var(--text-dim); }
+.total-cost, .guaranteed-cost{
+  display:inline-block;
+  padding:4px 10px; border-radius:10px;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  font-weight:800;
 }
 
-.resource-name {
-    font-weight: bold;
-    margin-bottom: 5px;
+/* --- Кнопка расчёта --- */
+#calculate-sharpening{
+  width:100%;
+  height:44px;
+  border:none;
+  border-radius:12px;
+  background: var(--accent);
+  color:#1a1a1a;
+  font-weight:800;
+  cursor:pointer;
+  transition:.15s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
 }
-.cheap {
-    color: #9DEB9D;
-}
-.standard {
-    color: #9F9FED;
-}
-.advanced {
-    color: #EA9D9E;
-}
+#calculate-sharpening:hover{ filter:brightness(1.05); transform:translateY(-1px); }
+#calculate-sharpening:active{ transform:translateY(0); }
 
-.total-label, .guaranteed-label {
-    margin-right: 5px;
-}
-
-.total-amount, .guaranteed-amount {
-    font-weight: bold;
-}
-/* Стили для дешёвых, стандартных, продвинутых */
-.cheap-resources, .standard-resources, .advanced-resources {
-     border: 1px solid #666;
-}
-
-.cost-display {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.total-cost, .guaranteed-cost {
-    font-weight: bold;
-    margin-left: 5px;
-}
-.error-message {
-    color: red;
-    text-align: center;
-    margin-top: 10px;
+/* Ошибка */
+.error-message{
+  display:none;
+  color:#fff;
+  background: linear-gradient(0deg, rgba(178,34,34,.12), rgba(178,34,34,.08));
+  border:1px solid rgba(178,34,34,.45);
+  padding:10px 12px;
+  border-radius:10px;
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {
-    .sharpening-settings, .price-inputs {
-        flex-direction: column; /* Перестраиваем в колонку */
-        align-items: stretch; /* Растягиваем на всю ширину */
-    }
-    .resource-block{
-        min-width: auto; /* Убираем ограничение ширины */
-        width: 100%; /* Растягиваем на всю ширину */
-    }
+@media (max-width: 768px){
+  .resource-block{ grid-template-columns:36px 1fr; }
+  .resource-block img{ width:36px; height:36px; border-radius:6px; }
 }
+
+/* — Доп. косметика — */
+.sharpening-container .discord-link{ color:#9F9FED; }
