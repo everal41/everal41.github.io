@@ -1,12 +1,12 @@
 // =================================================================
-// StalMath: calculator.js
+// StalMath: calculator.js (v2)
 // =================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- ПРОВЕРКА ДАННЫХ ---
     if (typeof presetsData === 'undefined' || typeof resourceCosts === 'undefined' || typeof rankIcons === 'undefined' || typeof armorRanks === 'undefined' || typeof itemNameColors === 'undefined') {
         console.error("Критическая ошибка: Файл data.js не загружен или содержит синтаксическую ошибку!");
-        alert("Не удалось загрузить данные. Пожалуйста, проверьте консоль (F12) и убедитесь, что файл data.js подключен правильно и не содержит ошибок.");
+        alert("Не удалось загрузить данные. Проверьте консоль (F12) и корректность data.js.");
         return;
     }
 
@@ -17,31 +17,57 @@ document.addEventListener('DOMContentLoaded', () => {
     const couponApplyBlock = document.getElementById('couponApplyBlock');
     const resetBtn = document.getElementById('resetBtn');
 
-    // --- ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ ---
+    // Новые элементы UI
+    const presetSearch = document.getElementById('presetSearch');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const expandAllBtn = document.getElementById('expandAllBtn');
+    const collapseAllBtn = document.getElementById('collapseAllBtn');
+    const discountAllSelect = document.getElementById('discountAllSelect');
+    const clearSelectedBtn = document.getElementById('clearSelectedBtn');
+    const shareBtn = document.getElementById('shareBtn');
+
+    const STORAGE_KEY = 'stalmath_calc_state_v1';
+
+    // --- ВСПОМОГАТЕЛЬНОЕ ---
     const groupBy = (array, key) => array.reduce((result, currentValue) => {
         (result[currentValue[key]] = result[currentValue[key]] || []).push(currentValue);
         return result;
     }, {});
 
-    // --- ФУНКЦИИ ГЕНЕРАЦИИ ИНТЕРФЕЙСА ---
+    function showToast(msg, timeout = 1800) {
+        const box = document.getElementById('toast');
+        if (!box) return;
+        box.textContent = msg;
+        box.hidden = false;
+        clearTimeout(box._t);
+        box._t = setTimeout(() => { box.hidden = true; }, timeout);
+    }
+
+    // --- ГЕНЕРАЦИЯ ИНТЕРФЕЙСА ---
     function createPresetItem(item) {
         const listItem = document.createElement('li');
         listItem.className = 'preset-item';
+        listItem.dataset.nameLower = item.name.toLowerCase();
+
         const label = document.createElement('label');
+
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = item.id;
         checkbox.dataset.resources = JSON.stringify(item.resources);
         checkbox.dataset.name = item.name;
+
         const image = document.createElement('img');
         image.src = item.image;
         image.alt = item.name;
         image.loading = 'lazy';
+
         const nameSpan = document.createElement('span');
         nameSpan.textContent = item.name;
         if (itemNameColors && itemNameColors[item.name]) {
             nameSpan.style.color = itemNameColors[item.name];
         }
+
         label.append(checkbox, image, nameSpan);
         listItem.append(label);
         return listItem;
@@ -53,9 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!container) continue;
             const items = presetsData[categoryKey];
             const groupedByRank = groupBy(items, 'rank');
+
             for (const rankName in groupedByRank) {
                 const details = document.createElement('details');
                 const summary = document.createElement('summary');
+
                 const iconPath = rankIcons[rankName];
                 if (iconPath) {
                     const img = document.createElement('img');
@@ -65,44 +93,63 @@ document.addEventListener('DOMContentLoaded', () => {
                     img.loading = 'lazy';
                     summary.appendChild(img);
                 }
+
                 const rankSpan = document.createElement('span');
                 rankSpan.textContent = rankName;
                 if (armorRanks && armorRanks[rankName]) {
                     rankSpan.className = armorRanks[rankName];
                 }
                 summary.appendChild(rankSpan);
+
                 const presetList = document.createElement('ul');
                 presetList.className = 'preset-list';
+
                 groupedByRank[rankName].forEach(item => {
                     presetList.appendChild(createPresetItem(item));
                 });
+
                 details.append(summary, presetList);
                 container.appendChild(details);
             }
         }
     }
-    
-    // --- НОВАЯ ЛОГИКА КАЛЬКУЛЯТОРА ---
 
-    /** Обновляет ВСЕ: UI купонов, поля ввода и итоговую стоимость. */
-    function masterRecalculate() {
-        // 1. Обновляем UI купонов на основе выбранных пресетов
-        const checkedPresets = updateCouponUI();
-        
-        // 2. Получаем скидки из обновленного UI
-        const discounts = getDiscountsFromUI();
-        
-        // 3. Собираем ресурсы с пресетов и применяем к ним скидки
-        const resources = calculateDiscountedResources(checkedPresets, discounts);
-        
-        // 4. Отображаем итоговое количество ресурсов в полях
-        updateResourceInputs(resources);
-        
-        // 5. Считаем финальную стоимость и выводим на экран
-        calculateAndDisplayTotalCost(resources);
+    // --- ЭНХАНС ЧИСЛОВЫХ ПОЛЕЙ ---
+    function enhanceNumberInputs() {
+        const inputs = calculatorForm.querySelectorAll('input[type="number"]');
+        inputs.forEach(input => {
+            if (input.closest('.number-control')) return;
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'number-control';
+
+            const minus = document.createElement('button');
+            minus.type = 'button';
+            minus.className = 'step-btn';
+            minus.setAttribute('aria-label', 'Уменьшить');
+            minus.textContent = '−';
+
+            const plus = document.createElement('button');
+            plus.type = 'button';
+            plus.className = 'step-btn';
+            plus.setAttribute('aria-label', 'Увеличить');
+            plus.textContent = '+';
+
+            input.parentNode.insertBefore(wrapper, input);
+            wrapper.append(minus, input, plus);
+        });
     }
-    
-    /** Обновляет UI купонов и возвращает список отмеченных пресетов. */
+
+    // --- ЛОГИКА КАЛЬКУЛЯТОРА ---
+    function masterRecalculate() {
+        const checkedPresets = updateCouponUI();
+        const discounts = getDiscountsFromUI();
+        const resources = calculateDiscountedResources(checkedPresets, discounts);
+        updateResourceInputs(resources);
+        calculateAndDisplayTotalCost();
+        saveState(); // авто-сохранение
+    }
+
     function updateCouponUI() {
         const checkedPresets = Array.from(presetsContainer.querySelectorAll('input[type="checkbox"]:checked'));
         const existingDiscounts = getDiscountsFromUI();
@@ -115,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const row = document.createElement('div');
                 row.className = 'coupon-item-row';
-                
+
                 const label = document.createElement('label');
                 label.textContent = presetName;
                 label.title = presetName;
@@ -123,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const select = document.createElement('select');
                 select.className = 'coupon-discount-select';
                 select.dataset.presetId = presetId;
-                
+
                 const options = [
                     { value: 1,    text: 'Без скидки' },
                     { value: 0.9,  text: 'Скидка 10%' },
@@ -136,14 +183,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     { value: 0.01, text: 'Скидка 99%' }
                 ];
                 options.forEach(opt => select.add(new Option(opt.text, opt.value)));
-                
+
                 if (existingDiscounts[presetId]) {
                     select.value = existingDiscounts[presetId];
                 }
 
                 const removeBtn = document.createElement('button');
                 removeBtn.className = 'remove-preset-btn';
-                removeBtn.innerHTML = '&times;'; // Крестик
+                removeBtn.innerHTML = '&times;';
                 removeBtn.title = `Убрать ${presetName}`;
                 removeBtn.dataset.presetId = presetId;
 
@@ -154,7 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return checkedPresets;
     }
 
-    /** Собирает данные о скидках из UI. */
     function getDiscountsFromUI() {
         const discountSelectors = couponApplyBlock.querySelectorAll('.coupon-discount-select');
         const discounts = {};
@@ -164,29 +210,26 @@ document.addEventListener('DOMContentLoaded', () => {
         return discounts;
     }
 
-    /** Считает итоговое количество ресурсов с учетом скидок. */
     function calculateDiscountedResources(checkedPresets, discounts) {
         const totalResources = {};
         checkedPresets.forEach(checkbox => {
             const resources = JSON.parse(checkbox.dataset.resources);
             const discountMultiplier = discounts[checkbox.id] || 1;
-            
             for (const resName in resources) {
-                const discountedAmount = Math.ceil(resources[resName] * discountMultiplier);
+                const amount = resources[resName];
+                const discountedAmount = Math.ceil(amount * discountMultiplier);
                 totalResources[resName] = (totalResources[resName] || 0) + discountedAmount;
             }
         });
         return totalResources;
     }
 
-    /** Обновляет числовые поля ввода. */
     function updateResourceInputs(resources) {
         calculatorForm.querySelectorAll('input[type="number"]').forEach(input => {
             input.value = resources[input.id] || 0;
         });
     }
 
-    /** Считает финальную стоимость из полей ввода. */
     function calculateAndDisplayTotalCost() {
         let totalCost = 0;
         const allInputs = calculatorForm.querySelectorAll('input[type="number"]');
@@ -200,30 +243,115 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (!hasValues) {
-            totalCoinsDisplay.textContent = "Выберите предметы или введите ресурсы";
+            totalCoinsDisplay.innerHTML = 'Выберите предметы или введите ресурсы';
         } else {
-            totalCoinsDisplay.textContent = `Итоговая стоимость: ${Math.round(totalCost).toLocaleString('ru-RU')} монет`;
+            totalCoinsDisplay.innerHTML = `<i class="fa-solid fa-coins" style="color: var(--coin)"></i> Итоговая стоимость: ${Math.round(totalCost).toLocaleString('ru-RU')} монет`;
         }
     }
-    
-    /** Сбрасывает все. */
+
     function resetAll() {
         presetsContainer.querySelectorAll('input[type="checkbox"]:checked').forEach(c => { c.checked = false; });
         couponApplyBlock.innerHTML = '';
-        updateResourceInputs({}); // Очищаем все поля
+        updateResourceInputs({});
         calculateAndDisplayTotalCost();
+        saveState();
     }
 
-    // --- ОБРАБОТЧИКИ СОБЫТИЙ ---
+    // --- ПОИСК ПО ПРЕСЕТАМ ---
+    function filterPresets(query) {
+        const q = query.trim().toLowerCase();
+        const rankDetails = presetsContainer.querySelectorAll('details > ul.preset-list');
 
-    // 1. Изменение пресетов (чекбоксы)
+        rankDetails.forEach(list => {
+            const items = list.querySelectorAll('li.preset-item');
+            let visibleCount = 0;
+
+            items.forEach(li => {
+                const match = !q || li.dataset.nameLower.includes(q);
+                li.style.display = match ? '' : 'none';
+                if (match) visibleCount++;
+            });
+
+            const details = list.parentElement; // <details>
+            if (details && details.tagName === 'DETAILS') {
+                // скрыть ветку ранга, если нет видимых элементов
+                details.style.display = visibleCount ? '' : 'none';
+            }
+        });
+    }
+
+    // --- СОХРАНЕНИЕ/ВОССТАНОВЛЕНИЕ СОСТОЯНИЯ ---
+    function getSelectedPresetIds() {
+        return Array.from(presetsContainer.querySelectorAll('input[type="checkbox"]:checked')).map(c => c.id);
+    }
+
+    function saveState() {
+        const state = {
+            selected: getSelectedPresetIds(),
+            discounts: getDiscountsFromUI(),
+            inputs: Object.fromEntries(Array.from(calculatorForm.querySelectorAll('input[type="number"]')).map(i => [i.id, i.value])),
+            search: presetSearch?.value || ''
+        };
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+    }
+
+    function restoreState() {
+        // 1) URL-ссылка вида ?p=id1,id2,id3
+        const params = new URLSearchParams(location.search);
+        const p = params.get('p');
+        if (p) {
+            const ids = p.split(',').filter(Boolean);
+            ids.forEach(id => {
+                const cb = document.getElementById(id);
+                if (cb) cb.checked = true;
+            });
+            masterRecalculate();
+            return;
+        }
+
+        // 2) LocalStorage
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return;
+            const state = JSON.parse(raw);
+            (state.selected || []).forEach(id => {
+                const cb = document.getElementById(id);
+                if (cb) cb.checked = true;
+            });
+            masterRecalculate(); // создаст UI купонов
+
+            // восстановление скидок
+            const discountSelectors = couponApplyBlock.querySelectorAll('.coupon-discount-select');
+            discountSelectors.forEach(sel => {
+                const v = state.discounts?.[sel.dataset.presetId];
+                if (v) sel.value = v;
+            });
+
+            // восстановление чисел
+            if (state.inputs) {
+                Object.entries(state.inputs).forEach(([id, val]) => {
+                    const input = document.getElementById(id);
+                    if (input) input.value = val;
+                });
+                calculateAndDisplayTotalCost();
+            }
+
+            if (presetSearch && state.search) {
+                presetSearch.value = state.search;
+                filterPresets(presetSearch.value);
+            }
+        } catch (e) {}
+    }
+
+    // --- ОБРАБОТЧИКИ ---
+    // Пресеты
     presetsContainer.addEventListener('change', (event) => {
         if (event.target.type === 'checkbox') {
             masterRecalculate();
         }
     });
 
-    // 2. Взаимодействие с блоком купонов (скидки и удаление)
+    // Блок купонов
     couponApplyBlock.addEventListener('click', (event) => {
         if (event.target.classList.contains('remove-preset-btn')) {
             const presetId = event.target.dataset.presetId;
@@ -236,22 +364,100 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     couponApplyBlock.addEventListener('change', (event) => {
-         if (event.target.classList.contains('coupon-discount-select')) {
+        if (event.target.classList.contains('coupon-discount-select')) {
             masterRecalculate();
         }
     });
-    
-    // 3. Ручной ввод в поля (теперь не сбрасывает пресеты)
+
+    // Ручной ввод в поля
     calculatorForm.addEventListener('input', (event) => {
         if (event.target.type === 'number') {
-            // Просто пересчитываем стоимость на основе текущих значений в полях
             calculateAndDisplayTotalCost();
+            saveState();
         }
     });
 
-    // 4. Кнопка сброса
-    resetBtn.addEventListener('click', resetAll);
+    // Степперы
+    calculatorForm.addEventListener('click', (e) => {
+        const btn = e.target.closest('.step-btn');
+        if (!btn) return;
+        const input = btn.parentElement.querySelector('input[type="number"]');
+        if (!input) return;
+        const stepBase = 1;
+        const mod = (e.shiftKey ? 10 : e.ctrlKey ? 5 : 1);
+        const delta = btn.textContent.trim() === '+' ? stepBase * mod : -stepBase * mod;
+        const current = parseInt(input.value, 10) || 0;
+        const next = Math.max(0, current + delta);
+        input.value = next;
+        calculateAndDisplayTotalCost();
+        saveState();
+    });
+
+    // Сброс
+    resetBtn.addEventListener('click', () => {
+        resetAll();
+        showToast('Сброшено');
+    });
+
+    // Поиск
+    presetSearch?.addEventListener('input', () => {
+        filterPresets(presetSearch.value);
+        saveState();
+    });
+    clearSearchBtn?.addEventListener('click', () => {
+        if (!presetSearch) return;
+        presetSearch.value = '';
+        filterPresets('');
+        saveState();
+    });
+
+    // Развернуть/свернуть всё
+    expandAllBtn?.addEventListener('click', () => {
+        document.querySelectorAll('.presets-container details').forEach(d => d.open = true);
+    });
+    collapseAllBtn?.addEventListener('click', () => {
+        document.querySelectorAll('.presets-container details').forEach(d => d.open = false);
+    });
+
+    // Скидка для всех
+    discountAllSelect?.addEventListener('change', () => {
+        const v = discountAllSelect.value;
+        if (!v) return;
+        couponApplyBlock.querySelectorAll('.coupon-discount-select').forEach(sel => sel.value = v);
+        masterRecalculate();
+        showToast('Скидка применена ко всем');
+        discountAllSelect.value = '';
+    });
+
+    // Очистить выбранные
+    clearSelectedBtn?.addEventListener('click', () => {
+        presetsContainer.querySelectorAll('input[type="checkbox"]:checked').forEach(c => c.checked = false);
+        masterRecalculate();
+        showToast('Выбранные пресеты сняты');
+    });
+
+    // Поделиться
+    shareBtn?.addEventListener('click', async () => {
+        const ids = getSelectedPresetIds();
+        const url = new URL(location.href);
+        if (ids.length) url.searchParams.set('p', ids.join(','));
+        else url.searchParams.delete('p');
+
+        try {
+            await navigator.clipboard.writeText(url.toString());
+            showToast('Ссылка скопирована');
+        } catch (e) {
+            showToast('Не удалось скопировать ссылку');
+        }
+    });
 
     // --- ИНИЦИАЛИЗАЦИЯ ---
     populateAllPresets();
+    // Закрыть все верхнеуровневые категории по умолчанию
+document.querySelectorAll('.presets-container > details.preset-category[open]')
+  .forEach(d => d.removeAttribute('open'));
+    enhanceNumberInputs();
+    restoreState();
+    // стартовый пересчёт, если ничего не восстановилось
+    if (!couponApplyBlock.childElementCount) calculateAndDisplayTotalCost();
 });
