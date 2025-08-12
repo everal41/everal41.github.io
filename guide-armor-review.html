@@ -1,103 +1,146 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обзор всех бронекостюмов | StalMath</title>
-    <meta name="description" content="Полный обзор всех бронекостюмов в STALCRAFT: научные, боевые и комбинированные. Оптимальные сборки артефактов и сценарии применения.">
-    
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="guides-style.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Обзор всех бронекостюмов | StalMath</title>
+  <meta name="description" content="Полный обзор всех бронекостюмов в STALCRAFT: научные, боевые и комбинированные. Оптимальные сборки артефактов и сценарии применения.">
+
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="guides-style.css"/>
 </head>
-<body>
-    <!-- Шапка сайта -->
-    <header class="site-header">
-        <nav class="header-links">
-            <a href="#" data-modal-target="#about-modal">О сайте</a>
-            <a href="#" data-modal-target="#contacts-modal">Связь</a>
-        </nav>
-        <div class="header-logo">
-            <h1>StalMath</h1>
-        </div>
-        <nav class="header-links">
-            <a href="index.html">Калькулятор обменных монет</a>
-            <a href="sharpening.html">Калькулятор заточки</a>
-            <a href="guides.html">Руководства</a>
-        </nav>
-    </header>
-<div id="about-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>О сайте StalMath</h2>
-            <p>Этот сайт предназначен для помощи игрокам STALCRAFT. Он предоставляет множество подробных гайдов на различные игровые темы.</p>
-            <h3>Можно ли как-то помочь?</h3>
-             <p>
-                Да, вы можете помочь посредством сбора обратной информации об использовании сайта.
-             </p>
-             <ul>
-                 <li>Если вы найдёте недочёты.</li>
-                 <li>Если у вас будут здравые идеи по улучшению сайта.</li>
-             </ul>
-            <p>Создатель: <a href="https://vk.com/hxteevery1" target="_blank">everal41</a></p>
-        </div>
+<body class="page-guides">
+  <!-- Единая шапка -->
+  <header class="site-header">
+    <nav class="header-links start">
+      <a href="#" data-modal-target="#about-modal">О сайте</a>
+      <a href="#" data-modal-target="#contacts-modal">Связь</a>
+    </nav>
+
+    <div class="brand">
+      <a href="home.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
+      <span class="badge">community project</span>
     </div>
 
-    <!-- Модальное окно "Контакты" -->
-    <div id="contacts-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Как с тобой связаться?</h2>
-            <p>Вы можете связаться со мной следующими способами:</p>
-            <ul>
-                <li>ВКонтакте: <a href="https://vk.com/hxteevery1" target="_blank">everal41</a></li>
-                <li>Сервер в Discord:  <a href="https://discord.gg/9hkdXxRSnr" target="_blank" class="discord-link">
-                <i class="fab fa-discord"></i></a></li>
-                <li>Ник активного персонажа в игре: <span style="color: #4CAF50;">X_Solitude</span></li>
-            </ul>
+    <nav class="header-links end">
+      <div class="dropdown" id="calcDropdown">
+        <button class="nav-btn dropdown-toggle" id="calcMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="calcMenu">
+          <i class="fa-solid fa-calculator"></i> Калькуляторы <i class="fa-solid fa-angle-down chevron" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-menu" id="calcMenu" role="menu">
+          <a class="dropdown-item" role="menuitem" href="index.html">
+            <i class="fa-solid fa-coins"></i> Калькулятор бартера
+          </a>
+          <a class="dropdown-item" role="menuitem" href="sharpening.html">
+            <i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки
+          </a>
+          <div class="dropdown-note">Скоро: экономические расчёты, DPS‑таблица</div>
         </div>
+      </div>
+
+      <a href="guides.html"><i class="fa-solid fa-book-open"></i> Руководства</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="themeToggleBtn" class="ghost-btn" title="Переключить тему">
+        <i class="fa-solid fa-moon"></i>
+      </button>
     </div>
-    <!-- Основной контент страницы гайда -->
+  </header>
 
-    <div class="guide-article-container">
-        <div class="article-sticky-header" id="sticky-header">
-            <h2 id="sticky-header-title"></h2>
-            <div class="progress-container-sticky">
-                <div class="progress-bar-fill-sticky" id="sticky-progress-bar"></div>
+  <!-- Модалки (как на главной) -->
+  <div id="about-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="about-title">
+    <div class="modal-content">
+      <button class="close-button" aria-label="Закрыть">&times;</button>
+      <h2 id="about-title">О StalMath</h2>
+      <p>StalMath — набор бесплатных инструментов и гайдов по STALCRAFT: X. Мы фокусируемся на точных расчётах, удобстве и наглядности.</p>
+      <ul>
+        <li>Калькулятор бартера с пресетами, скидками и шэрингом</li>
+        <li>Калькулятор заточки</li>
+        <li>Руководства и таблицы</li>
+      </ul>
+      <p>Обратная связь и помощь приветствуются — смотрите раздел «Связь».</p>
+    </div>
+  </div>
+
+  <div id="contacts-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="contacts-title">
+    <div class="modal-content">
+      <button class="close-button" aria-label="Закрыть">&times;</button>
+      <h2 id="contacts-title">Как связаться</h2>
+
+      <ul class="contact-list">
+        <li class="contact-item">
+          <i class="ci vk fa-brands fa-vk" aria-hidden="true"></i>
+          <div class="contact-text">
+            <div class="label">ВКонтакте</div>
+            <a class="contact-link brand-vk" href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" title="Открыть профиль VK">
+              <span>@everal41</span>
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="contact-item">
+          <i class="ci discord fa-brands fa-discord" aria-hidden="true"></i>
+          <div class="contact-text">
+            <div class="label">Discord</div>
+            <a class="contact-link brand-discord" href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" title="Перейти на сервер Discord">
+              <span>Наш сервер</span>
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="contact-item">
+          <i class="ci game fa-solid fa-gamepad" aria-hidden="true"></i>
+          <div class="contact-text">
+            <div class="label">Ник в игре</div>
+            <div class="nick-row">
+              <span class="nick online-nick" id="gameNick">X_Solitude</span>
+              <button type="button" class="copy-btn" id="copyNickBtn" title="Скопировать ник">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                <span>Копировать</span>
+              </button>
             </div>
-        </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-    
-        <h1>Обзор всех бронекостюмов</h1>
-        <!-- Блок с датой публикации -->
-        <div class="article-meta">
-            <span><i class="far fa-calendar-alt"></i> Опубликовано: 06.06.2025</span>
-        </div>
+  <!-- Контент статьи -->
+  <div class="guide-article-container">
 
-        <p>В STALCRAFT представлены три основных типа брони:</p>
-        <ul>
-            <li>Научные;</li>
-            <li>Боевые;</li>
-            <li>Комбинированные.</li>
-        </ul>
-        <p>Каждый из них обладает уникальной специализацией: если научная броня эффективна в одних условиях, то боевая незаменима в других, а комбинированная предлагает универсальность.</p>
-        <p>В этом руководстве я подробно рассмотрю каждый бронекостюм. Для каждого из них будут представлены оптимальные сборки артефактов, а также описаны основные и второстепенные сценарии применения.</p>
-        
-        <img src="images/guides/armor-review/armor-guide-header.jpg" alt="Бронекостюмы STALCRAFT">
-        <!-- Блок со ссылкой на видеогайд -->
-        <a href="https://www.youtube.com/watch?v=4BWHRrWUDD8" target="_blank" class="video-guide-link">
-            <i class="fab fa-youtube"></i>
-            <div class="video-guide-link-text">
-                <h4>Видеоверсия гайда</h4>
-                <p>Предпочитаете смотреть, а не читать? Полный разбор всех бронекостюмов доступен в формате видео на YouTube.</p>
-            </div>
-        </a>
+    <h1>Обзор всех бронекостюмов</h1>
+    <div class="article-meta">
+      <span><i class="far fa-calendar-alt"></i> Опубликовано: 06.06.2025</span>
+    </div>
 
-        <hr class="section-divider">
+    <p>В STALCRAFT представлены три основных типа брони:</p>
+    <ul>
+      <li>Научные;</li>
+      <li>Боевые;</li>
+      <li>Комбинированные.</li>
+    </ul>
+    <p>Каждый из них обладает уникальной специализацией: если научная броня эффективна в одних условиях, то боевая незаменима в других, а комбинированная предлагает универсальность.</p>
+    <p>В этом руководстве я подробно рассмотрю каждый бронекостюм. Для каждого из них будут представлены оптимальные сборки артефактов, а также описаны основные и второстепенные сценарии применения.</p>
+
+    <img src="images/guides/armor-review/armor-guide-header.jpg" alt="Бронекостюмы STALCRAFT">
+
+    <a href="https://www.youtube.com/watch?v=4BWHRrWUDD8" target="_blank" class="video-guide-link">
+      <i class="fab fa-youtube"></i>
+      <div class="video-guide-link-text">
+        <h4>Видеоверсия гайда</h4>
+        <p>Предпочитаете смотреть, а не читать? Полный разбор всех бронекостюмов доступен в формате видео на YouTube.</p>
+      </div>
+    </a>
+
+    <hr class="section-divider">
 
         <h2 id="saturn">Сатурн</h2>
         <div class="armor-intro-block">
@@ -360,16 +403,17 @@
         </div>
     </div>
 
+<!-- Глобальный тост -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
+  <!-- Кнопка назад -->
+  <a href="guides.html" class="back-to-guides-floating" title="Назад к списку гайдов">
+    <i class="fa-solid fa-arrow-left"></i>
+  </a>
 
-    <!-- Модальные окна -->
-    <div id="about-modal" class="modal">...</div>
-    <div id="contacts-modal" class="modal">...</div>
-    
-    <a href="guides.html" class="back-to-guides-floating" title="Назад к списку гайдов">
-        <i class="fas fa-arrow-left"></i>
-    </a>
-    <script src="global.js"></script> 
-    <script src="article-sticky-header.js"></script>
+  <!-- Скрипты -->
+  <script src="global.js?v=2"></script>
+  <script src="home.js"></script>
+  <script src="article-sticky-header.js"></script>
 </body>
 </html>
