@@ -897,3 +897,7 @@ body.modal-open { overflow-y: auto; }
   object-position: center;
   display: block;
 }
+
+@media (max-width: 480px){
+  html, body{ overflow-x: hidden; }
+}
