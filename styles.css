@@ -903,3 +903,10 @@ body.modal-open { overflow-y: auto; }
   .step-btn{ width: 28px; }    /* было 32px */
   .resource{ gap: 8px; }       /* было 10px */
 }
+
+@media (max-width: 480px){
+  /* ограничим ширину правой колонки (− [число] +) */
+  .resource{
+    grid-template-columns: 40px 1fr minmax(136px, 45%);
+  }
+}
