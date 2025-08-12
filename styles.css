@@ -367,7 +367,7 @@ legend {
     margin-bottom: 10px;
 }
 .resource img { width: 40px; height: 40px; border-radius: 6px; }
-.resource label { font-size: 14px; color: var(--text-dim); }
+.resource label { font-size: 14px; color: var(--text-dim); min-width: 0; overflow-wrap: anywhere;}
 
 .resource input[type="number"] {
     width: 120px;
@@ -897,3 +897,4 @@ body.modal-open { overflow-y: auto; }
   object-position: center;
   display: block;
 }
+
