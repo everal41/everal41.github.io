@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Changelog — StalMath</title>
+  <meta name="theme-color" content="#0f0f10" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="home.css"/>
+</head>
+<body class="page-changelog">
+  <a class="skip-link" href="#main">К содержимому</a>
+
+  <header class="site-header">
+    <nav class="header-links start">
+      <a href="home.html">На главную</a>
+      <a href="#" data-modal-target="#contacts-modal">Связь</a>
+    </nav>
+
+    <div class="brand">
+      <a href="home.html" class="logo">StalMath</a>
+      <span class="badge">community project</span>
+    </div>
+
+    <nav class="header-links end">
+      <div class="dropdown" id="calcDropdown">
+        <button class="nav-btn dropdown-toggle" id="calcMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="calcMenu">
+          <i class="fa-solid fa-calculator"></i> Калькуляторы
+          <i class="fa-solid fa-angle-down chevron" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-menu" id="calcMenu" role="menu">
+          <a class="dropdown-item" role="menuitem" href="index.html">
+            <i class="fa-solid fa-coins"></i> Калькулятор бартера
+          </a>
+          <a class="dropdown-item" role="menuitem" href="sharpening.html">
+            <i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки
+          </a>
+          <div class="dropdown-note">Скоро: экономические расчёты, DPS‑таблица</div>
+        </div>
+      </div>
+
+      <a href="guides.html"><i class="fa-solid fa-book-open"></i> Руководства</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="themeToggleBtn" class="ghost-btn" title="Переключить тему">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Контакты -->
+  <div id="contacts-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="contacts-title">
+    <div class="modal-content">
+      <button class="close-button" aria-label="Закрыть">&times;</button>
+      <h2 id="contacts-title">Как связаться</h2>
+      <ul class="contact-list">
+        <li class="contact-item">
+          <i class="ci vk fa-brands fa-vk"></i>
+          <div class="contact-text">
+            <div class="label">ВКонтакте</div>
+            <a class="contact-link brand-vk" href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener">
+              <span>@everal41</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <i class="ci discord fa-brands fa-discord"></i>
+          <div class="contact-text">
+            <div class="label">Discord</div>
+            <a class="contact-link brand-discord" href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener">
+              <span>Наш сервер</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <i class="ci game fa-solid fa-gamepad"></i>
+          <div class="contact-text">
+            <div class="label">Ник в игре</div>
+            <div class="nick-row">
+              <span class="nick online-nick" id="gameNick">X_Solitude</span>
+              <button type="button" class="copy-btn" id="copyNickBtn" title="Скопировать ник">
+                <i class="fa-regular fa-copy"></i>
+                <span>Копировать</span>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <main id="main" class="container ch-container">
+    <header class="ch-header">
+      <h1>Полный список обновлений</h1>
+      <p class="ch-sub">История изменений, улучшений и исправлений StalMath. Для подробностей раскрывайте версии.</p>
+    </header>
+
+    <div class="changelog">
+        <!-- 2.0.0 (pre) -->
+        <details class="ch-item" open>
+          <summary>
+            <span class="ver">Версия 2.0.0</span>
+            <span class="date chip chip-info">12.08.2025</span>
+          </summary>
+          <div class="ch-body">
+            <h4>Ключевые нововведения</h4>
+            <ul>
+              <li><strong>Новая главная страница.</strong> Лаконичный лэндинг, быстрый доступ к инструментам и секциям.</li>
+              <li><strong>Единая шапка сайта.</strong> Дропдаун «Калькуляторы», адаптивная раскладка, переключатель темы (Dark/Light).</li>
+              <li><strong>Компактные обновления.</strong> На главной показываются 3 последних изменения с ключевым описанием.</li>
+              <li><strong>Полная страница changelog.</strong> Улучшенная типографика и удобное раскрытие версий.</li>
+            </ul>
+
+            <h4>Улучшения</h4>
+            <ul>
+              <li><strong>Светлая тема:</strong> повышен контраст, улучшена читаемость заголовка/подзаголовка в hero.</li>
+              <li><strong>Контакты:</strong> стилизованные ссылки VK/Discord, копирование ника в 1 клик (единый вид карточек контактов).</li>
+              <li><strong>Инструменты:</strong> «старый» стиль карточек с плашками «Популярно/Актуально/Скоро».</li>
+              <li><strong>Единая шапка на ключевых страницах:</strong> Главная, калькулятор бартера, калькулятор заточки, хаб «Руководства», страницы гайдов, changelog.</li>
+            </ul>
+
+            <h4>Изменения по страницам</h4>
+            <ul>
+              <li><strong>Страница патчноутов:</strong> единая шапка; модалка «Связь»; глобальный тост‑уведомитель; skip‑link «К содержимому»; корректная дата внутри summary.</li>
+              <li><strong>Калькулятор бартера:</strong>
+                <ul>
+                  <li>Скрыты системные спиннеры у полей количества (используются свои кнопки −/+).</li>
+                  <li>Левая панель пресетов: невидимая полоса прокрутки; над поиском сохраняется верхняя подложка при скролле.</li>
+                  <li>Единый компактный размер иконок веток.</li>
+                  <li>Убрано подчёркивание у кнопок‑ссылок в модалке «Связь».</li>
+                  <li>Скролл страницы не блокируется при открытой модалке.</li>
+                </ul>
+              </li>
+              <li><strong>Калькулятор заточки:</strong>
+                <ul>
+                  <li>Полный редизайн интерфейса на карточках; унификация под светлую/тёмную темы.</li>
+                  <li>Собственный фон страницы (page-sharpening).</li>
+                  <li>Скрыты системные спиннеры у number‑полей.</li>
+                  <li>Единая шапка и модалки; глобальный тост; исправлено копирование ника.</li>
+                </ul>
+              </li>
+              <li><strong>Руководства (хаб):</strong>
+                <ul>
+                  <li>Единая шапка и фон раздела (page-guides); новый карточный дизайн, бейдж «Скоро».</li>
+                  <li>Убраны дубли модалок; добавлены аккуратные ховеры картинок.</li>
+                </ul>
+              </li>
+              <li><strong>Страницы гайдов:</strong>
+                <ul>
+                  <li>Единая шапка и модалки, глобальный тост; поддержка светлой темы.</li>
+                  <li>Обзор бронекостюмов: убрана липкая панель глав; стиль выровнен под темы.</li>
+                  <li>Кастомные сборники радио: унификация шапки/модалок, темизация.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h4>Исправления</h4>
+            <ul>
+              <li>Исправлен «ореол» у кнопки темы; корректные тени и фон шапки при прокрутке.</li>
+              <li>Убрана «улетающая» дата на странице changelog.</li>
+              <li>Тост‑уведомления всегда отображаются в правом нижнем углу, независимо от модалок.</li>
+            </ul>
+
+            <h4>Техническое</h4>
+            <ul>
+              <li>Обновлён Font Awesome до 6.5.2, добавлен шрифт Russo One на обновлённых страницах.</li>
+              <li>Единые скрипты для модалок/темы/шапки: global.js + home.js подключены на ключевых страницах.</li>
+              <li>Фоновые арты подключаются через CSS‑переменные страницы (—bg-image) без дублирования стилей.</li>
+            </ul>
+            
+          </div>
+        </details>
+      <!-- 1.3.0 -->
+      <details class="ch-item">
+        <summary>
+          <span class="ver">Версия 1.3.0</span>
+          <span class="date chip chip-info">07.08.2025</span>
+        </summary>
+        <div class="ch-body">
+          <h4>Ключевые нововведения</h4>
+          <ul>
+            <li><strong>Полностью переработана система купонов.</strong> Можно применять разные купоны к разным предметам; скидка применяется к количеству ресурсов.</li>
+            <li><strong>Гибкий ручной ввод:</strong> корректируйте итоговые ресурсы, не сбрасывая пресеты.</li>
+            <li><strong>Управление списком расчёта:</strong> кнопка [×] рядом с предметом удаляет его из расчёта.</li>
+          </ul>
+          <h4>Улучшения</h4>
+          <ul>
+            <li>Группировка пресетов по веткам, мгновенный пересчёт, кнопка полного сброса, актуальные скидки.</li>
+          </ul>
+          <h4>Исправления</h4>
+          <ul>
+            <li>Фон больше не искажается при открытии длинных списков.</li>
+          </ul>
+          <h4>Техническое</h4>
+          <ul>
+            <li>Рефакторинг, подготовка к многостраничности, улучшение семантики.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 1.2.1 -->
+      <details class="ch-item">
+        <summary>
+          <span class="ver">Версия 1.2.1</span>
+          <span class="date chip chip-info">01.08.2025</span>
+        </summary>
+        <div class="ch-body">
+          <h4>Исправления</h4>
+          <ul>
+            <li>Калькулятор: улучшена кликабельность названий пресетов и размер чекбоксов; изменён дизайн вкладок пресетов.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 1.2.0 -->
+      <details class="ch-item">
+        <summary>
+          <span class="ver">Версия 1.2.0</span>
+          <span class="date chip chip-info">01.08.2025</span>
+        </summary>
+        <div class="ch-body">
+          <h4>Улучшения</h4>
+          <ul>
+            <li>Добавлена ветка KS‑1.</li>
+            <li>Обновлены цены бартерных ресурсов Любеч‑3.</li>
+            <li>Обновлён ник во вкладках «О сайте» и «Связь».</li>
+            <li>Добавлена страница с гайдами.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 1.1.1 -->
+      <details class="ch-item">
+        <summary>
+          <span class="ver">Версия 1.1.1</span>
+          <span class="date chip chip-info">04.06.2025</span>
+        </summary>
+        <div class="ch-body">
+          <h4>Улучшения</h4>
+          <ul>
+            <li>Дополнены все фракционные костюмы.</li>
+            <li>Обновлены «О сайте» и «Связь» (ник, ссылка).</li>
+            <li>Актуализированы цены запчастей и инструментов в калькуляторе заточки.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 1.1.0 -->
+      <details class="ch-item">
+        <summary>
+          <span class="ver">Версия 1.1.0</span>
+          <span class="date chip chip-info">17.03.2025</span>
+        </summary>
+        <div class="ch-body">
+          <h4>Улучшения</h4>
+          <ul>
+            <li>Добавлены шаблоны всех бартерных предметов.</li>
+            <li>Изменён цвет названий бартерных ресурсов.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 1.0.5 -->
+      <details class="ch-item">
+        <summary>
+          <span class="ver">Версия 1.0.5</span>
+          <span class="date chip chip-info">15.03.2025</span>
+        </summary>
+        <div class="ch-body">
+          <h4>Улучшения</h4>
+          <ul>
+            <li>Добавлены шаблоны всех бартерных цевий и креплений.</li>
+            <li>Добавлены шаблоны всех бартерных прочих обвесов.</li>
+            <li>Добавлены шаблоны всех бартерных устройств.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 1.0.4 -->
+      <details class="ch-item">
+        <summary>
+          <span class="ver">Версия 1.0.4</span>
+          <span class="date chip chip-info">14.03.2025</span>
+        </summary>
+        <div class="ch-body">
+          <h4>Улучшения</h4>
+          <ul>
+            <li>Добавлены шаблоны всех бартерных магазинов.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 1.0.3 -->
+      <details class="ch-item">
+        <summary>
+          <span class="ver">Версия 1.0.3</span>
+          <span class="date chip chip-info">09.03.2025</span>
+        </summary>
+        <div class="ch-body">
+          <h4>Улучшения</h4>
+          <ul>
+            <li>Полностью обновлены все шаблоны брони.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 1.0.2 -->
+      <details class="ch-item">
+        <summary>
+          <span class="ver">Версия 1.0.2</span>
+          <span class="date chip chip-info">05.03.2025</span>
+        </summary>
+        <div class="ch-body">
+          <h4>Улучшения</h4>
+          <ul>
+            <li>Полностью готовы все шаблоны оружия.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 1.0.1 -->
+      <details class="ch-item">
+        <summary>
+          <span class="ver">Версия 1.0.1</span>
+          <span class="date chip chip-info">03.03.2025</span>
+        </summary>
+        <div class="ch-body">
+          <h4>Улучшения</h4>
+          <ul>
+            <li>Распределены шаблоны оружия по веткам (будут расширяться).</li>
+            <li>Навигация по надульникам: цвет ветки соответствует калибру (5.45 — зелёный, 5.56 — жёлтый и т.д.).</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="foot-brand">
+        <div class="logo-sm">StalMath</div>
+        <div class="muted">Фан‑сайт и инструменты для STALCRAFT: X</div>
+      </div>
+      <nav class="foot-links">
+        <a href="home.html">Главная</a>
+        <a href="index.html">Калькулятор</a>
+        <a href="sharpening.html">Заточка</a>
+        <a href="guides.html">Руководства</a>
+      </nav>
+      <div class="foot-social">
+        <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+      </div>
+    </div>
+    <div class="copy muted">
+      © StalMath. Неофициальный фан‑проект. Игра STALCRAFT: X разрабатывается компанией EXBO. Все права на игровые материалы принадлежат EXBO и иным правообладателям.
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="global.js?v=2"></script>
+  <script src="home.js"></script>
+</body>
+</html>
