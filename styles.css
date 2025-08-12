@@ -370,7 +370,7 @@ legend {
 .resource label { font-size: 14px; color: var(--text-dim); min-width: 0; overflow-wrap: anywhere;}
 
 .resource input[type="number"] {
-    width: 120px;
+    width: clamp(72px, 28vw, 120px);
     padding: 6px 8px;
     background: var(--surface);
     border: 1px solid var(--border);
@@ -897,4 +897,5 @@ body.modal-open { overflow-y: auto; }
   object-position: center;
   display: block;
 }
+
 
