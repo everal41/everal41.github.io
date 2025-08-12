@@ -367,10 +367,10 @@ legend {
     margin-bottom: 10px;
 }
 .resource img { width: 40px; height: 40px; border-radius: 6px; }
-.resource label { font-size: 14px; color: var(--text-dim); min-width: 0; overflow-wrap: anywhere;}
+.resource label { font-size: 14px; color: var(--text-dim); min-width: 0; }
 
 .resource input[type="number"] {
-    width: clamp(72px, 28vw, 120px);
+    width: 120px;
     padding: 6px 8px;
     background: var(--surface);
     border: 1px solid var(--border);
@@ -400,7 +400,6 @@ legend {
     grid-template-columns: auto 1fr auto;
     align-items: stretch;
     gap: 6px;
-    max-width: 100%;
 }
 .step-btn {
     width: 32px; height: 32px;
@@ -897,16 +896,4 @@ body.modal-open { overflow-y: auto; }
   object-fit: contain;
   object-position: center;
   display: block;
-}
-
-@media (max-width: 380px){
-  .step-btn{ width: 28px; }    /* было 32px */
-  .resource{ gap: 8px; }       /* было 10px */
-}
-
-@media (max-width: 480px){
-  /* ограничим ширину правой колонки (− [число] +) */
-  .resource{
-    grid-template-columns: 40px 1fr minmax(136px, 45%);
-  }
 }
