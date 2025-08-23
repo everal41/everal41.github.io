@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StalMath — интерактивная карта STALCRAFT: X</title>
+  <meta name="description" content="Интерактивная внутриигровая карта STALCRAFT: X — метки квестов, превью, награды и переходы к гайдам." />
+  <meta name="theme-color" content="#0f0f10" />
+  <link rel="icon" href="../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../home.css"/>
+  <link rel="stylesheet" href="map.css"/>
+</head>
+<body class="page-map">
+<a class="skip-link" href="#main">К содержимому</a>
+
+<header class="site-header">
+  <nav class="header-links start">
+    <a href="#" data-modal-target="#about-modal">О сайте</a>
+    <a href="#" data-modal-target="#contacts-modal">Связь</a>
+  </nav>
+
+  <div class="brand">
+    <a href="../index.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
+    <span class="badge">community project</span>
+  </div>
+
+  <nav class="header-links end">
+    <div class="dropdown" id="calcDropdown">
+      <button class="nav-btn dropdown-toggle" id="calcMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="calcMenu">
+        <i class="fa-solid fa-calculator"></i> Калькуляторы <i class="fa-solid fa-angle-down chevron" aria-hidden="true"></i>
+      </button>
+      <div class="dropdown-menu" id="calcMenu" role="menu">
+        <a class="dropdown-item" role="menuitem" href="../barter.html">
+          <i class="fa-solid fa-coins"></i> Калькулятор бартера
+        </a>
+        <a class="dropdown-item" role="menuitem" href="../sharpening.html">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки
+        </a>
+        <div class="dropdown-note">Скоро: экономические расчёты, DPS‑таблица</div>
+      </div>
+    </div>
+    <a href="map.html"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+    <a href="../guides.html"><i class="fa-solid fa-book-open"></i> Руководства</a>
+  </nav>
+
+  <div class="header-actions">
+    <button id="themeToggleBtn" class="ghost-btn" title="Переключить тему">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- О сайте -->
+<div id="about-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="about-title">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="about-title">О StalMath</h2>
+    <p>StalMath — набор бесплатных инструментов и гайдов по STALCRAFT: X. Мы фокусируемся на точных расчётах, удобстве и наглядности.</p>
+    <ul>
+      <li>Калькулятор бартера с пресетами, скидками и шэрингом</li>
+      <li>Калькулятор заточки</li>
+      <li>Руководства и таблицы</li>
+    </ul>
+    <p>Обратная связь и помощь приветствуются — смотрите раздел «Связь».</p>
+  </div>
+</div>
+
+<!-- Контакты -->
+<div id="contacts-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="contacts-title">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="contacts-title">Как связаться</h2>
+    <ul class="contact-list">
+      <li class="contact-item">
+        <i class="ci vk fa-brands fa-vk" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">ВКонтакте</div>
+          <a class="contact-link brand-vk" href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" title="Открыть профиль VK">
+            <span>@everal41</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci discord fa-brands fa-discord" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Discord</div>
+          <a class="contact-link brand-discord" href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" title="Перейти на сервер Discord">
+            <span>Наш сервер</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci game fa-solid fa-gamepad" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Ник в игре</div>
+          <div class="nick-row">
+            <span class="nick online-nick" id="gameNick">X_Solitude</span>
+            <button type="button" class="copy-btn" id="copyNickBtn" title="Скопировать ник">
+              <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              <span>Копировать</span>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<main id="main">
+  <section class="container map-container">
+    <div class="map-header">
+      <div class="map-title">
+        <h1>Интерактивная карта</h1>
+        <p class="muted">Зумируйте колесом/щипком. При увеличении — перетаскивайте карту мышью или пальцем.</p>
+      </div>
+
+      <div class="map-controls">
+        <label class="ctrl">
+          <span class="lbl">Локация</span>
+          <select id="mapSelect" class="ctrl-input" aria-label="Выбор карты"></select>
+        </label>
+
+        <div class="ctrl">
+          <span class="lbl">Масштаб</span>
+          <div class="zoom-group">
+            <button id="zoomOutBtn" class="btn btn-ghost" title="Уменьшить"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+            <div id="zoomValue" class="zoom-value">100%</div>
+            <button id="zoomInBtn" class="btn btn-ghost" title="Увеличить"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <button id="zoomResetBtn" class="btn btn-secondary" title="По экрану"><i class="fa-solid fa-compress"></i> По экрану</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mapCanvas" class="map-canvas">
+      <div id="mapFrame" class="map-frame" style="--frame-w:1372px; --frame-h:2000px;">
+        <img id="mapImage" class="map-image" src="images/maps/map-south.png" alt="Карта: Юг" draggable="false" />
+        <div id="markersLayer" class="markers-layer" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="map-legend">
+      <div class="chip chip-any">
+        <img class="legend-icon" src="images/icons/marker-any.webp" alt="" onerror="this.style.display='none'"> Любая группировка
+      </div>
+      <div class="chip chip-stalker">
+        <img class="legend-icon" src="images/icons/marker-stalker.webp" alt="Сталкеры"> Сталкеры
+      </div>
+      <div class="chip chip-bandit">
+        <img class="legend-icon" src="images/icons/marker-bandit.webp" alt="Бандиты"> Бандиты
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="foot-brand">
+      <div class="logo-sm">StalMath</div>
+      <div class="muted">Фан‑сайт и инструменты для STALCRAFT: X</div>
+    </div>
+    <nav class="foot-links">
+      <a href="../barter.html">Калькулятор</a>
+      <a href="../sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+    </nav>
+    <div class="foot-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="copy muted">
+    © StalMath. Неофициальный фан‑проект. Игра STALCRAFT: X разрабатывается компанией EXBO.
+    Все права на игровые материалы принадлежат EXBO и иным правообладателям.
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="../global.js"></script>
+<script src="../home.js"></script>
+<script src="map.js"></script>
+</body>
+</html>

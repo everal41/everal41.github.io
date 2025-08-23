@@ -1,0 +1,203 @@
+/* Отступы страницы */
+.page-map .map-container { padding-top: 88px; padding-bottom: 28px; }
+
+/* Заголовок и панель управления */
+.map-header { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: end; }
+.map-title h1 { margin: 0 0 6px; font-size: 28px; }
+.map-title .muted { margin: 0; }
+.map-controls { display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+.ctrl { display: grid; gap: 6px; }
+.ctrl .lbl { font-size: 12px; color: var(--text-dim); letter-spacing: .04em; text-transform: uppercase; }
+.ctrl-input {
+  appearance: none; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); min-width: 200px; cursor: pointer;
+}
+.ctrl-input:hover { border-color: var(--accent); }
+.zoom-group { display: inline-flex; align-items: center; gap: 8px; }
+.zoom-value { min-width: 52px; text-align: center; padding: 8px 10px; border-radius: 10px; border:1px solid var(--border); background: var(--surface); color: var(--text); }
+
+/* Полотно карты */
+.map-canvas {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: auto;
+  height: min(78vh, 1200px);
+  touch-action: none;
+}
+.map-canvas.pannable { cursor: grab; }
+.map-canvas.pannable.dragging { cursor: grabbing; }
+
+/* Рамка */
+.map-frame {
+  position: relative;
+  width: var(--frame-w, 1372px);
+  height: var(--frame-h, 2000px);
+  margin: 0 auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Изображение карты */
+.map-image {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(.98) contrast(1.02);
+  pointer-events: none;
+}
+
+/* Слой меток */
+.markers-layer { position: absolute; inset: 0; pointer-events: none; }
+
+/* Метка — сброс стилей кнопки */
+.marker{
+  position:absolute; transform:translate(-50%,-100%); z-index:10; pointer-events:auto;
+  appearance:none; -webkit-appearance:none; background:transparent; border:none; padding:0; margin:0; line-height:0;
+}
+.marker:focus{outline:none}
+.marker:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:6px}
+
+/* Пины (webp) */
+.marker .pin{ display:grid; place-items:center; }
+.marker .pin-img{
+  display:block; object-fit:contain; background:transparent;
+  filter:drop-shadow(0 6px 14px rgba(0,0,0,.5)); pointer-events:none;
+}
+.marker.pin-fallback .pin-img{ display:none; }
+.marker.pin-fallback .pin{
+  width:22px;height:22px;border-radius:999px;background:#1a1b1f;border:2px solid var(--border);color:var(--accent);
+  box-shadow:0 6px 16px rgba(0,0,0,.45), inset 0 0 10px rgba(255,204,102,.12);
+}
+.marker.pin-fallback.marker--stalker .pin{ border-color:var(--ok); color:#77e08a; background:#172118 }
+.marker.pin-fallback.marker--bandit  .pin{ border-color:var(--danger); color:#ff9a9a; background:#211616 }
+
+/* Размеры webp-иконок + масштаб */
+.marker{ --pin-scale: 0.68; } /* можно 0.65–0.72 */
+.marker--bandit  .pin-img{ width:calc(41px * var(--pin-scale)); height:calc(44px * var(--pin-scale)); }
+.marker--stalker .pin-img{ width:calc(43px * var(--pin-scale)); height:calc(41px * var(--pin-scale)); }
+.marker--any     .pin-img{ width:calc(44px * var(--pin-scale)); height:calc(42px * var(--pin-scale)); }
+
+/* Поповер — инфобокс (два столбца) */
+.marker .popover{
+  position:absolute; left:50%; bottom:calc(100% + 10px); --pop-dx: 0px;
+  transform: translateX(calc(-50% + var(--pop-dx)));
+  width:min(560px, 96vw);
+  background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:12px; box-shadow:var(--shadow);
+  opacity:0; visibility:hidden; transition:.16s ease; z-index:20;
+}
+.marker:hover .popover,
+.marker:focus-within .popover,
+.marker.active .popover{ opacity:1; visibility:visible; }
+.popover::after{
+  content:""; position:absolute; left:50%; transform:translateX(-50%);
+  top:100%; border:8px solid transparent; border-top-color:var(--surface); filter:drop-shadow(0 2px 0 var(--border));
+}
+
+.marker:hover,
+.marker:focus-within,
+.marker.active { z-index: 1000; }
+
+.popover.compact .q-grid { grid-template-columns: 1fr; }
+
+/* Сетка инфобокса */
+.q-grid{ display:grid; grid-template-columns: 188px 1fr; gap:14px; align-items:stretch; }
+
+/* Левая колонка */
+.q-left{ display:grid; gap:8px; align-content:start; }
+.q-thumb-xl{
+  width:100%; height:148px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#0f0f10;
+}
+.q-title-l{ color:var(--text); font-weight:800; font-size:18px; line-height:1.25; letter-spacing:.2px; }
+.q-badges{ display:flex; gap:6px; flex-wrap:wrap; justify-content:center; } /* центрируем плашку фракции */
+.q-badge{
+  display:inline-flex; align-items:center; gap:6px; height:24px; padding:0 10px; border-radius:999px;
+  font-size:12px; font-weight:800; letter-spacing:.02em; border:1px solid var(--border); background:var(--surface-2); color:var(--text);
+}
+.q-badge.badge--stalker{ border-color:var(--ok); background:rgba(76,175,80,.14); color:#a3e9b2 }
+.q-badge.badge--bandit{ border-color:var(--danger); background:rgba(178,34,34,.14); color:#ffb1b1 }
+.q-badge.badge--any{ border-color:var(--accent); background:rgba(255,204,102,.16); color:#ffd27a }
+
+/* Деньги/репутация — слева, под плашкой */
+.q-stats-inline{ display:inline-flex; align-items:center; gap:8px; justify-content:center; flex-wrap:wrap; }
+.stat-badge{
+  display:inline-flex; align-items:center; gap:6px; height:28px; padding:0 10px; border-radius:9px;
+  border:1px solid var(--border); background:var(--surface-2); white-space:nowrap; font-weight:800; font-size:13px; color:var(--text);
+}
+.stat-badge.money i{ color:var(--accent) }
+.stat-badge.rep i{ color:var(--ok) }
+
+/* Правая колонка */
+.q-right{ display:flex; flex-direction: column; gap:10px; min-height: 100%;  }
+
+/* Описание — в отдельном тёмном боксе */
+.q-desc-box{
+  border:1px solid var(--border);
+  background:linear-gradient(0deg, rgba(0,0,0,.18), rgba(0,0,0,.12)), var(--surface-2);
+  border-radius:10px; padding:10px;
+}
+.q-desc{ color:var(--text); opacity:.96; font-size:14px; line-height:1.5; }
+
+/* Блок наград (выделенный заголовок) */
+.rw-panel-large{ display:grid; gap:8px; }
+.rw-label{
+  font-size:12px; font-weight:900; text-transform:uppercase; letter-spacing:.06em;
+  color:var(--text);
+  display:flex; align-items:center; gap:10px;
+}
+.rw-label::after{ content:""; flex:1; height:1px; background:var(--border); border-radius:1px; opacity:.8; }
+
+.rw-gallery{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.rw-large{
+  display:inline-flex; align-items:center; gap:10px; padding:8px 10px;
+  border:1px solid var(--border); border-radius:12px; background:var(--surface-2);
+}
+
+/* Изображение награды — крупнее и с подсветкой по редкости */
+.rw-large img{
+  width:60px; height:60px; border-radius:8px; border:1px solid var(--border); object-fit:cover; background:#0f0f10;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.04), 0 6px 14px rgba(0,0,0,.35);
+}
+.rw-large .lbl{ font-size:13px; color:var(--text); }
+
+/* Подсветки по редкости */
+.rw-large.rarity-stalker img{
+  border-color:#2e86ff;
+  box-shadow: inset 0 0 0 1px rgba(46,134,255,.25), 0 0 18px rgba(46,134,255,.22), 0 6px 14px rgba(0,0,0,.35);
+}
+.rw-large.rarity-epic img{
+  border-color:#a972ff;
+  box-shadow: inset 0 0 0 1px rgba(169,114,255,.25), 0 0 18px rgba(169,114,255,.22), 0 6px 14px rgba(0,0,0,.35);
+}
+.rw-large.rarity-rare img{
+  border-color:#3bbf8a;
+  box-shadow: inset 0 0 0 1px rgba(59,191,138,.25), 0 0 18px rgba(59,191,138,.22), 0 6px 14px rgba(0,0,0,.35);
+}
+
+/* Кнопка справа — заметная */
+.q-actions{ display:flex; justify-content:center; margin-top: auto; }
+.q-actions .btn.inline{ padding:10px 12px; }
+.q-actions .btn.btn-primary{ font-weight:800; }
+
+
+/* Легенда — фиксируем размеры, чтобы не «расползалась» */
+.map-legend{ margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.map-legend .chip{
+  height:26px; padding:0 8px; display:inline-flex; align-items:center; gap:6px; font-size:13px; line-height:1; border-radius:16px;
+}
+.legend-icon{ width:16px; height:16px; object-fit:contain; display:inline-block; }
+
+/* Сервис */
+.map-image.error{ filter:grayscale(.9) brightness(.7) }
+.map-frame.loading .map-image{ opacity:.6 }
+
+/* Адаптив */
+@media (max-width: 520px){
+  .q-grid{ grid-template-columns:1fr; }
+  .q-left{ grid-template-columns:1fr; }
+}
+@media (max-width: 780px){
+  .map-header{ grid-template-columns:1fr; }
+  .map-controls{ justify-content:flex-start; }
+}
