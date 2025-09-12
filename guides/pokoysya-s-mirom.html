@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Покойся с миром — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Покойся с миром» в STALCRAFT: X: где взять у Сталкеров на Болотах, лучшие ответы в диалогах с Чипом для максимальной награды, пошаговое прохождение и награды." />
+  <meta name="keywords" content="STALCRAFT X, Покойся с миром, квест Покойся с миром, гайд Покойся с миром, Шулер, Грэм, Чип, Старая лопата, Болота, Сталкеры, прохождение квеста, лучшая награда" />
+  <meta name="theme-color" content="#0f0f10" />
+  <link rel="icon" href="../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../home.css"/>
+  <link rel="stylesheet" href="guide.css"/>
+
+  <style>
+    /* Подсветка вариантов ответов */
+    .choice-list{ display:grid; gap:8px; margin-top:8px; }
+    .choice{
+      display:grid; grid-template-columns:auto 1fr; align-items:center; gap:10px;
+      padding:10px 12px; border:1px solid var(--border); border-radius:12px;
+      background:var(--surface-2);
+    }
+    .choice .num{
+      width:26px; height:26px; border-radius:999px; display:grid; place-items:center;
+      font-weight:800; font-size:12px; line-height:1;
+      color:#ffd27a; border:1px solid var(--border);
+      background:rgba(255,204,102,.14);
+    }
+    .choice .text{ line-height:1.45; color:var(--text); }
+    .choice-note{ font-size:12px; color:var(--text-dim); margin:6px 0 0; }
+    /* Компакт в списках внутри шагов */
+    .steps .choice-list{ margin-top:6px; }
+  </style>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+
+<header class="site-header">
+  <nav class="header-links start">
+    <a href="#" data-modal-target="#about-modal">О сайте</a>
+    <a href="#" data-modal-target="#contacts-modal">Связь</a>
+  </nav>
+  <div class="brand">
+    <a href="../index.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
+    <span class="badge">community project</span>
+  </div>
+  <nav class="header-links end">
+    <div class="dropdown" id="calcDropdown">
+      <button class="nav-btn dropdown-toggle" id="calcMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="calcMenu">
+        <i class="fa-solid fa-calculator"></i> Калькуляторы <i class="fa-solid fa-angle-down chevron" aria-hidden="true"></i>
+      </button>
+      <div class="dropdown-menu" id="calcMenu" role="menu">
+        <a class="dropdown-item" role="menuitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+        <a class="dropdown-item" role="menuitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+        <div class="dropdown-note">Скоро: экономические расчёты, DPS‑таблица</div>
+      </div>
+    </div>
+    <a href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+    <a href="../guides.html" aria-current="page"><i class="fa-solid fa-book-open"></i> Руководства</a>
+  </nav>
+  <div class="header-actions">
+    <button id="themeToggleBtn" class="ghost-btn" title="Переключить тему">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Модалки -->
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="about-title">О StalMath</h2>
+    <p>StalMath — набор бесплатных инструментов и гайдов по STALCRAFT: X. Мы фокусируемся на точных расчётах, удобстве и наглядности.</p>
+    <ul>
+      <li>Калькулятор бартера с пресетами, скидками и шэрингом</li>
+      <li>Калькулятор заточки</li>
+      <li>Руководства и таблицы</li>
+    </ul>
+  </div>
+</div>
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="contacts-title">Как связаться</h2>
+    <ul class="contact-list">
+      <li class="contact-item">
+        <i class="ci vk fa-brands fa-vk" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">ВКонтакте</div>
+          <a class="contact-link brand-vk" href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener">
+            <span>@everal41</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci discord fa-brands fa-discord" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Discord</div>
+          <a class="contact-link brand-discord" href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener">
+            <span>Наш сервер</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci game fa-solid fa-gamepad" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Ник в игре</div>
+          <div class="nick-row">
+            <span class="nick online-nick" id="gameNick">X_Solitude</span>
+            <button type="button" class="copy-btn" id="copyNickBtn" title="Скопировать ник">
+              <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              <span>Копировать</span>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<main id="main" class="g-container container">
+  <header class="g-header">
+    <h1 class="g-title">Покойся с миром</h1>
+    <div class="g-meta">
+      <span class="chip chip-faction chip-stalker"><i class="fa-solid fa-user"></i> Только Сталкеры</span>
+      <span class="chip"><i class="fa-solid fa-ruble-sign"></i> 10 000 руб.</span>
+      <span class="chip"><i class="fa-solid fa-medal"></i> +200 репутации</span>
+      <a class="chip chip-ghost" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть на карте</a>
+    </div>
+    <div class="g-cover" style="background-image:url('../map/images/quests/pokoysya-s-mirom/pokoysya-s-mirom.jpg'), linear-gradient(135deg,#2b2b2b,#1a1a1a)"></div>
+  </header>
+
+  <div class="g-grid">
+    <article class="g-article" id="article">
+      <nav id="toc" class="toc" aria-label="Содержание"></nav>
+
+      <section id="about">
+        <h2>О квесте</h2>
+        <p>Квест можно взять за Сталкеров на базе на Болоте. Для принятия квеста необходимо поговорить с NPC <strong>Шулер</strong> или <strong>Грэм</strong>. Квест имеет несколько веток прохождения — ниже описана ветка с <em>наилучшей наградой</em>. Если нужна только <strong>Старая лопата</strong>, можно пройти любым вариантом — по итогу вы её всё равно получите.</p>
+      </section>
+
+      <section id="steps">
+        <h2>Прохождение</h2>
+        <ol class="steps">
+          <li>
+            <h3>К землянке Чипа</h3>
+            <p>Поговорив с Шулером или Грэмом, отправляйтесь по метке к землянке Чипа. Для перехода на локацию нажмите <kbd>Кнопку взаимодействия</kbd> в щели у сеточного забора.</p>
+          </li>
+
+          <li>
+            <h3>Диалог с Чипом — ветка для лучшей награды</h3>
+            <p>При приближении к Чипу он сам начнёт диалог. Наша цель — ветка с созданием «муляжа» Чипа. Всегда выбираем <strong>первый</strong> вариант ответа:</p>
+            <div class="choice-list">
+              <div class="choice"><span class="num">1</span><div class="text">Чип, не стреляй, давай просто поговорим.</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Успокойся. Я от твоих друзей Грэма и Шулера.</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Ты им должен? Я не в курсе...</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Они просто хотят поиграть в карты. Меня тоже обещали взять в вашу компанию.</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Да ладно тебе, ты преувеличиваешь.</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">А почему ты в этот раз сбежал?</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Ты проиграл.</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Тебе хватает денег для покрытия долга?</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">У тебя уже есть план... Расскажешь?</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Звучит отлично! Давай так и поступим.</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Ага, я пошел.</div></div>
+            </div>
+          </li>
+
+          <li>
+            <h3>Свиные кишки</h3>
+            <p>Достаньте <strong>свиные кишки</strong> — выпадают в качестве награды с лежанки хрюш. Отнесите предмет обратно в землянку к Чипу.</p>
+          </li>
+
+          <li>
+            <h3>Омут</h3>
+            <p>Снова говорим с Чипом и <strong>разливаем бутафорную кровь</strong> возле аномалии <em>Омут</em>. После этого ещё раз поговорите с Чипом и возвращайтесь на базу.</p>
+          </li>
+
+          <li>
+            <h3>Сообщить друзьям</h3>
+            <p>Скажите Грэму и Шулеру, что Чипа разорвало Омутом.</p>
+          </li>
+
+          <li>
+            <h3>Старая лопата</h3>
+            <p>Переместитесь к землянке, поговорите с НПС и заберите <strong>Старую лопату</strong> из старого холодильника.</p>
+            <figure class="img-full">
+              <img src="../map/images/quests/pokoysya-s-mirom/fridge.jpg" alt="Старая лопата в холодильнике">
+              <figcaption>Лопата лежит в старом холодильнике</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <h3>Спор с Шулером и «похороны»</h3>
+            <p>Вернитесь к Шулеру и выберите следующие варианты (всё также — <strong>первые</strong> варианты):</p>
+            <div class="choice-list">
+              <div class="choice"><span class="num">1</span><div class="text">Ага, вот.</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Почему ты так решил?</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Ты хочешь их присвоить?</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Ты перегибаешь палку.</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Смирись, Шулер. Твой друг лежит перед тобой, а ты сбрендил от горя.</div></div>
+            </div>
+            <p class="choice-note">Затем <strong>закопайте могилу</strong> — нажмите кнопку взаимодействия три раза, наведясь на яму.</p>
+          </li>
+
+          <li>
+            <h3>Финал</h3>
+            <p>Идите к Чипу — он будет стоять в крайней теплице.</p>
+            <figure class="img-full">
+              <img src="../map/images/quests/pokoysya-s-mirom/chip-greenhouse.jpg" alt="Чип в крайней теплице">
+              <figcaption>Чип в крайней теплице</figcaption>
+            </figure>
+            <div class="choice-list">
+              <div class="choice"><span class="num">1</span><div class="text">Привет, Чип.</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Они поверили. Похоронили тебя с почестями.</div></div>
+              <div class="choice"><span class="num">2</span><div class="text">Теперь не попадайся им. За такие шутки в зубах бывают промежутки.</div></div>
+              <div class="choice"><span class="num">1</span><div class="text">Плохая примета, знаешь ли. Клички себе придумывать.</div></div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="rewards">
+        <h2>Награды</h2>
+        <div class="reward-list">
+          <div class="reward-card rarity-rare">
+            <img src="../map/images/items/old-shovel.png" alt="Старая лопата" />
+            <div class="r-meta">
+              <div class="r-name">Старая лопата</div>
+            </div>
+          </div>
+          <div class="reward-card">
+            <img src="../map/images/items/energy-zhiden-extra.webp" alt='Энергетик "Жидень EXTRA" ×2' />
+            <div class="r-meta"><div class="r-name">Энергетик "Жидень EXTRA" ×2</div></div>
+          </div>
+          <div class="reward-card">
+            <img src="../map/images/items/tonic-arni.webp" alt='Тоник "Арни" ×2' />
+            <div class="r-meta"><div class="r-name">Тоник "Арни" ×2</div></div>
+          </div>
+          <div class="reward-card">
+            <img src="../map/images/items/desperol.webp" alt="Десперол ×3" />
+            <div class="r-meta"><div class="r-name">Десперол ×3</div></div>
+          </div>
+
+          <div class="reward-inline">
+            <span class="chip"><i class="fa-solid fa-ruble-sign"></i> 10 000 руб.</span>
+            <span class="chip"><i class="fa-solid fa-medal"></i> +200 репутации</span>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <aside class="infobox" aria-label="Информация о квесте">
+      <div class="ibox-title">Покойся с миром</div>
+      <div class="ibox-row">
+        <span class="ibox-label">Доступно</span>
+        <span class="ibox-val tag"><i class="fa-solid fa-user"></i> Только Сталкеры</span>
+      </div>
+      <div class="ibox-row">
+        <span class="ibox-label">Локация</span>
+        <span class="ibox-val">Болота</span>
+      </div>
+      <div class="ibox-row">
+        <span class="ibox-label">Репутация</span>
+        <span class="ibox-val"><i class="fa-solid fa-medal"></i> +200</span>
+      </div>
+      <div class="ibox-row">
+        <span class="ibox-label">Деньги</span>
+        <span class="ibox-val"><i class="fa-solid fa-ruble-sign"></i> 10 000 руб.</span>
+      </div>
+
+      <div class="ibox-block">
+        <div class="ibox-subtitle">Главная награда</div>
+        <div class="ibox-reward rarity-rare">
+          <img src="../map/images/items/old-shovel.png" alt="Старая лопата">
+          <div class="ibox-rmeta">
+            <div class="name">Старая лопата</div>
+          </div>
+        </div>
+      </div>
+
+      <a class="btn btn-primary wide" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть на карте</a>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="foot-brand">
+      <div class="logo-sm">StalMath</div>
+      <div class="muted">Фан‑сайт и инструменты для STALCRAFT: X</div>
+    </div>
+    <nav class="foot-links">
+      <a href="../barter.html">Калькулятор</a>
+      <a href="../sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+    </nav>
+    <div class="foot-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="copy muted">© StalMath. Неофициальный фан‑проект.</div>
+</footer>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="../global.js"></script>
+<script src="../home.js"></script>
+<script src="guide.js"></script>
+</body>
+</html>
