@@ -1,5 +1,4 @@
-/* Инфобокс: слева — превью/название/фракция/статусы, справа — описание в боксе + крупные награды.
-   Добавлены редкости наград и заметная кнопка «Гайд по прохождению». */
+/* Инфобокс: слева — превью/название/фракция/статусы, справа — описание в боксе + крупные награды. */
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = {
@@ -14,10 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     zoomValue: document.getElementById('zoomValue'),
     toast: document.getElementById('toast')
   };
+  el.tilesLayer = null; // слой тайлов
 
   const DEFAULT_ZOOM = 0.76;
   const LIMITS = { maxZoom: 3.5 };
   const PIN_SCALE = 0.68;
+  const TILE_SEAM = 0.5; // перекрытие внутренних стыков тайлов (CSS-пиксели)
 
   const MARKER_ICONS = {
     bandit:  { src: 'images/icons/marker-bandit.webp',  w: 41, h: 44, alt: 'Бандиты' },
@@ -25,8 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
     any:     { src: 'images/icons/marker-any.webp',     w: 44, h: 42, alt: 'Любая группировка' }
   };
 
+  // Карты: south использует тайлы 192x192 (z-x-y), остальные — цельные изображения
   const MAPS = [
-    { id: 'south',   name: 'Южная часть зоны', src: 'images/maps/map-south.png',   width: 1372, height: 2000 },
+    {
+      id: 'south',
+      name: 'Южная часть зоны',
+      src: 'images/maps/map-south.png',     // фолбэк
+      width: 1372, height: 2000,            // базовая система координат
+      tiles: {
+        tileSize: 192,
+        levels: [
+          { z: 1, cols: 8, rows: 11, url: (x, y) => `images/maps/South/1x/1-${x}-${y}.jpg` }
+          // можно подключить детальнее:
+          // { z: 2, cols: 16, rows: 22, url: (x, y) => `images/maps/South/2x/2-${x}-${y}.jpg` },
+          // { z: 3, cols: 32, rows: 44, url: (x, y) => `images/maps/South/3x/3-${x}-${y}.jpg` },
+        ]
+      }
+    },
     { id: 'north',   name: 'Северная часть зоны', src: 'images/maps/map-north.png',   width: 1372, height: 2000 },
     { id: 'pripyat', name: 'Припять',             src: 'images/maps/map-pripyat.png', width: 1372, height: 2000 }
   ];
@@ -49,7 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
       x: 647, y: 1691,
       preview: 'images/quests/echo-past/echo-past.jpg',
       desc: 'На Болотах я нашёл очень старый ПДА, на котором имя владельца — Борода.',
-      rewards: [{ img: 'images/items/pp2000-yakor-blue.webp', label: 'ПП‑2000 «Якорь»', rarity: 'stalker' }],
+      rewards: [{ img: 'images/items/pp2000-yakor-blue.webp', label: 'ПП‑2000 «Якорь»', rarity: 'stalker' },
+      { img: 'images/items/ammo-545-sbp.webp', label: 'Ящик 5.45 СБП' },
+      { img: 'images/items/ammo-556-sbp.webp', label: 'Ящик 5.56 СБП' },
+      { img: 'images/items/ammo-762-sbp.webp', label: 'Ящик 7.62 СБП' },
+      { img: 'images/items/pouch-medic.webp', label: 'Подсумок с военными аптечками' },
+      { img: 'images/items/tonic-arni.webp', label: 'Тоник Арни' }
+      ],
       money: 1500,
       reputation: 30,
       guideUrl: '../guides/echo-past.html'
@@ -63,14 +85,101 @@ document.addEventListener('DOMContentLoaded', () => {
       x: 445, y: 1572,
       preview: 'images/quests/echo-past/echo-past.jpg',
       desc: 'На Болотах я нашёл очень старый ПДА, на котором имя владельца — Борода.',
-      rewards: [{ img: 'images/items/pp2000-yakor-blue.webp', label: 'ПП‑2000 «Якорь»', rarity: 'stalker' }],
+      rewards: [{ img: 'images/items/pp2000-yakor-blue.webp', label: 'ПП‑2000 «Якорь»', rarity: 'stalker' },
+      { img: 'images/items/ammo-545-sbp.webp', label: 'Ящик 5.45 СБП' },
+      { img: 'images/items/ammo-556-sbp.webp', label: 'Ящик 5.56 СБП' },
+      { img: 'images/items/ammo-762-sbp.webp', label: 'Ящик 7.62 СБП' },
+      { img: 'images/items/pouch-medic.webp', label: 'Подсумок с военными аптечками' },
+      { img: 'images/items/tonic-arni.webp', label: 'Тоник Арни' }
+    ],
       money: 1500,
       reputation: 30,
       guideUrl: '../guides/echo-past.html'
     },
+    // Упырь — Сталкеры
+    {
+      id: 'q-upyr-stalker',
+      title: 'Упырь',
+      loc: 'south',
+      faction: 'stalker',
+      x: 648, y: 1791,
+      preview: 'images/quests/upyr/upyr.jpg',
+      desc: 'В лагерь принесли труп сталкера с множеством ран.',
+      rewards: [
+        { img: 'images/items/domestic-mre.webp', label: 'Отечественный ИРП ×4' },
+        { img: 'images/items/clarinol.webp',     label: 'Кларинол ×2' },
+        { img: 'images/items/ammo-545-sbp.webp', label: 'Ящик 5.45 СБП' },
+        { img: 'images/items/ammo-556-sbp.webp', label: 'Ящик 5.56 СБП' },
+        { img: 'images/items/ammo-762-sbp.webp', label: 'Ящик 7.62 СБП' }
+      ],
+      money: 6000,
+      reputation: 140,
+      guideUrl: '../guides/upyr.html'
+    },
+    // Упырь — Бандиты
+    {
+      id: 'q-upyr-bandit',
+      title: 'Упырь',
+      loc: 'south',
+      faction: 'bandit',
+      x: 312, y: 1569,
+      preview: 'images/quests/upyr/upyr.jpg',
+      desc: 'В лагерь принесли труп бандита с множеством ран.',
+      rewards: [
+        { img: 'images/items/domestic-mre.webp', label: 'Отечественный ИРП ×4' },
+        { img: 'images/items/clarinol.webp',     label: 'Кларинол ×2' },
+        { img: 'images/items/ammo-545-sbp.webp', label: 'Ящик 5.45 СБП' },
+        { img: 'images/items/ammo-556-sbp.webp', label: 'Ящик 5.56 СБП' },
+        { img: 'images/items/ammo-762-sbp.webp', label: 'Ящик 7.62 СБП' }
+      ],
+      money: 6000,
+      reputation: 140,
+      guideUrl: '../guides/upyr.html'
+    },
+    // Покойся с миром — Сталкеры
+    {
+      id: 'q-rest-in-peace-stalker',
+      title: 'Покойся с миром',
+      loc: 'south',
+      faction: 'stalker',
+      x: 651, y: 1799,
+      preview: 'images/quests/pokoysya-s-mirom/pokoysya-s-mirom.jpg',
+      desc: 'Заядлые картежники Шулер и Грэм попросили найти их товарища по кличке Чип.',
+      rewards: [
+        { img: 'images/items/old-shovel.png',         label: 'Старая лопата', rarity: 'rare' },
+        { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA" ×2' },
+        { img: 'images/items/tonic-arni.webp',          label: 'Тоник "Арни" ×2' },
+        { img: 'images/items/desperol.webp',            label: 'Десперол ×3' }
+      ],
+      money: 10000,
+      reputation: 200,
+      guideUrl: '../guides/pokoysya-s-mirom.html'
+    },
+    // Естественный отбор — Сталкеры
+    {
+      id: 'q-natural-selection-stalker',
+      title: 'Естественный отбор',
+      loc: 'south',
+      faction: 'stalker',
+      x: 658, y: 1793,
+      preview: 'images/quests/estestvennyj-otbor/cover.jpg',
+      desc: 'Я купил у Синяка координаты места с залежами артефактов.',
+      rewards: [
+        { img: 'images/items/desperol.webp',          label: 'Десперол', qty: 2 },
+        { img: 'images/items/boevoi-goroh.webp',      label: 'Боевой горох', qty: 1 },
+        { img: 'images/items/pouch-medic.webp',       label: 'Подсумок с военными аптечками', qty: 1 },
+        { img: 'images/items/ammo-545-sbp.webp',      label: 'Ящик патронов 5.45 мм СБП', qty: 1 },
+        { img: 'images/items/ammo-556-sbp.webp',      label: 'Ящик патронов 5.56 мм СБП', qty: 1 },
+        { img: 'images/items/ammo-762-sbp.webp',      label: 'Ящик патронов 7.62 мм СБП', qty: 1 }
+      ],
+      money: 5000,
+      reputation: 120,
+      guideUrl: '../guides/estestvennyj-otbor.html'
+    }
   ];
 
   let state = { currentMapId: 'south', zoom: DEFAULT_ZOOM, minZoom: 0.3 };
+  let tilesState = { level: null }; // текущий уровень тайлов
 
   function initMapSelect() {
     el.mapSelect.innerHTML = MAPS.map(m => `<option value="${m.id}">${m.name}</option>`).join('');
@@ -86,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderMap(resetView=false){
     const map = getMapById(state.currentMapId);
 
-    // Сохраняем базовые размеры для пробника координат
     el.mapFrame.dataset.baseW = map.width;
     el.mapFrame.dataset.baseH = map.height;
 
@@ -100,7 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
     el.mapImage.onload = () => el.mapFrame.classList.remove('loading');
     el.mapImage.onerror = () => { el.mapFrame.classList.remove('loading'); el.mapImage.classList.add('error'); };
 
+    setupTilesLayer();
     recalcMinZoom();
+
     if (resetView){
       const startZoom = Math.max(DEFAULT_ZOOM, state.minZoom);
       setZoom(startZoom, getCanvasCenterAnchor());
@@ -113,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.markersLayer.innerHTML = '';
     markers.forEach(q => el.markersLayer.appendChild(createMarkerEl(q, map)));
 
-    // После рендера поправим поповеры, если что-то уже активно
+    updateTiles(true);
     updateOpenPopovers();
   }
 
@@ -165,24 +275,19 @@ document.addEventListener('DOMContentLoaded', () => {
       im.addEventListener('error', () => { im.src = IMG_PLACEHOLDER; }, { once:true });
     });
 
-    // Клик по маркеру
     marker.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;
       const active = marker.classList.toggle('active');
-      // Сбрасываем другие
       if (active){
         document.querySelectorAll('.marker.active').forEach(m => { if (m !== marker) { m.classList.remove('active'); m.style.zIndex = ''; } });
-        // Поднимаем активную метку над остальными
         marker.style.zIndex = '1000';
         scrollMarkerIntoView(marker);
-        // Позиционируем поповер после перерисовки
         requestAnimationFrame(() => positionPopover(marker));
       } else {
         marker.style.zIndex = '';
       }
     });
 
-    // Наведение: тоже поднимаем и позиционируем
     marker.addEventListener('mouseenter', () => {
       marker.style.zIndex = '1000';
       requestAnimationFrame(() => positionPopover(marker));
@@ -212,24 +317,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function buildRewardsLarge(q){
-    const list = [
-      ...(q.rewardsVar || []),
-      ...(q.rewards || [])
-    ];
-    if (!list.length) return '';
-    return `
-      <div class="rw-panel-large">
-        <div class="rw-label">НАГРАДА</div>
-        <div class="rw-gallery">
-          ${list.map(r => `
-            <span class="rw-large ${r.rarity ? `rarity-${escapeClass(r.rarity)}` : ''}">
+  const list = [
+    ...(q.rewardsVar || []),
+    ...(q.rewards || [])
+  ];
+  if (!list.length) return '';
+
+  const many = list.length >= 4;
+
+  return `
+    <div class="rw-panel-large">
+      <div class="rw-label">НАГРАДА</div>
+      <div class="rw-gallery ${many ? 'grid-2' : ''}">
+        ${list.map(r => {
+          const { name, qty } = parseLabelQty(r);
+          return `
+            <span class="rw-large ${many ? 'compact ' : ''}${r.rarity ? `rarity-${escapeClass(r.rarity)}` : ''}">
               <img src="${r.img || IMG_PLACEHOLDER}" alt="Награда" />
-              <span class="lbl">${escapeHtml(r.label || '')}</span>
+              <span class="lbl">${escapeHtml(name || '')}</span>
+              ${qty ? `<span class="qty">×${escapeHtml(qty)}</span>` : ''}
             </span>
-          `).join('')}
-        </div>
+          `;
+        }).join('')}
       </div>
-    `;
+    </div>
+  `;
   }
 
   /* Центрирование метки при открытии */
@@ -240,44 +352,178 @@ document.addEventListener('DOMContentLoaded', () => {
     if (out) marker.scrollIntoView({ block:'center', inline:'center', behavior:'smooth' });
   }
 
-  /* Подталкивание поповера внутрь канваса + компактный режим */
   function positionPopover(marker){
     const pop = marker.querySelector('.popover');
     if (!pop) return;
 
-    // Сброс — затем установим нужные значения
     pop.style.transform = 'translateX(-50%)';
-    pop.style.width = ''; // вернёмся к CSS-правилу width:min(560px,96vw)
+    pop.style.width = '';
+    pop.style.maxHeight = '';
+    pop.classList.remove('scrollable');
+    pop.removeAttribute('data-pos');
 
     const cr = el.mapCanvas.getBoundingClientRect();
+    const mr = marker.getBoundingClientRect();
     const pad = 8;
-    const available = Math.max(0, cr.width - pad*2);
 
-    // Ограничим ширину поповера канвасом, чтобы он не выходил наружу
+    const availableW = Math.max(0, cr.width - pad*2);
     const maxW = 560;
-    if (available > 0) {
-      const w = Math.min(maxW, available);
-      pop.style.width = w + 'px';
-    }
+    if (availableW > 0) pop.style.width = Math.min(maxW, availableW) + 'px';
 
-    // Компактная сетка по реальной ширине канваса (не вьюпорта)
     const qGrid = pop.querySelector('.q-grid');
     if (qGrid){
-      if (available < 520) qGrid.style.gridTemplateColumns = '1fr';
+      if (availableW < 520) qGrid.style.gridTemplateColumns = '1fr';
       else qGrid.style.gridTemplateColumns = '';
     }
 
-    // После применения ширины — считаем сдвиг
-    const pr = pop.getBoundingClientRect();
+    let pr = pop.getBoundingClientRect();
     let dx = 0;
     if (pr.left < cr.left + pad) dx = (cr.left + pad) - pr.left;
     else if (pr.right > cr.right - pad) dx = (cr.right - pad) - pr.right;
-
     if (Math.abs(dx) > 0.5){
       pop.style.transform = `translateX(calc(-50% + ${dx}px))`;
-    } else {
-      pop.style.transform = 'translateX(-50%)';
     }
+
+    const spaceAbove = (mr.top - cr.top) - 12;
+    const spaceBelow = (cr.bottom - mr.bottom) - 12;
+    const naturalH = pop.scrollHeight;
+
+    const placeBelow = (spaceAbove < naturalH && spaceBelow > spaceAbove);
+    if (placeBelow) pop.setAttribute('data-pos', 'below');
+
+    const availableH = Math.max(150, (placeBelow ? spaceBelow : spaceAbove) - 8);
+    if (naturalH > availableH) {
+      pop.classList.add('scrollable');
+      pop.style.maxHeight = availableH + 'px';
+    }
+  }
+
+  /* === ТАЙЛЫ ============================================================ */
+
+  function setupTilesLayer(){
+    if (el.tilesLayer) { el.tilesLayer.remove(); el.tilesLayer = null; tilesState.level = null; }
+    const map = getMapById(state.currentMapId);
+    if (!map.tiles){ el.mapImage.style.display = ''; return; }
+
+    el.mapImage.style.display = 'none';
+    const layer = document.createElement('div');
+    layer.className = 'tiles-layer';
+    el.mapFrame.insertBefore(layer, el.markersLayer);
+    el.tilesLayer = layer;
+  }
+
+  // выбираем уровень с нужной «детализацией» исходя из зума и DPR
+  function pickBestTileLevel(map){
+    const t = map.tiles;
+    if (!t?.levels?.length) return null;
+    const dpr = window.devicePixelRatio || 1;
+    const want = state.zoom * dpr;
+
+    const baseCols1 = Math.ceil(map.width  / t.tileSize);
+    const baseRows1 = Math.ceil(map.height / t.tileSize);
+
+    const levels = t.levels.map(l => {
+      const fx = l.cols / baseCols1;
+      const fy = l.rows / baseRows1;
+      return { l, eff: Math.min(fx, fy) };
+    }).sort((a,b) => a.eff - b.eff);
+
+    let best = levels[0].l;
+    for (const it of levels){
+      if (it.eff >= want) { best = it.l; break; }
+      best = it.l;
+    }
+    return best;
+  }
+
+  // базовый размер тайла в системе координат карты (1372×2000) для выбранного уровня
+  function getBaseUnit(map, lvl){
+    const t = map.tiles;
+    const baseCols1 = Math.ceil(map.width  / t.tileSize);
+    const baseRows1 = Math.ceil(map.height / t.tileSize);
+    const unitW = (t.tileSize * baseCols1) / lvl.cols;
+    const unitH = (t.tileSize * baseRows1) / lvl.rows;
+    return { unitW, unitH };
+  }
+
+  function updateTiles(force=false){
+    const map = getMapById(state.currentMapId);
+    if (!el.tilesLayer || !map.tiles) return;
+
+    const lvl = pickBestTileLevel(map);
+    if (!lvl) return;
+
+    if (force || !tilesState.level || tilesState.level.z !== lvl.z){
+      tilesState.level = lvl;
+      el.tilesLayer.innerHTML = '';
+    }
+
+    const { unitW, unitH } = getBaseUnit(map, lvl);
+
+    const usableCols = Math.ceil(map.width  / unitW); // кол-во столбцов, покрывающих карту
+    const usableRows = Math.ceil(map.height / unitH); // кол-во строк, покрывающих карту
+
+    // видимая область в координатах карты
+    const r = el.mapCanvas.getBoundingClientRect();
+    const leftBase = el.mapCanvas.scrollLeft / state.zoom;
+    const topBase  = el.mapCanvas.scrollTop  / state.zoom;
+    const viewBaseW = r.width  / state.zoom;
+    const viewBaseH = r.height / state.zoom;
+
+    // диапазон тайлов + буфер
+    const buf = 1;
+    const c0 = Math.max(0, Math.floor(leftBase / unitW) - buf);
+    const r0 = Math.max(0, Math.floor(topBase  / unitH) - buf);
+    const c1 = Math.min(usableCols - 1, Math.floor((leftBase + viewBaseW) / unitW) + buf);
+    const r1 = Math.min(usableRows - 1, Math.floor((topBase  + viewBaseH) / unitH) + buf);
+
+    const needed = new Set();
+
+    for (let row = r0; row <= r1; row++){
+      for (let col = c0; col <= c1; col++){
+        const key = `${lvl.z}:${row}:${col}`;
+        needed.add(key);
+
+        let img = el.tilesLayer.querySelector(`img.tile[data-key="${key}"]`);
+        if (!img){
+          img = new Image();
+          img.className = 'tile';
+          img.decoding = 'async';
+          img.loading = 'eager';
+          img.dataset.key = key;
+          img.alt = '';
+          img.src = lvl.url(col, row); // x=col, y=row
+          el.tilesLayer.appendChild(img);
+        }
+
+        // базовая позиция/размер тайла
+        let x = col * unitW * state.zoom;
+        let y = row * unitH * state.zoom;
+        let w = unitW * state.zoom;
+        let h = unitH * state.zoom;
+
+        // перекрытие внутренних стыков (скрываем «волоски»)
+        const isLastCol = col === usableCols - 1;
+        const isLastRow = row === usableRows - 1;
+        const sL = (col > 0) ? TILE_SEAM : 0;
+        const sT = (row > 0) ? TILE_SEAM : 0;
+        const sR = !isLastCol ? TILE_SEAM : 0;
+        const sB = !isLastRow ? TILE_SEAM : 0;
+
+        x -= sL; y -= sT;
+        w += sL + sR;
+        h += sT + sB;
+
+        img.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        img.style.width  = w + 'px';
+        img.style.height = h + 'px';
+      }
+    }
+
+    // удаляем тайлы вне видимости
+    el.tilesLayer.querySelectorAll('img.tile').forEach(im => {
+      if (!needed.has(im.dataset.key)) im.remove();
+    });
   }
 
   /* Переобновить все открытые/фокусные/ховерные поповеры (при зуме/скролле/резайзе) */
@@ -286,7 +532,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .forEach(positionPopover);
   }
 
-  /* Зум / подгон под экран */
   function recalcMinZoom(){
     const map = getMapById(state.currentMapId);
     const fitW = el.mapCanvas.clientWidth / map.width;
@@ -322,8 +567,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     el.mapCanvas.classList.toggle('pannable', state.zoom > state.minZoom + 1e-3);
 
-    // После зума — перепозиционируем видимые поповеры
     updateOpenPopovers();
+    updateTiles();
   }
 
   function centerCanvas(){
@@ -411,14 +656,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* События для перепозиционирования поповеров */
-  el.mapCanvas.addEventListener('scroll', updateOpenPopovers);
+  /* События для перепозиционирования поповеров + тайлов */
+  el.mapCanvas.addEventListener('scroll', () => { updateOpenPopovers(); updateTiles(); });
   window.addEventListener('resize', () => {
     recalcMinZoom();
     setZoom(Math.max(state.zoom,state.minZoom), getCanvasCenterAnchor());
     updateOpenPopovers();
+    updateTiles();
   });
-  window.addEventListener('orientationchange', updateOpenPopovers);
+  window.addEventListener('orientationchange', () => { updateOpenPopovers(); updateTiles(); });
 
   /* Утилиты */
   function clamp(v,min,max){ return Math.max(min, Math.min(max,v)); }
@@ -428,7 +674,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function formatRubles(n){ return new Intl.NumberFormat('ru-RU').format(Number(n)) + ' руб.'; }
   function showToast(text){ if(!el.toast) return; el.toast.textContent=text; el.toast.hidden=false; clearTimeout(showToast._t); showToast._t=setTimeout(()=>{el.toast.hidden=true},1800); }
 
-  /* Старт */
   initMapSelect();
   renderMap(true);
 });
@@ -459,3 +704,46 @@ window.enableMapCoordProbe = (on = true) => {
     console.info('Пробник координат: выключен');
   }
 };
+
+// Фильтр по фракциям по клику на чипы в легенде
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = {
+    any:     document.querySelector('.map-legend .chip-any'),
+    stalker: document.querySelector('.map-legend .chip-stalker'),
+    bandit:  document.querySelector('.map-legend .chip-bandit')
+  };
+  const visible = { any: true, stalker: true, bandit: true };
+
+  const apply = (faction) => {
+    document.querySelectorAll(`.marker--${faction}`).forEach(m => {
+      m.style.display = visible[faction] ? '' : 'none';
+    });
+    toggles[faction]?.classList.toggle('off', !visible[faction]);
+  };
+
+  Object.entries(toggles).forEach(([f, node]) => {
+    if (!node) return;
+    node.setAttribute('role','button');
+    node.setAttribute('aria-pressed','true');
+    node.tabIndex = 0;
+    const toggle = () => { visible[f] = !visible[f]; apply(f); };
+    node.addEventListener('click', toggle);
+    node.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+});
+
+function parseLabelQty(r){
+  // Если qty передан отдельно — используем его, иначе пытаемся вырезать "×N" или "x N" в конце подписи
+  let qty = r?.qty;
+  let name = String(r?.label ?? '');
+  if (!qty && name){
+    const m = name.match(/[×x]\s*(\d+)\s*$/i);
+    if (m){
+      qty = m[1];
+      name = name.replace(m[0], '').trim();
+    }
+  }
+  return { name, qty };
+}
