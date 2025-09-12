@@ -1,5 +1,7 @@
 /* Отступы страницы */
-.page-map .map-container { padding-top: 88px; padding-bottom: 28px; }
+.page-map .map-container { padding-top: 26px; padding-bottom: 22px; }
+/* Статичная шапка */
+.page-map .site-header { position: static !important; top: auto !important; }
 
 /* Заголовок и панель управления */
 .map-header { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: end; }
@@ -24,13 +26,13 @@
   background: var(--surface);
   box-shadow: var(--shadow);
   overflow: auto;
-  height: min(78vh, 1200px);
+  height: min(84vh, 1200px);
   touch-action: none;
 }
 .map-canvas.pannable { cursor: grab; }
 .map-canvas.pannable.dragging { cursor: grabbing; }
 
-/* Рамка */
+/* Рамка: скрываем всё, что выходит за границы 1372×2000 */
 .map-frame {
   position: relative;
   width: var(--frame-w, 1372px);
@@ -38,14 +40,24 @@
   margin: 0 auto;
   user-select: none;
   -webkit-user-drag: none;
+  overflow: hidden; /* важно: чтобы белые поля крайних тайлов не были видны */
 }
 
-/* Изображение карты */
+/* Изображение карты (фолбэк) */
 .map-image {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover;
   filter: saturate(.98) contrast(1.02);
   pointer-events: none;
+}
+
+/* Слой тайлов */
+.tiles-layer { position: absolute; inset: 0; pointer-events: none; }
+.tiles-layer img.tile{
+  position: absolute; display: block; transform-origin: top left;
+  will-change: transform, width, height;
+  image-rendering: auto;
+  backface-visibility: hidden;
 }
 
 /* Слой меток */
@@ -74,7 +86,7 @@
 .marker.pin-fallback.marker--bandit  .pin{ border-color:var(--danger); color:#ff9a9a; background:#211616 }
 
 /* Размеры webp-иконок + масштаб */
-.marker{ --pin-scale: 0.68; } /* можно 0.65–0.72 */
+.marker{ --pin-scale: 0.68; }
 .marker--bandit  .pin-img{ width:calc(41px * var(--pin-scale)); height:calc(44px * var(--pin-scale)); }
 .marker--stalker .pin-img{ width:calc(43px * var(--pin-scale)); height:calc(41px * var(--pin-scale)); }
 .marker--any     .pin-img{ width:calc(44px * var(--pin-scale)); height:calc(42px * var(--pin-scale)); }
@@ -86,6 +98,16 @@
   width:min(560px, 96vw);
   background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:12px; box-shadow:var(--shadow);
   opacity:0; visibility:hidden; transition:.16s ease; z-index:20;
+  max-width: min(560px, 96vw);
+  line-height: 1.35;
+}
+.marker .popover.scrollable { overflow: auto; }
+.marker .popover[data-pos="below"] { top: calc(100% + 10px); bottom: auto; }
+.marker .popover[data-pos="below"]::after{
+  top: auto; bottom: 100%;
+  border: 8px solid transparent;
+  border-bottom-color: var(--surface);
+  filter: drop-shadow(0 -2px 0 var(--border));
 }
 .marker:hover .popover,
 .marker:focus-within .popover,
@@ -110,14 +132,14 @@
   width:100%; height:148px; object-fit:cover; border-radius:10px; border:1px solid var(--border); background:#0f0f10;
 }
 .q-title-l{ color:var(--text); font-weight:800; font-size:18px; line-height:1.25; letter-spacing:.2px; }
-.q-badges{ display:flex; gap:6px; flex-wrap:wrap; justify-content:center; } /* центрируем плашку фракции */
+.q-badges{ display:flex; gap:6px; flex-wrap:wrap; justify-content:center; }
 .q-badge{
   display:inline-flex; align-items:center; gap:6px; height:24px; padding:0 10px; border-radius:999px;
   font-size:12px; font-weight:800; letter-spacing:.02em; border:1px solid var(--border); background:var(--surface-2); color:var(--text);
 }
 .q-badge.badge--stalker{ border-color:var(--ok); background:rgba(76,175,80,.14); color:#a3e9b2 }
 .q-badge.badge--bandit{ border-color:var(--danger); background:rgba(178,34,34,.14); color:#ffb1b1 }
-.q-badge.badge--any{ border-color:var(--accent); background:rgba(255,204,102,.16); color:#ffd27a }
+.q-badge.badge--any{ border-color:var(--accent); background:rgba(255,204,102,.16); color: #ffd27a }
 
 /* Деньги/репутация — слева, под плашкой */
 .q-stats-inline{ display:inline-flex; align-items:center; gap:8px; justify-content:center; flex-wrap:wrap; }
@@ -142,50 +164,55 @@
 /* Блок наград (выделенный заголовок) */
 .rw-panel-large{ display:grid; gap:8px; }
 .rw-label{
-  font-size:12px; font-weight:900; text-transform:uppercase; letter-spacing:.06em;
+  font-size:12px; font-weight:900; text-transform:uppercase; letter-spacing:.06ем;
   color:var(--text);
   display:flex; align-items:center; gap:10px;
 }
 .rw-label::after{ content:""; flex:1; height:1px; background:var(--border); border-radius:1px; opacity:.8; }
 
 .rw-gallery{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.rw-gallery.grid-2 {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+.rw-gallery.grid-2 .rw-large .lbl{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
 .rw-large{
   display:inline-flex; align-items:center; gap:10px; padding:8px 10px;
   border:1px solid var(--border); border-radius:12px; background:var(--surface-2);
+  min-width: 0;
 }
 
-/* Изображение награды — крупнее и с подсветкой по редкости */
+/* Изображение награды */
 .rw-large img{
   width:60px; height:60px; border-radius:8px; border:1px solid var(--border); object-fit:cover; background:#0f0f10;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.04), 0 6px 14px rgba(0,0,0,.35);
 }
-.rw-large .lbl{ font-size:13px; color:var(--text); }
+.rw-large .lbl{ font-size:13px; color:var(--text); white-space: normal; overflow-wrap: anywhere; line-height: 1.25;}
 
 /* Подсветки по редкости */
-.rw-large.rarity-stalker img{
-  border-color:#2e86ff;
-  box-shadow: inset 0 0 0 1px rgba(46,134,255,.25), 0 0 18px rgba(46,134,255,.22), 0 6px 14px rgba(0,0,0,.35);
-}
-.rw-large.rarity-epic img{
-  border-color:#a972ff;
-  box-shadow: inset 0 0 0 1px rgba(169,114,255,.25), 0 0 18px rgba(169,114,255,.22), 0 6px 14px rgba(0,0,0,.35);
-}
-.rw-large.rarity-rare img{
-  border-color:#3bbf8a;
-  box-shadow: inset 0 0 0 1px rgba(59,191,138,.25), 0 0 18px rgba(59,191,138,.22), 0 6px 14px rgba(0,0,0,.35);
-}
+.rw-large.rarity-stalker img{ border-color:#2e86ff; box-shadow: inset 0 0 0 1px rgba(46,134,255,.25), 0 0 18px rgba(46,134,255,.22), 0 6px 14px rgba(0,0,0,.35); }
+.rw-large.rarity-epic img{ border-color:#a972ff; box-shadow: inset 0 0 0 1px rgba(169,114,255,.25), 0 0 18px rgba(169,114,255,.22), 0 6px 14px rgba(0,0,0,.35); }
+.rw-large.rarity-rare img{ border-color:#3bbf8a; box-shadow: inset 0 0 0 1px rgba(59,191,138,.25), 0 0 18px rgba(59,191,138,.22), 0 6px 14px rgba(0,0,0,.35); }
 
-/* Кнопка справа — заметная */
+.rw-large.compact { padding: 6px 8px; }
+.rw-large.compact img { width: 42px; height: 42px; }
+.rw-large.compact .lbl { font-size: 12px; }
+
+/* Кнопка справа */
 .q-actions{ display:flex; justify-content:center; margin-top: auto; }
 .q-actions .btn.inline{ padding:10px 12px; }
 .q-actions .btn.btn-primary{ font-weight:800; }
 
-
-/* Легенда — фиксируем размеры, чтобы не «расползалась» */
+/* Легенда */
 .map-legend{ margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 .map-legend .chip{
-  height:26px; padding:0 8px; display:inline-flex; align-items:center; gap:6px; font-size:13px; line-height:1; border-radius:16px;
+  height:26px; padding:0 8px; display:inline-flex; align-items:center; gap:6px; font-size:13px; line-height:1; border-radius:16px; cursor: pointer; user-select: none;
 }
+.map-legend .chip.off { opacity: .45; filter: grayscale(.25); }
 .legend-icon{ width:16px; height:16px; object-fit:contain; display:inline-block; }
 
 /* Сервис */
@@ -201,3 +228,30 @@
   .map-header{ grid-template-columns:1fr; }
   .map-controls{ justify-content:flex-start; }
 }
+
+/* Карточка награды: три колонки — картинка | название (растягивается) | количество */
+.rw-large{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.rw-large .lbl{ min-width: 0; } /* даём тексту сжиматься, чтобы не давил плашку количества */
+
+/* Плашка количества — всегда видима, не переносится */
+.rw-large .qty{
+  justify-self: end;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 1;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* Компактный режим (при множестве наград) */
+.rw-large.compact .qty{ font-size: 11px; padding: 3px 6px; }
