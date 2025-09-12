@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Упырь — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Подробный гайд по прохождению квеста «Упырь» в STALCRAFT: X: где взять квест у обеих фракций, проблемные места «По следам чудовища» и «В логове», награды." />
+  <meta name="theme-color" content="#0f0f10" />
+  <link rel="icon" href="../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../home.css"/>
+  <link rel="stylesheet" href="guide.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+
+<header class="site-header">
+  <nav class="header-links start">
+    <a href="#" data-modal-target="#about-modal">О сайте</a>
+    <a href="#" data-modal-target="#contacts-modal">Связь</a>
+  </nav>
+  <div class="brand">
+    <a href="../index.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
+    <span class="badge">community project</span>
+  </div>
+  <nav class="header-links end">
+    <div class="dropdown" id="calcDropdown">
+      <button class="nav-btn dropdown-toggle" id="calcMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="calcMenu">
+        <i class="fa-solid fa-calculator"></i> Калькуляторы <i class="fa-solid fa-angle-down chevron" aria-hidden="true"></i>
+      </button>
+      <div class="dropdown-menu" id="calcMenu" role="menu">
+        <a class="dropdown-item" role="menuitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+        <a class="dropdown-item" role="menuitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+        <div class="dropdown-note">Скоро: экономические расчёты, DPS‑таблица</div>
+      </div>
+    </div>
+    <a href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+    <a href="../guides.html" aria-current="page"><i class="fa-solid fa-book-open"></i> Руководства</a>
+  </nav>
+  <div class="header-actions">
+    <button id="themeToggleBtn" class="ghost-btn" title="Переключить тему">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- О сайте -->
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="about-title">О StalMath</h2>
+    <p>StalMath — набор бесплатных инструментов и гайдов по STALCRAFT: X. Мы фокусируемся на точных расчётах, удобстве и наглядности.</p>
+    <ul>
+      <li>Калькулятор бартера с пресетами, скидками и шэрингом</li>
+      <li>Калькулятор заточки</li>
+      <li>Руководства и таблицы</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Контакты -->
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="contacts-title">Как связаться</h2>
+    <ul class="contact-list">
+      <li class="contact-item">
+        <i class="ci vk fa-brands fa-vk" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">ВКонтакте</div>
+          <a class="contact-link brand-vk" href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener">
+            <span>@everal41</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci discord fa-brands fa-discord" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Discord</div>
+          <a class="contact-link brand-discord" href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener">
+            <span>Наш сервер</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci game fa-solid fa-gamepad" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Ник в игре</div>
+          <div class="nick-row">
+            <span class="nick online-nick" id="gameNick">X_Solitude</span>
+            <button type="button" class="copy-btn" id="copyNickBtn" title="Скопировать ник">
+              <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              <span>Копировать</span>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<main id="main" class="g-container container">
+  <header class="g-header">
+    <h1 class="g-title">Упырь</h1>
+    <div class="g-meta">
+      <span class="chip chip-faction chip-any"><i class="fa-solid fa-users"></i> Любая группировка</span>
+      <span class="chip"><i class="fa-solid fa-ruble-sign"></i> 6 000 руб.</span>
+      <span class="chip"><i class="fa-solid fa-medal"></i> +140 репутации</span>
+      <a class="chip chip-ghost" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть на карте</a>
+    </div>
+    <div class="g-cover" style="background-image:url('../map/images/quests/upyr/upyr.jpg'), linear-gradient(135deg,#2b2b2b,#1a1a1a)"></div>
+  </header>
+
+  <div class="g-grid">
+    <article class="g-article" id="article">
+      <nav id="toc" class="toc" aria-label="Содержание"></nav>
+
+      <section id="about">
+        <h2>О квесте</h2>
+        <p>Квест берётся на базе на Болотах у обеих фракций. НПС сам начнёт диалог при приближении. Если вы пропустили разговор — просто снова поговорите с ним, и квест появится.</p>
+        <div class="notice"><i class="fa-solid fa-circle-info"></i> Прохождение линейное. Ниже отмечены два момента, где игроки чаще всего путаются.</div>
+      </section>
+
+      <section id="pickup">
+        <h2>Где взять квест</h2>
+        <p>Подойдите к НПС на своей базе на Болотах. Диалог активируется автоматически, либо начните разговор вручную.</p>
+      </section>
+
+      <section id="tracks">
+        <h2>По следам чудовища</h2>
+        <p>Задача — найти два трупа.</p>
+
+        <h3>Бандиты</h3>
+        <div class="img-grid-2">
+          <figure>
+            <img src="../map/images/quests/upyr/tracks-bandit-1.jpg" alt="Труп №1 — Бандиты">
+            <figcaption>Труп №1 — Бандиты</figcaption>
+          </figure>
+          <figure>
+            <img src="../map/images/quests/upyr/tracks-bandit-2.jpg" alt="Труп №2 — Бандиты">
+            <figcaption>Труп №2 — Бандиты</figcaption>
+          </figure>
+        </div>
+
+        <h3>Сталкеры</h3>
+        <div class="img-grid-2">
+          <figure>
+            <img src="../map/images/quests/upyr/tracks-stalker-1.jpg" alt="Труп №1 — Сталкеры">
+            <figcaption>Труп №1 — Сталкеры</figcaption>
+          </figure>
+          <figure>
+            <img src="../map/images/quests/upyr/tracks-stalker-2.jpg" alt="Труп №2 — Сталкеры">
+            <figcaption>Труп №2 — Сталкеры</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="lair">
+        <h2>В логове</h2>
+        <p>Внутри логова необходимо <strong>взаимодействовать с ПДА</strong> на столе.</p>
+        <figure class="img-full">
+          <img src="../map/images/quests/upyr/pda.jpg" alt="ПДА на столе">
+          <figcaption>ПДА на столе — с ним нужно взаимодействовать</figcaption>
+        </figure>
+      </section>
+
+      <section id="rewards">
+        <h2>Награды</h2>
+        <div class="reward-list">
+          <div class="reward-card">
+            <img src="../map/images/items/domestic-mre.webp" alt="Отечественный ИРП ×4" />
+            <div class="r-meta"><div class="r-name">Отечественный ИРП ×4</div></div>
+          </div>
+          <div class="reward-card">
+            <img src="../map/images/items/clarinol.webp" alt="Кларинол ×2" />
+            <div class="r-meta"><div class="r-name">Кларинол ×2</div></div>
+          </div>
+          <div class="reward-card">
+            <img src="../map/images/items/ammo-545-sbp.webp" alt="Ящик 5.45 СБП" />
+            <div class="r-meta"><div class="r-name">Ящик 5.45 СБП</div></div>
+          </div>
+          <div class="reward-card">
+            <img src="../map/images/items/ammo-556-sbp.webp" alt="Ящик 5.56 СБП" />
+            <div class="r-meta"><div class="r-name">Ящик 5.56 СБП</div></div>
+          </div>
+          <div class="reward-card">
+            <img src="../map/images/items/ammo-762-sbp.webp" alt="Ящик 7.62 СБП" />
+            <div class="r-meta"><div class="r-name">Ящик 7.62 СБП</div></div>
+          </div>
+
+          <div class="reward-inline">
+            <span class="chip"><i class="fa-solid fa-ruble-sign"></i> 6 000 руб.</span>
+            <span class="chip"><i class="fa-solid fa-medal"></i> +140 репутации</span>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <aside class="infobox" aria-label="Информация о квесте">
+      <div class="ibox-title">Упырь</div>
+      <div class="ibox-row">
+        <span class="ibox-label">Доступно</span>
+        <span class="ibox-val tag"><i class="fa-solid fa-users"></i> Сталкеры / Бандиты</span>
+      </div>
+      <div class="ibox-row">
+        <span class="ibox-label">Локация</span>
+        <span class="ibox-val">Болота</span>
+      </div>
+      <div class="ibox-row">
+        <span class="ibox-label">Репутация</span>
+        <span class="ibox-val"><i class="fa-solid fa-medal"></i> +140</span>
+      </div>
+      <div class="ibox-row">
+        <span class="ibox-label">Деньги</span>
+        <span class="ibox-val"><i class="fa-solid fa-ruble-sign"></i> 6 000 руб.</span>
+      </div>
+
+      <div class="ibox-block">
+        <div class="ibox-subtitle">Полезные награды</div>
+        <div class="ibox-reward">
+          <img src="../map/images/items/domestic-mre.webp" alt="Отечественный ИРП ×4">
+          <div class="ibox-rmeta">
+            <div class="name">Отечественный ИРП ×4</div>
+            <div class="rare">Провиант</div>
+          </div>
+        </div>
+      </div>
+
+      <a class="btn btn-primary wide" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть на карте</a>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="foot-brand">
+      <div class="logo-sm">StalMath</div>
+      <div class="muted">Фан‑сайт и инструменты для STALCRAFT: X</div>
+    </div>
+    <nav class="foot-links">
+      <a href="../barter.html">Калькулятор</a>
+      <a href="../sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+    </nav>
+    <div class="foot-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="copy muted">© StalMath. Неофициальный фан‑проект.</div>
+</footer>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="../global.js"></script>
+<script src="../home.js"></script>
+<script src="guide.js"></script>
+</body>
+</html>
