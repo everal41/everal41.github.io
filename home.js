@@ -1,79 +1,153 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Кол-во обновлений: длина компактного списка главной или полного списка на странице changelog
-  const updatesCountEl = document.getElementById('updatesCount');
-  const updatesItems = document.querySelectorAll('.changelog .ch-item, #updatesList li');
-  const updatesNum = updatesItems.length;
-  if (updatesCountEl) updatesCountEl.setAttribute('data-to', String(updatesNum));
+// =====================================================================
+// StalMath — home.js
+// Шапка сайта, дропдауны, копирование ника, мини‑тосты
+// =====================================================================
+(() => {
+  document.addEventListener('DOMContentLoaded', () => {
+    setupCalcDropdown();
+    setupCopyNick();
+  });
 
-  // Счётчики (анимация при появлении)
-  const counters = document.querySelectorAll('.count-up[data-to]');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const to = parseInt(el.dataset.to, 10) || 0;
-      const dur = 900;
-      const start = performance.now();
-      function tick(t){
-        const p = Math.min(1, (t - start)/dur);
-        el.textContent = Math.round(to * (0.2 + 0.8 * p));
-        if (p < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-      io.unobserve(el);
+  // Выпадающее меню "Калькуляторы"
+  function setupCalcDropdown() {
+    const dd = document.getElementById('calcDropdown');
+    if (!dd) return;
+    const btn = dd.querySelector('#calcMenuBtn');
+    const menu = dd.querySelector('#calcMenu');
+    const items = Array.from(menu?.querySelectorAll('.dropdown-item')) || [];
+
+    let open = false;
+    let currentIndex = -1;
+
+    const openMenu = () => {
+      if (open) return;
+      open = true;
+      dd.classList.add('open');
+      btn?.setAttribute('aria-expanded', 'true');
+    };
+    const closeMenu = (returnFocus = false) => {
+      if (!open) return;
+      open = false;
+      dd.classList.remove('open');
+      btn?.setAttribute('aria-expanded', 'false');
+      currentIndex = -1;
+      if (returnFocus) btn?.focus();
+    };
+    const toggleMenu = () => (open ? closeMenu() : openMenu());
+
+    // Клик по кнопке
+    btn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
     });
-  }, {threshold: 0.35});
-  counters.forEach(c => io.observe(c));
 
-  // Шапка при скролле + при смене темы (плотнее фон на вершине)
-  const header = document.querySelector('.site-header');
-  function applyHeaderBg() {
-    const y = window.scrollY || document.documentElement.scrollTop;
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    header.style.boxShadow = y > 10 ? '0 8px 20px rgba(0,0,0,.2)' : 'none';
-    header.style.background = isLight
-      ? (y > 10 ? 'rgba(255,255,255,.96)' : 'rgba(255,255,255,.94)')
-      : (y > 10 ? 'rgba(0,0,0,.55)' : 'rgba(0,0,0,.42)');
+    // Клавиатура на кнопке
+    btn?.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openMenu();
+        currentIndex = 0; items[currentIndex]?.focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        openMenu();
+        currentIndex = items.length - 1; items[currentIndex]?.focus();
+      } else if (e.key === 'Escape') {
+        closeMenu(true);
+      }
+    });
+
+    // Навигация внутри меню
+    menu?.addEventListener('keydown', (e) => {
+      if (!open) return;
+      const last = items.length - 1;
+      if (e.key === 'Escape') {
+        e.preventDefault(); closeMenu(true);
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault(); currentIndex = (currentIndex + 1) % items.length; items[currentIndex]?.focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault(); currentIndex = (currentIndex - 1 + items.length) % items.length; items[currentIndex]?.focus();
+      } else if (e.key === 'Home') {
+        e.preventDefault(); currentIndex = 0; items[currentIndex]?.focus();
+      } else if (e.key === 'End') {
+        e.preventDefault(); currentIndex = last; items[currentIndex]?.focus();
+      } else if (e.key === 'Tab') {
+        // Закрываем, передаём таб‑навигацию дальше
+        closeMenu();
+      }
+    });
+
+    // Закрытие по клику вне
+    document.addEventListener('click', (e) => {
+      if (!open) return;
+      if (!dd.contains(e.target)) closeMenu();
+    });
+
+    // Сервисные закрытия
+    window.addEventListener('blur', () => closeMenu());
+    window.addEventListener('resize', () => closeMenu());
   }
-  applyHeaderBg();
-  window.addEventListener('scroll', applyHeaderBg, { passive: true });
-  const themeObserver = new MutationObserver(applyHeaderBg);
-  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
-  // Дропдаун «Калькуляторы»
-  const dropdown = document.getElementById('calcDropdown');
-  const btn = document.getElementById('calcMenuBtn');
-  function closeMenu(){ dropdown?.classList.remove('open'); btn?.setAttribute('aria-expanded','false'); }
-  function openMenu(){ dropdown?.classList.add('open'); btn?.setAttribute('aria-expanded','true'); }
-  btn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    dropdown?.classList.contains('open') ? closeMenu() : openMenu();
-  });
-  document.addEventListener('click', (e) => {
-    if (!dropdown?.classList.contains('open')) return;
-    if (!dropdown.contains(e.target)) closeMenu();
-  });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+  // Копирование ника из модалки контактов
+  function setupCopyNick() {
+    const btn = document.getElementById('copyNickBtn');
+    const nickEl = document.getElementById('gameNick');
+    if (!btn || !nickEl) return;
 
-  // Toast helper
-  function showToast(msg, timeout = 1600){
-    const box = document.getElementById('toast');
-    if (!box) return;
-    box.textContent = msg;
-    box.hidden = false;
-    clearTimeout(box._t);
-    box._t = setTimeout(() => { box.hidden = true; }, timeout);
+    btn.addEventListener('click', async () => {
+      const text = (nickEl.textContent || '').trim();
+      if (!text) return;
+
+      const icon = btn.querySelector('i');
+      const label = btn.querySelector('span');
+      const prevIcon = icon?.className || 'fa-regular fa-copy';
+      const prevText = label?.textContent || 'Копировать';
+
+      const restore = () => {
+        if (icon) icon.className = prevIcon;
+        if (label) label.textContent = prevText;
+        btn.classList.remove('copied');
+      };
+
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          if (!fallbackCopy(text)) throw new Error('Clipboard API not available');
+        }
+        btn.classList.add('copied');
+        if (icon) icon.className = 'fa-solid fa-check';
+        if (label) label.textContent = 'Скопировано';
+        showToast('Ник скопирован');
+        setTimeout(restore, 1400);
+      } catch {
+        showToast('Не удалось скопировать');
+      }
+    });
   }
 
-  // Копировать ник
-  document.getElementById('copyNickBtn')?.addEventListener('click', async () => {
-    const nick = document.getElementById('gameNick')?.textContent?.trim();
-    if (!nick) return;
-    try {
-      await navigator.clipboard.writeText(nick);
-      showToast('Ник скопирован');
-    } catch {
-      showToast('Не удалось скопировать');
-    }
-  });
-});
+  // Фолбэк для копирования
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    ta.style.pointerEvents = 'none';
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  // Простой тост
+  function showToast(text) {
+    const toast = document.getElementById('toast');
+    if (!toast) { console.info(text); return; }
+    toast.textContent = text;
+    toast.hidden = false;
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => { toast.hidden = true; }, 1800);
+  }
+})();
