@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Травник — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Подробный гайд по прохождению квеста «Травник» в STALCRAFT: X: где взять, быстрые варианты трав (Краснолистья, Трухлявник, Болотная омела), пошаговые действия и награды." />
+  <meta name="theme-color" content="#0f0f10" />
+  <link rel="icon" href="../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../home.css"/>
+  <link rel="stylesheet" href="guide.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+
+<header class="site-header">
+  <nav class="header-links start">
+    <a href="#" data-modal-target="#about-modal">О сайте</a>
+    <a href="#" data-modal-target="#contacts-modal">Связь</a>
+  </nav>
+  <div class="brand">
+    <a href="../index.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
+    <span class="badge">community project</span>
+  </div>
+  <nav class="header-links end">
+    <div class="dropdown" id="calcDropdown">
+      <button class="nav-btn dropdown-toggle" id="calcMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="calcMenu">
+        <i class="fa-solid fa-calculator"></i> Калькуляторы <i class="fa-solid fa-angle-down chevron" aria-hidden="true"></i>
+      </button>
+      <div class="dropdown-menu" id="calcMenu" role="menu">
+        <a class="dropdown-item" role="menuitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+        <a class="dropdown-item" role="menuitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+        <div class="dropdown-note">Скоро: экономические расчёты, DPS‑таблица</div>
+      </div>
+    </div>
+    <a href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+    <a href="../guides.html" aria-current="page"><i class="fa-solid fa-book-open"></i> Руководства</a>
+  </nav>
+  <div class="header-actions">
+    <button id="themeToggleBtn" class="ghost-btn" title="Переключить тему">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- О сайте -->
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="about-title">О StalMath</h2>
+    <p>StalMath — набор бесплатных инструментов и гайдов по STALCRAFT: X. Мы фокусируемся на точных расчётах, удобстве и наглядности.</p>
+    <ul>
+      <li>Калькулятор бартера с пресетами, скидками и шэрингом</li>
+      <li>Калькулятор заточки</li>
+      <li>Руководства и таблицы</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Контакты -->
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="contacts-title">Как связаться</h2>
+    <ul class="contact-list">
+      <li class="contact-item">
+        <i class="ci vk fa-brands fa-vk" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">ВКонтакте</div>
+          <a class="contact-link brand-vk" href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener">
+            <span>@everal41</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci discord fa-brands fa-discord" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Discord</div>
+          <a class="contact-link brand-discord" href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener">
+            <span>Наш сервер</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci game fa-solid fa-gamepad" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Ник в игре</div>
+          <div class="nick-row">
+            <span class="nick online-nick" id="gameNick">X_Solitude</span>
+            <button type="button" class="copy-btn" id="copyNickBtn" title="Скопировать ник">
+              <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              <span>Копировать</span>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<main id="main" class="g-container container">
+  <header class="g-header">
+    <h1 class="g-title">Травник</h1>
+    <div class="g-meta">
+      <span class="chip chip-faction chip-bandit"><i class="fa-solid fa-users"></i> Только Бандиты</span>
+      <span class="chip"><i class="fa-solid fa-ruble-sign"></i> 5 300 руб.</span>
+      <span class="chip"><i class="fa-solid fa-medal"></i> +115 репутации</span>
+      <a class="chip map-cta" href="../map/map.html">
+        <i class="fa-solid fa-map-location-dot"></i> Показать на карте
+      </a>
+    </div>
+    <div class="g-cover" style="background-image:url('../map/images/quests/travnik/travnik.jpg'), linear-gradient(135deg,#2b2b2b,#1a1a1a)"></div>
+  </header>
+
+  <div class="g-grid">
+    <article class="g-article" id="article">
+
+      <section id="about">
+        <h2>О квесте</h2>
+        <p>Квест берётся у бандита по кличке Клифа на Лодочной станции. Квест линейный, варианты ответов в диалогах на награду не влияют.</p>
+      </section>
+
+      <section id="pickup">
+        <h2>Где взять квест</h2>
+        <p>Подойдите к Клифе на втором этаже Лодочной станции и возьмите задание.</p>
+        <figure class="img-wide">
+          <img src="../map/images/quests/travnik/klifa-lodstation.jpg" alt="Клифа на Лодочной станции (место взятия квеста)">
+          <figcaption>Лодочная станция — Клифа</figcaption>
+        </figure>
+      </section>
+
+      <section id="steps">
+        <h2>Полное прохождение</h2>
+        <ol class="steps">
+          <li>
+            <h3>Встретьтесь с Клифой у хибары</h3>
+            <p>После разговора на Лодочной станции отправляйтесь к назначенной хибаре. Поднимитесь по лестнице на крышу и прыгните в проём, затем зайдите внутрь через дверь.</p>
+            <figure class="img-wide">
+              <img src="../map/images/quests/travnik/roof-hole.jpg" alt="Проём в крыше хибары — куда прыгать">
+              <figcaption>Проём в крыше</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <h3>Обыщите хибару</h3>
+            <p>После диалога с Клифой начните взаимодействовать с мебелью и прочими интерактивными предметами интерьера. Обязательно проверьте стопку бумаг на столе у компьютера — внутри найдёте <strong>300 руб.</strong></p>
+            <figure class="img-wide">
+              <img src="../map/images/quests/travnik/papers-stack.jpg" alt="Стопка бумаг на столе — лут 300 руб.">
+              <figcaption>Стопка бумаг на столе</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <h3>Серия из трёх забегов за травами</h3>
+            <p>После того как обыщете несколько объектов, Клифа сам начнёт диалог. Вам предстоит три забега за различными квестовыми травами — каждый раз вам предстоит один выбор из двух вариантов.</p>
+            <div class="notice"><i class="fa-solid fa-bolt"></i> Для быстрого прохождения выбирайте:<strong>«Краснолистья»,</strong><strong>«Трухлявник»</strong> и <strong>«Болотную омелу».</strong></div>
+          </li>
+
+          <li>
+            <h3>Забег 1: «Собачья мята» или «Краснолистья»</h3>
+            <p>Оба варианта схожи по времени, но «Краснолистья» спавнятся по 2 шт. в области, их чуть легче найти, и они расположены на более безопасной территории. «Собачья мята» — в районе аэропорта, где полно военных.</p>
+            <div class="img-grid-2">
+              <figure>
+                <img src="../map/images/quests/travnik/dog-mint.jpg" alt="Собачья мята — образец">
+                <figcaption>Собачья мята</figcaption>
+              </figure>
+              <figure>
+                <img src="../map/images/quests/travnik/krasnolist.jpg" alt="Краснолист — образец">
+                <figcaption>Краснолист</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li>
+            <h3>Забег 2: «Трухлявник» или «Ржавые волосы»</h3>
+            <p>«Ржавые волосы» находятся почти у перехода на Обочину и их требуется <strong>3 шт.</strong>. Удобнее всего будет выбрать «Трухлявник».</p>
+            <div class="img-grid-2">
+              <figure>
+                <img src="../map/images/quests/travnik/truhlyavnik.jpg" alt="Трухлявник — образец">
+                <figcaption>Трухлявник</figcaption>
+              </figure>
+              <figure>
+                <img src="../map/images/quests/travnik/rusty-hair.jpg" alt="Ржавые волосы — образец">
+                <figcaption>Ржавые волосы</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li>
+            <h3>Забег 3: «Синий трюфель» или «Болотная омела»</h3>
+            <p>«Синих трюфелей» нужно <strong>3 шт.</strong>, один из них — близ базы сталкеров. «Болотная омела» нужна всего <strong>одна</strong>, и растёт она рядом с переходом на Обочину — выбирайте омелу.</p>
+            <div class="img-grid-2">
+              <figure>
+                <img src="../map/images/quests/travnik/blue-truffle.jpg" alt="Синий трюфель — образец">
+                <figcaption>Синий трюфель</figcaption>
+              </figure>
+              <figure>
+                <img src="../map/images/quests/travnik/swamp-mistletoe.jpg" alt="Болотная омела — образец">
+                <figcaption>Болотная омела</figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li>
+            <h3>Вернитесь к Клифе и снова к хибаре</h3>
+            <p>После всех забегов поговорите с Клифой и отправляйтесь обратно к хибаре. При приближении к Травнику он сам запустит диалог — ответы ни на что не влияют.</p>
+          </li>
+
+          <li>
+            <h3>Заберите награду из тайника</h3>
+            <p>После диалога Клифа скинет координаты тайника — внутри лежит основная награда за квест.</p>
+            <figure class="img-wide">
+              <img src="../map/images/quests/travnik/stash.jpg" alt="Тайник с наградой — местоположение">
+              <figcaption>Тайник с наградой</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </section>
+
+      <section id="rewards">
+        <h2>Награды</h2>
+        <div class="reward-list">
+          <div class="reward-card">
+            <img src="../map/images/items/trinket-particle.png" alt="Брелок «Частица»" />
+            <div class="r-meta">
+              <div class="r-name">Брелок «Частица»</div>
+            </div>
+          </div>
+          <div class="reward-card">
+            <img src="../map/images/items/pouch-medic-guide.webp" alt="Подсумок с аптечками проводника" />
+            <div class="r-meta">
+              <div class="r-name">Подсумок с аптечками проводника</div>
+            </div>
+          </div>
+          <div class="reward-card">
+            <img src="../map/images/items/boevoi-goroh.webp" alt="Боевой горох" />
+            <div class="r-meta">
+              <div class="r-name">2 шт. Боевой горох</div>
+            </div>
+          </div>
+
+          <div class="reward-inline">
+            <span class="chip"><i class="fa-solid fa-ruble-sign"></i> 5 300 руб.</span>
+            <span class="chip"><i class="fa-solid fa-medal"></i> +115 репутации</span>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="foot-brand">
+      <div class="logo-sm">StalMath</div>
+      <div class="muted">Фан‑сайт и инструменты для STALCRAFT: X</div>
+    </div>
+    <nav class="foot-links">
+      <a href="../barter.html">Калькулятор</a>
+      <a href="../sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+    </nav>
+    <div class="foot-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="copy muted">© StalMath. Неофициальный фан‑проект.</div>
+</footer>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="../global.js"></script>
+<script src="../home.js"></script>
+<script src="guide.js"></script>
+</body>
+</html>
