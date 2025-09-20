@@ -1,8 +1,3 @@
-// =================================================================
-// StalMath: global.js (v2)
-// Скрипты, работающие на ВСЕХ страницах сайта
-// =================================================================
-
 function trapFocus(modal) {
     const focusable = modal.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
     if (!focusable.length) return () => {};
@@ -112,7 +107,6 @@ function setupMobileAsideToggle() {
         aside?.classList.toggle('open');
     });
 
-    // Закрыть по клику вне
     document.addEventListener('click', (e) => {
         if (!aside?.classList.contains('open')) return;
         const within = e.target === aside || aside.contains(e.target) || e.target === btn;
@@ -125,3 +119,30 @@ document.addEventListener('DOMContentLoaded', () => {
     setupThemeToggle();
     setupMobileAsideToggle();
 });
+
+(() => {
+  const btn = document.getElementById('mobileMenuToggle');
+  const menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+
+  const open = () => {
+    menu.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+  };
+  const close = () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+  };
+  const toggle = () => menu.classList.contains('open') ? close() : open();
+
+  btn.addEventListener('click', toggle);
+  menu.addEventListener('click', (e) => { if (e.target.matches('[data-close]')) close(); });
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  menu.querySelectorAll('a, button').forEach(n => n.addEventListener('click', () => setTimeout(close, 0)));
+
+  document.getElementById('themeToggleBtnMobile')?.addEventListener('click', () => {
+    document.getElementById('themeToggleBtn')?.click();
+  });
+})();
