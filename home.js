@@ -1,14 +1,9 @@
-// =====================================================================
-// StalMath — home.js
-// Шапка сайта, дропдауны, копирование ника, мини‑тосты
-// =====================================================================
 (() => {
   document.addEventListener('DOMContentLoaded', () => {
     setupCalcDropdown();
     setupCopyNick();
   });
 
-  // Выпадающее меню "Калькуляторы"
   function setupCalcDropdown() {
     const dd = document.getElementById('calcDropdown');
     if (!dd) return;
@@ -71,7 +66,6 @@
       } else if (e.key === 'End') {
         e.preventDefault(); currentIndex = last; items[currentIndex]?.focus();
       } else if (e.key === 'Tab') {
-        // Закрываем, передаём таб‑навигацию дальше
         closeMenu();
       }
     });
@@ -93,7 +87,9 @@
     const nickEl = document.getElementById('gameNick');
     if (!btn || !nickEl) return;
 
-    btn.addEventListener('click', async () => {
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+
       const text = (nickEl.textContent || '').trim();
       if (!text) return;
 
@@ -102,10 +98,16 @@
       const prevIcon = icon?.className || 'fa-regular fa-copy';
       const prevText = label?.textContent || 'Копировать';
 
+      const setState = (iconCls, txt, cls) => {
+        if (icon) icon.className = iconCls;
+        if (label) label.textContent = txt;
+        btn.classList.remove('copied', 'error');
+        if (cls) btn.classList.add(cls);
+      };
       const restore = () => {
         if (icon) icon.className = prevIcon;
         if (label) label.textContent = prevText;
-        btn.classList.remove('copied');
+        btn.classList.remove('copied', 'error');
       };
 
       try {
@@ -114,13 +116,13 @@
         } else {
           if (!fallbackCopy(text)) throw new Error('Clipboard API not available');
         }
-        btn.classList.add('copied');
-        if (icon) icon.className = 'fa-solid fa-check';
-        if (label) label.textContent = 'Скопировано';
-        showToast('Ник скопирован');
+        setState('fa-solid fa-check', 'Скопировано', 'copied');
         setTimeout(restore, 1400);
-      } catch {
-        showToast('Не удалось скопировать');
+      } catch (err) {
+        console.error('Не удалось скопировать ник:', err);
+        setState('fa-solid fa-xmark', 'Ошибка', 'error');
+        setTimeout(restore, 1600);
+
       }
     });
   }
