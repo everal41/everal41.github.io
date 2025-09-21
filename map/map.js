@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     { id: 'north',   name: 'Северная часть зоны', src: 'images/maps/map-north.png',   width: 1372, height: 2000 },
-    { id: 'pripyat', name: 'Припять',             src: 'images/maps/map-pripyat.png', width: 1372, height: 2000 }
+    { id: 'lyubech', name: 'Любеч-3',             src: 'images/maps/map-lyubech.png', width: 1372, height: 2000 }
   ];
 
   const IMG_PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
