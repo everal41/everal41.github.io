@@ -316,10 +316,12 @@ body.page-map {
   .marker .popover{ transition: none; }
 }
 
+/* Бургер-кнопка — по умолчанию скрыта (десктоп) */
 .page-map .mobile-menu-toggle{
   display:none;
 }
 
+/* Мобилки: скрываем старые навы, показываем бургер */
 @media (max-width: 820px){
   .page-map .site-header{ position: relative; }
   .page-map .header-links.start,
@@ -342,9 +344,10 @@ body.page-map {
   }
 }
 
+/* Выезжающее меню */
 .page-map .mobile-menu{
   position:fixed; inset:0; z-index:5000;
-  pointer-events:none;
+  pointer-events:none; /* выключено пока закрыто */
 }
 .page-map .mobile-menu .mm-backdrop{
   position:absolute; inset:0;
@@ -390,11 +393,13 @@ body.page-map {
   color:var(--text); display:flex; align-items:center; justify-content:center; gap:10px;
 }
 
+/* Для тех, кто любит меньше анимаций */
 @media (prefers-reduced-motion: reduce){
   .page-map .mobile-menu .mm-backdrop,
   .page-map .mobile-menu .mm-panel{ transition:none; }
 }
 
+/* Компактная панель управления */
 @media (max-width: 720px){
   .page-map .map-controls-panel{
     top: 8px; left: 8px;
@@ -436,6 +441,7 @@ body.page-map {
     border-radius: 8px;
     font-size: 12.5px;
   }
+
   .page-map #zoomResetBtn{ width: 36px; min-width: 36px; font-size: 0; }
   .page-map #zoomResetBtn i{ font-size: 16px; margin: 0; }
 }
@@ -526,4 +532,46 @@ html[data-theme="dark"] .page-map .map-controls-panel .btn:hover{
     font-variant-numeric: tabular-nums;
     gap: 0;
   }
+}
+
+[data-theme="light"] .page-map .q-badge.badge--stalker{
+  background: #e8f5e9;
+  border-color: #88cfa0;
+  color: #2e7d32;
+}
+
+[data-theme="light"] .page-map .q-badge.badge--bandit{
+  background: #fdecea;
+  border-color: #ef9a9a;
+  color: #b22222;
+}
+
+[data-theme="light"] .page-map .q-badge.badge--any{
+  background: #fff6e0;
+  border-color: #f2c66d;
+  color: #8a5a00;
+}
+
+[data-theme="light"] .page-map .q-actions .btn.btn-primary{
+  background: #fff6e0;
+  border-color: #ead08c;
+  color: #5a3d00;
+  font-weight: 700;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.03);
+}
+
+[data-theme="light"] .page-map .q-actions .btn.btn-primary i{
+  color: inherit;
+}
+
+[data-theme="light"] .page-map .q-actions .btn.btn-primary:hover{
+  background: #ffefc6;
+  border-color: #e3c57c;
+  filter: none;
+  transform: none;
+}
+[data-theme="light"] .page-map .q-actions .btn.btn-primary:active{
+  background: #ffe6ad;
+  border-color: #d9b86a;
+  transform: none;
 }
