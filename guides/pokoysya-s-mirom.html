@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="guide.css"/>
 
   <style>
-    /* Подсветка вариантов ответов */
     .choice-list{ display:grid; gap:8px; margin-top:8px; }
     .choice{
       display:grid; grid-template-columns:auto 1fr; align-items:center; gap:10px;
@@ -32,7 +31,6 @@
     }
     .choice .text{ line-height:1.45; color:var(--text); }
     .choice-note{ font-size:12px; color:var(--text-dim); margin:6px 0 0; }
-    /* Компакт в списках внутри шагов */
     .steps .choice-list{ margin-top:6px; }
   </style>
 </head>
@@ -40,13 +38,15 @@
 <a class="skip-link" href="#main">К содержимому</a>
 
 <header class="site-header">
+  <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Меню" aria-controls="mobileMenu" aria-expanded="false">
+    <span class="line"></span><span class="line"></span><span class="line"></span>
+  </button>
   <nav class="header-links start">
     <a href="#" data-modal-target="#about-modal">О сайте</a>
     <a href="#" data-modal-target="#contacts-modal">Связь</a>
   </nav>
   <div class="brand">
     <a href="../index.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
-    <span class="badge">community project</span>
   </div>
   <nav class="header-links end">
     <div class="dropdown" id="calcDropdown">
@@ -56,7 +56,6 @@
       <div class="dropdown-menu" id="calcMenu" role="menu">
         <a class="dropdown-item" role="menuitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
         <a class="dropdown-item" role="menuitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
-        <div class="dropdown-note">Скоро: экономические расчёты, DPS‑таблица</div>
       </div>
     </div>
     <a href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
@@ -69,17 +68,44 @@
   </div>
 </header>
 
+<!-- Мобильное меню -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mm-backdrop" data-close></div>
+  <aside class="mm-panel" role="menu" aria-label="Мобильное меню">
+    <div class="mm-content">
+      <nav class="mm-nav">
+        <a href="#" class="mm-item" data-modal-target="#about-modal"><i class="fa-regular fa-circle-question"></i> О сайте</a>
+        <a href="#" class="mm-item" data-modal-target="#contacts-modal"><i class="fa-regular fa-address-book"></i> Связь</a>
+        <details class="mm-accordion">
+          <summary><i class="fa-solid fa-calculator"></i> Калькуляторы</summary>
+          <div class="mm-sublist">
+            <a class="mm-subitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+            <a class="mm-subitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+          </div>
+        </details>
+        <a href="../map/map.html" class="mm-item"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+        <a href="../guides.html" class="mm-item"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      </nav>
+      <div class="mm-actions">
+        <button id="themeToggleBtnMobile" class="ghost-btn"><i class="fa-solid fa-moon"></i> Тема</button>
+      </div>
+    </div>
+  </aside>
+</div>
+
 <!-- Модалки -->
 <div id="about-modal" class="modal" aria-hidden="true">
   <div class="modal-content">
     <button class="close-button" aria-label="Закрыть">&times;</button>
     <h2 id="about-title">О StalMath</h2>
-    <p>StalMath — набор бесплатных инструментов и гайдов по STALCRAFT: X. Мы фокусируемся на точных расчётах, удобстве и наглядности.</p>
+    <p>StalMath — это фан-проект и набор инструментов для игроков STALCRAFT: X. Наша цель — сделать вашу игру комфортнее с помощью:</p>
     <ul>
-      <li>Калькулятор бартера с пресетами, скидками и шэрингом</li>
-      <li>Калькулятор заточки</li>
-      <li>Руководства и таблицы</li>
+      <li>Точных калькуляторов для бартера и заточки;</li>
+      <li>Интерактивной карты со всеми квестами и наградами;</li>
+      <li>Подробных гайдов по игровым механикам.</li>
     </ul>
+    <p>Проект активно развивается, и со временем здесь будут появляться новые функции.</p>
+    <p>Заметили ошибку или есть идеи для улучшения? Пожалуйста, свяжитесь с нами через раздел «Связь». Ваша обратная связь помогает делать StalMath лучше!</p>
   </div>
 </div>
 <div id="contacts-modal" class="modal" aria-hidden="true">
@@ -124,14 +150,14 @@
 
 <main id="main" class="g-container container">
   <header class="g-header">
-    <h1 class="g-title">Покойся с миром</h1>
-    <div class="g-meta">
-      <span class="chip chip-faction chip-stalker"><i class="fa-solid fa-user"></i> Только Сталкеры</span>
-      <span class="chip"><i class="fa-solid fa-ruble-sign"></i> 10 000 руб.</span>
-      <span class="chip"><i class="fa-solid fa-medal"></i> +200 репутации</span>
-      <a class="chip chip-ghost" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть на карте</a>
+    <div class="g-cover" style="background-image:url('../map/images/quests/pokoysya-s-mirom/pokoysya-s-mirom.jpg')"></div>
+    <div class="container g-header-content">
+      <h1 class="g-title">Покойся с миром</h1>
+      <div class="g-meta">
+        <span class="chip"><i class="fa-solid fa-user"></i>Сталкеры</span>
+        <a class="chip" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть карту</a>
+      </div>
     </div>
-    <div class="g-cover" style="background-image:url('../map/images/quests/pokoysya-s-mirom/pokoysya-s-mirom.jpg'), linear-gradient(135deg,#2b2b2b,#1a1a1a)"></div>
   </header>
 
   <div class="g-grid">
@@ -140,7 +166,7 @@
 
       <section id="about">
         <h2>О квесте</h2>
-        <p>Квест можно взять за Сталкеров на базе на Болоте. Для принятия квеста необходимо поговорить с NPC <strong>Шулер</strong> или <strong>Грэм</strong>. Квест имеет несколько веток прохождения — ниже описана ветка с <em>наилучшей наградой</em>. Если нужна только <strong>Старая лопата</strong>, можно пройти любым вариантом — по итогу вы её всё равно получите.</p>
+        <p>Квест можно взять за Сталкеров на базе "Ставка Атамана" на Болоте. Для принятия квеста необходимо поговорить с NPC <strong>Шулер</strong> или <strong>Грэм</strong>. Квест имеет несколько веток прохождения — ниже описана ветка с <em>наилучшей наградой</em>. Если нужна только <strong>Старая лопата</strong>, можно пройти любым вариантом — по итогу вы её всё равно получите.</p>
       </section>
 
       <section id="steps">
@@ -188,7 +214,7 @@
             <h3>Старая лопата</h3>
             <p>Переместитесь к землянке, поговорите с НПС и заберите <strong>Старую лопату</strong> из старого холодильника.</p>
             <figure class="img-full">
-              <img src="../map/images/quests/pokoysya-s-mirom/fridge.jpg" alt="Старая лопата в холодильнике">
+              <img src="../map/images/quests/pokoysya-s-mirom/fridge.jpg" alt="Старая лопата в холодильнике" loading="lazy">
               <figcaption>Лопата лежит в старом холодильнике</figcaption>
             </figure>
           </li>
@@ -210,7 +236,7 @@
             <h3>Финал</h3>
             <p>Идите к Чипу — он будет стоять в крайней теплице.</p>
             <figure class="img-full">
-              <img src="../map/images/quests/pokoysya-s-mirom/chip-greenhouse.jpg" alt="Чип в крайней теплице">
+              <img src="../map/images/quests/pokoysya-s-mirom/chip-greenhouse.jpg" alt="Чип в крайней теплице" loading="lazy">
               <figcaption>Чип в крайней теплице</figcaption>
             </figure>
             <div class="choice-list">
@@ -226,29 +252,12 @@
       <section id="rewards">
         <h2>Награды</h2>
         <div class="reward-list">
-          <div class="reward-card rarity-rare">
-            <img src="../map/images/items/old-shovel.png" alt="Старая лопата" />
-            <div class="r-meta">
-              <div class="r-name">Старая лопата</div>
-            </div>
-          </div>
-          <div class="reward-card">
-            <img src="../map/images/items/energy-zhiden-extra.webp" alt='Энергетик "Жидень EXTRA" ×2' />
-            <div class="r-meta"><div class="r-name">Энергетик "Жидень EXTRA" ×2</div></div>
-          </div>
-          <div class="reward-card">
-            <img src="../map/images/items/tonic-arni.webp" alt='Тоник "Арни" ×2' />
-            <div class="r-meta"><div class="r-name">Тоник "Арни" ×2</div></div>
-          </div>
-          <div class="reward-card">
-            <img src="../map/images/items/desperol.webp" alt="Десперол ×3" />
-            <div class="r-meta"><div class="r-name">Десперол ×3</div></div>
-          </div>
-
-          <div class="reward-inline">
-            <span class="chip"><i class="fa-solid fa-ruble-sign"></i> 10 000 руб.</span>
-            <span class="chip"><i class="fa-solid fa-medal"></i> +200 репутации</span>
-          </div>
+          <div class="reward-card"><img src="../map/images/items/old-shovel.png" alt="Старая лопата" /><span>Старая лопата</span></div>
+          <div class="reward-card"><img src="../map/images/items/energy-zhiden-extra.webp" alt='Энергетик "Жидень EXTRA" ×2' /><span>Энергетик "Жидень EXTRA" ×2</span></div>
+          <div class="reward-card"><img src="../map/images/items/tonic-arni.webp" alt='Тоник "Арни" ×2' /><span>Тоник "Арни" ×2</span></div>
+          <div class="reward-card"><img src="../map/images/items/desperol.webp" alt="Десперол ×3" /><span>Десперол ×3</span></div>
+          <div class="reward-card stat-card money"><i class="fa-solid fa-ruble-sign"></i><span>10 000 руб.</span></div>
+          <div class="reward-card stat-card rep"><i class="fa-solid fa-medal"></i><span>+200 репутации</span></div>
         </div>
       </section>
     </article>
@@ -257,32 +266,29 @@
       <div class="ibox-title">Покойся с миром</div>
       <div class="ibox-row">
         <span class="ibox-label">Доступно</span>
-        <span class="ibox-val tag"><i class="fa-solid fa-user"></i> Только Сталкеры</span>
+        <span class="ibox-val tag tag-stalker"><i class="fa-solid fa-user"></i>Сталкеры</span>
       </div>
       <div class="ibox-row">
         <span class="ibox-label">Локация</span>
-        <span class="ibox-val">Болота</span>
+        <div class="ibox-val">Болота <small>Ставка Атамана</small></div>
       </div>
+      <hr class="ibox-divider">
+      <div class="ibox-subtitle">Особенности</div>
+      <div class="ibox-props">
+        <span class="prop" title="Квест нельзя провалить"><i class="fa-solid fa-shield-halved"></i><span>Нет провала</span></span>
+        <span class="prop" title="Квест имеет несколько концовок"><i class="fa-solid fa-route"></i><span>Нелинейный</span></span>
+        <span class="prop" title="Квест не требует условий для начала"><i class="fa-solid fa-key"></i><span>Без условий</span></span>
+      </div>
+      <hr class="ibox-divider">
       <div class="ibox-row">
         <span class="ibox-label">Репутация</span>
-        <span class="ibox-val"><i class="fa-solid fa-medal"></i> +200</span>
+        <span class="ibox-val reward-stat"><i class="fa-solid fa-medal"></i> +200</span>
       </div>
       <div class="ibox-row">
         <span class="ibox-label">Деньги</span>
-        <span class="ibox-val"><i class="fa-solid fa-ruble-sign"></i> 10 000 руб.</span>
+        <span class="ibox-val reward-stat"><i class="fa-solid fa-ruble-sign"></i> 10 000</span>
       </div>
-
-      <div class="ibox-block">
-        <div class="ibox-subtitle">Главная награда</div>
-        <div class="ibox-reward rarity-rare">
-          <img src="../map/images/items/old-shovel.png" alt="Старая лопата">
-          <div class="ibox-rmeta">
-            <div class="name">Старая лопата</div>
-          </div>
-        </div>
-      </div>
-
-      <a class="btn btn-primary wide" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть на карте</a>
+      <a class="btn btn-primary wide" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть карту</a>
     </aside>
   </div>
 </main>
@@ -307,7 +313,6 @@
 </footer>
 
 <div id="toast" class="toast" hidden></div>
-
 <script src="../global.js"></script>
 <script src="../home.js"></script>
 <script src="guide.js"></script>
