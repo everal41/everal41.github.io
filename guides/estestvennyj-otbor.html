@@ -27,13 +27,15 @@
 <a class="skip-link" href="#main">К содержимому</a>
 
 <header class="site-header">
+  <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Меню" aria-controls="mobileMenu" aria-expanded="false">
+  <span class="line"></span><span class="line"></span><span class="line"></span>
+  </button>
   <nav class="header-links start">
     <a href="#" data-modal-target="#about-modal">О сайте</a>
     <a href="#" data-modal-target="#contacts-modal">Связь</a>
   </nav>
   <div class="brand">
     <a href="../index.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
-    <span class="badge">community project</span>
   </div>
   <nav class="header-links end">
     <div class="dropdown" id="calcDropdown">
@@ -43,7 +45,6 @@
       <div class="dropdown-menu" id="calcMenu" role="menu">
         <a class="dropdown-item" role="menuitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
         <a class="dropdown-item" role="menuitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
-        <div class="dropdown-note">Скоро: экономические расчёты, DPS‑таблица</div>
       </div>
     </div>
     <a href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
@@ -55,18 +56,52 @@
     </button>
   </div>
 </header>
+<!-- Мобильное меню -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mm-backdrop" data-close></div>
+  <aside class="mm-panel" role="menu" aria-label="Мобильное меню">
+    <div class="mm-content">
+      <nav class="mm-nav">
+        <a href="#" class="mm-item" data-modal-target="#about-modal">
+          <i class="fa-regular fa-circle-question"></i> О сайте
+        </a>
+        <a href="#" class="mm-item" data-modal-target="#contacts-modal">
+          <i class="fa-regular fa-address-book"></i> Связь
+        </a>
+
+        <details class="mm-accordion">
+          <summary><i class="fa-solid fa-calculator"></i> Калькуляторы</summary>
+          <div class="mm-sublist">
+            <a class="mm-subitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+            <a class="mm-subitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+          </div>
+        </details>
+
+        <a href="../map/map.html" class="mm-item"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+        <a href="../guides.html" class="mm-item"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      </nav>
+
+      <div class="mm-actions">
+        <button id="themeToggleBtnMobile" class="ghost-btn"><i class="fa-solid fa-moon"></i> Тема</button>
+      </div>
+    </div>
+  </aside>
+</div>
 
 <!-- Модалки -->
 <div id="about-modal" class="modal" aria-hidden="true">
   <div class="modal-content">
     <button class="close-button" aria-label="Закрыть">&times;</button>
     <h2 id="about-title">О StalMath</h2>
-    <p>StalMath — набор бесплатных инструментов и гайдов по STALCRAFT: X. Мы фокусируемся на точных расчётах, удобстве и наглядности.</p>
+    <p>StalMath — это фан-проект и набор инструментов для игроков STALCRAFT: X. Наша цель — сделать вашу игру комфортнее с помощью:</p>
     <ul>
-      <li>Калькулятор бартера с пресетами, скидками и шэрингом</li>
-      <li>Калькулятор заточки</li>
-      <li>Руководства и таблицы</li>
+      <li>Точных калькуляторов для бартера и заточки;</li>
+      <li>Интерактивной карты со всеми квестами и наградами;</li>
+      <li>Подробных гайдов по игровым механикам.</li>
     </ul>
+    <p>Проект активно развивается, и со временем здесь будут появляться новые функции.</p>
+    </ul>
+    <p>Заметили ошибку или есть идеи для улучшения? Пожалуйста, свяжитесь с нами через раздел «Связь». Ваша обратная связь помогает делать StalMath лучше!</p>
   </div>
 </div>
 <div id="contacts-modal" class="modal" aria-hidden="true">
@@ -110,15 +145,15 @@
 </div>
 
 <main id="main" class="g-container container">
-  <header class="g-header">
-    <h1 class="g-title">Естественный отбор</h1>
-    <div class="g-meta">
-      <span class="chip chip-faction chip-stalker"><i class="fa-solid fa-user"></i> Только Сталкеры</span>
-      <span class="chip"><i class="fa-solid fa-ruble-sign"></i> 5 000 руб.</span>
-      <span class="chip"><i class="fa-solid fa-medal"></i> +120 репутации</span>
-      <a class="chip chip-ghost" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть на карте</a>
+    <header class="g-header">
+    <div class="g-cover" style="background-image:url('../map/images/quests/estestvennyj-otbor/cover.jpg')"></div>
+    <div class="container g-header-content">
+      <h1 class="g-title">Естественный отбор</h1>
+      <div class="g-meta">
+        <span class="chip chip-faction chip-stalker"><i class="fa-solid fa-user"></i> Сталкеры</span>
+        <a class="chip chip-ghost" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть карту</a>
+      </div>
     </div>
-    <div class="g-cover" style="background-image:url('../map/images/quests/estestvennyj-otbor/cover.jpg'), linear-gradient(135deg,#2b2b2b,#1a1a1a)"></div>
   </header>
 
   <div class="g-grid">
@@ -127,15 +162,19 @@
 
       <section id="about">
         <h2>О квесте</h2>
-        <p>Квест берётся на базе сталкеров на локации Болота. Чтобы взять квест необходимо подойти к <strong>Борову</strong>, он сам начнёт с вами диалог. Варианты ответов ни на что не влияют и большинство диалогов в данном квесте линейные.</p>
+        <p>Квест берётся на базе сталкеров "Ставка Атамана" на локации Болота. Чтобы взять квест необходимо подойти к <strong>Борову</strong>, он начнёт с вами диалог.</p>
       </section>
 
       <section id="steps">
-        <h2>Прохождение квеста</h2>
+        <h2>Прохождение</h2>
+        <div class="notice compact" role="note">
+          <i class="fa-solid fa-circle-info"></i>
+          Квест линейный, варианты ответов ни на что не влияют, провалить его нельзя.
+        </div>
         <ol class="steps">
           <li>
             <h3>Купить координаты у Синяка</h3>
-            <p>Поговорив с Боровым, выходите из здания и подойдите к костру у базы — рядом сидит <strong>Синяк</strong>. Купите у него координаты.</p>
+            <p>Поговорив с Боровым, выйдите из здания и подойдите к костру у выхода с базы — рядом сидит <strong>Синяк</strong>. Поговорите с ним и купите координаты.</p>
             <figure class="img-full">
               <img src="../map/images/quests/estestvennyj-otbor/sinyak.jpg" alt="Синяк у костра">
               <figcaption>Синяк у костра</figcaption>
@@ -144,7 +183,7 @@
 
           <li>
             <h3>Засада и тело Шума</h3>
-            <p>Придя на место, вы увидите мёртвых сталкеров. Через несколько секунд на вас нападут <strong>три бандита</strong> с противоположной стороны. Убейте их и осмотрите мёртвого <strong>Шума</strong>.</p>
+            <p>Придя на место, вы увидите мёртвых сталкеров. Через несколько секунд на вас нападут <strong>три бандита</strong> с противоположного берега. Убейте их и осмотрите тело <strong>Шума</strong>.</p>
             <figure class="img-full">
               <img src="../map/images/quests/estestvennyj-otbor/shum.jpg" alt="Тело Шума">
               <figcaption>Тело Шума</figcaption>
@@ -154,7 +193,6 @@
           <li>
             <h3>Вернуться к Борову</h3>
             <p>Возвращайтесь на базу и поговорите с Боровым.</p>
-            <div class="notice"><i class="fa-solid fa-circle-info"></i> С этого момента квест становится полностью линейным.</div>
           </li>
           
 
@@ -175,62 +213,56 @@
         </ol>
       </section>
 
-      <section id="rewards">
-        <h2>Награды</h2>
-        <div class="reward-list">
-          <div class="reward-card">
-            <img src="../map/images/items/desperol.webp" alt="Десперол ×2" />
-            <div class="r-meta"><div class="r-name">Десперол ×2</div></div>
-          </div>
-          <div class="reward-card">
-            <img src="../map/images/items/boevoi-goroh.webp" alt="Боевой горох ×1" />
-            <div class="r-meta"><div class="r-name">Боевой горох ×1</div></div>
-          </div>
-          <div class="reward-card">
-            <img src="../map/images/items/pouch-medic.webp" alt="Подсумок с военными аптечками ×1" />
-            <div class="r-meta"><div class="r-name">Подсумок с военными аптечками ×1</div></div>
-          </div>
-          <div class="reward-card">
-            <img src="../map/images/items/ammo-545-sbp.webp" alt="Ящик патронов 5.45 мм СБП ×1" />
-            <div class="r-meta"><div class="r-name">Ящик патронов 5.45 мм СБП ×1</div></div>
-          </div>
-          <div class="reward-card">
-            <img src="../map/images/items/ammo-556-sbp.webp" alt="Ящик патронов 5.56 мм СБП ×1" />
-            <div class="r-meta"><div class="r-name">Ящик патронов 5.56 мм СБП ×1</div></div>
-          </div>
-          <div class="reward-card">
-            <img src="../map/images/items/ammo-762-sbp.webp" alt="Ящик патронов 7.62 мм СБП ×1" />
-            <div class="r-meta"><div class="r-name">Ящик патронов 7.62 мм СБП ×1</div></div>
-          </div>
-
-          <div class="reward-inline">
-            <span class="chip"><i class="fa-solid fa-ruble-sign"></i> 5 000 руб.</span>
-            <span class="chip"><i class="fa-solid fa-medal"></i> +120 репутации</span>
-          </div>
-        </div>
-      </section>
+            <section id="rewards">
+              <h2>Награды</h2>
+              <div class="reward-list">
+                <!-- Предметы -->
+                <div class="reward-card"><img src="../map/images/items/desperol.webp" alt="Десперол" /><span>Десперол ×2</span></div>
+                <div class="reward-card"><img src="../map/images/items/boevoi-goroh.webp" alt="Боевой горох" /><span>Боевой горох</span></div>
+                <div class="reward-card"><img src="../map/images/items/pouch-medic.webp" alt="Подсумок с военными аптечками" /><span>Подсумок с военными аптечками</span></div>
+                <div class="reward-card"><img src="../map/images/items/ammo-545-sbp.webp" alt="Ящик 5.45 СБП" /><span>Ящик 5.45 СБП</span></div>
+                <div class="reward-card"><img src="../map/images/items/ammo-556-sbp.webp" alt="Ящик 5.56 СБП" /><span>Ящик 5.56 СБП</span></div>
+                <div class="reward-card"><img src="../map/images/items/ammo-762-sbp.webp" alt="Ящик 7.62 СБП" /><span>Ящик 7.62 СБП</span></div>
+                <!-- Статы -->
+                <div class="reward-card stat-card"><i class="fa-solid fa-ruble-sign"></i><span>5 000 руб.</span></div>
+                <div class="reward-card stat-card"><i class="fa-solid fa-medal"></i><span>+120 репутации</span></div>
+              </div>
+            </section>
     </article>
 
-    <aside class="infobox" aria-label="Информация о квесте">
+        <aside class="infobox" aria-label="Информация о квесте">
       <div class="ibox-title">Естественный отбор</div>
+      
       <div class="ibox-row">
         <span class="ibox-label">Доступно</span>
-        <span class="ibox-val tag"><i class="fa-solid fa-user"></i> Только Сталкеры</span>
+        <span class="ibox-val tag tag-stalker"><i class="fa-solid fa-user"></i> Сталкеры</span>
       </div>
       <div class="ibox-row">
         <span class="ibox-label">Локация</span>
-        <span class="ibox-val">Болота</span>
+        <div class="ibox-val">Болота <small>Ставка Атамана</small></div>
       </div>
+
+      <hr class="ibox-divider">
+      
+      <div class="ibox-subtitle">Особенности</div>
+      <div class="ibox-props">
+        <span class="prop" title="Квест нельзя провалить"><i class="fa-solid fa-shield-halved"></i><span>Нет провала</span></span>
+        <span class="prop" title="Квест полностью линейный"><i class="fa-solid fa-route"></i><span>Линейный</span></span>
+        <span class="prop" title="Квест не требует условий для начала"><i class="fa-solid fa-key"></i><span>Без условий</span></span>
+      </div>
+
+      <hr class="ibox-divider">
+      
       <div class="ibox-row">
         <span class="ibox-label">Репутация</span>
-        <span class="ibox-val"><i class="fa-solid fa-medal"></i> +120</span>
+        <span class="ibox-val reward-stat"><i class="fa-solid fa-medal"></i> +120</span>
       </div>
       <div class="ibox-row">
         <span class="ibox-label">Деньги</span>
-        <span class="ibox-val"><i class="fa-solid fa-ruble-sign"></i> 5 000 руб.</span>
+        <span class="ibox-val reward-stat"><i class="fa-solid fa-ruble-sign"></i> 5 000</span>
       </div>
 
-      <a class="btn btn-primary wide" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть на карте</a>
+      <a class="btn btn-primary wide" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть карту</a>
     </aside>
   </div>
 </main>
