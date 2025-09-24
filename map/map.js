@@ -300,8 +300,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function buildFactionBadge(q){
-    const txt = q.faction === 'bandit' ? 'Только Бандиты'
-             : q.faction === 'stalker' ? 'Только Сталкеры'
+    const txt = q.faction === 'bandit' ? 'Бандиты'
+             : q.faction === 'stalker' ? 'Сталкеры'
              : 'Любая группировка';
     const cls = q.faction === 'bandit' ? 'badge--bandit'
              : q.faction === 'stalker' ? 'badge--stalker'
