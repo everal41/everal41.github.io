@@ -6,18 +6,51 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------- TOC ----------------
   if (article && toc) {
     const headers = [...article.querySelectorAll('h2')];
-    if (!headers.length) { toc.remove(); }
-    else {
-      const links = headers.map(h => {
-        const id = h.id || h.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g,'');
+    if (!headers.length) {
+      toc.remove();
+    } else {
+      const used = new Set();
+
+      function slugify(s, fallback = 'sec') {
+        let id = String(s || '').trim().toLowerCase()
+          .replace(/\s+/g, '-')                   // пробелы -> дефис
+          .replace(/[^\p{L}\p{N}-]+/gu, '')       // оставить буквы/цифры любых алфавитов и дефисы
+          .replace(/-+/g, '-')                    // сжать --- в -
+          .replace(/^-|-$/g, '');                 // обрезать крайние дефисы
+        if (!id) id = fallback;
+        let base = id, i = 2;
+        while (used.has(id)) id = `${base}-${i++}`;
+        used.add(id);
+        return id;
+      }
+
+      const links = headers.map((h, idx) => {
+        let rawId = (h.id || '').trim();
+        if (!rawId) rawId = h.closest('section')?.id || '';
+        const id = rawId ? slugify(rawId) : slugify(h.textContent, `h2-${idx+1}`);
+
         h.id = id;
+
         const a = document.createElement('a');
         a.href = `#${id}`;
         a.textContent = h.textContent.trim();
         toc.appendChild(a);
-        return { h, a };
+        return { h, a, id };
       });
 
+      // Плавный скролл по клику
+      toc.addEventListener('click', (e) => {
+        const a = e.target.closest('a');
+        if (!a) return;
+        const id = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', `#${id}`);
+      });
+
+      // Подсветка активного пункта при скролле
       const io = new IntersectionObserver(entries => {
         entries.forEach(e => {
           const link = links.find(l => l.h === e.target)?.a;
@@ -27,21 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
           }
         });
-      }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.01 });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0.01 });
 
       headers.forEach(h => io.observe(h));
     }
   }
 
-  // ---------------- Lightbox ----------------
   initLightbox(article || document);
 
-  // ---------------- Copy nick ----------------
   initCopyNick();
 });
 
 function initLightbox(scopeEl){
-  // Создаём оверлей один раз
   let lb = document.querySelector('.lb');
   if (!lb) {
     lb = document.createElement('div');
@@ -53,7 +83,6 @@ function initLightbox(scopeEl){
   const lbImg = lb.querySelector('img');
   const lbCaption = lb.querySelector('.lb-caption');
 
-  // Помечаем изображения как кликабельные
   const images = [...(scopeEl.querySelectorAll
     ? scopeEl.querySelectorAll('img')
     : document.querySelectorAll('img'))]
@@ -109,7 +138,6 @@ function initCopyNick(){
         if (label) label.textContent = prevLabel || 'Копировать';
       }, 1400);
     } catch (e) {
-      // Фолбэк через textarea
       const ta = document.createElement('textarea');
       ta.value = nick;
       ta.style.position = 'fixed';
