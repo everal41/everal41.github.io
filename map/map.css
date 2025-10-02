@@ -121,7 +121,7 @@ body.page-map {
 }
 
 /* Слой тайлов */
-.tiles-layer { position: absolute; inset: 0; pointer-events: none; }
+.tiles-layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
 .tiles-layer img.tile{
   position: absolute; display: block; transform-origin: top left;
   will-change: transform, width, height;
