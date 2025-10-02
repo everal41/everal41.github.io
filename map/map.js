@@ -25,21 +25,27 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const MAPS = [
-    {
-      id: 'south',
-      name: 'Южная часть зоны',
-      src: 'images/maps/map-south.png',
-      width: 1372, height: 2000,
-      tiles: {
-        tileSize: 192,
-        levels: [
-          { z: 1, cols: 8, rows: 11, url: (x, y) => `images/maps/South/1x/1-${x}-${y}.jpg` }
-        ]
-      }
-    },
-    { id: 'north',   name: 'Северная часть зоны', src: 'images/maps/map-north.png',   width: 1372, height: 2000 },
-    { id: 'lyubech', name: 'Любеч-3',             src: 'images/maps/map-lyubech.png', width: 1372, height: 2000 }
-  ];
+  {
+    id: 'south',
+    name: 'Южная часть зоны',
+    src: 'images/maps/map-south-2x.png',
+    width: 2742,
+    height: 3999,
+    tiles: {
+      tileSize: 192,
+      levels: [
+        {
+          z: 2,
+          cols: 15,
+          rows: 21,
+          url: (x, y) => `images/maps/South/2x/2-${x}-${y}.jpg`
+        }
+      ]
+    }
+  },
+  { id: 'north',   name: 'Северная часть зоны', src: 'images/maps/map-north.png',   width: 1372, height: 2000 },
+  { id: 'lyubech', name: 'Любеч-3',             src: 'images/maps/map-lyubech.png', width: 1372, height: 2000 }
+];
 
   const IMG_PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
     <svg xmlns="http://www.w3.org/2000/svg" width="120" height="80">
@@ -56,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Эхо прошлого',
       loc: 'south',
       faction: 'stalker',
-      x: 647, y: 1691,
+      x: 1295, y: 3372,
       preview: 'images/quests/echo-past/echo-past.jpg',
       desc: 'На Болотах я нашёл очень старый ПДА, на котором имя владельца — Борода.',
       rewards: [{ img: 'images/items/pp2000-yakor-blue.webp', label: 'ПП‑2000 «Якорь»', rarity: 'stalker' },
@@ -76,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Эхо прошлого',
       loc: 'south',
       faction: 'bandit',
-      x: 445, y: 1572,
+      x: 888, y: 3145,
       preview: 'images/quests/echo-past/echo-past.jpg',
       desc: 'На Болотах я нашёл очень старый ПДА, на котором имя владельца — Борода.',
       rewards: [{ img: 'images/items/pp2000-yakor-blue.webp', label: 'ПП‑2000 «Якорь»', rarity: 'stalker' },
@@ -96,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Упырь',
       loc: 'south',
       faction: 'stalker',
-      x: 648, y: 1791,
+      x: 1298, y: 3583,
       preview: 'images/quests/upyr/upyr.jpg',
       desc: 'В лагерь принесли труп сталкера с множеством ран.',
       rewards: [
@@ -116,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Упырь',
       loc: 'south',
       faction: 'bandit',
-      x: 312, y: 1569,
+      x: 627, y: 3136,
       preview: 'images/quests/upyr/upyr.jpg',
       desc: 'В лагерь принесли труп бандита с множеством ран.',
       rewards: [
@@ -136,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Покойся с миром',
       loc: 'south',
       faction: 'stalker',
-      x: 651, y: 1799,
+      x: 1305, y: 3596,
       preview: 'images/quests/pokoysya-s-mirom/pokoysya-s-mirom.jpg',
       desc: 'Заядлые картежники Шулер и Грэм попросили найти их товарища по кличке Чип.',
       rewards: [
@@ -155,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Естественный отбор',
       loc: 'south',
       faction: 'stalker',
-      x: 658, y: 1793,
+      x: 1316, y: 3587,
       preview: 'images/quests/estestvennyj-otbor/cover.jpg',
       desc: 'Я купил у Синяка координаты места с залежами артефактов.',
       rewards: [
@@ -175,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Травник',
       loc: 'south',
       faction: 'bandit',
-      x: 305, y: 1576,
+      x: 607, y: 3147,
       preview: 'images/quests/travnik/travnik.jpg',
       desc: 'Я познакомился с бандитом по кличке Клифа. Он предложил мне поучаствовать в обносе одной обжитой хижины на севере Болот.',
       rewards: [
@@ -239,8 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function createMarkerEl(q, map){
-    const left = (q.x / map.width * 100).toFixed(4) + '%';
-    const top  = (q.y / map.height * 100).toFixed(4) + '%';
+    const left = (q.x / map.width * 100) + '%';
+    const top = (q.y / map.height * 100) + '%';
 
     const marker = document.createElement('button');
     marker.className = `marker marker--${q.faction || 'any'}`;
@@ -623,23 +629,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.pointerType === 'touch'){ el.mapCanvas.setPointerCapture(e.pointerId); pointers.set(e.pointerId,{x:e.clientX,y:e.clientY}); }
   });
   el.mapCanvas.addEventListener('pointermove', (e) => {
-    if (e.pointerType === 'touch' && pointers.has(e.pointerId)){
-      pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
-      if (pointers.size >= 2){
-        const [p1,p2] = getTwoPoints();
-        const dist0 = distance(p1,p2);
-        if (!el._pinch) el._pinch = { dist: dist0, zoom: state.zoom };
-        const scale = dist0 / el._pinch.dist;
-        const newZoom = el._pinch.zoom * scale;
-        const center = { clientX:(p1.x+p2.x)/2, clientY:(p1.y+p2.y)/2 };
-        setZoom(newZoom, center);
+  if (e.pointerType === 'touch' && pointers.has(e.pointerId)) {
+    pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+
+    if (pointers.size === 2) {
+      const [p1,p2] = getTwoPoints();
+      const distNow = distance(p1,p2);
+
+      if (!el._pinch) {
+        el._pinch = { 
+          dist: distNow, 
+          zoom: state.zoom,
+          cx: (p1.x + p2.x) / 2,
+          cy: (p1.y + p2.y) / 2
+        };
       }
+
+      const scale = distNow / el._pinch.dist;
+      const newZoom = el._pinch.zoom * scale;
+      const center = { clientX: el._pinch.cx, clientY: el._pinch.cy };
+
+      setZoom(newZoom, center);
     }
-  }, { passive:false });
-  ['pointerup','pointercancel','pointerleave'].forEach(t => el.mapCanvas.addEventListener(t, (e) => {
+  }
+}, { passive:false });
+
+['pointerup','pointercancel','pointerleave'].forEach(t => 
+  el.mapCanvas.addEventListener(t, (e) => {
     if (pointers.has(e.pointerId)) pointers.delete(e.pointerId);
     if (pointers.size < 2) el._pinch = null;
-  }));
+  })
+);
   function getTwoPoints(){ const it=pointers.values(); const a=it.next().value; const b=it.next().value; return [a,b]; }
   function distance(a,b){ const dx=a.x-b.x, dy=a.y-b.y; return Math.hypot(dx,dy); }
 
