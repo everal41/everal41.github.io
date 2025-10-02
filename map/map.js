@@ -625,43 +625,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Pinch‑zoom */
   const pointers = new Map();
-  el.mapCanvas.addEventListener('pointerdown', (e) => {
-    if (e.pointerType === 'touch'){ el.mapCanvas.setPointerCapture(e.pointerId); pointers.set(e.pointerId,{x:e.clientX,y:e.clientY}); }
-  });
-  el.mapCanvas.addEventListener('pointermove', (e) => {
-  if (e.pointerType === 'touch' && pointers.has(e.pointerId)) {
-    pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+
+el.mapCanvas.addEventListener('pointerdown', (e) => {
+  if (e.pointerType === 'touch') {
+    el.mapCanvas.setPointerCapture(e.pointerId);
+    pointers.set(e.pointerId, {x: e.clientX, y: e.clientY});
 
     if (pointers.size === 2) {
-      const [p1,p2] = getTwoPoints();
-      const distNow = distance(p1,p2);
+      const [p1, p2] = getTwoPoints();
+      el._pinch = {
+        dist: distance(p1, p2),
+        zoom: state.zoom,
+        cx: (p1.x + p2.x) / 2,
+        cy: (p1.y + p2.y) / 2
+      };
+    }
+  }
+});
 
-      if (!el._pinch) {
-        el._pinch = { 
-          dist: distNow, 
-          zoom: state.zoom,
-          cx: (p1.x + p2.x) / 2,
-          cy: (p1.y + p2.y) / 2
-        };
-      }
+el.mapCanvas.addEventListener('pointermove', (e) => {
+  if (e.pointerType === 'touch' && pointers.has(e.pointerId)) {
+    pointers.set(e.pointerId, {x: e.clientX, y: e.clientY});
 
-      const scale = distNow / el._pinch.dist;
+    if (pointers.size === 2 && el._pinch) {
+      const [p1, p2] = getTwoPoints();
+
+      const distNow = distance(p1, p2);
+      const scale   = distNow / el._pinch.dist;
       const newZoom = el._pinch.zoom * scale;
       const center = { clientX: el._pinch.cx, clientY: el._pinch.cy };
 
       setZoom(newZoom, center);
     }
   }
-}, { passive:false });
+}, { passive: false });
 
-['pointerup','pointercancel','pointerleave'].forEach(t => 
+['pointerup', 'pointercancel', 'pointerleave'].forEach(t =>
   el.mapCanvas.addEventListener(t, (e) => {
     if (pointers.has(e.pointerId)) pointers.delete(e.pointerId);
-    if (pointers.size < 2) el._pinch = null;
+
+    if (pointers.size < 2) {
+      el._pinch = null;
+    }
   })
 );
-  function getTwoPoints(){ const it=pointers.values(); const a=it.next().value; const b=it.next().value; return [a,b]; }
-  function distance(a,b){ const dx=a.x-b.x, dy=a.y-b.y; return Math.hypot(dx,dy); }
+
+function getTwoPoints() {
+  const it = pointers.values();
+  const a = it.next().value;
+  const b = it.next().value;
+  return [a, b];
+}
+
+function distance(a, b) {
+  const dx = a.x - b.x, dy = a.y - b.y;
+  return Math.hypot(dx, dy);
+}
 
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.marker')) {
