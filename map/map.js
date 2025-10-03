@@ -168,20 +168,21 @@ document.addEventListener('DOMContentLoaded', () => {
         { img: 'images/items/desperol.webp',          label: 'Десперол', qty: 2 },
         { img: 'images/items/boevoi-goroh.webp',      label: 'Боевой горох' },
         { img: 'images/items/pouch-medic.webp',       label: 'Подсумок с военными аптечками' },
-        { img: 'images/items/ammo-545-sbp.webp',      label: 'Ящик патронов 5.45 мм СБП' },
-        { img: 'images/items/ammo-556-sbp.webp',      label: 'Ящик патронов 5.56 мм СБП' },
-        { img: 'images/items/ammo-762-sbp.webp',      label: 'Ящик патронов 7.62 мм СБП' }
+        { img: 'images/items/ammo-545-sbp.webp',      label: 'Ящик 5.45 СБП' },
+        { img: 'images/items/ammo-556-sbp.webp',      label: 'Ящик 5.56 СБП' },
+        { img: 'images/items/ammo-762-sbp.webp',      label: 'Ящик 7.62 СБП' }
       ],
       money: 5000,
       reputation: 120,
       guideUrl: '../guides/estestvennyj-otbor.html'
     },
+    // Травник — Бандиты
     {
       id: 'q-travnik-bandit',
       title: 'Травник',
       loc: 'south',
       faction: 'bandit',
-      x: 607, y: 3147,
+      x: 609, y: 3149,
       preview: 'images/quests/travnik/travnik.jpg',
       desc: 'Я познакомился с бандитом по кличке Клифа. Он предложил мне поучаствовать в обносе одной обжитой хижины на севере Болот.',
       rewards: [
@@ -192,6 +193,27 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 5300,
       reputation: 115,
       guideUrl: '../guides/travnik.html'
+    },
+    // Комар — Бандиты
+    {
+      id: 'q-komar-bandit',
+      title: 'Комар',
+      loc: 'south',
+      faction: 'bandit',
+      x: 607, y: 3138,
+      preview: 'images/quests/komar/komar.jpg',
+      desc: 'Бандит по кличке Комар попросил меня отомстить за своего приятеля Ваньку Жёлудя, которого задрали кабаны.',
+      rewards: [
+        { img: 'images/items/ammo-545-sbp.webp', label: 'Ящик 5.45 СБП' },
+        { img: 'images/items/ammo-556-sbp.webp', label: 'Ящик 5.56 СБП' },
+        { img: 'images/items/ammo-762-sbp.webp', label: 'Ящик 7.62 СБП' },
+        { img: 'images/items/pouch-medic.webp', label: 'Подсумок с военными аптечками', qty: 2 },
+        { img: 'images/items/domestic-mre.webp', label: 'Отечественный ИРП', qty: 2 },
+        { img: 'images/items/neyrotonic.webp', label: 'Нейротоник', qty: 2 }
+      ],
+      money: 10000,
+      reputation: 220,
+      guideUrl: '../guides/komar.html'
     }
   ];
 
