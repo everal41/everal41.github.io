@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const MARKER_ICONS = {
     bandit:  { src: 'images/icons/marker-bandit.webp',  w: 41, h: 44, alt: 'Бандиты' },
     stalker: { src: 'images/icons/marker-stalker.webp', w: 43, h: 41, alt: 'Сталкеры' },
-    any:     { src: 'images/icons/marker-any.webp',     w: 44, h: 42, alt: 'Любая группировка' }
+    any:     { src: 'images/icons/marker-any.webp',     w: 44, h: 42, alt: 'Для всех' }
   };
 
   const MAPS = [
@@ -329,11 +329,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function buildFactionBadge(q){
     const txt = q.faction === 'bandit' ? 'Бандиты'
-             : q.faction === 'stalker' ? 'Сталкеры'
-             : 'Любая группировка';
+            : q.faction === 'stalker' ? 'Сталкеры'
+            : 'Для всех';
     const cls = q.faction === 'bandit' ? 'badge--bandit'
-             : q.faction === 'stalker' ? 'badge--stalker'
-             : 'badge--any';
+            : q.faction === 'stalker' ? 'badge--stalker'
+            : 'badge--any';
     return `<div class="q-badges"><span class="q-badge ${cls}">${txt}</span></div>`;
   }
 
@@ -725,7 +725,7 @@ function distance(a, b) {
   function escapeHtml(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function escapeClass(s){ return String(s).replace(/[^a-z0-9_-]/gi,''); }
   function formatInt(n){ return Number(n).toFixed(0); }
-  function formatRubles(n){ return new Intl.NumberFormat('ru-RU').format(Number(n)) + ' руб.'; }
+  function formatRubles(n){ return new Intl.NumberFormat('ru-RU').format(Number(n)); }
   function showToast(text){ if(!el.toast) return; el.toast.textContent=text; el.toast.hidden=false; clearTimeout(showToast._t); showToast._t=setTimeout(()=>{el.toast.hidden=true},1800); }
 
   initMapSelect();
