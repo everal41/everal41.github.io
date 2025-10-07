@@ -214,6 +214,25 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 10000,
       reputation: 220,
       guideUrl: '../guides/komar.html'
+    },
+    // Посылка Фримена - Бандиты
+    {
+      id: 'q-freeman-parcel-bandit',
+      title: 'Посылка Фримена',
+      loc: 'south',
+      faction: 'bandit',
+      x: 617, y: 3144,
+      preview: 'images/quests/posylka-freemena/posylka-freemena.jpg',
+      desc: 'Бандит по кличке Варг задумал подмять под себя сталкерского торговца Фримена.',
+      rewards: [
+        { img: 'images/items/aks-74u.webp', label: 'АКС-74У Варга' },
+        { img: 'images/items/neyrotonic.webp', label: 'Нейротоник' },
+        { img: 'images/items/clarinol.webp', label: 'Кларинол', qty: 2 },
+        { img: 'images/items/tonic-arni.webp', label: 'Тоник Арни', qty: 3 }
+      ],
+      money: 6000,
+      reputation: 140,
+      guideUrl: '../guides/posylka-freemena.html'
     }
   ];
 
