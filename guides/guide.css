@@ -387,3 +387,73 @@ figure.img-full figcaption{ padding:10px 14px; font-size:14px; color:var(--text-
   border-color: #ef9a9a;
   color: #b22222;
 }
+
+.choice-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.choice-tab {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.choice-tab:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.choice-tab.active {
+  border-color: var(--accent);
+  background-color: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent-text);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+.choice-panels .choice-panel {
+  display: none;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: var(--surface-2);
+}
+
+.choice-panels .choice-panel.active {
+  display: block;
+}
+
+.dialogue-path {
+  padding-left: 20px;
+  margin: 10px 0 0;
+}
+.dialogue-path li { margin-bottom: 8px; }
+.dialogue-path li::marker { color: var(--accent); font-weight: 700; }
+.dialogue-path li code {
+  font-family: inherit;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin-right: 8px;
+}
+
+.dialogue-path {
+  counter-reset: step-counter; 
+  padding-left: 24px;
+  list-style-position: outside;
+}
+
+.dialogue-path li::before {
+  content: none;
+}
