@@ -1,4 +1,3 @@
-// TOC + Lightbox + копирование ника
 document.addEventListener('DOMContentLoaded', () => {
   const article = document.getElementById('article');
   const toc = document.getElementById('toc');
@@ -13,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function slugify(s, fallback = 'sec') {
         let id = String(s || '').trim().toLowerCase()
-          .replace(/\s+/g, '-')                   // пробелы -> дефис
-          .replace(/[^\p{L}\p{N}-]+/gu, '')       // оставить буквы/цифры любых алфавитов и дефисы
-          .replace(/-+/g, '-')                    // сжать --- в -
-          .replace(/^-|-$/g, '');                 // обрезать крайние дефисы
+          .replace(/\s+/g, '-')
+          .replace(/[^\p{L}\p{N}-]+/gu, '')
+          .replace(/-+/g, '-')
+          .replace(/^-|-$/g, '');
         if (!id) id = fallback;
         let base = id, i = 2;
         while (used.has(id)) id = `${base}-${i++}`;
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return { h, a, id };
       });
 
-      // Плавный скролл по клику
       toc.addEventListener('click', (e) => {
         const a = e.target.closest('a');
         if (!a) return;
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         history.replaceState(null, '', `#${id}`);
       });
 
-      // Подсветка активного пункта при скролле
       const io = new IntersectionObserver(entries => {
         entries.forEach(e => {
           const link = links.find(l => l.h === e.target)?.a;
@@ -66,11 +63,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  initLightbox(article || document);
+  // --- НОВЫЙ БЛОК: Логика для переключателей вариантов наград ---
+  const rewardChoice = document.getElementById('rewardChoice');
+  if (rewardChoice) {
+    const tabs = rewardChoice.querySelectorAll('.choice-tab');
+    const panels = document.querySelectorAll('.choice-panels .choice-panel');
 
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+
+        tab.classList.add('active');
+        const targetPanel = document.getElementById(tab.dataset.target);
+        if (targetPanel) {
+          targetPanel.classList.add('active');
+        }
+      });
+    });
+  }
+
+
+  // --- Инициализация существующих функций ---
+  initLightbox(article || document);
   initCopyNick();
 });
 
+
+// ---------------- Lightbox ----------------
 function initLightbox(scopeEl){
   let lb = document.querySelector('.lb');
   if (!lb) {
@@ -114,6 +134,8 @@ function initLightbox(scopeEl){
   function onEsc(e){ if (e.key === 'Escape') closeLB(); }
 }
 
+
+// ---------------- Копирование ника ----------------
 function initCopyNick(){
   const btn = document.getElementById('copyNickBtn');
   const nickEl = document.getElementById('gameNick');
