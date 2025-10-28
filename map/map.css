@@ -577,3 +577,10 @@ html[data-theme="dark"] .page-map .map-controls-panel .btn:hover{
   border-color: #d9b86a;
   transform: none;
 }
+
+/* Скрывает указатель-треугольник на мобильных устройствах */
+@media (max-width: 820px) {
+  .marker .popover::after {
+    display: none;
+  }
+}
