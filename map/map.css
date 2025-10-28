@@ -168,12 +168,12 @@ body.page-map {
   position:absolute; left:50%; bottom:calc(100% + 10px); --pop-dx: 0px;
   transform: translateX(calc(-50% + var(--pop-dx)));
   width:min(560px, 96vw);
-  background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:12px; box-shadow:var(--shadow-lg);
+  background:var(--surface); border:1px solid var(--border); border-radius:14px; /* padding УБРАН ОТСЮДА */ box-shadow:var(--shadow-lg);
   opacity:0; visibility:hidden; transition:opacity .16s ease, visibility .16s ease; z-index:20;
   max-width: min(560px, 96vw);
   line-height: 1.35;
+  display: flex;
 }
-.marker .popover.scrollable { overflow: auto; }
 .marker .popover[data-pos="below"] { top: calc(100% + 10px); bottom: auto; }
 .marker .popover[data-pos="below"]::after{
   top: auto; bottom: 100%;
@@ -197,7 +197,12 @@ body.page-map {
 .popover.compact .q-grid { grid-template-columns: 1fr; }
 
 /* Сетка инфобокса */
-.q-grid{ display:grid; grid-template-columns: 188px 1fr; gap:14px; align-items:stretch; }
+.q-grid{
+  display:grid; grid-template-columns: 188px 1fr; gap:14px; align-items:stretch;
+  padding: 12px;
+  overflow: auto;
+  width: 100%;
+}
 
 /* Левая колонка */
 .q-left{ display:grid; gap:8px; align-content:start; }
