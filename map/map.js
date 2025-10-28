@@ -14,14 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
   el.tilesLayer = null;
 
   const DEFAULT_ZOOM = 1.48;
-  const LIMITS = { maxZoom: 3.5 };
+  const LIMITS = { maxZoom: 3.5, minZoom: 0.68 };
   const PIN_SCALE = 0.68;
   const TILE_SEAM = 0.5;
 
   const MARKER_ICONS = {
     bandit:  { src: 'images/icons/marker-bandit.webp',  w: 41, h: 44, alt: 'Бандиты' },
     stalker: { src: 'images/icons/marker-stalker.webp', w: 43, h: 41, alt: 'Сталкеры' },
-    any:     { src: 'images/icons/marker-any.webp',     w: 44, h: 42, alt: 'Для всех' }
+    any:     { src: 'images/icons/marker-any.webp',     w: 44, h: 42, alt: 'Все' }
   };
 
   const MAPS = [
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function buildFactionBadge(q){
     const txt = q.faction === 'bandit' ? 'Бандиты'
             : q.faction === 'stalker' ? 'Сталкеры'
-            : 'Для всех';
+            : 'Все';
     const cls = q.faction === 'bandit' ? 'badge--bandit'
             : q.faction === 'stalker' ? 'badge--stalker'
             : 'badge--any';
@@ -593,7 +593,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const relX = (el.mapCanvas.scrollLeft + (ax - r.left)) / Math.max(1, cw);
     const relY = (el.mapCanvas.scrollTop  + (ay - r.top))  / Math.max(1, ch);
 
-    state.zoom = clamp(newZoom, state.minZoom, LIMITS.maxZoom);
+    // Используем Math.max, чтобы выбрать наибольшее из двух минимальных значений
+    const lowerBound = Math.max(state.minZoom, LIMITS.minZoom);
+    state.zoom = clamp(newZoom, lowerBound, LIMITS.maxZoom); // <--- Измененная логика
+
     const nw = map.width * state.zoom;
     const nh = map.height * state.zoom;
 
