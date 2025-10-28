@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       x: 1295, y: 3372,
       preview: 'images/quests/echo-past/echo-past.jpg',
       desc: 'На Болотах я нашёл очень старый ПДА, на котором имя владельца — Борода.',
-      rewards: [{ img: 'images/items/pp2000-yakor-blue.webp', label: 'ПП‑2000 «Якорь»', rarity: 'stalker' },
+      rewards: [{ img: 'images/items/pp2000-yakor-blue.webp', label: 'ПП‑2000 «Якорь»', rarity: 'rare' },
       { img: 'images/items/ammo-545-sbp.webp', label: 'Ящик 5.45 СБП' },
       { img: 'images/items/ammo-556-sbp.webp', label: 'Ящик 5.56 СБП' },
       { img: 'images/items/ammo-762-sbp.webp', label: 'Ящик 7.62 СБП' },
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
       x: 888, y: 3145,
       preview: 'images/quests/echo-past/echo-past.jpg',
       desc: 'На Болотах я нашёл очень старый ПДА, на котором имя владельца — Борода.',
-      rewards: [{ img: 'images/items/pp2000-yakor-blue.webp', label: 'ПП‑2000 «Якорь»', rarity: 'stalker' },
+      rewards: [{ img: 'images/items/pp2000-yakor-blue.webp', label: 'ПП‑2000 «Якорь»', rarity: 'rare' },
       { img: 'images/items/ammo-545-sbp.webp', label: 'Ящик 5.45 СБП' },
       { img: 'images/items/ammo-556-sbp.webp', label: 'Ящик 5.56 СБП' },
       { img: 'images/items/ammo-762-sbp.webp', label: 'Ящик 7.62 СБП' },
@@ -233,6 +233,26 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 6000,
       reputation: 140,
       guideUrl: '../guides/posylka-freemena.html'
+    },
+    // Судьба - Бандиты
+    {
+      id: 'q-sudba-bandit',
+      title: 'Судьба',
+      loc: 'south',
+      faction: 'bandit',
+      x: 947, y: 3332,
+      preview: 'images/quests/sudba/sudba.jpg',
+      desc: 'Я спас новичка от стаи гончих. Стоит с ним поговорить на базе.',
+      rewards: [
+        { img: 'images/items/sig-shepota.webp',        label: 'Сиг «Шепота»', rarity: 'veteran' },
+        { img: 'images/items/token-ice.png',          label: 'Жетон Льда' },
+        { img: 'images/items/art-batareika.webp',      label: 'Артефакт «Батарейка»' },
+        { img: 'images/items/art-ulitka.webp',         label: 'Артефакт «Улитка»' },
+        { img: 'images/items/pouch-medic-science.webp',label: 'Подсумок с аптечками ученых', qty: 3 },
+        { img: 'images/items/bag-ap-556.webp',         label: 'Сумка бронебойных 5.56 мм',   qty: 2 }
+      ],
+      money: 55000,
+      guideUrl: '../guides/sudba.html'
     }
   ];
 
