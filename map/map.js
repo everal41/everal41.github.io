@@ -649,6 +649,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let dragActive=false, dragStart={x:0,y:0,sx:0,sy:0};
   el.mapCanvas.addEventListener('pointerdown', (e) => {
     if (e.target.closest('.marker') || e.target.closest('.popover')) return;
+    if (e.pointerType === 'touch') {
+      const activeMarker = document.querySelector('.marker.active');
+      if (activeMarker) {
+        activeMarker.classList.remove('active');
+        return;
+      }
+    }
     if (state.zoom <= state.minZoom + 1e-3) return;
     if (e.button !== 0) return;
     el.mapCanvas.setPointerCapture(e.pointerId);
