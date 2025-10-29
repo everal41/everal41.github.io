@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Инициализация существующих функций ---
   initLightbox(article || document);
   initCopyNick();
+  initReadingProgress(article || document);
 });
 
 
@@ -176,4 +177,33 @@ function initCopyNick(){
       }, 1400);
     }
   });
+}
+
+// ---------- Прогресс-бар чтения ----------
+function initReadingProgress(targetEl){
+  const el = targetEl || document.getElementById('article');
+  if (!el) return;
+
+  let bar = document.querySelector('.reading-progress');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.className = 'reading-progress';
+    document.body.appendChild(bar);
+  }
+
+  const update = () => {
+    const rect = el.getBoundingClientRect();
+    const start = rect.top + window.scrollY;
+    const height = el.offsetHeight;
+    const max = Math.max(1, height - window.innerHeight);
+    const scrolled = window.scrollY - start;
+    let p = scrolled / max;
+    p = Math.max(0, Math.min(1, p));
+    bar.style.width = `${p * 100}%`;
+    bar.style.opacity = p > 0 ? '1' : '0';
+  };
+
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
 }
