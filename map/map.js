@@ -253,6 +253,26 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       money: 55000,
       guideUrl: '../guides/sudba.html'
+    },
+    // Документация — Бандиты
+    {
+      id: 'q-dokumentaciya-bandit',
+      title: 'Документация',
+      loc: 'south',
+      faction: 'bandit',
+      x: 1310, y: 2748,
+      preview: 'images/quests/dokumentaciya/cover.jpg',
+      desc: 'Познакомился в лагере с бандитом по кличке Гном.',
+      rewards: [
+        { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"' },
+        { img: 'images/items/tonic-arni.webp',    label: 'Тоник Арни', qty: 2 },
+        { img: 'images/items/ammo-545-sbp.webp',  label: 'Ящик 5.45 СБП' },
+        { img: 'images/items/ammo-556-sbp.webp',  label: 'Ящик 5.56 СБП' },
+        { img: 'images/items/ammo-762-sbp.webp',  label: 'Ящик 7.62 СБП' }
+      ],
+      money: 1000,
+      reputation: 25,
+      guideUrl: '../guides/dokumentaciya.html'
     }
   ];
 
