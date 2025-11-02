@@ -273,6 +273,25 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 1000,
       reputation: 25,
       guideUrl: '../guides/dokumentaciya.html'
+    },
+    // Безопасность превыше всего (Моряк) — Бандиты
+    {
+      id: 'q-bezopasnost-moryak-bandit',
+      title: 'Безопасность превыше всего',
+      loc: 'south',
+      faction: 'bandit',
+      x: 1328, y: 2744,
+      preview: 'images/quests/bezopasnost/cover.jpg',
+      desc: 'Бандит с Обочины по кличке Моряк хочет устроить гоп-стоп одному из блаженных.',
+      rewards: [
+        { img: 'images/items/pouch-medic.webp',         label: 'Подсумок с военными аптечками', qty: 2 },
+        { img: 'images/items/american-mre.webp',        label: 'Американский ИРП', qty: 10 },
+        { img: 'images/items/clarinol.webp',            label: 'Кларинол', qty: 2 },
+        { img: 'images/items/boevoi-goroh.webp',        label: 'Боевой горох', qty: 2 }
+      ],
+      money: 6500,
+      reputation: 130,
+      guideUrl: '../guides/bezopasnost.html'
     }
   ];
 
