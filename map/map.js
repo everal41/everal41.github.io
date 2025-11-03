@@ -292,6 +292,22 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 6500,
       reputation: 130,
       guideUrl: '../guides/bezopasnost.html'
+    },
+    // Мертвецы не рассказывают сказки — Бандиты
+    {
+      id: 'q-mertvetsy-skazki-bandit',
+      title: 'Мертвецы не рассказывают сказки',
+      loc: 'south',
+      faction: 'bandit',
+      x: 1313, y: 2735,
+      preview: 'images/quests/mertvetsy/cover.jpg',
+      desc: 'Некий Решала попросил меня помочь с устранением группы "неправильных" бандитов, что грабят и убивают еще зеленых братков.',
+      rewards: [
+        { img: 'images/items/walther.webp',        label: 'Walther «Иудей»', rarity: 'stalker' }
+      ],
+      money: 10000,
+      reputation: 75,
+      guideUrl: '../guides/mertvetsy.html'
     }
   ];
 
