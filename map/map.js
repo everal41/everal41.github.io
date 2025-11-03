@@ -308,8 +308,26 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 10000,
       reputation: 75,
       guideUrl: '../guides/mertvetsy.html'
+    },
+    // Почтальон — Бандиты
+    {
+      id: 'q-pochtalyon-bandit',
+      title: 'Почтальон',
+      loc: 'south',
+      faction: 'bandit',
+      x: 1301, y: 2744,
+      preview: 'images/quests/pochtalyon/cover.jpg',
+      desc: 'Ровный поручил мне доставить два конверта, красный для Мишки и синий для Форекса.',
+      rewards: [
+        { img: 'images/items/desperol.webp',               label: 'Десперол' },
+        { img: 'images/items/energy-zhiden-extra.webp',    label: 'Энергетик "Жидень EXTRA"', qty: 2 },
+        { img: 'images/items/tonic-arni.webp',             label: 'Тоник "Арни"',             qty: 2 }
+      ],
+      money: 2000,
+      reputation: 45,
+      guideUrl: '../guides/pochtalyon.html'
     }
-  ];
+      ];
 
   let state = { currentMapId: 'south', zoom: DEFAULT_ZOOM, minZoom: 0.3 };
   let tilesState = { level: null };
