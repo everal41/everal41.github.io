@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Почтальон — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Почтальон» в STALCRAFT: X: где взять у Бандитов в Сельской школе, кому отдать конверты (синий — Форексу, красный — Мишке) и какие награды вы получите." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Почтальон, Ровный, Форекс, Мишка, Сельская школа, Обочина, Бандиты, прохождение, награды" />
+  <meta name="theme-color" content="#0f0f10" />
+
+  <link rel="icon" href="../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../home.css"/>
+  <link rel="stylesheet" href="guide.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+
+<header class="site-header">
+  <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Меню" aria-controls="mobileMenu" aria-expanded="false">
+    <span class="line"></span><span class="line"></span><span class="line"></span>
+  </button>
+  <nav class="header-links start">
+    <a href="#" data-modal-target="#about-modal">О сайте</a>
+    <a href="#" data-modal-target="#contacts-modal">Связь</a>
+  </nav>
+  <div class="brand">
+    <a href="../index.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
+  </div>
+  <nav class="header-links end">
+    <div class="dropdown" id="calcDropdown">
+      <button class="nav-btn dropdown-toggle" id="calcMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="calcMenu">
+        <i class="fa-solid fa-calculator"></i> Калькуляторы <i class="fa-solid fa-angle-down chevron" aria-hidden="true"></i>
+      </button>
+      <div class="dropdown-menu" id="calcMenu" role="menu">
+        <a class="dropdown-item" role="menuitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+        <a class="dropdown-item" role="menuitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+      </div>
+    </div>
+    <a href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+    <a href="../guides.html" aria-current="page"><i class="fa-solid fa-book-open"></i> Руководства</a>
+  </nav>
+  <div class="header-actions">
+    <button id="themeToggleBtn" class="ghost-btn" title="Переключить тему">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Мобильное меню -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mm-backdrop" data-close></div>
+  <aside class="mm-panel" role="menu" aria-label="Мобильное меню">
+    <div class="mm-content">
+      <nav class="mm-nav">
+        <a href="#" class="mm-item" data-modal-target="#about-modal"><i class="fa-regular fa-circle-question"></i> О сайте</a>
+        <a href="#" class="mm-item" data-modal-target="#contacts-modal"><i class="fa-regular fa-address-book"></i> Связь</a>
+        <details class="mm-accordion">
+          <summary><i class="fa-solid fa-calculator"></i> Калькуляторы</summary>
+          <div class="mm-sublist">
+            <a class="mm-subitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+            <a class="mm-subitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+          </div>
+        </details>
+        <a href="../map/map.html" class="mm-item"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+        <a href="../guides.html" class="mm-item"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      </nav>
+      <div class="mm-actions">
+        <button id="themeToggleBtnMobile" class="ghost-btn"><i class="fa-solid fa-moon"></i> Тема</button>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- Модалки -->
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="about-title">О StalMath</h2>
+    <p>StalMath — это фан-проект и набор инструментов для игроков STALCRAFT: X. Наша цель — сделать вашу игру комфортнее с помощью:</p>
+    <ul>
+      <li>Точных калькуляторов для бартера и заточки;</li>
+      <li>Интерактивной карты со всеми квестами и наградами;</li>
+      <li>Подробных гайдов по игровым механикам.</li>
+    </ul>
+    <p>Проект активно развивается, и со временем здесь будут появляться новые функции.</p>
+    <p>Заметили ошибку или есть идеи для улучшения? Пожалуйста, свяжитесь с нами через раздел «Связь».</p>
+  </div>
+</div>
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="contacts-title">Как связаться</h2>
+    <ul class="contact-list">
+      <li class="contact-item">
+        <i class="ci vk fa-brands fa-vk" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">ВКонтакте</div>
+          <a class="contact-link brand-vk" href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener">
+            <span>@everal41</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci discord fa-brands fa-discord" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Discord</div>
+          <a class="contact-link brand-discord" href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener">
+            <span>Наш сервер</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci game fa-solid fa-gamepad" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Ник в игре</div>
+          <div class="nick-row">
+            <span class="nick online-nick" id="gameNick">X_Solitude</span>
+            <button type="button" class="copy-btn" id="copyNickBtn" title="Скопировать ник">
+              <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              <span>Копировать</span>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<main id="main" class="g-container container">
+  <header class="g-header">
+    <div class="g-cover" style="background-image:url('../map/images/quests/pochtalyon/cover.jpg')"></div>
+    <div class="container g-header-content">
+      <h1 class="g-title">Почтальон</h1>
+      <div class="g-meta">
+        <span class="chip"><i class="fa-solid fa-user"></i>Бандиты</span>
+        <a class="chip" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть карту</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="g-grid">
+    <article class="g-article" id="article">
+      <nav id="toc" class="toc" aria-label="Содержание"></nav>
+
+      <section id="about">
+        <h2>О квесте</h2>
+        <p>Квест берётся на <strong>первом этаже Сельской школы</strong> у бандита по кличке <strong>Ровный</strong>. Квест <em>нелинейный</em>, но очень простой: отдайте <strong>синий конверт</strong> — <strong>Форексу</strong>, а <strong>красный</strong> — <strong>Мишке</strong>.</p>
+      </section>
+
+      <section id="steps">
+        <h2>Прохождение</h2>
+        <div class="notice compact" role="note">
+          <i class="fa-solid fa-circle-info"></i>
+          Квест нелинейный, без возможности провала.
+        </div>
+
+        <ol class="steps">
+          <li>
+            <h3>Взять письма у Ровного</h3>
+            <p>Поговорите с Ровным — он выдаст два конверта: <strong>красный</strong> и <strong>синий</strong>. Сначала идём к Форексу.</p>
+          </li>
+
+          <li>
+            <h3>Отнести синий конверт Форексу</h3>
+            <figure class="img-full">
+              <img src="../map/images/quests/pochtalyon/forex.jpg" alt="Форекс" loading="lazy">
+              <figcaption>Форекс — адресат синего конверта</figcaption>
+            </figure>
+            <p>Ответы у Форекса:</p>
+            <ol class="dialogue-path">
+              <li><code>1</code> Привет!</li>
+              <li><code>1</code> Я по поводу доставки конверта.</li>
+              <li><code>2</code> <em>[Дать конверт с синей пометкой]</em></li>
+              <li><code>1</code> Я пошёл.</li>
+            </ol>
+          </li>
+
+          <li>
+            <h3>Отнести красный конверт Мишке</h3>
+            <figure class="img-full">
+              <img src="../map/images/quests/pochtalyon/mishka.jpg" alt="Мишка" loading="lazy">
+              <figcaption>Мишка — адресат красного конверта</figcaption>
+            </figure>
+            <p>Передайте Мишке <strong>красный конверт</strong>.</p>
+          </li>
+
+          <li>
+            <h3>Вернуться к Ровному</h3>
+            <p>Возвращайтесь к Ровному в Сельскую школу и заберите награду.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="rewards">
+        <h2>Награды</h2>
+        <div class="reward-list">
+          <div class="reward-card"><img src="../map/images/items/desperol.webp" alt="Десперол" /><span>Десперол</span></div>
+          <div class="reward-card"><img src="../map/images/items/energy-zhiden-extra.webp" alt='Энергетик "Жидень EXTRA"' /><span>Энергетик «Жидень EXTRA» ×2</span></div>
+          <div class="reward-card"><img src="../map/images/items/tonic-arni.webp" alt='Тоник "Арни"' /><span>Тоник «Арни» ×2</span></div>
+          <div class="reward-card stat-card money"><i class="fa-solid fa-ruble-sign"></i><span>2 000 руб.</span></div>
+          <div class="reward-card stat-card rep"><i class="fa-solid fa-medal"></i><span>+45 репутации</span></div>
+        </div>
+      </section>
+    </article>
+
+    <aside class="infobox" aria-label="Информация о квесте">
+      <div class="ibox-title">Почтальон</div>
+      <div class="ibox-row">
+        <span class="ibox-label">Доступно</span>
+        <span class="ibox-val tag tag-bandit"><i class="fa-solid fa-user"></i>Бандиты</span>
+      </div>
+      <div class="ibox-row">
+        <span class="ibox-label">Локация</span>
+        <div class="ibox-val">Обочина <small>Сельская школа</small></div>
+      </div>
+      <hr class="ibox-divider">
+      <div class="ibox-subtitle">Особенности</div>
+      <div class="ibox-props">
+        <span class="prop" title="Квест нельзя провалить"><i class="fa-solid fa-shield-halved"></i><span>Нельзя провалить</span></span>
+        <span class="prop" title="Квест нелинейный"><i class="fa-solid fa-code-branch"></i><span>Нелинейный</span></span>
+        <span class="prop" title="Нет условий для начала"><i class="fa-solid fa-key"></i><span>Без условий</span></span>
+      </div>
+      <hr class="ibox-divider">
+      <div class="ibox-row">
+        <span class="ibox-label">Репутация</span>
+        <span class="ibox-val reward-stat"><i class="fa-solid fa-medal"></i> +45</span>
+      </div>
+      <div class="ibox-row">
+        <span class="ibox-label">Деньги</span>
+        <span class="ibox-val reward-stat"><i class="fa-solid fa-ruble-sign"></i> 2 000</span>
+      </div>
+      <a class="btn btn-primary wide" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть карту</a>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="foot-brand">
+      <div class="logo-sm">StalMath</div>
+      <div class="muted">Фан‑сайт и инструменты для STALCRAFT: X</div>
+    </div>
+    <nav class="foot-links">
+      <a href="../barter.html">Калькулятор</a>
+      <a href="../sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+    </nav>
+    <div class="foot-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="copy muted">© StalMath. Неофициальный фан‑проект.</div>
+</footer>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../global.js"></script>
+<script src="../home.js"></script>
+<script src="guide.js"></script>
+</body>
+</html>
