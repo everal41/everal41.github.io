@@ -326,6 +326,27 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 2000,
       reputation: 45,
       guideUrl: '../guides/pochtalyon.html'
+    },
+    // Торговые дела — Бандиты
+    {
+      id: 'q-torgovye-dela-bandit',
+      title: 'Торговые дела',
+      loc: 'south',
+      faction: 'bandit',
+      x: 1323, y: 2742,
+      preview: 'images/quests/torgovye-dela/cover.jpg',
+      desc: 'Зубастый не хочет со мной разговаривать, пока Мент не замолвит за меня слово.',
+      rewards: [
+        { img: 'images/items/pouch-medic.webp',   label: 'Подсумок с военными аптечками', qty: 2 },
+        { img: 'images/items/ammo-545-sbp.webp',  label: 'Ящик 5.45 СБП' },
+        { img: 'images/items/ammo-556-sbp.webp',  label: 'Ящик 5.56 СБП' },
+        { img: 'images/items/ammo-762-sbp.webp',  label: 'Ящик 7.62 СБП' },
+        { img: 'images/items/desperol.webp',      label: 'Десперол', qty: 2 },
+        { img: 'images/items/american-mre.webp',  label: 'Американский ИРП', qty: 2 }
+      ],
+      money: 7000,
+      reputation: 170,
+      guideUrl: '../guides/torgovye-dela.html'
     }
       ];
 
