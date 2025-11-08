@@ -608,3 +608,106 @@ figure.img-full figcaption{ padding:10px 14px; font-size:14px; color:var(--text-
     0 0 18px rgba(106,168,255,.22),
     0 6px 14px rgba(0,0,0,.20);
 }
+
+html[data-theme="light"] .page-guide{
+  --nm-gray-50:  #f9fafb;
+  --nm-gray-75:  #f7f7f8;
+  --nm-gray-100: #f3f4f6;
+  --nm-gray-200: #e5e7eb;
+  --nm-gray-300: #d1d5db;
+  --nm-gray-400: #9ca3af;
+  --nm-gray-500: #6b7280;
+  --nm-gray-600: #4b5563;
+  --nm-gray-700: #374151;
+}
+
+[data-theme="light"] .page-guide .infobox .btn.btn-primary{
+  background: linear-gradient(0deg, var(--nm-gray-75), #fff);
+  border-color: var(--nm-gray-300);
+  color: var(--nm-gray-700);
+  font-weight: 700;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.03);
+}
+[data-theme="light"] .page-guide .infobox .btn.btn-primary:hover{
+  background: var(--nm-gray-100);
+  border-color: var(--nm-gray-400);
+}
+[data-theme="light"] .page-guide .infobox .btn.btn-primary:active{
+  background: var(--nm-gray-100);
+  border-color: var(--nm-gray-400);
+}
+
+[data-theme="light"] .page-guide .notice{
+  border-left-color: var(--nm-gray-400);
+  background: linear-gradient(0deg, rgba(17,24,39,.04), rgba(17,24,39,.02)), var(--surface-2);
+}
+[data-theme="light"] .page-guide .notice i{ color: var(--nm-gray-600); }
+
+[data-theme="light"] .page-guide .toc a:hover,
+[data-theme="light"] .page-guide .toc a.active{
+  border-color: var(--nm-gray-400);
+}
+
+[data-theme="light"] .page-guide .steps li::before{
+  color: var(--nm-gray-700);
+}
+
+[data-theme="light"] .page-guide .reward-card.stat-card .fa-ruble-sign,
+[data-theme="light"] .page-guide .infobox .ibox-val .fa-ruble-sign{
+  color: var(--nm-gray-600);
+}
+
+[data-theme="light"] .page-guide .kbd-action kbd{
+  color: var(--nm-gray-700);
+}
+
+[data-theme="light"] .page-guide .choice:hover{ border-color: var(--nm-gray-400); }
+[data-theme="light"] .page-guide .choice .num{
+  background: var(--nm-gray-50);
+  border-color: var(--nm-gray-300);
+  color: var(--nm-gray-700);
+}
+
+[data-theme="light"] .page-guide .dialogue-path li:hover{ border-color: var(--nm-gray-400); }
+[data-theme="light"] .page-guide .dialogue-path li > code{
+  color: var(--nm-gray-700);
+  background: var(--nm-gray-50);
+  border-color: var(--nm-gray-300);
+}
+
+[data-theme="light"] .page-guide .choice-tab:hover{
+  border-color: var(--nm-gray-400);
+  color: var(--text);
+}
+[data-theme="light"] .page-guide .choice-tab.active{
+  border-color: var(--nm-gray-500);
+  background-color: var(--nm-gray-50);
+  color: var(--text);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+[data-theme="light"] body.page-guide .reading-progress{
+  background: linear-gradient(90deg, var(--nm-gray-500), var(--nm-gray-300) 60%, var(--nm-gray-500));
+}
+
+[data-theme="light"] .page-guide .img-grid-2 figure:hover{
+  border-color: var(--nm-gray-400);
+}
+
+html[data-theme="light"] .page-guide{
+  --accent: var(--nm-gray-600, #4b5563);
+  --accent-text: #fff;
+}
+
+
+html[data-theme="light"] .page-guide .g-cover{
+  opacity: .96;
+}
+
+html[data-theme="light"] .page-guide .g-cover::after{
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0) 0%,
+    rgba(245,246,251,.68) 88%
+  );
+}
