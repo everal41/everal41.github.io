@@ -347,6 +347,30 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 7000,
       reputation: 170,
       guideUrl: '../guides/torgovye-dela.html'
+    },
+    // Нычка мертвеца — Бандиты
+    {
+      id: 'q-nychka-mertveca-bandit',
+      title: 'Нычка мертвеца',
+      loc: 'south',
+      faction: 'bandit',
+      x: 1290, y: 2742,
+      preview: 'images/quests/nychka-mertveca/cover.jpg',
+      desc: 'Я приобрел координаты нычки одного жмура. Нужно проверить их.',
+      rewards: [
+        { img: 'images/items/art-cibulya.webp',                 label: 'Цибуля' },
+        { img: 'images/items/art-prizrachnyj-kristall.webp',    label: 'Призрачный кристалл' },
+        { img: 'images/items/bag-exp-762.webp',                 label: 'Сумка экспансивных патронов 7.62' },
+        { img: 'images/items/bag-exp-545.webp',                 label: 'Сумка экспансивных патронов 5.45', qty: 2 },
+        { img: 'images/items/bag-exp-556.webp',                 label: 'Сумка экспансивных патронов 5.56' },
+        { img: 'images/items/pouch-medic.webp',                 label: 'Подсумок с военными аптечками', qty: 2 },
+        { img: 'images/items/pouch-medic-guide.webp',           label: 'Подсумок с аптечками проводника' },
+        { img: 'images/items/pouch-medic-science.webp',         label: 'Подсумок с аптечками ученых' },
+        { img: 'images/items/srachnik.webp',                    label: 'Срачник', qty: 15 },
+        { img: 'images/items/copper-wire-remnants.webp',        label: 'Остатки медной проволоки', qty: 10 },
+        { img: 'images/items/koren-vonyuchka.webp',             label: 'Корень-вонючка', qty: 20 }
+      ],
+      guideUrl: '../guides/nychka-mertveca.html'
     }
       ];
 
