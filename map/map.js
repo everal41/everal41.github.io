@@ -371,6 +371,30 @@ document.addEventListener('DOMContentLoaded', () => {
         { img: 'images/items/koren-vonyuchka.webp',             label: 'Корень-вонючка', qty: 20 }
       ],
       guideUrl: '../guides/nychka-mertveca.html'
+    },
+    // Беспредел — Бандиты
+    {
+      id: 'q-bespredel-bandit',
+      title: 'Беспредел',
+      loc: 'south',
+      faction: 'bandit',
+      x: 836, y: 2229,
+      preview: 'images/quests/bespredel/cover.jpg',
+      desc: 'Бандит Могол удивлен, что никто из его банды не явился в назначенный час на сходку.',
+      rewards: [
+        { img: 'images/items/bag-ap-762.webp',        label: 'Сумка бронебойных 7.62 мм' },
+        { img: 'images/items/bag-556.webp',           label: 'Сумка патронов 5.56 мм' },
+        { img: 'images/items/bag-545.webp',           label: 'Сумка патронов 5.45 мм' },
+        { img: 'images/items/ammo-9mm.webp',          label: 'Патрон 9 мм', qty: 170 },
+        { img: 'images/items/tonic-arni.webp',        label: 'Тоник "Арни"', qty: 3 },
+        { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"', qty: 3 },
+        { img: 'images/items/epinefrin.webp',         label: 'Эпинефрин', qty: 3 },
+        { img: 'images/items/radioprotector-1.webp',  label: 'Радиопротектор первого класса', qty: 5 },
+        { img: 'images/items/pouch-medic-science.webp', label: 'Подсумок с аптечками ученых', qty: 2 }
+      ],
+      money: 56250,
+      reputation: 80,
+      guideUrl: '../guides/bespredel.html'
     }
       ];
 
