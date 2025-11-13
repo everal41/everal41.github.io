@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
       preview: 'images/quests/posylka-freemena/posylka-freemena.jpg',
       desc: 'Бандит по кличке Варг задумал подмять под себя сталкерского торговца Фримена.',
       rewards: [
-        { img: 'images/items/aks-74u.webp', label: 'АКС-74У Варга' },
+        { img: 'images/items/aks-74u.webp', label: 'АКС-74У Варга', rarity: 'rare' },
         { img: 'images/items/neyrotonic.webp', label: 'Нейротоник' },
         { img: 'images/items/clarinol.webp', label: 'Кларинол', qty: 2 },
         { img: 'images/items/tonic-arni.webp', label: 'Тоник Арни', qty: 3 }
@@ -1011,3 +1011,4 @@ function parseLabelQty(r){
   }
   return { name, qty };
 }
+
