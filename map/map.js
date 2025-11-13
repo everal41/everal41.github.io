@@ -395,6 +395,27 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 56250,
       reputation: 80,
       guideUrl: '../guides/bespredel.html'
+    },
+    // Должок — Бандиты
+    {
+      id: 'q-dolzhok-bandit',
+      title: 'Должок',
+      loc: 'south',
+      faction: 'bandit',
+      x: 806, y: 2151,
+      preview: 'images/quests/dolzhok/cover.jpg',
+      desc: 'В одном из подвалов на «Колосе» я нашёл труп.',
+      rewards: [
+        { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"', qty: 5 },
+        { img: 'images/items/zalivnoe.webp',            label: 'Заливное', qty: 4 },
+        { img: 'images/items/desperol.webp',            label: 'Десперол', qty: 2 },
+        { img: 'images/items/ammo-545-sbp.webp',        label: 'Ящик 5.45 СБП', qty: 2 },
+        { img: 'images/items/ammo-556-sbp.webp',        label: 'Ящик 5.56 СБП', qty: 2 },
+        { img: 'images/items/ammo-762-sbp.webp',        label: 'Ящик 7.62 СБП', qty: 2 }
+      ],
+      money: 10000,
+      reputation: 245,
+      guideUrl: '../guides/dolzhok.html'
     }
       ];
 
