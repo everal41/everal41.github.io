@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
       preview: 'images/quests/posylka-freemena/posylka-freemena.jpg',
       desc: 'Бандит по кличке Варг задумал подмять под себя сталкерского торговца Фримена.',
       rewards: [
-        { img: 'images/items/aks-74u.webp', label: 'АКС-74У Варга', rarity: 'rare' },
+        { img: 'images/items/aks-74u.webp', label: 'АКС-74У Варга' },
         { img: 'images/items/neyrotonic.webp', label: 'Нейротоник' },
         { img: 'images/items/clarinol.webp', label: 'Кларинол', qty: 2 },
         { img: 'images/items/tonic-arni.webp', label: 'Тоник Арни', qty: 3 }
@@ -416,6 +416,27 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 10000,
       reputation: 245,
       guideUrl: '../guides/dolzhok.html'
+    },
+    // Дела бандитские — Бандиты
+    {
+      id: 'q-dela-banditskie-bandit',
+      title: 'Дела бандитские',
+      loc: 'south',
+      faction: 'bandit',
+      x: 1323, y: 2115,
+      preview: 'images/quests/dela-banditskie/cover.jpg',
+      desc: 'Бандит по прозвищу Варяг попросил меня найти тайник.',
+      rewards: [
+        { img: 'images/items/podarok-varyaga.webp', label: 'Подарок Варяга', rarity: 'stalker' },
+        { img: 'images/items/volchi-slezy.webp', label: 'Волчьи слёзы' },
+        { img: 'images/items/holodec-kopytom.webp', label: 'Холодец "Копытом по лицу"', qty: 5 },
+        { img: 'images/items/neyrotonic.webp', label: 'Нейротоник', qty: 3 },
+        { img: 'images/items/desperol.webp', label: 'Десперол', qty: 4 },
+        { img: 'images/items/clarinol.webp', label: 'Кларинол', qty: 3 }
+      ],
+      money: 10000,
+      reputation: 380,
+      guideUrl: '../guides/dela-banditskie.html'
     }
       ];
 
@@ -1011,4 +1032,3 @@ function parseLabelQty(r){
   }
   return { name, qty };
 }
-
