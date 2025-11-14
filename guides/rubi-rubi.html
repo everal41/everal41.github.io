@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Руби, руби! — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту Рубаки в STALCRAFT: X: где взять у Рубаки в Сельской школе, сбор ингредиентов для готовки и все награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Руби руби, Рубака, Сельская школа, Обочина, Старьевщик, Диггеры, Бандиты, прохождение, награды" />
+  <meta name="theme-color" content="#0f0f10" />
+
+  <link rel="icon" href="../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../home.css"/>
+  <link rel="stylesheet" href="guide.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+
+<header class="site-header">
+  <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Меню" aria-controls="mobileMenu" aria-expanded="false">
+    <span class="line"></span><span class="line"></span><span class="line"></span>
+  </button>
+  <nav class="header-links start">
+    <a href="#" data-modal-target="#about-modal">О сайте</a>
+    <a href="#" data-modal-target="#contacts-modal">Связь</a>
+  </nav>
+  <div class="brand">
+    <a href="../index.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
+  </div>
+  <nav class="header-links end">
+    <div class="dropdown" id="calcDropdown">
+      <button class="nav-btn dropdown-toggle" id="calcMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="calcMenu">
+        <i class="fa-solid fa-calculator"></i> Калькуляторы <i class="fa-solid fa-angle-down chevron" aria-hidden="true"></i>
+      </button>
+      <div class="dropdown-menu" id="calcMenu" role="menu">
+        <a class="dropdown-item" role="menuitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+        <a class="dropdown-item" role="menuitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+      </div>
+    </div>
+    <a href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+    <a href="../guides.html" aria-current="page"><i class="fa-solid fa-book-open"></i> Руководства</a>
+  </nav>
+  <div class="header-actions">
+    <button id="themeToggleBtn" class="ghost-btn" title="Переключить тему">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mm-backdrop" data-close></div>
+  <aside class="mm-panel" role="menu" aria-label="Мобильное меню">
+    <div class="mm-content">
+      <nav class="mm-nav">
+        <a href="#" class="mm-item" data-modal-target="#about-modal"><i class="fa-regular fa-circle-question"></i> О сайте</a>
+        <a href="#" class="mm-item" data-modal-target="#contacts-modal"><i class="fa-regular fa-address-book"></i> Связь</a>
+        <details class="mm-accordion">
+          <summary><i class="fa-solid fa-calculator"></i> Калькуляторы</summary>
+          <div class="mm-sublist">
+            <a class="mm-subitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+            <a class="mm-subitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+          </div>
+        </details>
+        <a href="../map/map.html" class="mm-item"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+        <a href="../guides.html" class="mm-item"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      </nav>
+      <div class="mm-actions">
+        <button id="themeToggleBtnMobile" class="ghost-btn"><i class="fa-solid fa-moon"></i> Тема</button>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="about-title">О StalMath</h2>
+    <p>StalMath — это фан‑проект и набор инструментов для игроков STALCRAFT: X. Наша цель — сделать вашу игру комфортнее с помощью:</p>
+    <ul>
+      <li>Точных калькуляторов для бартера и заточки;</li>
+      <li>Интерактивной карты со всеми квестами и наградами;</li>
+      <li>Подробных гайдов по игровым механикам.</li>
+    </ul>
+    <p>Проект активно развивается, и со временем здесь будут появляться новые функции.</p>
+    <p>Заметили ошибку или есть идеи для улучшения? Пожалуйста, свяжитесь с нами через раздел «Связь». Ваша обратная связь помогает делать StalMath лучше!</p>
+  </div>
+</div>
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Закрыть">&times;</button>
+    <h2 id="contacts-title">Как связаться</h2>
+    <ul class="contact-list">
+      <li class="contact-item">
+        <i class="ci vk fa-brands fa-vk" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">ВКонтакте</div>
+          <a class="contact-link brand-vk" href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener">
+            <span>@everal41</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci discord fa-brands fa-discord" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Discord</div>
+          <a class="contact-link brand-discord" href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener">
+            <span>Наш сервер</span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <i class="ci game fa-solid fa-gamepad" aria-hidden="true"></i>
+        <div class="contact-text">
+          <div class="label">Ник в игре</div>
+          <div class="nick-row">
+            <span class="nick online-nick" id="gameNick">X_Solitude</span>
+            <button type="button" class="copy-btn" id="copyNickBtn" title="Скопировать ник">
+              <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              <span>Копировать</span>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<main id="main" class="g-container container">
+  <header class="g-header">
+    <div class="g-cover" style="background-image:url('../map/images/quests/rubi-rubi/cover.jpg')"></div>
+    <div class="container g-header-content">
+      <h1 class="g-title">Руби, руби!</h1>
+      <div class="g-meta">
+        <span class="chip"><i class="fa-solid fa-user"></i>Бандиты</span>
+        <a class="chip" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть карту</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="g-grid">
+    <article class="g-article" id="article">
+      <nav id="toc" class="toc" aria-label="Содержание"></nav>
+
+      <section id="about">
+        <h2>О квесте</h2>
+        <p>Квест берётся у бандита по прозвищу <strong>Рубака</strong> в «Сельской школе» на локации <strong>Обочина</strong>. Квест появится после прохождения сюжетного квеста от Старьёвщика.</p>
+        
+        <div class="notice compact" role="note">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          Данный квест нужен для открытия квеста Монеты.
+        </div>
+
+        <p>Квест <em>линейный</em>, без вариантов и развилок. В процессе прохождения вы будете собирать ингредиенты для кулинарных экспериментов Рубаки — местного повара, готовящего еду из мутантов.</p>
+      </section>
+
+      <section id="steps">
+        <h2>Прохождение</h2>
+
+        <div class="notice compact" role="note">
+          <i class="fa-solid fa-circle-info"></i>
+          Квест линейный, без возможности провала.
+        </div>
+
+        <ol class="steps">
+          <li>
+            <h3>Начало квеста и сбор печени</h3>
+            <p>Выполнив сюжетный квест, приходим на базу на Обочине и говорим с <strong>Рубакой</strong>. Он попросит вас принести <strong>4 шт. собачьей печени</strong>.</p>
+            
+            <div class="notice compact" role="note">
+              <i class="fa-solid fa-lightbulb"></i>
+              Собачья печень выпадает со спотов шавок на Обочине.
+            </div>
+
+            <figure class="img-full">
+              <img src="../map/images/quests/rubi-rubi/cover.jpg" alt="Рубака в Сельской школе" loading="lazy">
+              <figcaption>Рубака — местный повар</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <h3>Сбор кабаньего мяса</h3>
+            <p>Собрав печень, возвращаемся к Рубаке. Следующим поручением будет сбор <strong>3 шт. кабаньего мяса</strong>.</p>
+            
+            <div class="notice compact" role="note">
+              <i class="fa-solid fa-lightbulb"></i>
+              Кабанье мясо также выпадает со спотов кабанов только на Обочине.
+            </div>
+          </li>
+
+          <li>
+            <h3>Переговоры со Старьёвщиком</h3>
+            <p>Возвращаемся к Рубаке, он попросит нас поговорить со <strong>Старьёвщиком</strong>, дабы тот пустил его на базу Диггеров.</p>
+            
+            <div class="notice compact" role="alert">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              Прежде чем идти на базу Диггеров, купите 8 шт. клочков шерсти, возьмите 40 шт. корней-вонючек и 4 головы слабой крысы. Эти предметы можно приобрести на аукционе (2 корня-липучки при преобразовании дадут 40 шт. корней-вонючек).
+            </div>
+
+            <figure class="img-full">
+              <img src="../map/images/quests/rubi-rubi/staryevschik.jpg" alt="Старьёвщик" loading="lazy">
+              <figcaption>Старьёвщик на базе Диггеров</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <h3>Сбор корней и шерсти</h3>
+            <p>Поговорив со Старьёвщиком, с нами свяжется Рубака и попросит собрать <strong>40 шт. корней-вонючек</strong> и <strong>8 шт. клочков шерсти</strong>.</p>
+            
+            <p>Если вы закупились ресурсами заранее, как было рекомендовано выше, то можете сразу же идти к Рубаке на базу Диггеров.</p>
+
+            <figure class="img-full">
+              <img src="../map/images/quests/rubi-rubi/rubaka-diggers.jpg" alt="Рубака на базе Диггеров" loading="lazy">
+              <figcaption>Рубака на базе Диггеров</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <h3>Финальное задание — головы крыс</h3>
+            <p>Последним поручением будет сбор <strong>четырёх голов крыс</strong>. Если вы их закупили заранее, то сразу же можете их сдать.</p>
+            
+            <p>Рубака выдаст финальную награду за квест.</p>
+            
+            <div class="notice compact" role="note">
+              <i class="fa-solid fa-shop"></i>
+              После прохождения квеста вы сможете торговать с Рубакой. Он продаёт различные полезные расходники, которые доступны только на аукционе, у Рубаки или при крафте в убежище.
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="rewards">
+        <h2>Награды</h2>
+        <div class="reward-list">
+          <div class="reward-card"><img src="../map/images/items/zharkoe-mutants.webp" alt="Жаркое из мутантов" /><span>Жаркое из мутантов</span></div>
+          <div class="reward-card"><img src="../map/images/items/holodec-kopytom.webp" alt='Холодец "Копытом по лицу"' /><span>Холодец «Копытом по лицу»</span></div>
+          <div class="reward-card"><img src="../map/images/items/tonic-arni.webp" alt="Тоник Арни" /><span>Тоник «Арни»</span></div>
+          <div class="reward-card"><img src="../map/images/items/energy-zhiden-extra.webp" alt='Энергетик "Жидень EXTRA"' /><span>Энергетик «Жидень EXTRA»</span></div>
+          <div class="reward-card"><img src="../map/images/items/neyrotonic.webp" alt="Нейротоник" /><span>Нейротоник</span></div>
+
+          <div class="reward-card stat-card money"><i class="fa-solid fa-ruble-sign"></i><span>1 500 руб.</span></div>
+          <div class="reward-card stat-card rep"><i class="fa-solid fa-medal"></i><span>+35 репутации</span></div>
+        </div>
+      </section>
+    </article>
+
+    <aside class="infobox" aria-label="Информация о квесте">
+      <div class="ibox-title">Руби, руби!</div>
+      <div class="ibox-row">
+        <span class="ibox-label">Доступно</span>
+        <span class="ibox-val tag tag-bandit"><i class="fa-solid fa-user"></i>Бандиты</span>
+      </div>
+      <div class="ibox-row">
+        <span class="ibox-label">Локация</span>
+        <div class="ibox-val">Обочина <small>Сельская школа</small></div>
+      </div>
+      <hr class="ibox-divider">
+      <div class="ibox-subtitle">Особенности</div>
+      <div class="ibox-props">
+        <span class="prop" title="Квест нельзя провалить"><i class="fa-solid fa-shield-halved"></i><span>Нельзя провалить</span></span>
+        <span class="prop" title="Квест линейный"><i class="fa-solid fa-route"></i><span>Линейный</span></span>
+        <span class="prop" title="Нужен квест от Старьёвщика"><i class="fa-solid fa-lock"></i><span>Нужен квест</span></span>
+      </div>
+      <hr class="ibox-divider">
+      <div class="ibox-row">
+        <span class="ibox-label">Репутация</span>
+        <span class="ibox-val reward-stat"><i class="fa-solid fa-medal"></i> +35</span>
+      </div>
+      <div class="ibox-row">
+        <span class="ibox-label">Деньги</span>
+        <span class="ibox-val reward-stat"><i class="fa-solid fa-ruble-sign"></i> 1 500</span>
+      </div>
+      <a class="btn btn-primary wide" href="../map/map.html"><i class="fa-solid fa-map-location-dot"></i> Открыть карту</a>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="foot-brand">
+      <div class="logo-sm">StalMath</div>
+      <div class="muted">Фан‑сайт и инструменты для STALCRAFT: X</div>
+    </div>
+    <nav class="foot-links">
+      <a href="../barter.html">Калькулятор</a>
+      <a href="../sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+    </nav>
+    <div class="foot-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="copy muted">© StalMath. Неофициальный фан‑проект.</div>
+</footer>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../global.js"></script>
+<script src="../home.js"></script>
+<script src="guide.js"></script>
+</body>
+</html>
