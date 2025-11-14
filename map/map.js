@@ -437,6 +437,26 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 10000,
       reputation: 380,
       guideUrl: '../guides/dela-banditskie.html'
+    },
+    // Руби, руби! — Бандиты
+    {
+      id: 'q-rubi-rubi-bandit',
+      title: 'Руби, руби!',
+      loc: 'south',
+      faction: 'bandit',
+      x: 1329, y: 2721,
+      preview: 'images/quests/rubi-rubi/cover.jpg',
+      desc: 'Я познакомился с Рубакой - довольно странным мужиком, готовящим еду из местной живности.',
+      rewards: [
+        { img: 'images/items/zharkoe-mutants.webp', label: 'Жаркое из мутантов' },
+        { img: 'images/items/holodec-kopytom.webp', label: 'Холодец "Копытом по лицу"' },
+        { img: 'images/items/tonic-arni.webp', label: 'Тоник "Арни"' },
+        { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"' },
+        { img: 'images/items/neyrotonic.webp', label: 'Нейротоник' }
+      ],
+      money: 1500,
+      reputation: 35,
+      guideUrl: '../guides/rubi-rubi.html'
     }
       ];
 
