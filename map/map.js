@@ -457,6 +457,24 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 1500,
       reputation: 35,
       guideUrl: '../guides/rubi-rubi.html'
+    },
+    // Отчаяние — Бандиты
+    {
+      id: 'q-otchayanie-bandit',
+      title: 'Отчаяние',
+      loc: 'south',
+      faction: 'bandit',
+      x: 439, y: 2212,
+      preview: 'images/quests/otchayanie/cover.jpg',
+      desc: 'Я получил координаты нычки от одного измученного кошмарами блаженного.',
+      rewards: [
+        { img: 'images/items/skorlupa.webp', label: 'Скорлупа' },
+        { img: 'images/items/medic-bag.webp', label: 'Сумка с военными аптечками' },
+        { img: 'images/items/domestic-mre.webp', label: 'Отечественный ИРП', qty: 2 }
+      ],
+      money: 12500,
+      reputation: 10,
+      guideUrl: '../guides/otchayanie.html'
     }
       ];
 
