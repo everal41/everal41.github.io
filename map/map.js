@@ -475,6 +475,26 @@ document.addEventListener('DOMContentLoaded', () => {
       money: 12500,
       reputation: 10,
       guideUrl: '../guides/otchayanie.html'
+    },
+    // Посылка Фримена - Сталкеры
+    {
+      id: 'q-freeman-parcel-stalker',
+      title: 'Посылка Фримена',
+      loc: 'south',
+      faction: 'stalker',
+      x: 1318, y: 3590,
+      preview: 'images/quests/posylka-freemena/freemen.jpg',
+      desc: 'Торговец Фримен попросил меня отыскать курьера, который пропал несколько часов назад.',
+      rewards: [
+        { img: 'images/items/tactical-aks74u.png', label: 'Тактический АКС-74У', rarity: 'rare' },
+        { img: 'images/items/pouch-medic-science.webp', label: 'Подсумок с аптечками учёных', qty: 2 },
+        { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"', qty: 3 },
+        { img: 'images/items/tonic-arni.webp', label: 'Тоник "Арни"', qty: 3 },
+        { img: 'images/items/epinefrin.webp', label: 'Эпинефрин' }
+      ],
+      money: 27500,
+      reputation: 50,
+      guideUrl: '../guides/posylka-freemena-stalker.html'
     }
       ];
 
