@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Калькулятор заточки | StalMath</title>
+  <meta name="description" content="Рассчитайте необходимые ресурсы и стоимость заточки снаряжения в STALCRAFT: X. Точные данные по всем уровням." />
+  <meta name="keywords" content="STALCRAFT X, заточка, калькулятор, ресурсы, запчасти, инструменты, StalMath" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="sharpening.css"/>
+</head>
+<body class="page-sharpening">
+<a class="skip-link" href="#main">К содержимому</a>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../../guides/guides.html" class="nav-link"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger active" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="sharpening.html" class="dropdown-link active"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../../guides/guides.html" class="drawer-link"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="sharpening.html" class="drawer-link active"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="calc-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <span>Инструмент</span>
+      </div>
+      <h1 class="hero-title"><i class="fa-solid fa-gem"></i> Калькулятор заточки</h1>
+      <p class="hero-subtitle">Рассчитайте необходимые ресурсы и стоимость улучшения снаряжения</p>
+    </div>
+  </section>
+
+  <section class="calc-section">
+    <div class="calc-container">
+      
+      <div class="calc-card settings-card">
+  <div class="card-header">
+    <i class="fa-solid fa-sliders"></i>
+    <h2>Параметры заточки</h2>
+  </div>
+  <div class="card-body">
+    <div class="settings-grid">
+      <div class="input-group">
+        <label for="start-level">С уровня</label>
+        <select id="start-level" class="calc-select">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="end-level">До уровня</label>
+        <select id="end-level" class="calc-select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="current-attempt">
+          Текущая попытка
+          <span class="attempt-hint" id="attemptHint">(макс: 0)</span>
+        </label>
+        <input type="number" id="current-attempt" class="calc-input" min="0" value="0">
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="calc-card prices-card">
+        <div class="card-header">
+          <i class="fa-solid fa-coins"></i>
+          <h2>Цены ресурсов</h2>
+        </div>
+        <div class="card-body">
+          <div class="prices-grid">
+            <div class="price-group cheap">
+              <div class="price-group-header">
+                <span class="tier-badge cheap">Дешёвые</span>
+              </div>
+              <div class="price-inputs">
+                <div class="input-group">
+                  <label for="cheap-part-price">Запчасти</label>
+                  <input type="number" id="cheap-part-price" class="calc-input" min="0" value="15000">
+                </div>
+                <div class="input-group">
+                  <label for="cheap-tool-price">Инструменты</label>
+                  <input type="number" id="cheap-tool-price" class="calc-input" min="0" value="25000">
+                </div>
+              </div>
+            </div>
+            <div class="price-group standard">
+              <div class="price-group-header">
+                <span class="tier-badge standard">Стандартные</span>
+              </div>
+              <div class="price-inputs">
+                <div class="input-group">
+                  <label for="standard-part-price">Запчасти</label>
+                  <input type="number" id="standard-part-price" class="calc-input" min="0" value="30000">
+                </div>
+                <div class="input-group">
+                  <label for="standard-tool-price">Инструменты</label>
+                  <input type="number" id="standard-tool-price" class="calc-input" min="0" value="9000">
+                </div>
+              </div>
+            </div>
+            <div class="price-group advanced">
+              <div class="price-group-header">
+                <span class="tier-badge advanced">Продвинутые</span>
+              </div>
+              <div class="price-inputs">
+                <div class="input-group">
+                  <label for="advanced-part-price">Запчасти</label>
+                  <input type="number" id="advanced-part-price" class="calc-input" min="0" value="60000">
+                </div>
+                <div class="input-group">
+                  <label for="advanced-tool-price">Инструменты</label>
+                  <input type="number" id="advanced-tool-price" class="calc-input" min="0" value="12500">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button id="calculate-sharpening" class="calc-button">
+        <i class="fa-solid fa-calculator"></i>
+        <span>Рассчитать</span>
+      </button>
+
+      <div class="error-message" id="errorMessage" hidden>
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span></span>
+      </div>
+
+      <div class="calc-card results-card">
+        <div class="card-header">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <h2>Необходимые ресурсы</h2>
+        </div>
+        <div class="card-body">
+          <div class="resources-grid">
+            <div class="resource-card cheap">
+              <div class="resource-header">
+                <img src="images/cheap_part.webp" alt="Дешёвые запчасти">
+                <div class="resource-title">
+                  <span class="resource-name">Дешёвые запчасти</span>
+                  <span class="tier-label">Уровни 1–5</span>
+                </div>
+              </div>
+              <div class="resource-stats">
+                <div class="stat-row">
+                  <span class="stat-label">Всего:</span>
+                  <span class="stat-value cheap-parts-total">0</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">До гаранта:</span>
+                  <span class="stat-value cheap-parts-guaranteed">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="resource-card cheap">
+              <div class="resource-header">
+                <img src="images/cheap_tool.webp" alt="Дешёвые инструменты">
+                <div class="resource-title">
+                  <span class="resource-name">Дешёвые инструменты</span>
+                  <span class="tier-label">Уровни 1–5</span>
+                </div>
+              </div>
+              <div class="resource-stats">
+                <div class="stat-row">
+                  <span class="stat-label">Всего:</span>
+                  <span class="stat-value cheap-tools-total">0</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">До гаранта:</span>
+                  <span class="stat-value cheap-tools-guaranteed">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="resource-card standard">
+              <div class="resource-header">
+                <img src="images/standard_part.webp" alt="Стандартные запчасти">
+                <div class="resource-title">
+                  <span class="resource-name">Стандартные запчасти</span>
+                  <span class="tier-label">Уровни 6–10</span>
+                </div>
+              </div>
+              <div class="resource-stats">
+                <div class="stat-row">
+                  <span class="stat-label">Всего:</span>
+                  <span class="stat-value standard-parts-total">0</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">До гаранта:</span>
+                  <span class="stat-value standard-parts-guaranteed">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="resource-card standard">
+              <div class="resource-header">
+                <img src="images/standard_tool.webp" alt="Стандартные инструменты">
+                <div class="resource-title">
+                  <span class="resource-name">Стандартные инструменты</span>
+                  <span class="tier-label">Уровни 6–10</span>
+                </div>
+              </div>
+              <div class="resource-stats">
+                <div class="stat-row">
+                  <span class="stat-label">Всего:</span>
+                  <span class="stat-value standard-tools-total">0</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">До гаранта:</span>
+                  <span class="stat-value standard-tools-guaranteed">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="resource-card advanced">
+              <div class="resource-header">
+                <img src="images/advanced_part.webp" alt="Продвинутые запчасти">
+                <div class="resource-title">
+                  <span class="resource-name">Продвинутые запчасти</span>
+                  <span class="tier-label">Уровни 11–15</span>
+                </div>
+              </div>
+              <div class="resource-stats">
+                <div class="stat-row">
+                  <span class="stat-label">Всего:</span>
+                  <span class="stat-value advanced-parts-total">0</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">До гаранта:</span>
+                  <span class="stat-value advanced-parts-guaranteed">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="resource-card advanced">
+              <div class="resource-header">
+                <img src="images/advanced_tool.webp" alt="Продвинутые инструменты">
+                <div class="resource-title">
+                  <span class="resource-name">Продвинутые инструменты</span>
+                  <span class="tier-label">Уровни 11–15</span>
+                </div>
+              </div>
+              <div class="resource-stats">
+                <div class="stat-row">
+                  <span class="stat-label">Всего:</span>
+                  <span class="stat-value advanced-tools-total">0</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">До гаранта:</span>
+                  <span class="stat-value advanced-tools-guaranteed">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-card cost-card">
+        <div class="card-header">
+          <i class="fa-solid fa-wallet"></i>
+          <h2>Итоговая стоимость</h2>
+        </div>
+        <div class="card-body">
+          <div class="cost-grid">
+            <div class="cost-item">
+              <div class="cost-label">
+                <i class="fa-solid fa-coins"></i>
+                <span>Общая стоимость</span>
+              </div>
+              <div class="cost-value total-cost">0</div>
+            </div>
+            <div class="cost-item highlight">
+              <div class="cost-label">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>До гаранта</span>
+              </div>
+              <div class="cost-value guaranteed-cost">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../barter/barter.html">Калькулятор</a>
+      <a href="sharpening.html">Заточка</a>
+      <a href="../../guides/guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="../../global.js"></script>
+<script src="sharpening.js"></script>
+</body>
+</html>

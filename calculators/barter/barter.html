@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Калькулятор бартера STALCRAFT: расчёт обменных монет и ресурсов | StalMath</title>
+  <meta name="description" content="Калькулятор бартера STALCRAFT: X — расчёт обменных монет и бартерных ресурсов по пресетам. Скидки, шэринг, автоматический подсчёт стоимости." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, калькулятор бартера, обменные монеты, бартерные ресурсы, StalMath" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="../../home.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-barter">
+<a class="skip-link" href="#main">К содержимому</a>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../../guides/guides.html" class="nav-link"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger active" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="barter.html" class="dropdown-link active"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../../guides/guides.html" class="drawer-link"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="barter.html" class="drawer-link active"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="calc-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-coins"></i>
+        <span>Инструмент</span>
+      </div>
+      <h1 class="hero-title"><i class="fa-solid fa-scale-balanced"></i> Калькулятор бартера</h1>
+      <p class="hero-subtitle">Рассчитайте стоимость бартерных ресурсов и обменных монет для выбранных пресетов</p>
+    </div>
+  </section>
+
+  <section class="barter-section">
+    <div class="barter-layout">
+      <aside class="left-block" aria-label="Список пресетов">
+        <div class="presets-topbar">
+          <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="presetSearch" type="search" placeholder="Поиск по пресетам..." autocomplete="off" />
+            <button type="button" id="clearSearchBtn" class="ghost-btn" title="Очистить поиск">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="presets-tools">
+            <button type="button" id="expandAllBtn" class="ghost-btn" title="Развернуть всё">
+              <i class="fa-solid fa-angles-down"></i>
+            </button>
+            <button type="button" id="collapseAllBtn" class="ghost-btn" title="Свернуть всё">
+              <i class="fa-solid fa-angles-up"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="presets-container">
+          <details class="preset-category">
+            <summary><span>Броня</span></summary>
+            <ul id="armor-presets" class="preset-list"></ul>
+          </details>
+
+          <details class="preset-category">
+            <summary><span>Оружие</span></summary>
+            <ul id="weapons-presets" class="preset-list"></ul>
+          </details>
+
+          <details class="preset-category">
+            <summary><span>Рюкзаки и Контейнеры</span></summary>
+            <ul id="containers-presets" class="preset-list"></ul>
+            <ul id="backpacks-presets" class="preset-list"></ul>
+          </details>
+
+          <details class="preset-category">
+            <summary><span>Надульники и глушители</span></summary>
+            <ul id="attachments-presets" class="preset-list"></ul>
+          </details>
+
+          <details class="preset-category">
+            <summary><span>Магазины</span></summary>
+            <ul id="mags-presets" class="preset-list"></ul>
+          </details>
+
+          <details class="preset-category">
+            <summary><span>Цевья и крепления</span></summary>
+            <ul id="forends-presets" class="preset-list"></ul>
+            <ul id="brackets-presets" class="preset-list"></ul>
+          </details>
+
+          <details class="preset-category">
+            <summary><span>Прочие обвесы</span></summary>
+            <ul id="others-presets" class="preset-list"></ul>
+          </details>
+
+          <details class="preset-category">
+            <summary><span>Устройства</span></summary>
+            <ul id="devices-presets" class="preset-list"></ul>
+          </details>
+
+          <details class="preset-category">
+            <summary><span>Прицелы</span></summary>
+            <ul id="sights-presets" class="preset-list"></ul>
+          </details>
+
+          <details class="preset-category">
+            <summary><span>Скины и Краски</span></summary>
+            <ul id="skins-presets" class="preset-list"></ul>
+          </details>
+
+          <details class="preset-category">
+            <summary><span>Прочее</span></summary>
+            <ul id="skans-presets" class="preset-list"></ul>
+          </details>
+        </div>
+      </aside>
+
+      <div class="right-block">
+        <form id="calculatorForm" novalidate>
+          <fieldset>
+            <legend>Болота</legend>
+            <div class="resource rank-noob">
+              <img src="images/barter/bolotny_kamen.png" alt="Болотный камень" loading="lazy">
+              <label for="bolotny_kamen">Болотный камень</label>
+              <input type="number" id="bolotny_kamen" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-noob">
+              <img src="images/barter/green_plesen.png" alt="Зеленая плесень" loading="lazy">
+              <label for="green_plesen">Зеленая плесень</label>
+              <input type="number" id="green_plesen" min="0" value="0" inputmode="numeric">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Южная Зона</legend>
+            <div class="resource rank-new">
+              <img src="images/barter/koren_vonyuchka.png" alt="Корень-вонючка" loading="lazy">
+              <label for="koren_vonyuchka">Корень-вонючка</label>
+              <input type="number" id="koren_vonyuchka" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-new">
+              <img src="images/barter/srachnik.png" alt="Срачник" loading="lazy">
+              <label for="srachnik">Срачник</label>
+              <input type="number" id="srachnik" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-new">
+              <img src="images/barter/mednaya_provoloka.png" alt="Остатки медной проволоки" loading="lazy">
+              <label for="mednaya_provoloka">Остатки медной проволоки</label>
+              <input type="number" id="mednaya_provoloka" min="0" value="0" inputmode="numeric">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Окрестности Завода</legend>
+            <div class="resource rank-mid">
+              <img src="images/barter/romashka.png" alt="Росток чернобыльской ромашки" loading="lazy">
+              <label for="romashka">Росток чернобыльской ромашки</label>
+              <input type="number" id="romashka" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mid">
+              <img src="images/barter/radioperedatchik.png" alt="Остатки радиопередатчика" loading="lazy">
+              <label for="radioperedatchik">Остатки радиопередатчика</label>
+              <input type="number" id="radioperedatchik" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mid">
+              <img src="images/barter/rassolnik.png" alt="Рассольник" loading="lazy">
+              <label for="rassolnik">Рассольник</label>
+              <input type="number" id="rassolnik" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mid">
+              <img src="images/barter/alpha_fragment.png" alt="Фрагмент данных Альфа" loading="lazy">
+              <label for="alfa_fragment">Фрагмент данных Альфа</label>
+              <input type="number" id="alfa_fragment" min="0" value="0" inputmode="numeric">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Полесское/ПД</legend>
+            <div class="resource rank-high">
+              <img src="images/barter/beta_fragment.png" alt="Фрагмент данных &quot;Бета&quot;" loading="lazy">
+              <label for="beta_fragment">Фрагмент данных "Бета"</label>
+              <input type="number" id="beta_fragment" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-high">
+              <img src="images/barter/durman_kamen.png" alt="Дурман-камень" loading="lazy">
+              <label for="durman_kamen">Дурман-камень</label>
+              <input type="number" id="durman_kamen" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-high">
+              <img src="images/barter/severny_moh.png" alt="Северный мох" loading="lazy">
+              <label for="severny_moh">Северный мох</label>
+              <input type="number" id="severny_moh" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-high">
+              <img src="images/barter/ostatki_akkumulyatora.png" alt="Остатки аккумулятора" loading="lazy">
+              <label for="ostatki_akkumulyatora">Остатки аккумулятора</label>
+              <input type="number" id="ostatki_akkumulyatora" min="0" value="0" inputmode="numeric">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Север</legend>
+            <div class="resource rank-mast">
+              <img src="images/barter/gamma_fragment.png" alt="Фрагмент данных &quot;Гамма&quot;" loading="lazy">
+              <label for="gamma_fragment">Фрагмент данных "Гамма"</label>
+              <input type="number" id="gamma_fragment" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mast">
+              <img src="images/barter/veshestvo_07270.png" alt="Вещество 07270" loading="lazy">
+              <label for="veshestvo_07270">Вещество 07270</label>
+              <input type="number" id="veshestvo_07270" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mast">
+              <img src="images/barter/ryzhiy_paporotnik.png" alt="Рыжий папоротник" loading="lazy">
+              <label for="ryzhiy_paporotnik">Рыжий папоротник</label>
+              <input type="number" id="ryzhiy_paporotnik" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mast">
+              <img src="images/barter/psi_mayachok.png" alt="Остатки пси-маячка" loading="lazy">
+              <label for="psi_mayachok">Остатки пси-маячка</label>
+              <input type="number" id="psi_mayachok" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mast">
+              <img src="images/barter/kvantovaya_batareya.png" alt="Квантовая батарея" loading="lazy">
+              <label for="kvantovaya_batareya">Квантовая батарея</label>
+              <input type="number" id="kvantovaya_batareya" min="0" value="0" inputmode="numeric">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Любеч-3</legend>
+            <div class="resource rank-mast">
+              <img src="images/barter/limb.png" alt="Лимб" loading="lazy">
+              <label for="limb">Лимб</label>
+              <input type="number" id="limb" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mast">
+              <img src="images/barter/gorkolistnik.png" alt="Горьколистник" loading="lazy">
+              <label for="gorkolistnik">Горьколистник</label>
+              <input type="number" id="gorkolistnik" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mast">
+              <img src="images/barter/lambda_fragment.png" alt="Фрагмент данных &quot;Лямбда&quot;" loading="lazy">
+              <label for="lambda_fragment">Фрагмент данных "Лямбда"</label>
+              <input type="number" id="lambda_fragment" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mast">
+              <img src="images/barter/limboplazma.png" alt="Лимбоплазма" loading="lazy">
+              <label for="limboplazma">Лимбоплазма</label>
+              <input type="number" id="limboplazma" min="0" value="0" inputmode="numeric">
+            </div>
+            <div class="resource rank-mast">
+              <img src="images/barter/anomalnaya_batareya.png" alt="Аномальная батарея" loading="lazy">
+              <label for="anomalnaya_batareya">Аномальная батарея</label>
+              <input type="number" id="anomalnaya_batareya" min="0" value="0" inputmode="numeric">
+            </div>
+          </fieldset>
+
+          <div class="result-block">
+            <div class="coupon-header">
+              <div class="coupon-title">
+                <i class="fa-solid fa-tag"></i>
+                <span>Выбранные пресеты и скидки</span>
+              </div>
+              <div class="coupon-tools">
+                <label class="sr-only" for="discountAllSelect">Скидка для всех</label>
+                <select id="discountAllSelect" title="Применить скидку ко всем выбранным">
+                  <option value="">Скидка для всех…</option>
+                  <option value="1">Без скидки</option>
+                  <option value="0.9">Скидка 10%</option>
+                  <option value="0.85">Скидка 15%</option>
+                  <option value="0.8">Скидка 20%</option>
+                  <option value="0.75">Скидка 25%</option>
+                  <option value="0.7">Скидка 30%</option>
+                  <option value="0.5">Скидка 50%</option>
+                  <option value="0.25">Скидка 75%</option>
+                  <option value="0.01">Скидка 99%</option>
+                </select>
+                <button type="button" id="clearSelectedBtn" class="ghost-btn" title="Снять все выбранные пресеты">
+                  <i class="fa-solid fa-broom"></i>
+                </button>
+              </div>
+            </div>
+
+            <div id="couponApplyBlock" class="coupon-apply-container"></div>
+
+            <div class="total-cost-block">
+              <p id="totalCoinsDisplay" aria-live="polite">Выберите предметы для расчета</p>
+              <div class="result-actions">
+                <button type="button" id="shareBtn" class="ghost-btn" title="Поделиться расчётом">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </button>
+                <button type="button" id="resetBtn" title="Сбросить всё">
+                  <i class="fas fa-undo"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info">
+        <span class="brand-name">StalMath</span>
+        <span class="brand-desc">Инструменты для STALCRAFT: X</span>
+      </div>
+    </div>
+    <nav class="footer-links">
+      <a href="barter.html">Калькулятор</a>
+      <a href="../sharpening/sharpening.html">Заточка</a>
+      <a href="../../guides/guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="data.js"></script>
+<script src="calculator.js"></script>
+<script src="../../global.js"></script>
+</body>
+</html>
