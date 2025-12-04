@@ -1,191 +1,142 @@
 <!DOCTYPE html>
 <html lang="ru" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StalMath — интерактивная карта квестов STALCRAFT: X | Юг, Север, Любеч-3</title>
-  <meta name="description" content="Интерактивная карта квестов STALCRAFT: X — метки и описания заданий, награды, фильтры по фракциям, превью и ссылки на гайды. Локации: Юг, Север, Любеч-3." />
-  <meta name="keywords" content="StalMath, STALCRAFT, STALCRAFT X, Сталкрафт, Сталкрафт Х, интерактивная карта, карта квестов, карта Сталкрафт, карта Сталкрафт X, квесты Сталкрафт, карта Юг, карта Север, карта Любеча-3, гайды Сталкрафт" />
-  <meta name="theme-color" content="#0f0f10" />
-  <link rel="icon" href="../favicon.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-  <link rel="stylesheet" href="../home.css"/>
-  <link rel="stylesheet" href="map.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StalMath — интерактивная карта квестов STALCRAFT: X</title>
+  <meta name="description" content="Интерактивная карта квестов STALCRAFT: X — метки и описания заданий, награды, фильтры по фракциям.">
+  <meta name="keywords" content="StalMath, STALCRAFT, интерактивная карта, карта квестов">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../home.css">
+  <link rel="stylesheet" href="map.css">
 </head>
 <body class="page-map">
 <a class="skip-link" href="#main">К содержимому</a>
 
-<header class="site-header">
-  <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Меню" aria-controls="mobileMenu" aria-expanded="false">
-    <span class="line"></span><span class="line"></span><span class="line"></span>
-  </button>
-  <nav class="header-links start">
-    <a href="#" data-modal-target="#about-modal">О сайте</a>
-    <a href="#" data-modal-target="#contacts-modal">Связь</a>
-  </nav>
-
-  <div class="brand">
-    <a href="../index.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
-  </div>
-
-  <nav class="header-links end">
-    <div class="dropdown" id="calcDropdown">
-      <button class="nav-btn dropdown-toggle" id="calcMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="calcMenu">
-        <i class="fa-solid fa-calculator"></i> Калькуляторы <i class="fa-solid fa-angle-down chevron" aria-hidden="true"></i>
-      </button>
-      <div class="dropdown-menu" id="calcMenu" role="menu">
-        <a class="dropdown-item" role="menuitem" href="../barter.html">
-          <i class="fa-solid fa-coins"></i> Калькулятор бартера
-        </a>
-        <a class="dropdown-item" role="menuitem" href="../sharpening.html">
-          <i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки
-        </a>
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand"><span class="brand-icon">SM</span><span class="brand-text">StalMath</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides/guides.html" class="nav-link"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="map.html" class="nav-link active"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false"><i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i></button>
+        <div class="dropdown-panel">
+          <a href="../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
       </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
     </div>
-    <a href="map.html"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
-    <a href="../guides.html"><i class="fa-solid fa-book-open"></i> Руководства</a>
-  </nav>
-
-  <div class="header-actions">
-    <button id="themeToggleBtn" class="ghost-btn" title="Переключить тему">
-      <i class="fa-solid fa-moon"></i>
-    </button>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- Мобильное меню -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <div class="mm-backdrop" data-close></div>
-  <aside class="mm-panel" role="menu" aria-label="Мобильное меню">
-    <div class="mm-content">
-      <nav class="mm-nav">
-        <a href="#" class="mm-item" data-modal-target="#about-modal"><i class="fa-regular fa-circle-question"></i> О сайте</a>
-        <a href="#" class="mm-item" data-modal-target="#contacts-modal"><i class="fa-regular fa-address-book"></i> Связь</a>
-
-        <details class="mm-accordion">
-          <summary><i class="fa-solid fa-calculator"></i> Калькуляторы</summary>
-          <div class="mm-sublist">
-            <a class="mm-subitem" href="../barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
-            <a class="mm-subitem" href="../sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
-          </div>
-        </details>
-
-        <a href="map.html" class="mm-item"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
-        <a href="../guides.html" class="mm-item"><i class="fa-solid fa-book-open"></i> Руководства</a>
-      </nav>
-
-      <div class="mm-actions">
-        <button id="themeToggleBtnMobile" class="ghost-btn"><i class="fa-solid fa-moon"></i> Тема</button>
-      </div>
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides/guides.html" class="drawer-link"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="map.html" class="drawer-link active"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
     </div>
-  </aside>
-</div>
-
-<!-- Модальные окна -->
-<div id="about-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="about-title">
-  <div class="modal-content">
-    <button class="close-button" aria-label="Закрыть">&times;</button>
-    <h2 id="about-title">О StalMath</h2>
-    <p>StalMath — это фан-проект и набор инструментов для игроков STALCRAFT: X. Наша цель — сделать вашу игру комфортнее с помощью:</p>
-    <ul>
-      <li>Точных калькуляторов для бартера и заточки;</li>
-      <li>Интерактивной карты со всеми квестами и наградами;</li>
-      <li>Подробных гайдов по игровым механикам.</li>
-    </ul>
-    <p>Проект активно развивается, и со временем здесь будут появляться новые функции.</p>
-    </ul>
-    <p>Заметили ошибку или есть идеи для улучшения? Пожалуйста, свяжитесь с нами через раздел «Связь». Ваша обратная связь помогает делать StalMath лучше!</p>
   </div>
 </div>
-<div id="contacts-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="contacts-title">
-  <div class="modal-content">
-    <button class="close-button" aria-label="Закрыть">&times;</button>
-    <h2 id="contacts-title">Как связаться</h2>
-    <ul class="contact-list">
-      <li class="contact-item">
-        <i class="ci vk fa-brands fa-vk" aria-hidden="true"></i>
-        <div class="contact-text">
-          <div class="label">ВКонтакте</div>
-          <a class="contact-link brand-vk" href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" title="Открыть профиль VK">
-            <span>@everal41</span>
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          </a>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
         </div>
-      </li>
-      <li class="contact-item">
-        <i class="ci discord fa-brands fa-discord" aria-hidden="true"></i>
-        <div class="contact-text">
-          <div class="label">Discord</div>
-          <a class="contact-link brand-discord" href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" title="Перейти на сервер Discord">
-            <span>Наш сервер</span>
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          </a>
-        </div>
-      </li>
-      <li class="contact-item">
-        <i class="ci game fa-solid fa-gamepad" aria-hidden="true"></i>
-        <div class="contact-text">
-          <div class="label">Ник в игре</div>
-          <div class="nick-row">
-            <span class="nick online-nick" id="gameNick">X_Solitude</span>
-            <button type="button" class="copy-btn" id="copyNickBtn" title="Скопировать ник">
-              <i class="fa-regular fa-copy" aria-hidden="true"></i>
-              <span>Копировать</span>
-            </button>
-          </div>
-        </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </div>
 
 <main id="main" class="map-viewport">
-  <!-- Полотно карты -->
   <div id="mapCanvas" class="map-canvas" role="region" aria-label="Полотно карты">
-    <div id="mapFrame" class="map-frame" style="--frame-w:1372px; --frame-h:2000px;">
-      <img id="mapImage" class="map-image" src="images/maps/map-south.png" alt="Карта: Юг" draggable="false" />
+    <div id="mapFrame" class="map-frame" style="--frame-w:1372px;--frame-h:2000px">
+      <img id="mapImage" class="map-image" src="images/maps/map-south.png" alt="Карта: Юг" draggable="false">
       <div id="markersLayer" class="markers-layer" aria-live="polite"></div>
     </div>
   </div>
-
-  <!-- Панель управления -->
-  <div class="map-controls-panel" role="group" aria-label="Управление картой">
-    <label class="ctrl">
-      <span class="lbl">Локация</span>
-      <select id="mapSelect" class="ctrl-input" aria-label="Выбор карты"></select>
-    </label>
-    <div class="ctrl">
-      <span class="lbl">Масштаб</span>
-      <div class="zoom-group">
-        <button id="zoomOutBtn" class="btn btn-ghost" title="Уменьшить" aria-controls="mapCanvas"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
-        <div id="zoomValue" class="zoom-value" aria-live="polite">100%</div>
-        <button id="zoomInBtn" class="btn btn-ghost" title="Увеличить" aria-controls="mapCanvas"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-        <button id="zoomResetBtn" class="btn btn-secondary" title="По экрану" aria-controls="mapCanvas"><i class="fa-solid fa-compress"></i> По экрану</button>
-      </div>
+  <div class="map-controls" role="group" aria-label="Управление картой">
+    <div class="control-group location-select">
+      <label class="control-label" for="mapSelect"><i class="fa-solid fa-map"></i><span>Локация</span></label>
+      <select id="mapSelect" class="control-select" aria-label="Выбор карты"></select>
+    </div>
+    <div class="control-divider"></div>
+    <div class="control-group zoom-controls">
+      <button id="zoomOutBtn" class="control-btn" title="Уменьшить"><i class="fa-solid fa-minus"></i></button>
+      <div id="zoomValue" class="zoom-display" aria-live="polite">100%</div>
+      <button id="zoomInBtn" class="control-btn" title="Увеличить"><i class="fa-solid fa-plus"></i></button>
     </div>
   </div>
-
-  <!-- Легенда -->
   <div class="map-legend" role="group" aria-label="Фильтр по фракциям">
-    <div class="chip chip-any" tabindex="0" aria-pressed="true">
-      <img class="legend-icon" src="images/icons/marker-any.webp" alt="Все" onerror="this.style.display='none'"> Все
-    </div>
-    <div class="chip chip-stalker" tabindex="0" aria-pressed="true">
-      <img class="legend-icon" src="images/icons/marker-stalker.webp" alt="Сталкеры"> Сталкеры
-    </div>
-    <div class="chip chip-bandit" tabindex="0" aria-pressed="true">
-      <img class="legend-icon" src="images/icons/marker-bandit.webp" alt="Бандиты"> Бандиты
-    </div>
+    <button class="legend-chip chip-any active" aria-pressed="true"><span class="chip-dot"></span><span>Все</span></button>
+    <button class="legend-chip chip-stalker active" aria-pressed="true"><span class="chip-dot"></span><span>Сталкеры</span></button>
+    <button class="legend-chip chip-bandit active" aria-pressed="true"><span class="chip-dot"></span><span>Бандиты</span></button>
   </div>
+  <div class="map-hint"><i class="fa-solid fa-hand-pointer"></i><span>Нажмите на метку для подробностей</span></div>
 </main>
 
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
-
 <script src="../global.js"></script>
-<script src="../home.js"></script>
+<script src="data/quests.js"></script>
 <script src="map.js"></script>
 </body>
 </html>
