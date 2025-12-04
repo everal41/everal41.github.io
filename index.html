@@ -3,276 +3,398 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StalMath — калькуляторы и гайды по STALCRAFT: X</title>
-  <meta name="description" content="Удобные калькуляторы и гайды по STALCRAFT: X. Бартер, заточка, полезные таблицы и инструменты для всех игроков." />
-  <meta name="keywords" content="STALCRAFT, Сталкрафт, калькулятор, гайд, бартер, заточка, StalMath, крафт, расчет, инструменты" />
-  <meta name="theme-color" content="#0f0f10" />
+  <title>StalMath — инструменты и гайды по STALCRAFT: X</title>
+  <meta name="description" content="Калькуляторы бартера и заточки, интерактивная карта квестов, подробные руководства — всё для комфортной игры в STALCRAFT: X." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, калькулятор, бартер, заточка, карта квестов, гайды, StalMath" />
+  <meta name="theme-color" content="#0a0a0b" />
   <link rel="icon" href="favicon.png" type="image/png" />
+  
+  <meta property="og:title" content="StalMath — инструменты для STALCRAFT: X" />
+  <meta property="og:description" content="Калькуляторы, интерактивная карта и гайды для игроков STALCRAFT: X" />
+  <meta property="og:type" content="website" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="home.css"/>
+  <link rel="stylesheet" href="index.css"/>
 </head>
-<body>
-  <a class="skip-link" href="#main">К содержимому</a>
+<body class="page-home">
+<a class="skip-link" href="#main">К содержимому</a>
 
-  <header class="site-header">
-    <nav class="header-links start">
-      <a href="#" data-modal-target="#about-modal">О сайте</a>
-      <a href="#" data-modal-target="#contacts-modal">Связь</a>
-    </nav>
-
-    <div class="brand">
-      <a href="index.html" class="logo" aria-label="StalMath — на главную">StalMath</a>
-      <span class="badge">community project</span>
-    </div>
-
-    <nav class="header-links end">
-      <div class="dropdown" id="calcDropdown">
-        <button class="nav-btn dropdown-toggle" id="calcMenuBtn" aria-expanded="false" aria-haspopup="true" aria-controls="calcMenu">
-          <i class="fa-solid fa-calculator"></i> Калькуляторы <i class="fa-solid fa-angle-down chevron" aria-hidden="true"></i>
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="guides/guides.html" class="nav-link"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
         </button>
-        <div class="dropdown-menu" id="calcMenu" role="menu">
-          <a class="dropdown-item" role="menuitem" href="barter.html">
-            <i class="fa-solid fa-coins"></i> Калькулятор бартера
-          </a>
-          <a class="dropdown-item" role="menuitem" href="sharpening.html">
-            <i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки
-          </a>
-          <div class="dropdown-note">Скоро: экономические расчёты, DPS‑таблица</div>
+        <div class="dropdown-panel">
+          <a href="calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
         </div>
       </div>
-      <a href="map/map.html"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
-      <a href="guides.html"><i class="fa-solid fa-book-open"></i> Руководства</a>
     </nav>
-
-    <div class="header-actions">
-      <button id="themeToggleBtn" class="ghost-btn" title="Переключить тему">
-        <i class="fa-solid fa-moon"></i>
-      </button>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
     </div>
-  </header>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-  <!-- О сайте -->
-  <div id="about-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="about-title">
-    <div class="modal-content">
-      <button class="close-button" aria-label="Закрыть">&times;</button>
-      <h2 id="about-title">О StalMath</h2>
-      <p>StalMath — набор бесплатных инструментов и гайдов по STALCRAFT: X. Мы фокусируемся на точных расчётах, удобстве и наглядности.</p>
-      <ul>
-        <li>Калькулятор бартера с пресетами, скидками и шэрингом</li>
-        <li>Калькулятор заточки</li>
-        <li>Руководства и таблицы</li>
-      </ul>
-      <p>Обратная связь и помощь приветствуются — смотрите раздел «Связь».</p>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="index.html" class="drawer-link active"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="guides/guides.html" class="drawer-link"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
     </div>
   </div>
+</div>
 
-  <!-- Контакты -->
-  <div id="contacts-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="contacts-title">
-    <div class="modal-content">
-      <button class="close-button" aria-label="Закрыть">&times;</button>
-      <h2 id="contacts-title">Как связаться</h2>
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
 
-      <ul class="contact-list">
-        <li class="contact-item">
-          <i class="ci vk fa-brands fa-vk" aria-hidden="true"></i>
-          <div class="contact-text">
-            <div class="label">ВКонтакте</div>
-            <a class="contact-link brand-vk" href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" title="Открыть профиль VK">
-              <span>@everal41</span>
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-            </a>
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  
+  <section class="hero-section">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-particles" id="heroParticles"></div>
+    </div>
+    
+    <div class="hero-content">
+      
+      <h1 class="hero-title">
+        <span class="title-accent">Stal</span><span>Math</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Калькуляторы, интерактивная карта и руководства<br class="hide-mobile"> для игроков STALCRAFT: X
+      </p>
+      
+      <div class="hero-actions">
+        <a href="map/map.html" class="hero-btn hero-btn-primary">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Карта квестов</span>
+        </a>
+        <a href="guides/guides.html" class="hero-btn hero-btn-secondary">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Руководства</span>
+        </a>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-number" data-count="22">0</span>
+          <span class="stat-label">Гайдов</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-number" data-count="24">0</span>
+          <span class="stat-label">Квестов на карте</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-number" data-count="480">0</span>
+          <span class="stat-label">Предметов в базе</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-scroll-hint">
+      <span>Листайте вниз</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <section class="quick-tools">
+    <div class="container">
+      <div class="tools-grid">
+        <a href="calculators/barter/barter.html" class="tool-card tool-barter">
+          <div class="tool-icon">
+            <i class="fa-solid fa-coins"></i>
           </div>
-        </li>
-
-        <li class="contact-item">
-          <i class="ci discord fa-brands fa-discord" aria-hidden="true"></i>
-          <div class="contact-text">
-            <div class="label">Discord</div>
-            <a class="contact-link brand-discord" href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" title="Перейти на сервер Discord">
-              <span>Наш сервер</span>
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-            </a>
+          <div class="tool-content">
+            <h3>Калькулятор бартера</h3>
+            <p>Расчёт обменных монет с учётом скидок и бонусов</p>
           </div>
-        </li>
+          <div class="tool-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </a>
+        
+        <a href="calculators/sharpening/sharpening.html" class="tool-card tool-sharpening">
+          <div class="tool-icon">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <div class="tool-content">
+            <h3>Калькулятор заточки</h3>
+            <p>Шансы успеха, ресурсы и стоимость улучшений</p>
+          </div>
+          <div class="tool-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </a>
+        
+        <a href="map/map.html" class="tool-card tool-map">
+          <div class="tool-icon">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          <div class="tool-content">
+            <h3>Карта квестов</h3>
+            <p>Интерактивная карта с метками и наградами</p>
+          </div>
+          <div class="tool-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <li class="contact-item">
-          <i class="ci game fa-solid fa-gamepad" aria-hidden="true"></i>
-          <div class="contact-text">
-            <div class="label">Ник в игре</div>
-            <div class="nick-row">
-              <span class="nick online-nick" id="gameNick">X_Solitude</span>
-              <button type="button" class="copy-btn" id="copyNickBtn" title="Скопировать ник">
-                <i class="fa-regular fa-copy" aria-hidden="true"></i>
-                <span>Копировать</span>
-              </button>
+  <section class="content-tabs-section">
+    <div class="container">
+      <div class="tabs-header">
+        <div class="tabs-nav" role="tablist">
+          <button class="tab-btn active" data-tab="updates" role="tab" aria-selected="true">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>Патч-ноуты</span>
+          </button>
+          <button class="tab-btn" data-tab="guides" role="tab" aria-selected="false">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Последние гайды</span>
+          </button>
+          <button class="tab-btn" data-tab="map" role="tab" aria-selected="false">
+            <i class="fa-solid fa-map"></i>
+            <span>Превью карты</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="tabs-content">
+        
+        <div class="tab-panel active" id="panel-updates" role="tabpanel">
+          <div class="updates-layout">
+            <div class="updates-main">
+              <div class="update-featured" id="featuredUpdate">
+              </div>
+            </div>
+            
+            <div class="updates-sidebar">
+              <h3 class="sidebar-title">История обновлений</h3>
+              <div class="updates-list" id="updatesList">
+              </div>
+              <a href="changelog/changelog.html" class="see-all-link">
+                <span>Все обновления</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
+        
+        <div class="tab-panel" id="panel-guides" role="tabpanel">
+          <div class="guides-preview-grid" id="latestGuides">
+          </div>
+          <div class="panel-footer">
+            <a href="guides/guides.html" class="see-all-btn">
+              <span>Все руководства</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="tab-panel" id="panel-map" role="tabpanel">
+          <div class="map-preview">
+            <div class="map-preview-image">
+              <img src="images/maps/map-south-preview.jpg" alt="Превью карты квестов" loading="lazy" />
+              <div class="map-preview-overlay">
+                <a href="map/map.html" class="map-open-btn">
+                  <i class="fa-solid fa-expand"></i>
+                  <span>Открыть карту</span>
+                </a>
+              </div>
+            </div>
+            <div class="map-preview-info">
+              <h3>Интерактивная карта квестов</h3>
+              <p>Все квесты Сталкеров и Бандитов с подробным описанием, наградами и ссылками на гайды прохождения.</p>
+              <div class="map-stats">
+                <div class="map-stat">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span><strong>24</strong> квеста</span>
+                </div>
+                <div class="map-stat">
+                  <i class="fa-solid fa-shield-halved"></i>
+                  <span><strong>2</strong> фракции</span>
+                </div>
+                <div class="map-stat">
+                  <i class="fa-solid fa-map"></i>
+                  <span><strong>3</strong> локации</span>
+                </div>
+              </div>
+              <div class="map-factions">
+                <span class="faction-chip stalker"><i class="fa-solid fa-shield-halved"></i> Сталкеры</span>
+                <span class="faction-chip bandit"><i class="fa-solid fa-skull"></i> Бандиты</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="project-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-scroll"></i></div>
+          <div class="stat-data">
+            <span class="stat-value" data-count="20">0</span>
+            <span class="stat-name">Квестовых гайдов</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-calculator"></i></div>
+          <div class="stat-data">
+            <span class="stat-value" data-count="2">0</span>
+            <span class="stat-name">Калькулятора</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-database"></i></div>
+          <div class="stat-data">
+            <span class="stat-value" data-count="480">0</span>
+            <span class="stat-name">Предметов в базе</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-code-branch"></i></div>
+          <div class="stat-data">
+            <span class="stat-value">3.0</span>
+            <span class="stat-name">Версия сайта</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="community-section">
+    <div class="container">
+      <div class="community-card">
+        <div class="community-content">
+          <div class="community-icon">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <div class="community-text">
+            <h3>Присоединяйтесь к сообществу</h3>
+            <p>Обсуждайте гайды, предлагайте идеи и сообщайте об ошибках</p>
+          </div>
+        </div>
+        <div class="community-links">
+          <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noopener" class="community-btn discord">
+            <i class="fa-brands fa-discord"></i>
+            <span>Discord</span>
+          </a>
+          <a href="https://vk.com/hxteevery1" target="_blank" rel="noopener" class="community-btn vk">
+            <i class="fa-brands fa-vk"></i>
+            <span>ВКонтакте</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="calculators/barter/barter.html">Калькулятор</a>
+      <a href="calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="guides/guides.html">Руководства</a>
+      <a href="map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
     </div>
   </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
 
-  <main id="main">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <h1><span>Stal</span><span>Math</span></h1>
-        <p class="tagline">Калькуляторы, гайды и утилиты для STALCRAFT: X</p>
+<div id="toast" class="toast" hidden></div>
 
-        <div class="cta-row">
-          <a class="btn btn-primary" href="barter.html"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
-          <a class="btn btn-secondary" href="sharpening.html"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
-          <a class="btn btn-secondary" href="map/map.html"><i class="fa-solid fa-map-location-dot"></i> Карта квестов</a>
-          <a class="btn btn-ghost" href="guides.html"><i class="fa-solid fa-book-open"></i> Руководства</a>
-        </div>
-
-        <div class="stats">
-          <div class="stat">
-            <div class="num count-up" data-to="480">0</div>
-            <div class="label">предметов в базе</div>
-          </div>
-          <div class="stat">
-            <div class="num count-up" data-to="2">0</div>
-            <div class="label">калькулятора сейчас</div>
-          </div>
-          <div class="stat">
-            <div class="num count-up" id="updatesCount" data-to="0">0</div>
-            <div class="label">последних обновления</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Инструменты -->
-    <section class="tools container">
-      <h2 class="section-title">Инструменты</h2>
-      <div class="cards">
-        <a class="card" href="barter.html">
-          <div class="icon"><i class="fa-solid fa-coins"></i></div>
-          <div class="card-title">Калькулятор обменных монет</div>
-          <p>Точные расчёты бартера, купоны‑скидки, пресеты и шэринг результата.</p>
-          <span class="chip chip-hot">Популярно</span>
-        </a>
-
-        <a class="card" href="sharpening.html">
-          <div class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-          <div class="card-title">Калькулятор заточки</div>
-          <p>Шанс успеха, ресурсы и стоимость попыток. Экономьте время и монеты.</p>
-          <span class="chip chip-info">Актуально</span>
-        </a>
-
-        <a class="card" href="guides.html">
-          <div class="icon"><i class="fa-solid fa-book-open"></i></div>
-          <div class="card-title">Руководства</div>
-          <p>Подробные разборы и подборки: бронекостюмы, радио‑сборники, экран отладки, фарм валюты и прохождение сюжета.</p>
-        </a>
-
-        <a class="card" href="#" onclick="alert('Скоро'); return false;">
-          <div class="icon"><i class="fa-solid fa-ranking-star"></i></div>
-          <div class="card-title">Тир‑листы</div>
-          <p>Подборки по актуальности и эффективности. В разработке.</p>
-          <span class="chip chip-soon">Скоро</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Обновления (компактный список) -->
-    <section class="updates container">
-      <h2 class="section-title">Последние обновления</h2>
-
-      <ul class="updates-compact" id="updatesList">
-        <li class="u-item">
-          <span class="date-badge">21.09</span>
-          <span class="u-text">2.1.1 (beta) — Общие улучшения работы с картой квестов.</span>
-        </li>
-        <li class="u-item">
-          <span class="date-badge">23.08</span>
-          <span class="u-text">2.1.0 (beta) — Добавлена страница с интерактивной картой квестов.</span>
-        </li>
-        <li class="u-item">
-          <span class="date-badge">10.08</span>
-          <span class="u-text">2.0.0 — Полностью переработан сайт.</span>
-        </li>
-      </ul>
-
-      <a class="btn inline" href="changelog.html">
-        <i class="fa-solid fa-clock-rotate-left"></i> Весь список
-      </a>
-    </section>
-
-    <!-- Гайды (превью) -->
-    <section class="guides container">
-      <h2 class="section-title">Подборки и гайды</h2>
-      <div class="guide-grid">
-        <a class="guide-card" href="guide-armor-review.html">
-          <div class="thumb" style="background-image:url('images/guides/armor-review/armor-guide-header.jpg'), linear-gradient(135deg,#2b2b2b,#1a1a1a)"></div>
-          <div class="guide-info">
-            <div class="guide-title">Обзор всех бронекостюмов</div>
-            <p>Подробный разбор всей брони в игре от научных до боевых. Оптимальные сборки и советы по применению.</p>
-          </div>
-        </a>
-        <a class="guide-card" href="guide-custom-radio.html">
-          <div class="thumb" style="background-image:url('images/guides/radio.jpg'), linear-gradient(135deg,#2b2b2b,#1a1a1a)"></div>
-          <div class="guide-info">
-            <div class="guide-title">Кастомные сборники Радио</div>
-            <p>Подборка уникальных радиостанций: от классики S.T.A.L.K.E.R. до рока. Как скачать и установить.</p>
-          </div>
-        </a>
-        <a class="guide-card" href="guides.html#debug">
-          <div class="thumb" style="background-image:url('images/guides/debug-screen.jpg'), linear-gradient(135deg,#2b2b2b,#1a1a1a)"></div>
-          <div class="guide-info">
-            <div class="guide-title">Экран отладки: как понять, что сервера «в пиве»</div>
-            <p>Разбираемся в пинге, FPS и причинах лагов: ваш ПК, интернет или сервер.</p>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- Комьюнити -->
-    <section class="community container">
-      <div class="callout">
-        <div class="callout-text">
-          <h3>Есть идеи или нашли баг?</h3>
-          <p>Напишите нам — поможете сделать StalMath удобнее для всех.</p>
-        </div>
-        <div class="callout-actions">
-          <a href="https://vk.com/hxteevery1" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-vk"></i> ВКонтакте</a>
-          <a href="https://discord.gg/9hkdXxRSnr" target="_blank" class="btn btn-ghost"><i class="fa-brands fa-discord"></i> Discord</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="foot-brand">
-        <div class="logo-sm">StalMath</div>
-        <div class="muted">Фан‑сайт и инструменты для STALCRAFT: X</div>
-      </div>
-      <nav class="foot-links">
-        <a href="barter.html">Калькулятор</a>
-        <a href="sharpening.html">Заточка</a>
-        <a href="guides.html">Руководства</a>
-      </nav>
-      <div class="foot-social">
-        <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
-        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
-      </div>
-    </div>
-    <div class="copy muted">
-      © StalMath. Неофициальный фан‑проект. Игра STALCRAFT: X разрабатывается компанией EXBO. Все права на игровые материалы принадлежат EXBO и иным правообладателям.
-    </div>
-  </footer>
-
-  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
-
-  <script src="global.js"></script>
-  <script src="home.js"></script>
+<script src="global.js"></script>
+<script src="index.js"></script>
 </body>
-
 </html>
-
