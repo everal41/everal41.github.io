@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>История обновлений | StalMath</title>
+  <meta name="description" content="Полная история изменений, улучшений и исправлений сайта StalMath — инструментов для STALCRAFT: X." />
+  <meta name="keywords" content="StalMath, STALCRAFT X, changelog, обновления, патчноуты, история версий" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../home.css"/>
+  <link rel="stylesheet" href="changelog.css"/>
+</head>
+<body class="page-changelog">
+<a class="skip-link" href="#main">К содержимому</a>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides/guides.html" class="nav-link"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides/guides.html" class="drawer-link"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  
+  <section class="changelog-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span>История изменений</span>
+      </div>
+      <h1 class="hero-title"><i class="fa-solid fa-code-branch"></i> Changelog</h1>
+      <p class="hero-subtitle">Все обновления, улучшения и исправления сайта StalMath</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-value" id="totalVersions">14</span>
+          <span class="stat-label">Версий</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">3.0</span>
+          <span class="stat-label">Текущая</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" id="totalChanges">50+</span>
+          <span class="stat-label">Изменений</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="changelog-section">
+    <div class="changelog-container">
+
+      <aside class="changelog-sidebar">
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">Версии</h3>
+          <nav class="version-nav" id="versionNav">
+            <a href="#v3.0.0" class="version-link active" data-version="3.0.0">
+              <span class="version-badge major">3.0.0</span>
+              <span class="version-date">03.12.2025</span>
+            </a>
+            <a href="#v2.1.1" class="version-link" data-version="2.1.1">
+              <span class="version-badge minor">2.1.1</span>
+              <span class="version-date">21.09.2025</span>
+            </a>
+            <a href="#v2.1.0" class="version-link" data-version="2.1.0">
+              <span class="version-badge minor">2.1.0</span>
+              <span class="version-date">23.08.2025</span>
+            </a>
+            <a href="#v2.0.0" class="version-link" data-version="2.0.0">
+              <span class="version-badge major">2.0.0</span>
+              <span class="version-date">12.08.2025</span>
+            </a>
+            <a href="#v1.3.0" class="version-link" data-version="1.3.0">
+              <span class="version-badge minor">1.3.0</span>
+              <span class="version-date">07.08.2025</span>
+            </a>
+            <a href="#v1.2.1" class="version-link" data-version="1.2.1">
+              <span class="version-badge patch">1.2.1</span>
+              <span class="version-date">01.08.2025</span>
+            </a>
+            <a href="#v1.2.0" class="version-link" data-version="1.2.0">
+              <span class="version-badge minor">1.2.0</span>
+              <span class="version-date">01.08.2025</span>
+            </a>
+            <a href="#v1.1.1" class="version-link" data-version="1.1.1">
+              <span class="version-badge patch">1.1.1</span>
+              <span class="version-date">04.06.2025</span>
+            </a>
+            <a href="#v1.1.0" class="version-link" data-version="1.1.0">
+              <span class="version-badge minor">1.1.0</span>
+              <span class="version-date">17.03.2025</span>
+            </a>
+            <a href="#v1.0.5" class="version-link" data-version="1.0.5">
+              <span class="version-badge patch">1.0.5</span>
+              <span class="version-date">15.03.2025</span>
+            </a>
+          </nav>
+          <button class="show-all-versions" id="showAllVersions">
+            <i class="fa-solid fa-chevron-down"></i>
+            <span>Показать все</span>
+          </button>
+        </div>
+        
+        <div class="sidebar-card legend-card">
+          <h3 class="sidebar-title">Легенда</h3>
+          <div class="legend-items">
+            <div class="legend-item">
+              <span class="change-badge new"><i class="fa-solid fa-plus"></i></span>
+              <span>Новое</span>
+            </div>
+            <div class="legend-item">
+              <span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span>
+              <span>Улучшение</span>
+            </div>
+            <div class="legend-item">
+              <span class="change-badge fix"><i class="fa-solid fa-wrench"></i></span>
+              <span>Исправление</span>
+            </div>
+            <div class="legend-item">
+              <span class="change-badge tech"><i class="fa-solid fa-code"></i></span>
+              <span>Техническое</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="changelog-timeline">
+        
+        <!-- Версия 3.0.0 -->
+        <article class="version-card featured" id="v3.0.0">
+          <div class="version-header">
+            <div class="version-info">
+              <div class="version-number">
+                <span class="version-tag major">Мажорное обновление</span>
+                <h2>Версия 3.0.0</h2>
+              </div>
+              <time class="version-date" datetime="2025-12-04">
+                <i class="fa-regular fa-calendar"></i>
+                3 декабря 2025
+              </time>
+            </div>
+            <span class="version-status current">Текущая версия</span>
+          </div>
+          
+          <div class="version-title">
+            <i class="fa-solid fa-sparkles"></i>
+            <span>Глобальная переработка сайта</span>
+          </div>
+          
+          <div class="version-body">
+            <div class="changes-group">
+              <h4><span class="change-badge new"><i class="fa-solid fa-plus"></i></span> Что нового</h4>
+              <ul class="changes-list">
+                <li><strong>Полностью обновлённый внешний вид сайта.</strong> Современный дизайн, приятные цвета и удобное расположение элементов.</li>
+                <li><strong>Новая главная страница.</strong> Быстрый доступ ко всем инструментам, последние гайды, история обновлений и статистика проекта — всё на одной странице.</li>
+                <li><strong>Переработанный калькулятор бартера.</strong> Обновлённый дизайн, понятный интерфейс и удобный выбор предметов. <em>Калькулятор продолжает дорабатываться.</em></li>
+                <li><strong>Переработанный калькулятор заточки.</strong> Наглядные результаты расчётов, удобный ввод цен ресурсов и понятная структура. <em>Калькулятор продолжает дорабатываться.</em></li>
+                <li><strong>Удобный каталог руководств.</strong> Поиск гайдов по названию, фильтры по категориям (квесты, снаряжение), фракциям (Сталкеры, Бандиты) и локациям.</li>
+                <li><strong>Улучшенная карта квестов.</strong> Информативные подсказки при клике на маркеры, удобный просмотр наград и быстрый переход к гайдам.</li>
+                <li><strong>Страница истории обновлений.</strong> Теперь можно посмотреть все изменения сайта с самого первого релиза.</li>
+                <li><strong>Новое меню навигации.</strong> Быстрый доступ ко всем разделам сайта из любой страницы, удобное мобильное меню.</li>
+              </ul>
+            </div>
+            
+            <div class="changes-group">
+              <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+              <ul class="changes-list">
+                <li><strong>Тёмная и светлая темы:</strong> обе темы полностью переработаны — стали приятнее для глаз, текст читается легче.</li>
+                <li><strong>Мобильная версия:</strong> сайт отлично работает на телефонах и планшетах — удобное меню, адаптивные карточки, оптимизированные страницы.</li>
+                <li><strong>Скорость загрузки:</strong> сайт работает быстрее благодаря внутренней оптимизации и переорганизации файлов.</li>
+                <li><strong>Страницы гайдов:</strong> удобное оглавление сбоку, увеличение картинок по клику, индикатор прогресса чтения.</li>
+                <li><strong>Карточки гайдов:</strong> сразу видно категорию, фракцию, локацию и дату публикации.</li>
+                <li><strong>Плавные переходы:</strong> элементы страницы появляются плавно, кнопки реагируют на наведение.</li>
+                <li><strong>Модальные окна:</strong> окна «О сайте» и «Контакты» стали удобнее и красивее.</li>
+              </ul>
+            </div>
+            
+            <div class="changes-group">
+              <h4><span class="change-badge tech"><i class="fa-solid fa-code"></i></span> Техническое</h4>
+              <ul class="changes-list">
+                <li>Полностью переорганизована структура файлов сайта для удобства разработки и быстрой загрузки.</li>
+                <li>Обновлены шрифты для лучшей читаемости на всех устройствах.</li>
+                <li>Исправлены мелкие ошибки отображения в разных браузерах.</li>
+                <li>Подготовлена база для будущих обновлений калькуляторов и карты.</li>
+              </ul>
+            </div>
+            
+            <div class="changes-group">
+              <h4><span class="change-badge fix"><i class="fa-solid fa-wrench"></i></span> В работе</h4>
+              <ul class="changes-list">
+                <li><strong>Карта квестов:</strong> добавление новых квестов и локаций.</li>
+                <li><strong>Руководства:</strong> написание гайдов по оставшимся квестам.</li>
+                <li><strong>Калькуляторы:</strong> доработка функционала и добавление новых возможностей.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Версия 2.1.1 -->
+        <article class="version-card" id="v2.1.1">
+          <div class="version-header">
+            <div class="version-info">
+              <div class="version-number">
+                <span class="version-tag minor">Минорный релиз</span>
+                <h2>Версия 2.1.1</h2>
+              </div>
+              <time class="version-date" datetime="2025-09-21">
+                <i class="fa-regular fa-calendar"></i>
+                21 сентября 2025
+              </time>
+            </div>
+          </div>
+          
+          <div class="version-body">
+            <div class="changes-group">
+              <h4><span class="change-badge new"><i class="fa-solid fa-plus"></i></span> Новое</h4>
+              <ul class="changes-list">
+                <li><strong>Полноэкранная страница карты.</strong></li>
+                <li><strong>Мобильное меню.</strong></li>
+              </ul>
+            </div>
+            
+            <div class="changes-group">
+              <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+              <ul class="changes-list">
+                <li><strong>Карта:</strong> убраны браузерные ползунки у холста; поповеры квестов открываются по клику.</li>
+                <li><strong>Поповеры:</strong> больше не обрезаются краями карты, автоматически располагаются выше/ниже маркера.</li>
+                <li><strong>Тёмная тема:</strong> осветлены элементы панели управления для лучшего контраста.</li>
+                <li><strong>Светлая тема:</strong> переработаны бейджи фракций, улучшена читабельность.</li>
+                <li><strong>О сайте:</strong> обновлено описание проекта.</li>
+              </ul>
+            </div>
+            
+            <div class="changes-group">
+              <h4><span class="change-badge fix"><i class="fa-solid fa-wrench"></i></span> Исправления</h4>
+              <ul class="changes-list">
+                <li>Исправлено «съедание» описания поповера границей карты.</li>
+                <li>Отцентрованы иконки в компактном режиме карты.</li>
+                <li>Устранены визуальные «швы» на стыках тайлов.</li>
+                <li>Убрано дублирующее тост-уведомление при копировании ника.</li>
+              </ul>
+            </div>
+            
+            <div class="changes-group">
+              <h4><span class="change-badge tech"><i class="fa-solid fa-code"></i></span> Техническое</h4>
+              <ul class="changes-list">
+                <li><strong>SEO:</strong> улучшены title/description, добавлены keywords.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Версия 2.1.0 -->
+        <article class="version-card" id="v2.1.0">
+          <div class="version-header">
+            <div class="version-info">
+              <div class="version-number">
+                <span class="version-tag minor">Минорный релиз</span>
+                <h2>Версия 2.1.0</h2>
+              </div>
+              <time class="version-date" datetime="2025-08-23">
+                <i class="fa-regular fa-calendar"></i>
+                23 августа 2025
+              </time>
+            </div>
+          </div>
+          
+          <div class="version-body">
+            <div class="changes-group">
+              <h4><span class="change-badge new"><i class="fa-solid fa-plus"></i></span> Новое</h4>
+              <ul class="changes-list">
+                <li>Добавлена страница с интерактивной картой по квестам.</li>
+                <li>Добавлены подробные гайды по прохождению квестов.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Версия 2.0.0 -->
+        <article class="version-card" id="v2.0.0">
+          <div class="version-header">
+            <div class="version-info">
+              <div class="version-number">
+                <span class="version-tag major">Мажорный релиз</span>
+                <h2>Версия 2.0.0</h2>
+              </div>
+              <time class="version-date" datetime="2025-08-12">
+                <i class="fa-regular fa-calendar"></i>
+                12 августа 2025
+              </time>
+            </div>
+          </div>
+          
+          <div class="version-body">
+            <div class="changes-group">
+              <h4><span class="change-badge new"><i class="fa-solid fa-plus"></i></span> Ключевые нововведения</h4>
+              <ul class="changes-list">
+                <li><strong>Новая главная страница.</strong> Лаконичный лендинг, быстрый доступ к инструментам.</li>
+                <li><strong>Единая шапка сайта.</strong> Дропдаун «Калькуляторы», переключатель темы.</li>
+                <li><strong>Компактные обновления.</strong> 3 последних изменения на главной.</li>
+                <li><strong>Полная страница changelog.</strong> Улучшенная типографика.</li>
+              </ul>
+            </div>
+            
+            <div class="changes-group">
+              <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+              <ul class="changes-list">
+                <li><strong>Светлая тема:</strong> повышен контраст, улучшена читаемость.</li>
+                <li><strong>Контакты:</strong> стилизованные ссылки VK/Discord, копирование ника в 1 клик.</li>
+                <li><strong>Единая шапка</strong> на всех ключевых страницах.</li>
+              </ul>
+            </div>
+            
+            <div class="changes-group">
+              <h4><span class="change-badge fix"><i class="fa-solid fa-wrench"></i></span> Исправления</h4>
+              <ul class="changes-list">
+                <li>Исправлен «ореол» у кнопки темы.</li>
+                <li>Корректные тени и фон шапки при прокрутке.</li>
+                <li>Тост-уведомления отображаются независимо от модалок.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Версия 1.3.0 -->
+        <article class="version-card" id="v1.3.0">
+          <div class="version-header">
+            <div class="version-info">
+              <div class="version-number">
+                <span class="version-tag minor">Минорный релиз</span>
+                <h2>Версия 1.3.0</h2>
+              </div>
+              <time class="version-date" datetime="2025-08-07">
+                <i class="fa-regular fa-calendar"></i>
+                7 августа 2025
+              </time>
+            </div>
+          </div>
+          
+          <div class="version-body">
+            <div class="changes-group">
+              <h4><span class="change-badge new"><i class="fa-solid fa-plus"></i></span> Ключевые нововведения</h4>
+              <ul class="changes-list">
+                <li><strong>Полностью переработана система купонов.</strong> Разные купоны к разным предметам.</li>
+                <li><strong>Гибкий ручной ввод:</strong> корректировка ресурсов без сброса пресетов.</li>
+                <li><strong>Управление списком:</strong> удаление предметов из расчёта.</li>
+              </ul>
+            </div>
+            
+            <div class="changes-group">
+              <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+              <ul class="changes-list">
+                <li>Группировка пресетов по веткам, мгновенный пересчёт.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Версия 1.2.1 -->
+        <article class="version-card" id="v1.2.1">
+          <div class="version-header">
+            <div class="version-info">
+              <div class="version-number">
+                <span class="version-tag patch">Патч</span>
+                <h2>Версия 1.2.1</h2>
+              </div>
+              <time class="version-date" datetime="2025-08-01">
+                <i class="fa-regular fa-calendar"></i>
+                1 августа 2025
+              </time>
+            </div>
+          </div>
+          
+          <div class="version-body">
+            <div class="changes-group">
+              <h4><span class="change-badge fix"><i class="fa-solid fa-wrench"></i></span> Исправления</h4>
+              <ul class="changes-list">
+                <li>Улучшена кликабельность названий пресетов.</li>
+                <li>Изменён дизайн вкладок пресетов.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Версия 1.2.0 -->
+        <article class="version-card" id="v1.2.0">
+          <div class="version-header">
+            <div class="version-info">
+              <div class="version-number">
+                <span class="version-tag minor">Минорный релиз</span>
+                <h2>Версия 1.2.0</h2>
+              </div>
+              <time class="version-date" datetime="2025-08-01">
+                <i class="fa-regular fa-calendar"></i>
+                1 августа 2025
+              </time>
+            </div>
+          </div>
+          
+          <div class="version-body">
+            <div class="changes-group">
+              <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+              <ul class="changes-list">
+                <li>Добавлена ветка KS-1.</li>
+                <li>Обновлены цены бартерных ресурсов Любеч-3.</li>
+                <li>Добавлена страница с гайдами.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Версия 1.1.1 -->
+        <article class="version-card" id="v1.1.1">
+          <div class="version-header">
+            <div class="version-info">
+              <div class="version-number">
+                <span class="version-tag patch">Патч</span>
+                <h2>Версия 1.1.1</h2>
+              </div>
+              <time class="version-date" datetime="2025-06-04">
+                <i class="fa-regular fa-calendar"></i>
+                4 июня 2025
+              </time>
+            </div>
+          </div>
+          
+          <div class="version-body">
+            <div class="changes-group">
+              <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+              <ul class="changes-list">
+                <li>Дополнены все фракционные костюмы.</li>
+                <li>Актуализированы цены в калькуляторе заточки.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Версия 1.1.0 -->
+        <article class="version-card" id="v1.1.0">
+          <div class="version-header">
+            <div class="version-info">
+              <div class="version-number">
+                <span class="version-tag minor">Минорный релиз</span>
+                <h2>Версия 1.1.0</h2>
+              </div>
+              <time class="version-date" datetime="2025-03-17">
+                <i class="fa-regular fa-calendar"></i>
+                17 марта 2025
+              </time>
+            </div>
+          </div>
+          
+          <div class="version-body">
+            <div class="changes-group">
+              <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+              <ul class="changes-list">
+                <li>Добавлены шаблоны всех бартерных предметов.</li>
+                <li>Изменён цвет названий бартерных ресурсов.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Версия 1.0.5 -->
+        <article class="version-card" id="v1.0.5">
+          <div class="version-header">
+            <div class="version-info">
+              <div class="version-number">
+                <span class="version-tag patch">Патч</span>
+                <h2>Версия 1.0.5</h2>
+              </div>
+              <time class="version-date" datetime="2025-03-15">
+                <i class="fa-regular fa-calendar"></i>
+                15 марта 2025
+              </time>
+            </div>
+          </div>
+          
+          <div class="version-body">
+            <div class="changes-group">
+              <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+              <ul class="changes-list">
+                <li>Добавлены шаблоны бартерных цевий и креплений.</li>
+                <li>Добавлены шаблоны бартерных устройств.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ранние версии (скрыты по умолчанию) -->
+        <div class="early-versions" id="earlyVersions" hidden>
+          
+          <!-- Версия 1.0.4 -->
+          <article class="version-card" id="v1.0.4">
+            <div class="version-header">
+              <div class="version-info">
+                <div class="version-number">
+                  <span class="version-tag patch">Патч</span>
+                  <h2>Версия 1.0.4</h2>
+                </div>
+                <time class="version-date" datetime="2025-03-14">
+                  <i class="fa-regular fa-calendar"></i>
+                  14 марта 2025
+                </time>
+              </div>
+            </div>
+            
+            <div class="version-body">
+              <div class="changes-group">
+                <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+                <ul class="changes-list">
+                  <li>Добавлены шаблоны всех бартерных магазинов.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Версия 1.0.3 -->
+          <article class="version-card" id="v1.0.3">
+            <div class="version-header">
+              <div class="version-info">
+                <div class="version-number">
+                  <span class="version-tag patch">Патч</span>
+                  <h2>Версия 1.0.3</h2>
+                </div>
+                <time class="version-date" datetime="2025-03-09">
+                  <i class="fa-regular fa-calendar"></i>
+                  9 марта 2025
+                </time>
+              </div>
+            </div>
+            
+            <div class="version-body">
+              <div class="changes-group">
+                <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+                <ul class="changes-list">
+                  <li>Полностью обновлены все шаблоны брони.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Версия 1.0.2 -->
+          <article class="version-card" id="v1.0.2">
+            <div class="version-header">
+              <div class="version-info">
+                <div class="version-number">
+                  <span class="version-tag patch">Патч</span>
+                  <h2>Версия 1.0.2</h2>
+                </div>
+                <time class="version-date" datetime="2025-03-05">
+                  <i class="fa-regular fa-calendar"></i>
+                  5 марта 2025
+                </time>
+              </div>
+            </div>
+            
+            <div class="version-body">
+              <div class="changes-group">
+                <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+                <ul class="changes-list">
+                  <li>Полностью готовы все шаблоны оружия.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Версия 1.0.1 -->
+          <article class="version-card" id="v1.0.1">
+            <div class="version-header">
+              <div class="version-info">
+                <div class="version-number">
+                  <span class="version-tag patch">Патч</span>
+                  <h2>Версия 1.0.1</h2>
+                </div>
+                <time class="version-date" datetime="2025-03-03">
+                  <i class="fa-regular fa-calendar"></i>
+                  3 марта 2025
+                </time>
+              </div>
+            </div>
+            
+            <div class="version-body">
+              <div class="changes-group">
+                <h4><span class="change-badge improve"><i class="fa-solid fa-arrow-up"></i></span> Улучшения</h4>
+                <ul class="changes-list">
+                  <li>Распределены шаблоны оружия по веткам.</li>
+                  <li>Навигация по надульникам: цвет ветки соответствует калибру.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Версия 1.0.0 -->
+          <article class="version-card" id="v1.0.0">
+            <div class="version-header">
+              <div class="version-info">
+                <div class="version-number">
+                  <span class="version-tag major">Первый релиз</span>
+                  <h2>Версия 1.0.0</h2>
+                </div>
+                <time class="version-date" datetime="2025-03-01">
+                  <i class="fa-regular fa-calendar"></i>
+                  1 марта 2025
+                </time>
+              </div>
+            </div>
+            
+            <div class="version-body">
+              <div class="changes-group">
+                <h4><span class="change-badge new"><i class="fa-solid fa-plus"></i></span> Первый публичный релиз</h4>
+                <ul class="changes-list">
+                  <li>Запуск калькулятора бартера.</li>
+                  <li>Базовая версия калькулятора заточки.</li>
+                  <li>Страница с информацией о проекте.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        <button class="show-early-btn" id="showEarlyBtn">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Показать ранние версии (1.0.0 — 1.0.4)</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+      </div>
+    </div>
+  </section>
+  
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides/guides.html">Руководства</a>
+      <a href="../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="../global.js"></script>
+<script src="changelog.js"></script>
+</body>
+</html>
