@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Документация — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Документация» в STALCRAFT: X для Бандитов: где взять у Гнома в Сельской школе, варианты диалогов с Нотариусом, ветки прохождения и все награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Документация, Гном, Нотариус, Пёс, Сельская школа, Обочина, Агрокомплекс Колос, Бандиты, прохождение, награды" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/dokumentaciya/cover.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Документация</span>
+      </div>
+      <h1 class="hero-title">Документация</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction-bandit"><i class="fa-solid fa-users"></i> Бандиты</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Обочина</span>
+        <span class="tag tag-type"><i class="fa-solid fa-code-branch"></i> Нелинейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-bandit"><i class="fa-solid fa-skull"></i> Бандиты</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Обочина</span></div>
+          <div class="info-item"><span class="info-label">Подлокация</span><span class="info-value">Сельская школа</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Можно провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-code-branch"></i><span>Нелинейный</span></div>
+          <div class="trait"><i class="fa-solid fa-unlock"></i><span>Без условий</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-ruble-sign"></i><span>1 000 руб.</span></div>
+          <div class="reward-row"><i class="fa-solid fa-star"></i><span>+25 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Квест берётся у бандита по кличке <strong>Гном</strong> в «Сельской школе» на локации <strong>Обочина</strong>. Квест <em>нелинейный</em> и имеет три исхода:</p>
+        <div class="outcome-cards">
+          <div class="outcome-card">
+            <div class="outcome-icon kill"><i class="fa-solid fa-xmark"></i></div>
+            <div class="outcome-content"><strong>Отказ</strong><span>Провал квеста</span></div>
+          </div>
+          <div class="outcome-card">
+            <div class="outcome-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;"><i class="fa-solid fa-coins"></i></div>
+            <div class="outcome-content"><strong>Заплатить Нотариусу</strong><span>+40 репутации, документ</span></div>
+          </div>
+          <div class="outcome-card recommended">
+            <div class="outcome-icon peace"><i class="fa-solid fa-hand-fist"></i></div>
+            <div class="outcome-content"><strong>Кинуть Нотариуса</strong><span>Предметные награды</span></div>
+            <span class="recommend-badge">Рекомендую</span>
+          </div>
+        </div>
+        <div class="alert alert-warning">
+          <i class="fa-solid fa-radiation"></i>
+          <span>Один из тайников находится в зоне 1‑го радиационного фона — возьмите антирадиационные расходники, если костюм не держит этот уровень.</span>
+        </div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        <div class="alert alert-warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Квест нелинейный и с возможностью провала.</span></div>
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Взять квест у Гнома</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Гномом</span></div>
+              <p>Подходим к <strong>Гному</strong> в «Сельской школе» и начинаем диалог (выбирайте первые варианты ответов).</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dokumentaciya/cover.jpg" alt="Гном в Сельской школе" loading="lazy">
+                <figcaption>Гном выдаёт квест</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>К Нотариусу на Агрокомплекс «Колос»</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Нотариусом</span></div>
+              <p>Отправляемся на <strong>Агрокомплекс «Колос»</strong> и разговариваем с Нотариусом, придерживаясь первых вариантов ответов.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dokumentaciya/notarius.jpg" alt="Нотариус на Агрокомплексе «Колос»" loading="lazy">
+                <figcaption>Нотариус отправит искать тайники</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Найти 3 тайника</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Обыскать тайники: 0/3</span></div>
+              <p>Ищем три тайника по меткам — координаты указаны точно, поэтому на поиск уйдёт немного времени.</p>
+              <div class="tip-box">
+                <i class="fa-solid fa-lightbulb"></i>
+                <p><strong>Совет:</strong> Не забудьте про радиозащиту для одного из тайников!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>Вернуться к Нотариусу — развилка</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Нотариусом</span></div>
+              <p>После осмотра всех тайников возвращаемся к Нотариусу. Один из тайников окажется пуст. Здесь вы выбираете исход квеста:</p>
+              
+              <div class="alert alert-tip"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Ключевой момент! Выберите, как поступить с Нотариусом.</span></div>
+              
+              <div class="choice-selector" id="rewardChoice">
+                <button class="choice-btn" data-target="panel-pay">
+                  <i class="fa-solid fa-coins"></i><span>Заплатить Нотариусу</span><small>+40 репутации, документ</small>
+                </button>
+                <button class="choice-btn active" data-target="panel-scam">
+                  <i class="fa-solid fa-hand-fist"></i><span>Кинуть Нотариуса</span><small>Предметные награды</small>
+                </button>
+              </div>
+              
+              <div class="choice-panels">
+                <div id="panel-pay" class="choice-panel">
+                  <h4><i class="fa-solid fa-handshake"></i> Вариант 1: Заплатить Нотариусу</h4>
+                  <p>Просто придерживайтесь первых ответов в диалоге. По итогу получите «Документ от Нотариуса» и +40 репутации (без предметной выгоды).</p>
+                  <div class="alert alert-info" style="margin-top: 12px;"><i class="fa-solid fa-circle-info"></i><span>Этот вариант проще, но менее выгоден по предметам.</span></div>
+                </div>
+
+                <div id="panel-scam" class="choice-panel active">
+                  <h4><i class="fa-solid fa-skull-crossbones"></i> Вариант 2: Кинуть Нотариуса (рекомендуется)</h4>
+                  <p>Выберите следующие ответы у Нотариуса:</p>
+                  <div class="dialogue-list">
+                    <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">[Вручить контейнеры]</span></div>
+                    <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Один схрон был пустым.</span></div>
+                    <div class="dialogue-option"><span class="option-num">2</span><span class="option-text">Мне кажется, это ты меня надурить хочешь.</span></div>
+                  </div>
+                  <p style="margin-top: 16px;">После этого возвращаемся в «Сельскую школу» к механику по кличке <strong>Пёс</strong> — он вскроет контейнеры и выдаст награду.</p>
+                  <figure class="img-figure" style="margin-top: 16px;">
+                    <img src="../images/quests/dokumentaciya/pes.jpg" alt="Механик Пёс в Сельской школе" loading="lazy">
+                    <figcaption>Механик Пёс — финальная выдача наград</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <p>Награды при выборе «Кинуть Нотариуса»:</p>
+        <div class="rewards-grid">
+          <div class="reward-item">
+            <img src="../../map/images/items/energy-zhiden-extra.webp" alt='Энергетик "Жидень EXTRA"' />
+            <div class="reward-details"><span class="reward-name">Энергетик «Жидень EXTRA»</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/tonic-arni.webp" alt='Тоник "Арни"' />
+            <div class="reward-details"><span class="reward-name">Тоник «Арни»</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/ammo-545-sbp.webp" alt="Ящик 5.45 СБП" />
+            <div class="reward-details"><span class="reward-name">Ящик 5.45 СБП</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/ammo-556-sbp.webp" alt="Ящик 5.56 СБП" />
+            <div class="reward-details"><span class="reward-name">Ящик 5.56 СБП</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/ammo-762-sbp.webp" alt="Ящик 7.62 СБП" />
+            <div class="reward-details"><span class="reward-name">Ящик 7.62 СБП</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>1 000 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+25 репутации</span></div>
+        </div>
+        
+        <div class="alert alert-info" style="margin-top: 20px;">
+          <i class="fa-solid fa-arrows-split-up-and-left"></i>
+          <span><strong>Альтернатива:</strong> если заплатить Нотариусу, вместо предметов вы получите +40 репутации и «Документ от Нотариуса» (без практического применения).</span>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Посылка Фримена (Бандиты) — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Посылка Фримена» в STALCRAFT: X для Бандитов: где взять у Варга, варианты диалогов для получения Кустарного, Тактического или АКС-74У Варга, все награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Посылка Фримена, Варг, Фримен, АКС-74У Варга, Лодочная Станция, Болота, Бандиты, прохождение, награды" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/posylka-freemena/posylka-freemena.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Посылка Фримена</span>
+      </div>
+      <h1 class="hero-title">Посылка Фримена</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction-bandit"><i class="fa-solid fa-skull"></i> Бандиты</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Болота</span>
+        <span class="tag tag-type"><i class="fa-solid fa-code-branch"></i> Нелинейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-bandit"><i class="fa-solid fa-skull"></i> Бандиты</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Болота</span></div>
+          <div class="info-item"><span class="info-label">Подлокация</span><span class="info-value">Лодочная станция</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait"><i class="fa-solid fa-shield-halved"></i><span>Нельзя провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-code-branch"></i><span>Нелинейный</span></div>
+          <div class="trait"><i class="fa-solid fa-unlock"></i><span>Без условий</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row money"><i class="fa-solid fa-ruble-sign"></i><span>6 000 руб.</span></div>
+          <div class="reward-row rep"><i class="fa-solid fa-star"></i><span>+140 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Квест берётся у бандита по кличке <strong>Варг</strong> на «Лодочной Станции» на <strong>Болотах</strong>. Задание нелинейное — от выбранного предфинального диалога зависит итоговая награда. Можно получить один из трёх вариантов АКС-74У:</p>
+        
+        <div class="outcome-cards">
+          <div class="outcome-card recommended">
+            <div class="outcome-icon peace"><i class="fa-solid fa-handshake"></i></div>
+            <div class="outcome-content"><strong>Договор на условиях Варга</strong><span>АКС-74У Варга</span></div>
+            <span class="recommend-badge">Рекомендую</span>
+          </div>
+          <div class="outcome-card">
+            <div class="outcome-icon peace"><i class="fa-solid fa-handshake-angle"></i></div>
+            <div class="outcome-content"><strong>Договор на обычных условиях</strong><span>Тактический АКС-74У</span></div>
+          </div>
+          <div class="outcome-card">
+            <div class="outcome-icon kill"><i class="fa-solid fa-skull"></i></div>
+            <div class="outcome-content"><strong>Убийство Фримена</strong><span>Кустарный АКС-74У</span></div>
+          </div>
+        </div>
+        
+        <div class="tip-box">
+          <i class="fa-solid fa-lightbulb"></i>
+          <p><strong>Совет:</strong> АКС-74У Варга имеет лучшие модули — рекомендую договариваться на условиях Варга.</p>
+        </div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        <div class="alert alert-info"><i class="fa-solid fa-circle-info"></i><span>Квест нелинейный, но провалить его невозможно. Остальные награды неизменны при любом раскладе.</span></div>
+        
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Уничтожить отряд Светлого</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Варгом и уничтожить отряд</span></div>
+              <p>Поговорите с <strong>Варгом</strong> на Лодочной Станции. Он отправит вас уничтожать отряд Светлого. Расправьтесь со всем отрядом и возвращайтесь к Варгу за следующим заданием.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>Устранить курьера Фримена</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти и убить курьера</span></div>
+              <p>Варг отправит вас на поиски курьеров Фримена, которые ходят в выделенной на карте области. Эти НПС иногда носят рюкзак за спиной. Устраните одного из них.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/posylka-freemena/courier.jpg" alt="Курьер Фримена с рюкзаком" loading="lazy">
+                <figcaption>Один из курьеров Фримена</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Найти склад по клочку карты</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Осмотреть клочок карты и найти склад</span></div>
+              <p>После убийства курьера в инвентаре появится клочок карты. Осмотрите его — на нём отмечена следующая точка. Это склад Фримена.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/posylka-freemena/map-scrap.jpg" alt="Клочок карты с пометкой" loading="lazy">
+                  <figcaption>Клочок карты</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/posylka-freemena/map-location.jpg" alt="Расположение склада на карте" loading="lazy">
+                  <figcaption>Нужная точка на карте</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>Зачистить склад</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Убить 10 ботов на складе</span></div>
+              <p>По прибытии на место спуститесь в нору и зачистите склад Фримена — нужно убить <strong>10 ботов</strong>. После зачистки вернитесь ко входу и поговорите с Варгом.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/posylka-freemena/cave-entrance.jpg" alt="Вход в пещеру к складу Фримена" loading="lazy">
+                <figcaption>Вход в пещеру, ведущую на склад</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="5">
+            <div class="step-marker">5</div>
+            <div class="step-content">
+              <h3>Переговоры с Фрименом</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Договориться с Фрименом</span></div>
+              <p>Отправляйтесь договариваться с самим <strong>Фрименом</strong>. По прибытии поговорите с Варгом и заходите внутрь.</p>
+              
+              <div class="alert alert-tip"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Ключевой момент! От этого диалога зависит, какой АКС вы получите. Рекомендую АКС-74У Варга — у него лучшие модули.</span></div>
+              
+              <div class="choice-selector" id="rewardChoice">
+                <button class="choice-btn active" data-target="panel-varg">
+                  <i class="fa-solid fa-crown"></i><span>Условия Варга</span><small>АКС-74У Варга</small>
+                </button>
+                <button class="choice-btn" data-target="panel-tactical">
+                  <i class="fa-solid fa-handshake"></i><span>Обычный договор</span><small>Тактический АКС-74У</small>
+                </button>
+                <button class="choice-btn" data-target="panel-custom">
+                  <i class="fa-solid fa-skull"></i><span>Убийство</span><small>Кустарный АКС-74У</small>
+                </button>
+              </div>
+              
+              <div class="choice-panels">
+                <div id="panel-varg" class="choice-panel active">
+                  <h4><i class="fa-solid fa-crown"></i> Условия Варга — АКС-74У Варга</h4>
+                  <p>Необходимо провести диалог на предложенный Варгом процент:</p>
+                  <div class="dialogue-list">
+                    <div class="dialogue-option"><span class="option-num">3</span><span class="option-text">Давай половину или пожалеешь</span></div>
+                    <div class="dialogue-option"><span class="option-num">3</span><span class="option-text">Готов снизить до сорока. И курьеров твоих крышевать будем.</span></div>
+                    <div class="dialogue-option"><span class="option-num">3</span><span class="option-text">Треть, крыша курьерам и еще поставщика тебе нормального найдем.</span></div>
+                  </div>
+                </div>
+                
+                <div id="panel-tactical" class="choice-panel">
+                  <h4><i class="fa-solid fa-handshake"></i> Обычный договор — Тактический АКС-74У</h4>
+                  <p>Достаточно договориться с Фрименом на любой процент ниже требований Варга:</p>
+                  <div class="dialogue-list">
+                    <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Может пятнадцать? А то мы и патроны не отобьем, которые на твоих людей потратили.</span></div>
+                    <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">По рукам.</span></div>
+                  </div>
+                </div>
+                
+                <div id="panel-custom" class="choice-panel">
+                  <h4><i class="fa-solid fa-skull-crossbones"></i> Убийство — Кустарный АКС-74У</h4>
+                  <p>Спровоцируйте Фримена и убейте его:</p>
+                  <div class="dialogue-list">
+                    <div class="dialogue-option"><span class="option-num">4</span><span class="option-text">Минимум семьдесят.</span></div>
+                    <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Кончай вопить. Я сказал "семьдесят".</span></div>
+                  </div>
+                  <div class="alert alert-warning" style="margin-top: 16px;"><i class="fa-solid fa-crosshairs"></i><span>После диалога придётся убить Фримена.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="6">
+            <div class="step-marker">6</div>
+            <div class="step-content">
+              <h3>Забрать награду</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Варгом</span></div>
+              <p>После переговоров с Фрименом выйдите из здания и поговорите с Варгом — он выдаст вам финальную награду.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <div class="rewards-grid">
+          <div class="reward-item rarity-newbie">
+            <img src="../../map/images/items/aks-74u.webp" alt="АКС-74У" />
+            <div class="reward-details"><span class="reward-name">АКС-74У (один из трёх)</span><span class="reward-rarity newbie">Новичок</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/neyrotonic.webp" alt="Нейротоник" />
+            <div class="reward-details"><span class="reward-name">Нейротоник</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/clarinol.webp" alt="Кларинол" />
+            <div class="reward-details"><span class="reward-name">Кларинол</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/tonic-arni.webp" alt="Тоник Арни" />
+            <div class="reward-details"><span class="reward-name">Тоник «Арни»</span><span class="reward-count">×3</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>6 000 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+140 репутации</span></div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>

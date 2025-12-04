@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Безопасность превыше всего — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Безопасность превыше всего» в STALCRAFT: X: где взять у Бандитов, правильные ответы в диалогах с Моряком и Юнгой, бои с блаженными и все награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Безопасность превыше всего, Моряк, Юнга, Сельская школа, Обочина, Бандиты, прохождение, награды" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/bezopasnost/cover.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Безопасность превыше всего</span>
+      </div>
+      <h1 class="hero-title">Безопасность превыше всего</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction-bandit"><i class="fa-solid fa-users"></i> Бандиты</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Обочина</span>
+        <span class="tag tag-type"><i class="fa-solid fa-code-branch"></i> Нелинейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-bandit"><i class="fa-solid fa-skull"></i> Бандиты</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Обочина</span></div>
+          <div class="info-item"><span class="info-label">Подлокация</span><span class="info-value">Сельская школа</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Можно провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-code-branch"></i><span>Нелинейный</span></div>
+          <div class="trait"><i class="fa-solid fa-unlock"></i><span>Без условий</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-ruble-sign"></i><span>6 500 руб.</span></div>
+          <div class="reward-row"><i class="fa-solid fa-star"></i><span>+130 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Квест берётся у бандита по кличке <strong>Моряк</strong> в «Сельской школе» на локации <strong>Обочина</strong>. Квест <em>нелинейный</em>, при неверном ответе его можно <strong>сразу провалить</strong>.</p>
+        <div class="tip-box">
+          <i class="fa-solid fa-lightbulb"></i>
+          <p><strong>Важно:</strong> Рекомендуется пройти квест правильно — он понадобится для дальнейших квестов в Баре.</p>
+        </div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        <div class="alert alert-warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Квест нелинейный, с возможностью провала. Следуйте указанным вариантам диалогов!</span></div>
+        
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Первый диалог с Моряком</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Моряком</span></div>
+              <p>Подойдите к <strong>Моряку</strong> — диалог начнётся автоматически.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/bezopasnost/cover.jpg" alt="Моряк в Сельской школе" loading="lazy">
+                <figcaption>Моряк сам заговорит с вами</figcaption>
+              </figure>
+              <p>Выбирайте следующие ответы:</p>
+              <div class="dialogue-list">
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">То есть как это — за кого?</span></div>
+                <div class="dialogue-option"><span class="option-num">2</span><span class="option-text">Против! Мне эти уроды нисколько не нравятся!</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Да, конечно!</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Что дальше?</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Если всё так просто — зачем нужен я?</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">И что, ты с меня водку выбить хочешь?</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Понятно. То есть я должен сбегать в твой тайник за этой царской водкой и принести её сюда?</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Хорошо. Давай координаты своей нычки.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>Забрать водку из тайника</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти тайник и забрать водку</span></div>
+              <p>Бегите по метке к нычке и заберите водку из ящика.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/bezopasnost/stash.jpg" alt="Ящик с водкой" loading="lazy">
+                <figcaption>Ящик с водкой</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Возврат к Моряку и встреча с блаженным</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Вернуться к Моряку и отдать водку</span></div>
+              <p>Вернитесь к <strong>Моряку</strong> и отдайте водку. Первый короткий диалог — линейный. Когда присоединится второй NPC (и вас переместит дальше), выбирайте только первые варианты:</p>
+              <div class="dialogue-list">
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Здрассте-здрассте...</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Да-да, прямо из‑под пули...</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Да, так всё и было...</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Мой герой! Мой ангел‑хранитель!</span></div>
+              </div>
+              <p>Затем вас перенесёт обратно к Моряку — диалог снова линейный.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>Раненый Моряк</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти раненого Моряка</span></div>
+              <p>Отправляйтесь по новой метке — найдёте <strong>раненого Моряка</strong>.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/bezopasnost/moryak-wounded.jpg" alt="Раненый Моряк" loading="lazy">
+                <figcaption>Раненый Моряк</figcaption>
+              </figure>
+              <p>Поговорите с ним и идите к <strong>Юнге</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="5">
+            <div class="step-marker">5</div>
+            <div class="step-content">
+              <h3>Разговор с Юнгой</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Юнгой</span></div>
+              <figure class="img-figure">
+                <img src="../images/quests/bezopasnost/yunga.jpg" alt="Юнга" loading="lazy">
+                <figcaption>Юнга</figcaption>
+              </figure>
+              <p>Диалог с Юнгой: в конце выберите первый вариант (можно прокликивать первые ответы):</p>
+              <div class="dialogue-list">
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Ладно, сделаю.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="6">
+            <div class="step-marker">6</div>
+            <div class="step-content">
+              <h3>Зачистка тоннеля</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Устранить блаженных: 0/4</span></div>
+              <p>После диалога вас перенесёт в тоннель. Устраните <strong>4 блаженных</strong>.</p>
+              <div class="alert alert-info"><i class="fa-solid fa-circle-info"></i><span>После зачистки вас автоматически вернёт обратно к Юнге.</span></div>
+            </div>
+          </div>
+
+          <div class="step" data-step="7">
+            <div class="step-marker">7</div>
+            <div class="step-content">
+              <h3>Завершение квеста</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Вернуться к раненому Моряку</span></div>
+              <p>Поговорите с Юнгой после возвращения, затем вернитесь к раненому Моряку.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/bezopasnost/moryak-wounded-2.jpg" alt="Возвращение к Моряку" loading="lazy">
+                <figcaption>Вернитесь к Моряку за наградой</figcaption>
+              </figure>
+              <p>Поговорите с Моряком — получите награду за квест.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <div class="rewards-grid">
+          <div class="reward-item">
+            <img src="../../map/images/items/pouch-medic.webp" alt="Подсумок с военными аптечками" />
+            <div class="reward-details"><span class="reward-name">Подсумок с военными аптечками</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/american-mre.webp" alt="Американский ИРП" />
+            <div class="reward-details"><span class="reward-name">Американский ИРП</span><span class="reward-count">×10</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/clarinol.webp" alt="Кларинол" />
+            <div class="reward-details"><span class="reward-name">Кларинол</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/boevoi-goroh.webp" alt="Боевой горох" />
+            <div class="reward-details"><span class="reward-name">Боевой горох</span><span class="reward-count">×2</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>6 500 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+130 репутации</span></div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>

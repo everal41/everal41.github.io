@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Должок — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Должок» в STALCRAFT: X: где взять на АПК «Колос», ветки за Чешира и Сиплого, все награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Должок, Сиплый, Чешир, Связной, Агрокомплекс Колос, Бандиты, прохождение, награды" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/dolzhok/cover.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Должок</span>
+      </div>
+      <h1 class="hero-title">Должок</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction-bandit"><i class="fa-solid fa-skull"></i> Бандиты</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Агрокомплекс «Колос»</span>
+        <span class="tag tag-type"><i class="fa-solid fa-code-branch"></i> Нелинейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-bandit"><i class="fa-solid fa-skull"></i> Бандиты</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Агрокомплекс «Колос»</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait"><i class="fa-solid fa-shield-halved"></i><span>Нельзя провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-code-branch"></i><span>Нелинейный</span></div>
+          <div class="trait"><i class="fa-solid fa-unlock"></i><span>Без условий</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-ruble-sign"></i><span>10 000 руб.</span></div>
+          <div class="reward-row"><i class="fa-solid fa-star"></i><span>+245 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <div class="alert alert-warning"><i class="fa-solid fa-circle-exclamation"></i><span>Прохождение данного квеста нужно для задания от NPC Монета, а также облегчит прохождение КИМ‑X «Атлас».</span></div>
+        <p>Квест берётся у <strong>трупа</strong> в подвале заброшенного здания на локации <strong>Агрокомплекс «Колос»</strong>.</p>
+        <p>Квест можно пройти двумя путями:</p>
+        <div class="outcome-cards">
+          <div class="outcome-card recommended">
+            <div class="outcome-icon peace"><i class="fa-solid fa-handshake"></i></div>
+            <div class="outcome-content"><strong>На стороне Чешира</strong><span>Меньше времени, лучше награда</span></div>
+            <span class="recommend-badge">Рекомендую</span>
+          </div>
+          <div class="outcome-card">
+            <div class="outcome-icon kill"><i class="fa-solid fa-clock"></i></div>
+            <div class="outcome-content"><strong>На стороне Сиплого</strong><span>Дольше, награда меньше</span></div>
+          </div>
+        </div>
+        <div class="tip-box">
+          <i class="fa-solid fa-lightbulb"></i>
+          <p><strong>Совет:</strong> Перед взятием квеста рекомендую поставить точку возрождения у Диггеров.</p>
+        </div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        <div class="alert alert-info"><i class="fa-solid fa-circle-info"></i><span>Квест нелинейный, но провалить его невозможно.</span></div>
+        
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Подвал на Колосе и Сиплый</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Осмотреть труп и найти Сиплого</span></div>
+              <p>На квестовой метке в подвале осмотрите труп — заберите контейнер.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dolzhok/cover.jpg" alt="Труп в подвале (Колос)" loading="lazy">
+                <figcaption>Труп в подвале — начало квеста</figcaption>
+              </figure>
+              <p>Отнесите контейнер <strong>Сиплому</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/dolzhok/siply-map.jpg" alt="Место Сиплого на карте" loading="lazy">
+                  <figcaption>Местоположение Сиплого на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/dolzhok/siply.jpg" alt="Сиплый" loading="lazy">
+                  <figcaption>Сиплый</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>Связной и канистра топлива</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти Связного и заполнить канистру</span></div>
+              <p>Поговорив с Сиплым, направляйтесь к <strong>Связному</strong> — он отправит заполнить канистру на <strong>Свалке</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/dolzhok/svyaznoy-map.jpg" alt="Место Связного на карте" loading="lazy">
+                  <figcaption>Местоположение Связного на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/dolzhok/svyaznoy.jpg" alt="Связной" loading="lazy">
+                  <figcaption>Связной</figcaption>
+                </figure>
+              </div>
+              <figure class="img-figure">
+                <img src="../images/quests/dolzhok/fuel-points.jpg" alt="Жёлтые метки — подходящий транспорт для слива топлива" loading="lazy">
+                <figcaption>Жёлтые метки — нужный транспорт для слива топлива</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Глюк и база Чешира</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти Глюка и попасть к Чеширу</span></div>
+              <p>Отдав канистру с топливом Связному, отправляйтесь на поиски <strong>Глюка</strong> в небольшой пещере и вернитесь к Связному. Далее двигайтесь на базу <strong>Чешира</strong> — левое здание, спуск в подвал.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dolzhok/glyuk-cave.jpg" alt="Труп Глюка" loading="lazy">
+                <figcaption>Труп Глюка в пещере</figcaption>
+              </figure>
+              <figure class="img-figure">
+                <img src="../images/quests/dolzhok/cheshir.jpg" alt="Чешир" loading="lazy">
+                <figcaption>Чешир — главарь банды</figcaption>
+              </figure>
+              
+              <div class="alert alert-tip"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Ключевой момент! Здесь вы выбираете путь прохождения квеста.</span></div>
+
+              <div class="choice-selector" id="rewardChoice">
+                <button class="choice-btn active" data-target="panel-cheshir">
+                  <i class="fa-solid fa-handshake"></i><span>За Чешира</span><small>Быстрее, лучше награда</small>
+                </button>
+                <button class="choice-btn" data-target="panel-siply">
+                  <i class="fa-solid fa-clock"></i><span>За Сиплого</span><small>Дольше, награда меньше</small>
+                </button>
+              </div>
+
+              <div class="choice-panels">
+                <div id="panel-cheshir" class="choice-panel active">
+                  <h4><i class="fa-solid fa-handshake"></i> Прохождение за Чешира (рекомендуется)</h4>
+                  <p>Выберите следующие варианты ответов:</p>
+                  <div class="dialogue-list">
+                    <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Да. Он рассказал мне ситуацию, и попросил договориться с тобой.</span></div>
+                    <div class="dialogue-option"><span class="option-num">2</span><span class="option-text">За свои поступки нужно отвечать.</span></div>
+                  </div>
+                  <p>Чешир отправит вас <strong>украсть ПДА у Сиплого</strong>. Подойдите к нему и спокойно заберите устройство.</p>
+                  <figure class="img-figure">
+                    <img src="../images/quests/dolzhok/sleeping-siply.jpg" alt="Спящий Сиплый — можно забрать ПДА" loading="lazy">
+                    <figcaption>Спящий Сиплый — забираем ПДА</figcaption>
+                  </figure>
+                  <p>В ПДА указано место схрона — вход через <strong>гермодверь</strong>.</p>
+                  <div class="img-grid-2">
+                    <figure class="img-figure">
+                      <img src="../images/quests/dolzhok/bunker-door.jpg" alt="Вход с гермодверью — схрон Сиплого" loading="lazy">
+                      <figcaption>Вход в схрон Сиплого</figcaption>
+                    </figure>
+                    <figure class="img-figure">
+                      <img src="../images/quests/dolzhok/loot-crate.jpg" alt="Ящик с хабаром" loading="lazy">
+                      <figcaption>Ящик с нужным хабаром</figcaption>
+                    </figure>
+                  </div>
+                  <p>Зачистите подземку, заберите хабар, поднимитесь по винтовой лестнице к двери с красной пометкой на полу и выходите наружу. Вернитесь к Связному, а затем к Чеширу — получите финальную награду.</p>
+                  <div class="tip-box">
+                    <i class="fa-solid fa-unlock"></i>
+                    <p>После завершения у вас появится полный функционал базы Чешира: откроется торговец, NPC будут выдавать ежедневные квесты.</p>
+                  </div>
+                </div>
+
+                <div id="panel-siply" class="choice-panel">
+                  <h4><i class="fa-solid fa-clock"></i> Прохождение за Сиплого</h4>
+                  <p>Выберите следующие варианты ответов:</p>
+                  <div class="dialogue-list">
+                    <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Да. Он рассказал мне ситуацию, и попросил договориться с тобой.</span></div>
+                    <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Все мы совершали ошибки. Может простишь им долг? Для тебя это копейки, и из-за них валить молодую банду не очень хорошо...</span></div>
+                  </div>
+                  <p>Вас выкинет с базы. Идите к <strong>Сиплому</strong> — теперь нужно собрать <strong>Срачник ×30</strong> и <strong>Полыхающий срачник ×2</strong>. Можно купить на аукционе или выбить со спотов.</p>
+                  <p>Собрав ресурсы, отправляйтесь к Связному, чтобы переместиться на базу Чешира, сдайте предметы Чеширу и вернитесь к Сиплому за наградой.</p>
+                  
+                  <div class="alert alert-info"><i class="fa-solid fa-clock"></i><span>Через 2 часа реального времени Сиплый снова свяжется с вами.</span></div>
+                  
+                  <p>Поговорив с Сиплым, отправляйтесь к Чеширу. Он даст письмо для Сиплого и задачу — <strong>завоевать доверие</strong> его бойцов:</p>
+                  
+                  <h4 style="margin: 16px 0 12px; font-size: 15px; color: var(--text-primary);">Задания бойцов Чешира:</h4>
+                  
+                  <p><strong>Могила</strong> — при выходе сам заговорит. Скажите, что деньги не отдаёте, и дождитесь 12 часов реального времени.</p>
+                  
+                  <p><strong>Корень</strong> — сдайте по 5 шт. трёх видов аптечек, взамен выдаст Эпинефрин.</p>
+                  <figure class="img-figure">
+                    <img src="../images/quests/dolzhok/koren.jpg" alt="Корень" loading="lazy">
+                    <figcaption>Корень — местный лекарь</figcaption>
+                  </figure>
+                  
+                  <p><strong>Фугас</strong> — попросит купить припасы у военного на Обочине. У военного выберите <strong>3-й вариант ответа</strong>.</p>
+                  <div class="img-grid-2">
+                    <figure class="img-figure">
+                      <img src="../images/quests/dolzhok/fugas.jpg" alt="Фугас" loading="lazy">
+                      <figcaption>Фугас</figcaption>
+                    </figure>
+                    <figure class="img-figure">
+                      <img src="../images/quests/dolzhok/military.jpg" alt="Военный на Обочине" loading="lazy">
+                      <figcaption>Военный на Обочине</figcaption>
+                    </figure>
+                  </div>
+                  
+                  <p><strong>Лазер</strong> — попросит обыскать тайник. Удобно совмещать с заданием Фугаса.</p>
+                  <div class="img-grid-2">
+                    <figure class="img-figure">
+                      <img src="../images/quests/dolzhok/laser.jpg" alt="Лазер" loading="lazy">
+                      <figcaption>Лазер</figcaption>
+                    </figure>
+                    <figure class="img-figure">
+                      <img src="../images/quests/dolzhok/laser-stash.jpg" alt="Тайник Лазера" loading="lazy">
+                      <figcaption>Тайник Лазера</figcaption>
+                    </figure>
+                  </div>
+                  
+                  <p><strong>Дог</strong> — устранить трёх сталкеров на Свалке.</p>
+                  <figure class="img-figure">
+                    <img src="../images/quests/dolzhok/dog.jpg" alt="Дог" loading="lazy">
+                    <figcaption>Дог</figcaption>
+                  </figure>
+                  
+                  <div class="tip-box">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <p>Выполнив любые <strong>3</strong> из этих заданий, спросите Чешира: «Что про меня думают парни?» — квест завершится. Откроется торговец <strong>Вирус</strong> и мини-игра у бандита Дикий.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <div class="rewards-grid">
+          <div class="reward-item">
+            <img src="../../map/images/items/energy-zhiden-extra.webp" alt='Энергетик "Жидень EXTRA"' />
+            <div class="reward-details"><span class="reward-name">Энергетик «Жидень EXTRA»</span><span class="reward-count">×5</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/zalivnoe.webp" alt="Заливное" />
+            <div class="reward-details"><span class="reward-name">Заливное</span><span class="reward-count">×4</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/desperol.webp" alt="Десперол" />
+            <div class="reward-details"><span class="reward-name">Десперол</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/ammo-545-sbp.webp" alt="Ящик 5.45 СБП" />
+            <div class="reward-details"><span class="reward-name">Ящик 5.45 СБП</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/ammo-556-sbp.webp" alt="Ящик 5.56 СБП" />
+            <div class="reward-details"><span class="reward-name">Ящик 5.56 СБП</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/ammo-762-sbp.webp" alt="Ящик 7.62 СБП" />
+            <div class="reward-details"><span class="reward-name">Ящик 7.62 СБП</span><span class="reward-count">×2</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>10 000 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+245 репутации</span></div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>
