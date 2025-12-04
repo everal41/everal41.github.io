@@ -286,6 +286,10 @@ body.page-map { display: flex; flex-direction: column; }
   transition: opacity var(--transition-fast), visibility var(--transition-fast);
   z-index: 20;
   overflow: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 [data-theme="light"] .marker .popover { background: #fff; }
@@ -501,6 +505,28 @@ body.page-map { display: flex; flex-direction: column; }
 
 .global-tooltip.visible { opacity: 1; visibility: visible; }
 
+.marker .popover::-webkit-scrollbar {
+  width: 6px;
+}
+
+.marker .popover::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 3px;
+}
+
+.marker .popover::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+.marker .popover::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.marker .popover.scrollable {
+  overflow-y: auto;
+}
+
 @media (max-width: 768px) {
   .map-controls { top: 12px; left: 12px; max-width: calc(100% - 24px); padding: 8px 10px; gap: 8px; }
   .control-label span { display: none; }
@@ -531,4 +557,16 @@ body.page-map { display: flex; flex-direction: column; }
 
 @media (prefers-reduced-motion: reduce) {
   .marker .pin-img, .marker .popover, .marker .pin::before { transition: none; }
+}
+
+@media (max-width: 768px) {
+  .marker .popover {
+    max-height: 70vh;
+    max-height: 70dvh;
+  }
+  
+  .marker .popover .q-grid {
+    max-height: 100%;
+    overflow-y: auto;
+  }
 }
