@@ -287,5 +287,23 @@ window.QUESTS_DATA = [
       { img: 'images/items/epinefrin.webp', label: 'Эпинефрин' }
     ],
     money: 27500, reputation: 50, guideUrl: '../guides/quests/posylka-freemena-stalker.html'
-  }
+  },
+  {
+  id: 'q-pochtalyon-stalker', 
+  title: 'Почтальон', 
+  loc: 'south', 
+  faction: 'stalker',
+  x: 1763,
+  y: 2958,
+  preview: '../guides/images/quests/pochtalyon-stalker/cover.jpg',
+  desc: 'Штиблет поручил мне доставить два конверта, красный для Бура и синий для Клопа.',
+  rewards: [
+    { img: 'images/items/desperol.webp', label: 'Десперол' },
+    { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"', qty: 2 },
+    { img: 'images/items/tonic-arni.webp', label: 'Тоник "Арни"', qty: 2 }
+  ],
+  money: 2000, 
+  reputation: 45, 
+  guideUrl: '../guides/quests/pochtalyon-stalker.html'
+}
 ];
