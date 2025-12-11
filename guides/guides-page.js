@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'pochtalyon-stalker',
+    title: 'Почтальон',
+    description: 'Штиблет поручил доставить два конверта: красный для Бура и синий для Клопа.',
+    image: 'images/quests/pochtalyon-stalker/cover.jpg',
+    url: 'quests/pochtalyon-stalker.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'obochina',
+    tags: ['beginner'],
+    keywords: ['штиблет', 'бур', 'клоп', 'конверт', 'доставка', 'почта', 'почтальон', 'пожарная часть'],
+    date: '2025-12-11',
+    status: 'published'
+  },
+  {
     id: 'posylka-freemena-stalker',
     title: 'Посылка Фримена',
     description: 'Гайд по нелинейному квесту от торговца Фримена. Все варианты диалогов для получения Тактического или Кустарного АКС-74У.',
