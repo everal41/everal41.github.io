@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'shershe-lya-fam',
+    title: 'Шерше ля Фам',
+    description: 'На Обочине встретьте Правдина и помогите оправдать пленника. Выбор: убить или пощадить Казанову.',
+    image: 'images/quests/shershe-lya-fam/cover.jpg',
+    url: 'quests/shershe-lya-fam.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'obochina',
+    tags: [],
+    keywords: ['правдин', 'казанова', 'сохатый', 'гривцов', 'лёлька', 'lelka', 'пленник', 'письмо', 'измена', 'шерше ля фам', 'cherchez la femme'],
+    date: '2025-12-12',
+    status: 'published'
+  },
+  {
     id: 'pochtalyon-stalker',
     title: 'Почтальон',
     description: 'Штиблет поручил доставить два конверта: красный для Бура и синий для Клопа.',
