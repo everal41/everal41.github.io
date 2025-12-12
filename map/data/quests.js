@@ -325,5 +325,26 @@ window.QUESTS_DATA = [
     money: 8000, 
     reputation: 160, 
     guideUrl: '../guides/quests/shershe-lya-fam.html'
+  },
+  {
+    id: 'q-torgovye-dela-stalker', 
+    title: 'Торговые дела', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1768, 
+    y: 2966, 
+    preview: '../guides/images/quests/torgovye-dela/cover-stalker.jpg',
+    desc: 'Кучер не хочет со мной разговаривать, пока Секундант не замолвит за меня слово.',
+    rewards: [
+      { img: 'images/items/pouch-medic.webp', label: 'Подсумок с военными аптечками', qty: 2 },
+      { img: 'images/items/ammo-545-sbp.webp', label: 'Ящик 5.45 СБП' },
+      { img: 'images/items/ammo-556-sbp.webp', label: 'Ящик 5.56 СБП' },
+      { img: 'images/items/ammo-762-sbp.webp', label: 'Ящик 7.62 СБП' },
+      { img: 'images/items/desperol.webp', label: 'Десперол', qty: 2 },
+      { img: 'images/items/american-mre.webp', label: 'Американский ИРП', qty: 2 }
+    ],
+    money: 7000, 
+    reputation: 170, 
+    guideUrl: '../guides/quests/torgovye-dela-stalker.html'
   }
 ];
