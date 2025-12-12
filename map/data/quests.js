@@ -289,21 +289,41 @@ window.QUESTS_DATA = [
     money: 27500, reputation: 50, guideUrl: '../guides/quests/posylka-freemena-stalker.html'
   },
   {
-  id: 'q-pochtalyon-stalker', 
-  title: 'Почтальон', 
-  loc: 'south', 
-  faction: 'stalker',
-  x: 1763,
-  y: 2958,
-  preview: '../guides/images/quests/pochtalyon-stalker/cover.jpg',
-  desc: 'Штиблет поручил мне доставить два конверта, красный для Бура и синий для Клопа.',
-  rewards: [
-    { img: 'images/items/desperol.webp', label: 'Десперол' },
-    { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"', qty: 2 },
-    { img: 'images/items/tonic-arni.webp', label: 'Тоник "Арни"', qty: 2 }
-  ],
-  money: 2000, 
-  reputation: 45, 
-  guideUrl: '../guides/quests/pochtalyon-stalker.html'
-}
+    id: 'q-pochtalyon-stalker', 
+    title: 'Почтальон', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1763,
+    y: 2958,
+    preview: '../guides/images/quests/pochtalyon-stalker/cover.jpg',
+    desc: 'Штиблет поручил мне доставить два конверта, красный для Бура и синий для Клопа.',
+    rewards: [
+      { img: 'images/items/desperol.webp', label: 'Десперол' },
+      { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"', qty: 2 },
+      { img: 'images/items/tonic-arni.webp', label: 'Тоник "Арни"', qty: 2 }
+    ],
+    money: 2000, 
+    reputation: 45, 
+    guideUrl: '../guides/quests/pochtalyon-stalker.html'
+  },
+  {
+    id: 'q-shershe-lya-fam-stalker', 
+    title: 'Шерше ля Фам', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1770, 
+    y: 2959, 
+    preview: '../guides/images/quests/shershe-lya-fam/cover.jpg',
+    desc: 'На Обочине мне удалось встретить некоего Правдина, в плену у которого находится какой-то сталкер, убивший своего друга.',
+    rewards: [
+      { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"', qty: 4 },
+      { img: 'images/items/tonic-arni.webp', label: 'Тоник "Арни"', qty: 4 },
+      { img: 'images/items/holodec-kopytom.webp', label: 'Холодец "Копытом по лицу"', qty: 5 },
+      { img: 'images/items/american-mre.webp', label: 'Американский ИРП', qty: 5 },
+      { img: 'images/items/neyrotonic.webp', label: 'Нейротоник' }
+    ],
+    money: 8000, 
+    reputation: 160, 
+    guideUrl: '../guides/quests/shershe-lya-fam.html'
+  }
 ];
