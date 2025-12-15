@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Торговые дела — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Торговые дела» в STALCRAFT: X для Сталкеров: где взять у Кучера в Пожарной части, задания Секунданта, поиск посылки и все награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Торговые дела, Кучер, Секундант, Ковбой, Стрекоза, Крикет, Ковыль, Пожарная часть, Обочина, Сталкеры, прохождение, награды" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/torgovye-dela/cover-stalker.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Торговые дела</span>
+      </div>
+      <h1 class="hero-title">Торговые дела</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction"><i class="fa-solid fa-shield-halved"></i> Сталкеры</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Обочина</span>
+        <span class="tag tag-type"><i class="fa-solid fa-route"></i> Линейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-stalker"><i class="fa-solid fa-shield-halved"></i> Сталкеры</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Обочина</span></div>
+          <div class="info-item"><span class="info-label">Подлокация</span><span class="info-value">Пожарная часть</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait"><i class="fa-solid fa-shield-halved"></i><span>Нельзя провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-route"></i><span>Линейный</span></div>
+          <div class="trait"><i class="fa-solid fa-unlock"></i><span>Без условий</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-ruble-sign"></i><span>7 000 руб.</span></div>
+          <div class="reward-row"><i class="fa-solid fa-star"></i><span>+170 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Квест берётся на первом этаже <strong>Пожарной части</strong> у торговца <strong>Кучера</strong>. Квест спокойно проходится и без чтения гайда.</p>
+        <div class="tip-box">
+          <i class="fa-solid fa-lightbulb"></i>
+          <p><strong>Бонус:</strong> После прохождения квеста вы сможете брать у Кучера повторяемый квест на доставку посылки от Прапора — награда <strong>3 000 руб.</strong> за каждую доставку.</p>
+        </div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        <div class="alert alert-info"><i class="fa-solid fa-circle-info"></i><span>Квест линейный, без возможности провала.</span></div>
+        
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Разговор с Кучером</h3>
+              <p>Поговорите с <strong>Кучером</strong> на первом этаже Пожарной части — он отправит вас к Секунданту.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/torgovye-dela/cover-stalker.jpg" alt="Кучер в Пожарной части" loading="lazy">
+                <figcaption>Кучер выдаёт квест</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>Головорез</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Секундантом</span></div>
+              <p><strong>Секундант</strong> сидит на втором этаже, поднимаемся и говорим с ним.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/torgovye-dela/sekundant.jpg" alt="Секундант" loading="lazy">
+                <figcaption>Секундант на втором этаже</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Разведка</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Осмотреть лагеря</span></div>
+              <p>Секундант отправит вас осматривать <strong>6 точек</strong> на карте — просто посетите их все.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>Разведка: Отчёт</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Доложить Секунданту</span></div>
+              <p>После посещения всех точек возвращайтесь обратно и поговорите с <strong>Секундантом</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="5">
+            <div class="step-marker">5</div>
+            <div class="step-content">
+              <h3>Удар по врагу</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Зачистить лагерь: Стоянка бандитов (0/1), Установить клейморы (3 шт.)</span></div>
+              <p>Приходим на отмеченную на карте область и зачищаем ближайшую стоянку бандитов (если их нету, подождите их респавна). На этой территории необходимо разместить <strong>три клеймора</strong>.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/torgovye-dela/claymore-1.jpg" alt="Первый клеймор" loading="lazy">
+                <figcaption>Первый клеймор</figcaption>
+              </figure>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/torgovye-dela/claymore-2.jpg" alt="Второй клеймор" loading="lazy">
+                  <figcaption>Второй клеймор</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/torgovye-dela/claymore-3.jpg" alt="Третий клеймор" loading="lazy">
+                  <figcaption>Третий клеймор</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="6">
+            <div class="step-marker">6</div>
+            <div class="step-content">
+              <h3>Удар по врагу: На базу</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Вернуться к Секунданту</span></div>
+              <p>Возвращаемся на базу и берём следующее поручение от <strong>Секунданта</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="7">
+            <div class="step-marker">7</div>
+            <div class="step-content">
+              <h3>Припасы</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Десятником, Припасы (1/1)</span></div>
+              <p>Приходим к <strong>Десятнику</strong> и отдаём ему ящик с припасами. После диалога с вами свяжется Секундант и выдаст следующее поручение.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/torgovye-dela/desyatnik.jpg" alt="Десятник" loading="lazy">
+                <figcaption>Десятник</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="8">
+            <div class="step-marker">8</div>
+            <div class="step-content">
+              <h3>Штурм</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Убить Ковбоя (0/1), Зачистить лагерь (0/3), Найти заложников (3 шт.)</span></div>
+              <p>Приходим на отмеченную область и устраняем всех бандитов вместе с <strong>Ковбоем</strong>.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/torgovye-dela/kovboy.jpg" alt="Ковбой" loading="lazy">
+                <figcaption>Ковбой</figcaption>
+              </figure>
+              <p>Также не забудьте осмотреть трупы заложников.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/torgovye-dela/hostage-1.jpg" alt="Заложник" loading="lazy">
+                <figcaption>Первый заложник</figcaption>
+              </figure>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/torgovye-dela/hostage-2.jpg" alt="Заложник" loading="lazy">
+                  <figcaption>Второй заложник</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/torgovye-dela/hostage-3.jpg" alt="Заложник" loading="lazy">
+                  <figcaption>Третий заложник</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="9">
+            <div class="step-marker">9</div>
+            <div class="step-content">
+              <h3>Штурм: Отчёт</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Вернуться к Секунданту</span></div>
+              <p>Выполнив поручение, возвращаемся к <strong>Секунданту</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="10">
+            <div class="step-marker">10</div>
+            <div class="step-content">
+              <h3>Дело</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Кучером</span></div>
+              <p>Следующие поручения будет выдавать сам <strong>Кучер</strong>, идём к нему.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="11">
+            <div class="step-marker">11</div>
+            <div class="step-content">
+              <h3>Дело: Посыльный</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти посыльного</span></div>
+              <p>Отправляемся на отмеченную точку и говорим с посыльным по кличке <strong>Стрекоза</strong>.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/torgovye-dela/strekoza.jpg" alt="Стрекоза" loading="lazy">
+                <figcaption>Посыльный Стрекоза</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="12">
+            <div class="step-marker">12</div>
+            <div class="step-content">
+              <h3>Дело: Потерянный груз</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Зачистить поляну: Кабан (0/3)</span></div>
+              <p>Посыльный отправит на поиски груза у стаи кабанов — подходим к области и зачищаем кабанов.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="13">
+            <div class="step-marker">13</div>
+            <div class="step-content">
+              <h3>Дело: Поиск товара</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти посылку</span></div>
+              <p>После зачистки кабанов постойте пару секунд в области.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="14">
+            <div class="step-marker">14</div>
+            <div class="step-content">
+              <h3>Дело: Доложить посыльному</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить со Стрекозой</span></div>
+              <p>Возвращаемся к посыльному и говорим с ним.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="15">
+            <div class="step-marker">15</div>
+            <div class="step-content">
+              <h3>Дело: Поиск посылки</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с местными</span></div>
+              <p>Отправляемся на указанную точку и говорим со сталкером по кличке <strong>Крикет</strong>.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/torgovye-dela/kriket.jpg" alt="Крикет" loading="lazy">
+                <figcaption>Крикет</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="16">
+            <div class="step-marker">16</div>
+            <div class="step-content">
+              <h3>Дело: По частям</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти содержимое посылки: Цинк патронов (0/1), Ящик гранат (0/1), Набор медикаментов (0/1)</span></div>
+              <p>Теперь необходимо выполнить поручение двух сталкеров, чтобы они вернули ящики, и забрать один из наборов под туннелем.</p>
+              
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--text-primary);"><i class="fa-solid fa-box"></i> Ящик гранат: Ковыль</h4>
+              <div class="step-objective" style="margin: 8px 0 12px;"><i class="fa-solid fa-crosshairs"></i><span>Найти Ковыля</span></div>
+              <p><strong>Ковыль</strong> стоит напротив Крикета — подходим к нему и говорим.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/torgovye-dela/kovyl.jpg" alt="Ковыль" loading="lazy">
+                <figcaption>Ковыль</figcaption>
+              </figure>
+              
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--text-primary);"><i class="fa-solid fa-gun"></i> Новый пистолет</h4>
+              <div class="step-objective" style="margin: 8px 0 12px;"><i class="fa-solid fa-crosshairs"></i><span>Получить пистолет у техника</span></div>
+              <p>Возвращаемся на базу и разговариваем с механиком — он попросит заплатить <strong>500 руб.</strong> и выдаст заказной пистолет.</p>
+              <div class="alert alert-tip"><i class="fa-solid fa-lightbulb"></i><span>В некоторых случаях платить не придётся при выборе второго варианта диалога, но эти варианты случайны и могут не сработать.</span></div>
+              
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--text-primary);"><i class="fa-solid fa-utensils"></i> Цинк патронов: Еда для Крикета</h4>
+              <div class="step-objective" style="margin: 8px 0 12px;"><i class="fa-solid fa-crosshairs"></i><span>Принести еды Крикету: Консервированная фасоль (0/2), Кусок чёрного хлеба (0/2), Водка (0/1)</span></div>
+              <p>Пока находитесь на базе, закупитесь необходимым провиантом у торговца, чтобы сразу отдать пистолет Ковылю и провиант Крикету.</p>
+              
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--text-primary);"><i class="fa-solid fa-handshake"></i> Обмен</h4>
+              <div class="step-objective" style="margin: 8px 0 12px;"><i class="fa-solid fa-crosshairs"></i><span>Принести пистолет Ковылю</span></div>
+              <p>Возвращаемся к сталкерам и передаём <strong>Ковылю</strong> пистолет. Взамен он отдаёт ящик гранат. Тут же подходим к <strong>Крикету</strong> и отдаём провиант — он выдаст цинк патронов.</p>
+              
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--text-primary);"><i class="fa-solid fa-briefcase-medical"></i> Медикаменты: Узнать о Петле</h4>
+              <div class="step-objective" style="margin: 8px 0 12px;"><i class="fa-solid fa-crosshairs"></i><span>Узнать о Петле</span></div>
+              <p>Идём в последнюю точку под тоннель и осматриваем труп <strong>Петли</strong> — в нём будет последний ящик.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/torgovye-dela/petlya.jpg" alt="Труп Петли" loading="lazy">
+                <figcaption>Труп Петли с набором медикаментов</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="17">
+            <div class="step-marker">17</div>
+            <div class="step-content">
+              <h3>Дело: Конец</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Кучером, Товар Прапора (1/1)</span></div>
+              <p>Собрав все ящики, возвращаемся к <strong>Кучеру</strong> и отчитываемся о выполнении задания.</p>
+              <div class="alert alert-info"><i class="fa-solid fa-rotate"></i><span>Теперь вы сможете брать у Кучера повторяемый квест на доставку посылки от Прапора. Квест обновляется со временем, и в награду вам будут выдавать <strong>3 000 руб.</strong></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <div class="rewards-grid">
+          <div class="reward-item">
+            <img src="../../map/images/items/pouch-medic.webp" alt="Подсумок с военными аптечками" />
+            <div class="reward-details"><span class="reward-name">Подсумок с военными аптечками</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/ammo-545-sbp.webp" alt="Ящик 5.45 СБП" />
+            <div class="reward-details"><span class="reward-name">Ящик 5.45 СБП</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/ammo-556-sbp.webp" alt="Ящик 5.56 СБП" />
+            <div class="reward-details"><span class="reward-name">Ящик 5.56 СБП</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/ammo-762-sbp.webp" alt="Ящик 7.62 СБП" />
+            <div class="reward-details"><span class="reward-name">Ящик 7.62 СБП</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/desperol.webp" alt="Десперол" />
+            <div class="reward-details"><span class="reward-name">Десперол</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/american-mre.webp" alt="Американский ИРП" />
+            <div class="reward-details"><span class="reward-name">Американский ИРП</span><span class="reward-count">×2</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>7 000 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+170 репутации</span></div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>
