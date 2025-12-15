@@ -346,5 +346,24 @@ window.QUESTS_DATA = [
     money: 7000, 
     reputation: 170, 
     guideUrl: '../guides/quests/torgovye-dela-stalker.html'
+  },
+  {
+    id: 'q-to-chto-doktor-propisal-stalker', 
+    title: 'То, что Доктор прописал', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1767, 
+    y: 2955, 
+    preview: '../guides/images/quests/to-chto-doktor-propisal/cover.jpg',
+    desc: 'Я должен попытаться продать "особые пилюли" доктора Вертейко (на самом деле, являющиеся обычным плацебо) командирам нескольких сталкерских аванпостов.',
+    rewards: [
+      { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"', qty: 2 },
+      { img: 'images/items/tonic-arni.webp', label: 'Тоник "Арни"', qty: 2 },
+      { img: 'images/items/desperol.webp', label: 'Десперол', qty: 2 },
+      { img: 'images/items/clarinol.webp', label: 'Кларинол', qty: 2 }
+    ],
+    money: 2500, 
+    reputation: 55, 
+    guideUrl: '../guides/quests/to-chto-doktor-propisal.html'
   }
 ];
