@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'torgovye-dela-stalker',
+    title: 'Торговые дела (Сталкеры)',
+    description: 'Кучер не хочет разговаривать, пока Секундант не замолвит за вас слово. Длинная цепочка заданий с разведкой, штурмом и поиском посылки.',
+    image: 'images/quests/torgovye-dela-stalker/cover-stalker.jpg',
+    url: 'quests/torgovye-dela-stalker.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'obochina',
+    tags: [],
+    keywords: ['кучер', 'секундант', 'ковбой', 'стрекоза', 'крикет', 'ковыль', 'петля', 'десятник', 'торговля', 'прапор', 'посылка', 'торговые дела'],
+    date: '2025-01-15',
+    status: 'published'
+  },
+  {
     id: 'shershe-lya-fam',
     title: 'Шерше ля Фам',
     description: 'На Обочине встретьте Правдина и помогите оправдать пленника. Выбор: убить или пощадить Казанову.',
