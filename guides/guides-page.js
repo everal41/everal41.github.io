@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'to-chto-doktor-propisal',
+    title: 'То, что Доктор прописал',
+    description: 'Продайте "особые пилюли" доктора Вертейко командирам сталкерских аванпостов. Правильные ответы для убеждения каждого командира.',
+    image: 'images/quests/to-chto-doktor-propisal/cover.jpg',
+    url: 'quests/to-chto-doktor-propisal.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'obochina',
+    tags: ['beginner'],
+    keywords: ['доктор', 'вертейко', 'пилюли', 'плацебо', 'таблетки', 'аванпост', 'командир', 'продать', 'волшебное лекарство'],
+    date: '2025-12-15',
+    status: 'published'
+  },
+  {
     id: 'torgovye-dela-stalker',
     title: 'Торговые дела (Сталкеры)',
     description: 'Кучер не хочет разговаривать, пока Секундант не замолвит за вас слово. Длинная цепочка заданий с разведкой, штурмом и поиском посылки.',
