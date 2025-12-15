@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     id: 'torgovye-dela-stalker',
     title: 'Торговые дела (Сталкеры)',
     description: 'Кучер не хочет разговаривать, пока Секундант не замолвит за вас слово. Длинная цепочка заданий с разведкой, штурмом и поиском посылки.',
-    image: 'images/quests/torgovye-dela-stalker/cover-stalker.jpg',
+    image: 'images/quests/torgovye-dela/cover-stalker.jpg',
     url: 'quests/torgovye-dela-stalker.html',
     category: 'quest',
     faction: 'stalker',
     location: 'obochina',
     tags: [],
     keywords: ['кучер', 'секундант', 'ковбой', 'стрекоза', 'крикет', 'ковыль', 'петля', 'десятник', 'торговля', 'прапор', 'посылка', 'торговые дела'],
-    date: '2025-01-15',
+    date: '2025-12-15',
     status: 'published'
   },
   {
