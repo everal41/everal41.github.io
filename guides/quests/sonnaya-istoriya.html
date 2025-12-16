@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сонная история — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Сонная история» в STALCRAFT: X для Сталкеров: где взять у Гностика, поиск сонника, торг с Бобом, сбор грибов и все награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Сонная история, Гностик, Боб, сонник, грибы, Пожарная часть, Обочина, Сталкеры, прохождение, награды, Кисель" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/sonnaya-istoriya/cover.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Сонная история</span>
+      </div>
+      <h1 class="hero-title">Сонная история</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction"><i class="fa-solid fa-shield-halved"></i> Сталкеры</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Обочина</span>
+        <span class="tag tag-type"><i class="fa-solid fa-code-branch"></i> Нелинейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-stalker"><i class="fa-solid fa-shield-halved"></i> Сталкеры</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Обочина</span></div>
+          <div class="info-item"><span class="info-label">Подлокация</span><span class="info-value">Пожарная часть</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait"><i class="fa-solid fa-shield-halved"></i><span>Нельзя провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-code-branch"></i><span>Нелинейный</span></div>
+          <div class="trait"><i class="fa-solid fa-unlock"></i><span>Без условий</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-ruble-sign"></i><span>5 500 руб.</span></div>
+          <div class="reward-row"><i class="fa-solid fa-star"></i><span>+130 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Квест берётся на втором этаже <strong>Пожарной части</strong> у сталкера <strong>Гностика</strong>. По ходу прохождения необходимо выбирать правильные ответы, дабы получить полную награду.</p>
+        <div class="tip-box">
+          <i class="fa-solid fa-lightbulb"></i>
+          <p><strong>Важно:</strong> В финале квеста можно спасти или дать умереть Гностику. При спасении вы получите <strong>полную награду</strong> (+130 репутации). Если дадите умереть — потеряете 100 ед. репутации.</p>
+        </div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        <div class="alert alert-info"><i class="fa-solid fa-circle-info"></i><span>Квест нелинейный, но провалить его невозможно. Следуйте указанным вариантам диалогов для максимальной награды.</span></div>
+        
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Разговор с Гностиком</h3>
+              <p>Поговорите с <strong>Гностиком</strong> на втором этаже Пожарной части — он отправит вас на поиски своего сонника.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/sonnaya-istoriya/cover.jpg" alt="Гностик в Пожарной части" loading="lazy">
+                <figcaption>Гностик выдаёт квест</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>Книга снов: Бумеранг</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти лагерь</span></div>
+              <p>Отправляемся на квестовую метку.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Книга снов: Обыск лагеря</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти сонник</span></div>
+              <p>Приблизившись к лагерю, вам необходимо найти на его территории рюкзак, в котором будет лежать нужный предмет.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/sonnaya-istoriya/backpack.jpg" alt="Рюкзак с сонником" loading="lazy">
+                <figcaption>Рюкзак с сонником</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>Книга снов: К Гностику</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Гностиком</span></div>
+              <p>Забрав сонник, возвращаемся к <strong>Гностику</strong> на базу.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="5">
+            <div class="step-marker">5</div>
+            <div class="step-content">
+              <h3>Оружейник</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Купить ружьё у Боба</span></div>
+              <p>Гностик попросит вас купить ружьё у <strong>Боба</strong>, с которым он договорился. Приходим на Болота и разговариваем с Бобом.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/sonnaya-istoriya/bob.jpg" alt="Боб" loading="lazy">
+                <figcaption>Боб на Болотах</figcaption>
+              </figure>
+              <p>Выбираем следующие варианты ответов, чтобы <strong>снизить цену</strong> за ружьё:</p>
+              <div class="dialogue-list">
+                <div class="dialogue-option"><span class="option-num">3</span><span class="option-text">Вы с Гностиком договорились ведь на две штуки. Чего цену гнёшь?</span></div>
+                <div class="dialogue-option"><span class="option-num">2</span><span class="option-text">Ты же сам говорил, что какая-то крыса тебе тайник обчистила. Гностика тоже бандиты до гола раздели, войди в положение.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="6">
+            <div class="step-marker">6</div>
+            <div class="step-content">
+              <h3>С ружьём вперёд</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Гностиком</span></div>
+              <p>Возвращаемся на базу и говорим с <strong>Гностиком</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="7">
+            <div class="step-marker">7</div>
+            <div class="step-content">
+              <h3>Волшебные грибы: Добыча</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Достать контейнер, Срезать грибы</span></div>
+              <p>Сперва отправляемся за контейнером. Заходим в здание и обыскиваем ящик.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/sonnaya-istoriya/container-box.jpg" alt="Ящик с контейнером" loading="lazy">
+                <figcaption>Ящик с контейнером</figcaption>
+              </figure>
+              <p>Забрав контейнер, отправляемся за грибами.</p>
+              <div class="alert alert-tip"><i class="fa-solid fa-lightbulb"></i><span>Защита от заражений не понадобится — спокойно собирайте грибы.</span></div>
+              <figure class="img-figure">
+                <img src="../images/quests/sonnaya-istoriya/mushrooms.jpg" alt="Грибы" loading="lazy">
+                <figcaption>Собираем грибы</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="8">
+            <div class="step-marker">8</div>
+            <div class="step-content">
+              <h3>Волшебные грибы: К Гностику</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Гностиком</span></div>
+              <p>Возвращаемся на базу и говорим с <strong>Гностиком</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="9">
+            <div class="step-marker">9</div>
+            <div class="step-content">
+              <h3>Осознанный сон</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти Гностика</span></div>
+              <p>Отправляемся на локацию <strong>Чёрные Ивы</strong> и подходим к квестовой метке.</p>
+              <div class="alert alert-info"><i class="fa-solid fa-clock"></i><span>Через <strong>30 минут</strong> игрового времени на точке появится Гностик.</span></div>
+              <figure class="img-figure">
+                <img src="../images/quests/sonnaya-istoriya/gnostik-ivy.jpg" alt="Гностик на Чёрных Ивах" loading="lazy">
+                <figcaption>Гностик на Чёрных Ивах</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="10">
+            <div class="step-marker">10</div>
+            <div class="step-content">
+              <h3>Проводник в мир иной</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Наблюдать за Гностиком</span></div>
+              <p>Говорим с <strong>Гностиком</strong> и выбираем следующие варианты ответов, чтобы <strong>спасти его</strong>:</p>
+              <div class="dialogue-list">
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">[Дать пощёчину]</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">[Убрать руки от горла]</span></div>
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">[Разбудить]</span></div>
+              </div>
+              <p>Повторно говорим с <strong>Гностиком</strong> и получаем награду за квест.</p>
+              <div class="alert alert-warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Если выбрать другие варианты ответов — Гностик умрёт. Вы всё ещё получите предметную награду, но <strong>потеряете 100 ед. репутации</strong>.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <div class="rewards-grid">
+          <div class="reward-item">
+            <img src="../../map/images/items/art-kisel.webp" alt="Кисель" />
+            <div class="reward-details"><span class="reward-name">Кисель</span><span class="reward-rarity">Артефакт</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/zalivnoe.webp" alt="Заливное" />
+            <div class="reward-details"><span class="reward-name">Заливное</span><span class="reward-count">×3</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/pouch-medic.webp" alt="Подсумок с военными аптечками" />
+            <div class="reward-details"><span class="reward-name">Подсумок с военными аптечками</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/clarinol.webp" alt="Кларинол" />
+            <div class="reward-details"><span class="reward-name">Кларинол</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>5 500 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+130 репутации</span></div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>
