@@ -416,7 +416,7 @@ window.QUESTS_DATA = [
     preview: '../guides/images/quests/opasnye-mysli/cover.jpg',
     desc: 'Неподалёку от Пожарной станции я нашёл труп сталкера.',
     rewards: [
-      { img: 'images/items/trinket-dnevnik-buntarya.webp', label: 'Брелок "Дневник Бунтаря"' },
+      { img: 'images/items/trinket-dnevnik-buntarya.png', label: 'Брелок "Дневник Бунтаря"' },
       { img: 'images/items/ammo-545-sbp.webp', label: 'Ящик 5.45 СБП' },
       { img: 'images/items/ammo-556-sbp.webp', label: 'Ящик 5.56 СБП' },
       { img: 'images/items/ammo-762-sbp.webp', label: 'Ящик 7.62 СБП' },
