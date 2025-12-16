@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'opasnye-mysli',
+    title: 'Опасные мысли',
+    description: 'Найдите труп возле кладбища и соберите все отрывки дневника. Награда — брелок "Дневник Бунтаря".',
+    image: 'images/quests/opasnye-mysli/cover.jpg',
+    url: 'quests/opasnye-mysli.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'obochina',
+    tags: ['beginner'],
+    keywords: ['бунтарь', 'дневник', 'брелок', 'труп', 'кладбище', 'записки', 'опасные мысли'],
+    date: '2025-12-16',
+    status: 'published'
+  },
+  {
     id: 'perekupshchik',
     title: 'Перекупщик',
     description: 'Помогите торговцу Шурпе наладить отношения с Перекупщиком и разобраться с блаженным Китом. Выбор: сдать Шурпу Санитарам или нет.',
