@@ -365,5 +365,24 @@ window.QUESTS_DATA = [
     money: 2500, 
     reputation: 55, 
     guideUrl: '../guides/quests/to-chto-doktor-propisal.html'
+  },
+  {
+    id: 'q-sonnaya-istoriya-stalker', 
+    title: 'Сонная история', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1770, 
+    y: 2951, 
+    preview: '../guides/images/quests/sonnaya-istoriya/cover.jpg',
+    desc: 'Познакомился со странным сталкером по кличке Гностик.',
+    rewards: [
+      { img: 'images/items/art-kisel.webp', label: 'Кисель' },
+      { img: 'images/items/zalivnoe.webp', label: 'Заливное', qty: 3 },
+      { img: 'images/items/pouch-medic.webp', label: 'Подсумок с военными аптечками', qty: 2 },
+      { img: 'images/items/clarinol.webp', label: 'Кларинол' }
+    ],
+    money: 5500, 
+    reputation: 130, 
+    guideUrl: '../guides/quests/sonnaya-istoriya.html'
   }
 ];
