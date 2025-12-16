@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'perekupshchik',
+    title: 'Перекупщик',
+    description: 'Помогите торговцу Шурпе наладить отношения с Перекупщиком и разобраться с блаженным Китом. Выбор: сдать Шурпу Санитарам или нет.',
+    image: 'images/quests/perekupshchik/cover.jpg',
+    url: 'quests/perekupshchik.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'obochina',
+    tags: [],
+    keywords: ['шурпа', 'перекупщик', 'кит', 'ахав', 'санитары', 'торговец', 'поставщик', 'военные', 'форт-12', 'магазин'],
+    date: '2025-12-16',
+    status: 'published'
+  },
+  {
     id: 'sonnaya-istoriya',
     title: 'Сонная история',
     description: 'Помогите странному сталкеру Гностику с его снами: найдите сонник, купите ружьё и соберите грибы.',
