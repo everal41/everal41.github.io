@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'sonnaya-istoriya',
+    title: 'Сонная история',
+    description: 'Помогите странному сталкеру Гностику с его снами: найдите сонник, купите ружьё и соберите грибы.',
+    image: 'images/quests/sonnaya-istoriya/cover.jpg',
+    url: 'quests/sonnaya-istoriya.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'obochina',
+    tags: [],
+    keywords: ['гностик', 'сон', 'сонник', 'боб', 'ружьё', 'грибы', 'кисель', 'артефакт', 'осознанный сон', 'чёрные ивы'],
+    date: '2025-12-16',
+    status: 'published'
+  },
+  {
     id: 'to-chto-doktor-propisal',
     title: 'То, что Доктор прописал',
     description: 'Продайте "особые пилюли" доктора Вертейко командирам сталкерских аванпостов. Правильные ответы для убеждения каждого командира.',
