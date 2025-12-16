@@ -384,5 +384,26 @@ window.QUESTS_DATA = [
     money: 5500, 
     reputation: 130, 
     guideUrl: '../guides/quests/sonnaya-istoriya.html'
+  },
+  {
+    id: 'q-perekupshchik-stalker', 
+    title: 'Перекупщик', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1774, 
+    y: 2957, 
+    preview: '../guides/images/quests/perekupshchik/cover.jpg',
+    desc: 'Торговец Шурпа попросил меня пообщаться с его поставщиком — Перекупщиком, который доставал для него товары военных.',
+    rewards: [
+      { img: 'images/items/zalivnoe.webp', label: 'Заливное', qty: 3 },
+      { img: 'images/items/pouch-medic.webp', label: 'Подсумок с военными аптечками', qty: 2 },
+      { img: 'images/items/desperol.webp', label: 'Десперол', qty: 3 },
+      { img: 'images/items/ammo-545-sbp.webp', label: 'Ящик 5.45 СБП' },
+      { img: 'images/items/ammo-556-sbp.webp', label: 'Ящик 5.56 СБП' },
+      { img: 'images/items/ammo-762-sbp.webp', label: 'Ящик 7.62 СБП' }
+    ],
+    money: 10500, 
+    reputation: 250, 
+    guideUrl: '../guides/quests/perekupshchik.html'
   }
 ];
