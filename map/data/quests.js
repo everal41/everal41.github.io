@@ -426,5 +426,25 @@ window.QUESTS_DATA = [
     money: 10000, 
     reputation: 100, 
     guideUrl: '../guides/quests/opasnye-mysli.html'
+  },
+  {
+    id: 'q-rubi-rubi-stalker', 
+    title: 'Руби, руби!', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1748, 
+    y: 2930, 
+    preview: '../guides/images/quests/rubi-rubi/cover-stalker.jpg',
+    desc: 'Я познакомился с Рубакой — довольно странным мужиком, готовящим еду из местной живности.',
+    rewards: [
+      { img: 'images/items/zharkoe-mutants.webp', label: 'Жаркое из мутантов', qty: 2 },
+      { img: 'images/items/holodec-kopytom.webp', label: 'Холодец "Копытом по лицу"' },
+      { img: 'images/items/tonic-arni.webp', label: 'Тоник "Арни"' },
+      { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"' },
+      { img: 'images/items/neyrotonic.webp', label: 'Нейротоник' }
+    ],
+    money: 1500, 
+    reputation: 35, 
+    guideUrl: '../guides/quests/rubi-rubi-stalker.html'
   }
 ];
