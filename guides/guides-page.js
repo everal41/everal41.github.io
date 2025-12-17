@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'rubi-rubi-stalker',
+    title: 'Руби, руби! (Сталкеры)',
+    description: 'Помогите Рубаке с кулинарными изысками: соберите ингредиенты для его блюд. Бонус — Рубака станет торговцем расходниками на базе диггеров.',
+    image: 'images/quests/rubi-rubi-stalker/cover-stalker.jpg',
+    url: 'quests/rubi-rubi-stalker.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'obochina',
+    tags: ['beginner'],
+    keywords: ['рубака', 'старьёвщик', 'еда', 'готовка', 'печень', 'мясо', 'кабан', 'шавки', 'диггеры', 'жаркое'],
+    date: '2025-12-17',
+    status: 'published'
+  },
+  {
     id: 'opasnye-mysli',
     title: 'Опасные мысли',
     description: 'Найдите труп возле кладбища и соберите все отрывки дневника. Награда — брелок "Дневник Бунтаря".',
