@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     id: 'rubi-rubi-stalker',
     title: 'Руби, руби! (Сталкеры)',
     description: 'Помогите Рубаке с кулинарными изысками: соберите ингредиенты для его блюд. Бонус — Рубака станет торговцем расходниками на базе диггеров.',
-    image: 'images/quests/rubi-rubi-stalker/cover-stalker.jpg',
+    image: 'images/quests/rubi-rubi/cover-stalker.jpg',
     url: 'quests/rubi-rubi-stalker.html',
     category: 'quest',
     faction: 'stalker',
