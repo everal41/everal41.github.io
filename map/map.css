@@ -527,6 +527,32 @@ body.page-map { display: flex; flex-direction: column; }
   overflow-y: auto;
 }
 
+.chip-event .chip-dot { 
+  background: linear-gradient(135deg, #f59e0b, #ef4444); 
+}
+
+.marker--event .pin-img { 
+  width: calc(44px * var(--pin-scale)); 
+  height: calc(42px * var(--pin-scale)); 
+}
+
+.marker.pin-fallback.marker--event .pin { 
+  border-color: #f59e0b; 
+  background: rgba(245, 158, 11, 0.15); 
+}
+
+.q-badge.badge--event { 
+  background: rgba(245, 158, 11, 0.1); 
+  border-color: rgba(245, 158, 11, 0.3); 
+  color: #fbbf24; 
+}
+
+[data-theme="light"] .q-badge.badge--event { 
+  background: rgba(217, 119, 6, 0.12);
+  border-color: rgba(217, 119, 6, 0.35);
+  color: #d97706; 
+}
+
 @media (max-width: 768px) {
   .map-controls { top: 12px; left: 12px; max-width: calc(100% - 24px); padding: 8px 10px; gap: 8px; }
   .control-label span { display: none; }
