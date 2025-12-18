@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гадание на снежной куче — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по новогоднему квесту «Гадание на снежной куче» в STALCRAFT: X: все 40 загадок Связующего, ответы и местоположения объектов для снежков." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Гадание на снежной куче, Связующий, снеговик, ёлка, Новый Год, ивент, загадки, снежки, подарки, прохождение" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/gadanie-na-snezhnoj-kuche/cover.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Гадание на снежной куче</span>
+      </div>
+      <h1 class="hero-title">Гадание на снежной куче</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction-event"><i class="fa-solid fa-snowflake"></i> Новогодний ивент</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> База группировки</span>
+        <span class="tag tag-type"><i class="fa-solid fa-route"></i> Линейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-event"><i class="fa-solid fa-snowflake"></i> Любая</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">База группировки</span></div>
+          <div class="info-item"><span class="info-label">Загадок</span><span class="info-value">40</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait"><i class="fa-solid fa-shield-halved"></i><span>Нельзя провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-route"></i><span>Линейный</span></div>
+          <div class="trait warning"><i class="fa-solid fa-clock"></i><span>Временный</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-gift"></i><span>184× подарков (5 видов)</span></div>
+          <div class="reward-row"><i class="fa-solid fa-palette"></i><span>2× кастомизация</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Квест берётся у снеговика по имени <strong>Связующий</strong>, который находится возле ёлки на базах группировок.</p>
+        
+        <div class="tip-box">
+          <i class="fa-solid fa-snowflake"></i>
+          <p><strong>Суть квеста:</strong></p>
+          <ol style="margin: 8px 0 0 16px; color: var(--text-secondary);">
+            <li style="margin-bottom: 6px;">Говорите со Связующим и выбираете часть зоны: <strong>южная</strong> или <strong>северная</strong></li>
+            <li style="margin-bottom: 6px;">Выбираете сложность загадки: <strong>простая</strong> или <strong>сложная</strong></li>
+            <li>Приходите на указанную область и метаете снежок в нужный объект. Разгадайте загадку в описании квеста, чтобы понять цель.</li>
+          </ol>
+        </div>
+
+        <div class="alert alert-info"><i class="fa-solid fa-list-ol"></i><span>Всего нужно пройти <strong>40 загадок</strong> для получения полной награды.</span></div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        
+        <p>Поговорите со <strong>Связующим</strong> возле ёлки и выберите желаемый этап квеста.</p>
+        <figure class="img-figure">
+          <img src="../images/quests/gadanie-na-snezhnoj-kuche/cover.jpg" alt="Связующий возле ёлки" loading="lazy">
+          <figcaption>Связующий выдаёт квест</figcaption>
+        </figure>
+      </section>
+
+      <section id="south" class="article-section">
+        <h2><i class="fa-solid fa-map-location-dot"></i> Южный путь — 22 загадки</h2>
+        
+        <div class="alert alert-tip"><i class="fa-solid fa-lightbulb"></i><span>Небольшое пояснение: за сталкеров простые загадки являются сложными за бандитов, и наоборот. Сложность заключается в том, что придётся ходить на вражескую территорию.</span></div>
+
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>На вершине отбросов</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>вертолёт</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-01-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-01-target.jpg" alt="Вертолёт" loading="lazy">
+                  <figcaption>Вертолёт</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>Вандализм</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>разбитую оконную раму</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-02-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-02-target.jpg" alt="Разбитое окно" loading="lazy">
+                  <figcaption>Разбитая оконная рама</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Песочные работы</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>дверь в тоннеле</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-03-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-03-target.jpg" alt="Дверь в тоннеле" loading="lazy">
+                  <figcaption>Дверь в тоннеле</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>У птицы в луже</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>лодку</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-04-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-04-target.jpg" alt="Лодка" loading="lazy">
+                  <figcaption>Лодка</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="5">
+            <div class="step-marker">5</div>
+            <div class="step-content">
+              <h3>А где искусство</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>картинную раму</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-05-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-05-target.jpg" alt="Пустая рама" loading="lazy">
+                  <figcaption>Картинная рама</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="6">
+            <div class="step-marker">6</div>
+            <div class="step-content">
+              <h3>Коси и забивай</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>скульптуру</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-06-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-06-target.jpg" alt="Скульптура" loading="lazy">
+                  <figcaption>Скульптура</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="7">
+            <div class="step-marker">7</div>
+            <div class="step-content">
+              <h3>А что есть лучший подарок?</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>агитационный плакат</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-07-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-07-target.jpg" alt="Плакат" loading="lazy">
+                  <figcaption>Агитационный плакат</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="8">
+            <div class="step-marker">8</div>
+            <div class="step-content">
+              <h3>Лесной стрелочник</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>начерченные на стене стрелки</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-08-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-08-target.jpg" alt="Стрелки на стене" loading="lazy">
+                  <figcaption>Стрелки на стене</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="9">
+            <div class="step-marker">9</div>
+            <div class="step-content">
+              <h3>Сонар</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>терминал</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-09-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-09-target.jpg" alt="Терминал" loading="lazy">
+                  <figcaption>Терминал</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="10">
+            <div class="step-marker">10</div>
+            <div class="step-content">
+              <h3>Крученый</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>дерево</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-10-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-10-target.jpg" alt="Дерево" loading="lazy">
+                  <figcaption>Дерево</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="11">
+            <div class="step-marker">11</div>
+            <div class="step-content">
+              <h3>Верный друг в плохой день</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>унитаз</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-11-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-11-target.jpg" alt="Унитаз" loading="lazy">
+                  <figcaption>Унитаз</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="12">
+            <div class="step-marker">12</div>
+            <div class="step-content">
+              <h3>Волна длиннее моря</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>радиостанцию</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-12-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-12-target.jpg" alt="Радиостанция" loading="lazy">
+                  <figcaption>Радиостанция</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+                    <div class="step" data-step="13">
+            <div class="step-marker">13</div>
+            <div class="step-content">
+              <h3>Хворост</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>дерево</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-13-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-13-target.jpg" alt="Дерево" loading="lazy">
+                  <figcaption>Дерево</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="14">
+            <div class="step-marker">14</div>
+            <div class="step-content">
+              <h3>Картографические цели</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>карту на стене</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-14-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-14-target.jpg" alt="Карта на стене" loading="lazy">
+                  <figcaption>Карта на стене</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="15">
+            <div class="step-marker">15</div>
+            <div class="step-content">
+              <h3>Вопрос на все деньги</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>надпись на стене</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-15-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-15-target.jpg" alt="Надпись на стене" loading="lazy">
+                  <figcaption>Надпись на стене</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="16">
+            <div class="step-marker">16</div>
+            <div class="step-content">
+              <h3>Ящик для мозгов</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>телевизор</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-16-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-16-target.jpg" alt="Телевизор" loading="lazy">
+                  <figcaption>Телевизор</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="17">
+            <div class="step-marker">17</div>
+            <div class="step-content">
+              <h3>Железный шкаф</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>подвешенный сейф</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-17-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-17-target.jpg" alt="Подвешенный сейф" loading="lazy">
+                  <figcaption>Подвешенный сейф</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="18">
+            <div class="step-marker">18</div>
+            <div class="step-content">
+              <h3>Картины ушедшей цивилизации</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>надпись «УМРИ!»</strong> на стене.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-18-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-18-target.jpg" alt='Надпись "УМРИ!"' loading="lazy">
+                  <figcaption>Надпись «УМРИ!»</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="19">
+            <div class="step-marker">19</div>
+            <div class="step-content">
+              <h3>Сломанный вождь</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>статую</strong>.</p>
+              <div class="alert alert-warning"><i class="fa-solid fa-biohazard"></i><span>Возле статуи опасная зона: <strong>био-3</strong>, <strong>пси-2</strong> и <strong>рад-1</strong>. Подготовьте защиту!</span></div>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-19-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-19-target.jpg" alt="Статуя" loading="lazy">
+                  <figcaption>Статуя</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="20">
+            <div class="step-marker">20</div>
+            <div class="step-content">
+              <h3>Хозяева есть?</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>кресло</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-20-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-20-target.jpg" alt="Кресло" loading="lazy">
+                  <figcaption>Кресло</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="21">
+            <div class="step-marker">21</div>
+            <div class="step-content">
+              <h3>Праздник труда</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>доску объявлений</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-21-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-21-target.jpg" alt="Доска объявлений" loading="lazy">
+                  <figcaption>Доска объявлений</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="22">
+            <div class="step-marker">22</div>
+            <div class="step-content">
+              <h3>Брёвна на водах</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Решить загадку снеговика</span></div>
+              <p>Приходим в указанную область и метаем снежок в <strong>дерево</strong>.</p>
+              <div class="alert alert-warning"><i class="fa-solid fa-biohazard"></i><span>Возле дерева опасная зона: <strong>био-1</strong>. Подготовьте защиту!</span></div>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-22-map.jpg" alt="Точка на карте" loading="lazy">
+                  <figcaption>Точка на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/gadanie-na-snezhnoj-kuche/south-22-target.jpg" alt="Дерево" loading="lazy">
+                  <figcaption>Дерево</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="alert alert-info" style="margin-top: 24px;"><i class="fa-solid fa-gift"></i><span><strong>Награда за южную часть зоны:</strong> 57 шт. подарков каждого типа и первый набор кастомизации «Новый Год 2026».</span></div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <div class="rewards-grid">
+          <div class="reward-item">
+            <img src="../../map/images/items/gift-modest.png" alt="Скромный подарок" />
+            <div class="reward-details"><span class="reward-name">Скромный подарок</span><span class="reward-count">×184</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/gift-small.png" alt="Маленький подарок" />
+            <div class="reward-details"><span class="reward-name">Маленький подарок</span><span class="reward-count">×184</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/gift-normal.png" alt="Обычный подарок" />
+            <div class="reward-details"><span class="reward-name">Обычный подарок</span><span class="reward-count">×184</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/gift-big.png" alt="Большой подарок" />
+            <div class="reward-details"><span class="reward-name">Большой подарок</span><span class="reward-count">×184</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/gift-huge.png" alt="Огромный подарок" />
+            <div class="reward-details"><span class="reward-name">Огромный подарок</span><span class="reward-count">×184</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/customization-ny2026.png" alt='Набор кастомизации "Новый Год 2026"' />
+            <div class="reward-details"><span class="reward-name">Набор кастомизации «Новый Год 2026»</span><span class="reward-count">×2</span></div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>
