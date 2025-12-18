@@ -208,6 +208,30 @@
 .reward-rarity.veteran { color: #BF5BAD; }
 .reward-rarity.master { color: #EA9D9E; }
 
+.tag-faction-event { 
+  background: rgba(245, 158, 11, 0.15); 
+  border-color: rgba(245, 158, 11, 0.4); 
+  color: #fbbf24; 
+}
+
+[data-theme="light"] .tag-faction-event { 
+  background: rgba(217, 119, 6, 0.12);
+  border-color: rgba(217, 119, 6, 0.35);
+  color: #d97706; 
+}
+
+.faction-event { 
+  color: #fbbf24; 
+}
+
+.faction-event i { 
+  margin-right: 4px; 
+}
+
+[data-theme="light"] .faction-event { 
+  color: #d97706; 
+}
+
 .reward-count { font-size: 13px; color: var(--text-muted); font-weight: 500; }
 [data-theme="light"] .reward-count { color: #4b5563; }
 
