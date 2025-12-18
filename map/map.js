@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const MARKER_ICONS = {
     bandit: { src: 'images/icons/marker-bandit.webp', w: 41, h: 44, alt: 'Бандиты' },
     stalker: { src: 'images/icons/marker-stalker.webp', w: 43, h: 41, alt: 'Сталкеры' },
-    any: { src: 'images/icons/marker-any.webp', w: 44, h: 42, alt: 'Все' }
+    any: { src: 'images/icons/marker-any.webp', w: 44, h: 42, alt: 'Все' },
+    event: { src: 'images/icons/marker-event.webp', w: 44, h: 42, alt: 'Ивент' }
   };
 
   const MAPS = [
@@ -154,8 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function buildFactionBadge(q) {
-    const txt = { bandit: 'Бандиты', stalker: 'Сталкеры' }[q.faction] || 'Все';
-    const cls = { bandit: 'badge--bandit', stalker: 'badge--stalker' }[q.faction] || 'badge--any';
+    const txt = { bandit: 'Бандиты', stalker: 'Сталкеры', event: 'Ивент' }[q.faction] || 'Все';
+    const cls = { bandit: 'badge--bandit', stalker: 'badge--stalker', event: 'badge--event' }[q.faction] || 'badge--any';
     return `<div class="q-badges"><span class="q-badge ${cls}">${txt}</span></div>`;
   }
 
@@ -381,8 +382,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => { recalcMinZoom(); setZoom(Math.max(state.zoom, state.minZoom), getCanvasCenterAnchor()); updateOpenPopovers(); updateTiles(); });
   window.addEventListener('orientationchange', () => { updateOpenPopovers(); updateTiles(); });
 
-  const legendToggles = { any: document.querySelector('.chip-any'), stalker: document.querySelector('.chip-stalker'), bandit: document.querySelector('.chip-bandit') };
-  const legendVisible = { any: true, stalker: true, bandit: true };
+  const legendToggles = { any: document.querySelector('.chip-any'), stalker: document.querySelector('.chip-stalker'), bandit: document.querySelector('.chip-bandit'), event: document.querySelector('.chip-event') };
+  const legendVisible = { any: true, stalker: true, bandit: true, event: true };
 
   Object.entries(legendToggles).forEach(([faction, node]) => {
     if (!node) return;
