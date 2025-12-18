@@ -446,5 +446,101 @@ window.QUESTS_DATA = [
     money: 1500, 
     reputation: 35, 
     guideUrl: '../guides/quests/rubi-rubi-stalker.html'
+  },
+  // Гадание на снежной куче - ивентовый квест
+  {
+    id: 'q-gadanie-event-stalker-bolota', 
+    title: 'Гадание на снежной куче', 
+    loc: 'south', 
+    faction: 'event',
+    x: 1296, 
+    y: 3596, 
+    preview: '../guides/images/quests/gadanie-na-snezhnoj-kuche/cover-bolota.jpg',
+    desc: 'Разгадайте все загадки Связующего для получения подарков.',
+    rewards: [
+      { img: 'images/items/gift-modest.png', label: 'Скромный подарок', qty: 184 },
+      { img: 'images/items/gift-small.png', label: 'Маленький подарок', qty: 184 },
+      { img: 'images/items/gift-normal.png', label: 'Обычный подарок', qty: 184 },
+      { img: 'images/items/gift-big.png', label: 'Большой подарок', qty: 184 },
+      { img: 'images/items/gift-huge.png', label: 'Огромный подарок', qty: 184 },
+      { img: 'images/items/customization-ny2026.png', label: 'Набор кастомизации "Новый Год 2026"', qty: 2 }
+    ],
+    guideUrl: '../guides/quests/gadanie-na-snezhnoj-kuche.html'
+  },
+  {
+    id: 'q-gadanie-event-bandit-bolota', 
+    title: 'Гадание на снежной куче', 
+    loc: 'south', 
+    faction: 'event',
+    x: 629, 
+    y: 3146, 
+    preview: '../guides/images/quests/gadanie-na-snezhnoj-kuche/cover-bolota-bandit.jpg',
+    desc: 'Разгадайте все загадки Связующего для получения подарков.',
+    rewards: [
+      { img: 'images/items/gift-modest.png', label: 'Скромный подарок', qty: 184 },
+      { img: 'images/items/gift-small.png', label: 'Маленький подарок', qty: 184 },
+      { img: 'images/items/gift-normal.png', label: 'Обычный подарок', qty: 184 },
+      { img: 'images/items/gift-big.png', label: 'Большой подарок', qty: 184 },
+      { img: 'images/items/gift-huge.png', label: 'Огромный подарок', qty: 184 },
+      { img: 'images/items/customization-ny2026.png', label: 'Набор кастомизации "Новый Год 2026"', qty: 2 }
+    ],
+    guideUrl: '../guides/quests/gadanie-na-snezhnoj-kuche.html'
+  },
+  {
+    id: 'q-gadanie-event-stalker-obochina', 
+    title: 'Гадание на снежной куче', 
+    loc: 'south', 
+    faction: 'event',
+    x: 1746, 
+    y: 2947, 
+    preview: '../guides/images/quests/gadanie-na-snezhnoj-kuche/cover-obochina-stalker.jpg',
+    desc: 'Разгадайте все загадки Связующего для получения подарков.',
+    rewards: [
+      { img: 'images/items/gift-modest.png', label: 'Скромный подарок', qty: 184 },
+      { img: 'images/items/gift-small.png', label: 'Маленький подарок', qty: 184 },
+      { img: 'images/items/gift-normal.png', label: 'Обычный подарок', qty: 184 },
+      { img: 'images/items/gift-big.png', label: 'Большой подарок', qty: 184 },
+      { img: 'images/items/gift-huge.png', label: 'Огромный подарок', qty: 184 },
+      { img: 'images/items/customization-ny2026.png', label: 'Набор кастомизации "Новый Год 2026"', qty: 2 }
+    ],
+    guideUrl: '../guides/quests/gadanie-na-snezhnoj-kuche.html'
+  },
+  {
+    id: 'q-gadanie-event-bandit-obochina', 
+    title: 'Гадание на снежной куче', 
+    loc: 'south', 
+    faction: 'event',
+    x: 1318, 
+    y: 2722, 
+    preview: '../guides/images/quests/gadanie-na-snezhnoj-kuche/cover-obochina-bandit.jpg',
+    desc: 'Разгадайте все загадки Связующего для получения подарков.',
+    rewards: [
+      { img: 'images/items/gift-modest.png', label: 'Скромный подарок', qty: 184 },
+      { img: 'images/items/gift-small.png', label: 'Маленький подарок', qty: 184 },
+      { img: 'images/items/gift-normal.png', label: 'Обычный подарок', qty: 184 },
+      { img: 'images/items/gift-big.png', label: 'Большой подарок', qty: 184 },
+      { img: 'images/items/gift-huge.png', label: 'Огромный подарок', qty: 184 },
+      { img: 'images/items/customization-ny2026.png', label: 'Набор кастомизации "Новый Год 2026"', qty: 2 }
+    ],
+    guideUrl: '../guides/quests/gadanie-na-snezhnoj-kuche.html'
+  },
+  {
+    id: 'q-gadanie-event-bandit-obochina', 
+    title: 'Гадание на снежной куче', 
+    loc: 'south', 
+    faction: 'event',
+    x: 1266, 
+    y: 1230, 
+    preview: '../guides/images/quests/gadanie-na-snezhnoj-kuche/cover.jpg',
+    desc: 'Разгадайте все загадки Связующего для получения подарков.',
+    rewards: [
+      { img: 'images/items/gift-modest.png', label: 'Скромный подарок', qty: 184 },
+      { img: 'images/items/gift-small.png', label: 'Маленький подарок', qty: 184 },
+      { img: 'images/items/gift-normal.png', label: 'Обычный подарок', qty: 184 },
+      { img: 'images/items/gift-big.png', label: 'Большой подарок', qty: 184 },
+      { img: 'images/items/gift-huge.png', label: 'Огромный подарок', qty: 184 },
+      { img: 'images/items/customization-ny2026.png', label: 'Набор кастомизации "Новый Год 2026"', qty: 2 }
+    ],
+    guideUrl: '../guides/quests/gadanie-na-snezhnoj-kuche.html'
   }
 ];
