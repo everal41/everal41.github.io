@@ -553,5 +553,20 @@ window.QUESTS_DATA = [
       { img: 'images/items/domestic-mre.webp', label: 'Отечественный ИРП', qty: 2 }
     ],
     money: 12500, reputation: 10, guideUrl: '../guides/quests/otchayanie-stalker.html'
+  },
+  {
+    id: 'q-shpionomaniya-stalker', title: 'Шпиономания', loc: 'south', faction: 'stalker',
+    x: 2285, y: 2538, preview: '../guides/images/quests/shpionomaniya/cover.jpg',
+    desc: 'Цефа с Обочины попросил меня поговорить с несколькими людьми: головорезом Кувалдой, пьяницей Рылом и новичком Змеем.',
+    rewards: [
+      { img: 'images/items/trinket-patron-9x39.png', label: 'Брелок «Патрон 9x39 мм»' },
+      { img: 'images/items/art-batareika.webp', label: 'Батарейка' },
+      { img: 'images/items/standart-tools.webp', label: 'Стандартные инструменты', qty: 10 },
+      { img: 'images/items/standart-parts.webp', label: 'Стандартные запчасти', qty: 10 },
+      { img: 'images/items/armor-components-veteran.webp', label: 'Набор компонентов брони (Ветеран)', qty: 3 },
+      { img: 'images/items/pouch-medic-science.webp', label: 'Сумка с аптечками учёных' },
+      { img: 'images/items/bag-ap-556.webp', label: 'Сумка бронебойных 5.56 мм' }
+    ],
+    money: 16500, reputation: 70, guideUrl: '../guides/quests/shpionomaniya.html'
   }
 ];
