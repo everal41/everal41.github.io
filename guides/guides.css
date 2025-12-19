@@ -690,6 +690,15 @@
   padding: 20px;
 }
 
+.card-faction.faction-event {
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+[data-theme="light"] .card-faction.faction-event {
+  color: #d97706;
+}
+
 .card-title {
   font-size: 18px;
   font-weight: 700;
