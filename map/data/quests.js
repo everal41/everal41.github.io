@@ -542,5 +542,16 @@ window.QUESTS_DATA = [
       { img: 'images/items/customization-ny2026.png', label: 'Набор кастомизации "Новый Год 2026"', qty: 2 }
     ],
     guideUrl: '../guides/quests/gadanie-na-snezhnoj-kuche.html'
+  },
+  {
+    id: 'q-otchayanie-stalker', title: 'Отчаяние', loc: 'south', faction: 'stalker',
+    x: 2391, y: 2324, preview: '../guides/images/quests/otchayanie/cover-stalker.jpg',
+    desc: 'Я получил координаты нычки от одного измученного кошмарами блаженного.',
+    rewards: [
+      { img: 'images/items/skorlupa.webp', label: 'Скорлупа' },
+      { img: 'images/items/medic-bag.webp', label: 'Сумка с военными аптечками' },
+      { img: 'images/items/domestic-mre.webp', label: 'Отечественный ИРП', qty: 2 }
+    ],
+    money: 12500, reputation: 10, guideUrl: '../guides/quests/otchayanie-stalker.html'
   }
 ];
