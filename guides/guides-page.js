@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'shpionomaniya',
+    title: 'Шпиономания',
+    description: 'Помогите Цефе разобраться с подозрениями: опросите сталкеров, расшифруйте записку и решите судьбу Цефалона. Выбор: сдать или защитить Цефу.',
+    image: 'images/quests/shpionomaniya/cover.jpg',
+    url: 'quests/shpionomaniya.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'chernie-ivy',
+    tags: [],
+    keywords: ['цефа', 'цефалон', 'кувалда', 'рыло', 'змей', 'шпион', 'санитары', 'бар', 'чёрные ивы', 'черные ивы', 'батарейка', 'записка', 'троица'],
+    date: '2025-12-19',
+    status: 'published'
+  },
+  {
     id: 'otchayanie-stalker',
     title: 'Отчаяние (Сталкеры)',
     description: 'Помогите блаженному Горькому справиться с кошмарами. Получите координаты нычки.',
