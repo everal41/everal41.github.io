@@ -563,10 +563,11 @@ window.QUESTS_DATA = [
       { img: 'images/items/art-batareika.webp', label: 'Батарейка' },
       { img: 'images/items/standart-tools.webp', label: 'Стандартные инструменты', qty: 10 },
       { img: 'images/items/standart-parts.webp', label: 'Стандартные запчасти', qty: 10 },
-      { img: 'images/items/armor-components-veteran.webp', label: 'Набор компонентов брони (Ветеран)', qty: 3 },
+      { img: 'images/items/armor-components-veteran.png', label: 'Набор компонентов брони (Ветеран)', qty: 3 },
       { img: 'images/items/pouch-medic-science.webp', label: 'Сумка с аптечками учёных' },
       { img: 'images/items/bag-ap-556.webp', label: 'Сумка бронебойных 5.56 мм' }
     ],
     money: 16500, reputation: 70, guideUrl: '../guides/quests/shpionomaniya.html'
   }
 ];
+
