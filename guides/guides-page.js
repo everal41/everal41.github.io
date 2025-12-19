@@ -538,7 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const CATEGORY_LABELS = { quest: 'Квесты', equipment: 'Снаряжение', tech: 'Технические', misc: 'Разное' };
   const CATEGORY_ICONS = { quest: 'fa-scroll', equipment: 'fa-shield-halved', tech: 'fa-gear', misc: 'fa-puzzle-piece' };
   const FACTION_LABELS = { stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции', event: 'Ивент' };
-  const LOCATION_LABELS = { bolota: 'Болота', obochina: 'Обочина', kolos: 'Колос', 'chernie-ivy': 'Черные Ивы' };
+  const LOCATION_LABELS = { bolota: 'Болота', obochina: 'Обочина', kolos: 'Колос', 'chernie-ivy': 'Черные Ивы', svalka: 'Свалка' };
   const TAG_LABELS = { beginner: 'Новичкам', advanced: 'Продвинутый', stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции' };
 
   const formatDate = (dateStr) => {
