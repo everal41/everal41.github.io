@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     category: 'quest',
     faction: 'stalker',
     location: 'chernie-ivy',
-    tags: [],
+    tags: ['beginner'],
     keywords: ['горький', 'шаман', 'блаженный', 'нычка', 'кошмары', 'чёрные ивы', 'черные ивы', 'каа', 'тайник', 'скорлупа'],
     date: '2025-12-19',
     status: 'published'
