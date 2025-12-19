@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'gadanie-na-snezhnoj-kuche',
+    title: 'Гадание на снежной куче',
+    description: 'Новогодний квест от Связующего: разгадайте все 40 загадок и получите подарки. Все местоположения объектов для снежков.',
+    image: 'images/quests/gadanie-na-snezhnoj-kuche/cover.jpg',
+    url: 'quests/gadanie-na-snezhnoj-kuche.html',
+    category: 'quest',
+    faction: 'event',
+    location: null,
+    tags: [],
+    keywords: ['связующий', 'снеговик', 'ёлка', 'новый год', 'ивент', 'загадки', 'снежки', 'подарки', 'гадание', 'снежная куча', 'праздник', 'зима', 'ny2026', 'кастомизация'],
+    date: '2025-12-19',
+    status: 'published'
+  },
+  {
     id: 'rubi-rubi-stalker',
     title: 'Руби, руби! (Сталкеры)',
     description: 'Помогите Рубаке с кулинарными изысками: соберите ингредиенты для его блюд. Бонус — Рубака станет торговцем расходниками на базе диггеров.',
@@ -509,7 +523,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const CATEGORY_LABELS = { quest: 'Квесты', equipment: 'Снаряжение', tech: 'Технические', misc: 'Разное' };
   const CATEGORY_ICONS = { quest: 'fa-scroll', equipment: 'fa-shield-halved', tech: 'fa-gear', misc: 'fa-puzzle-piece' };
-  const FACTION_LABELS = { stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции' };
+  const FACTION_LABELS = { stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции', event: 'Ивент' };
   const LOCATION_LABELS = { bolota: 'Болота', obochina: 'Обочина', kolos: 'Колос', yantar: 'Янтарь' };
   const TAG_LABELS = { beginner: 'Новичкам', advanced: 'Продвинутый', stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции' };
 
@@ -550,7 +564,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let factionBadge = '';
     if (guide.category === 'quest' && guide.faction) {
       const factionClass = guide.faction === 'both' ? 'faction-any' : `faction-${guide.faction}`;
-      const factionIcon = guide.faction === 'stalker' ? 'fa-shield-halved' : guide.faction === 'bandit' ? 'fa-skull' : 'fa-users';
+      const factionIcon = {
+        stalker: 'fa-shield-halved',
+        bandit: 'fa-skull',
+        both: 'fa-users',
+        event: 'fa-snowflake'
+      }[guide.faction] || 'fa-users';
       factionBadge = `<span class="card-faction ${factionClass}"><i class="fa-solid ${factionIcon}"></i>${FACTION_LABELS[guide.faction]}</span>`;
     }
     let locationBadge = '';
