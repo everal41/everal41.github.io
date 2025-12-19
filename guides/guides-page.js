@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
     url: 'quests/dela-banditskie.html',
     category: 'quest',
     faction: 'bandit',
-    location: 'yantar',
+    location: 'svalka',
     tags: ['advanced'],
     keywords: ['варяг', 'тайник', 'подарок', 'янтарь', 'волчьи слёзы'],
     date: '2025-12-03',
