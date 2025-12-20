@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'skrytoe-sokrovishche',
+    title: 'Скрытое сокровище',
+    description: 'Найдите тайник погибшего сталкера в Лесу. Простой квест с хорошей наградой — артефакт Кисель и полезные ресурсы.',
+    image: 'images/quests/skrytoe-sokrovishche/cover.jpg',
+    url: 'quests/skrytoe-sokrovishche.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'les',
+    tags: ['beginner'],
+    keywords: ['сокровище', 'тайник', 'труп', 'лес', 'кисель', 'артефакт', 'рюкзак', 'бетонные плиты'],
+    date: '2025-12-20',
+    status: 'published'
+  },
+  {
     id: 'legenda-zony',
     title: 'Легенда Зоны',
     description: 'Помогите Коле Колбаскину найти след легендарного сталкера Зрячего. Небольшая цепочка заданий с походами по вражеским локациям.',
@@ -566,7 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const CATEGORY_LABELS = { quest: 'Квесты', equipment: 'Снаряжение', tech: 'Технические', misc: 'Разное' };
   const CATEGORY_ICONS = { quest: 'fa-scroll', equipment: 'fa-shield-halved', tech: 'fa-gear', misc: 'fa-puzzle-piece' };
   const FACTION_LABELS = { stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции', event: 'Ивент' };
-  const LOCATION_LABELS = { bolota: 'Болота', obochina: 'Обочина', kolos: 'Колос', 'chernie-ivy': 'Черные Ивы', svalka: 'Свалка', bar: 'Бар' };
+  const LOCATION_LABELS = { bolota: 'Болота', obochina: 'Обочина', kolos: 'Колос', 'chernie-ivy': 'Черные Ивы', svalka: 'Свалка', bar: 'Бар', les: 'Лес' };
   const TAG_LABELS = { beginner: 'Новичкам', advanced: 'Продвинутый', stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции' };
 
   const formatDate = (dateStr) => {
