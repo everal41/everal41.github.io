@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'legenda-zony',
+    title: 'Легенда Зоны',
+    description: 'Помогите Коле Колбаскину найти след легендарного сталкера Зрячего. Небольшая цепочка заданий с походами по вражеским локациям.',
+    image: 'images/quests/legenda-zony/cover.jpg',
+    url: 'quests/legenda-zony.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'bar',
+    tags: [],
+    keywords: ['коля', 'колбаскин', 'зрячий', 'абакан', 'легенда', 'диггер', 'путь дураков', 'волк', 'шкатулка', 'блокнот', 'мёртвый город', 'свалка'],
+    date: '2025-12-20',
+    status: 'published'
+  },
+  {
     id: 'shpionomaniya',
     title: 'Шпиономания',
     description: 'Помогите Цефе разобраться с подозрениями: опросите сталкеров, расшифруйте записку и решите судьбу Цефалона. Выбор: сдать или защитить Цефу.',
