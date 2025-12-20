@@ -564,10 +564,25 @@ window.QUESTS_DATA = [
       { img: 'images/items/standart-tools.webp', label: 'Стандартные инструменты', qty: 10 },
       { img: 'images/items/standart-parts.webp', label: 'Стандартные запчасти', qty: 10 },
       { img: 'images/items/armor-components-veteran.png', label: 'Набор компонентов брони (Ветеран)', qty: 3 },
-      { img: 'images/items/pouch-medic-science.webp', label: 'Сумка с аптечками учёных' },
+      { img: 'images/items/medic-bag-science.webp', label: 'Сумка с аптечками учёных' },
       { img: 'images/items/bag-ap-556.webp', label: 'Сумка бронебойных 5.56 мм' }
     ],
     money: 16500, reputation: 70, guideUrl: '../guides/quests/shpionomaniya.html'
+  },
+  {
+    id: 'q-legenda-zony-stalker', 
+    title: 'Легенда Зоны', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1299, 
+    y: 1274, 
+    preview: '../guides/images/quests/legenda-zony/cover.jpg',
+    desc: 'Единственный человек, который мог бы помочь с поисками Зрячего — диггер, пропавший где-то на Пути Дураков.',
+    rewards: [
+      { img: 'images/items/abakan-zryachego.png', label: 'Абакан Зрячего', rarity: 'veteran' }
+    ],
+    money: 25000, 
+    reputation: 180, 
+    guideUrl: '../guides/quests/legenda-zony.html'
   }
 ];
-
