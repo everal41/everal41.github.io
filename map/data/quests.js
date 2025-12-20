@@ -584,5 +584,26 @@ window.QUESTS_DATA = [
     money: 25000, 
     reputation: 180, 
     guideUrl: '../guides/quests/legenda-zony.html'
+  },
+  {
+    id: 'q-skrytoe-sokrovishche-stalker', 
+    title: 'Скрытое сокровище', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 2138, 
+    y: 1593, 
+    preview: '../guides/images/quests/skrytoe-sokrovishche/cover.jpg',
+    desc: 'Еще один бедолага, загубленный Зоной...',
+    rewards: [
+      { img: 'images/items/art-kisel.webp', label: 'Кисель' },
+      { img: 'images/items/medic-bag-science.webp', label: 'Сумка с аптечками ученых' },
+      { img: 'images/items/standart-tools.webp', label: 'Стандартные инструменты', qty: 5 },
+      { img: 'images/items/standart-parts.webp', label: 'Стандартные запчасти', qty: 5 },
+      { img: 'images/items/vodka.webp', label: 'Водка', qty: 2 },
+      { img: 'images/items/bag-ap-545.webp', label: 'Сумка бронебойных 5.45 мм' }
+    ],
+    money: 5000, 
+    reputation: 20, 
+    guideUrl: '../guides/quests/skrytoe-sokrovishche.html'
   }
 ];
