@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Отец и сын — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Отец и сын» в STALCRAFT: X для Сталкеров: где найти старый дом в Лесу, поиск Яна, охота с Дедом, выбор награды — ТОЗ Деда или Мурка Яна." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Отец и сын, Дед, Ян, Лес, охота, ТОЗ Деда, Мурка Яна, Сталкеры, прохождение, награды" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/otec-i-syn/cover.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Отец и сын</span>
+      </div>
+      <h1 class="hero-title">Отец и сын</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction"><i class="fa-solid fa-shield-halved"></i> Сталкеры</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Лес</span>
+        <span class="tag tag-type"><i class="fa-solid fa-code-branch"></i> Нелинейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-stalker"><i class="fa-solid fa-shield-halved"></i> Сталкеры</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Лес</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Можно провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-code-branch"></i><span>Нелинейный</span></div>
+          <div class="trait"><i class="fa-solid fa-unlock"></i><span>Без условий</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-ruble-sign"></i><span>21 500 руб.</span></div>
+          <div class="reward-row"><i class="fa-solid fa-star"></i><span>+115 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Квест начнётся после того, как вы зайдёте в старый дом в <strong>Лесу</strong>. Квест можно пройти двумя путями: быть с охотниками до самого конца, тогда в награду вы получите <strong>ТОЗ Деда</strong> и брелок, или же вы можете оставить их во время охоты, за что получите <strong>Мурку Яна</strong>.</p>
+        
+        <div class="outcome-cards">
+          <div class="outcome-card recommended">
+            <div class="outcome-icon peace"><i class="fa-solid fa-handshake"></i></div>
+            <div class="outcome-content">
+              <strong>Помочь охотникам</strong>
+              <span>ТОЗ Деда + брелок «Патрон 12 калибра»</span>
+            </div>
+            <span class="recommend-badge">Рекомендую</span>
+          </div>
+          <div class="outcome-card">
+            <div class="outcome-icon kill"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+            <div class="outcome-content">
+              <strong>Оставить охотников</strong>
+              <span>Мурка Яна (во всём лучше ТОЗа, без брелока)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <i class="fa-solid fa-lightbulb"></i>
+          <p><strong>Моё мнение:</strong> Мурка Яна мощнее ТОЗа Деда, и стоит выбрать её, если вам нужен хороший дробовик здесь и сейчас. Но рано или поздно вы всё равно сделаете себе дробовик куда мощнее, а потому я выбираю путь <strong>ТОЗа Деда</strong> — ещё и брелок в коллекцию достанется. К тому же ТОЗ Деда можно отдать по линейке квестов на <strong>КИМ-Х Атлас</strong>, чтобы сократить время прохождения одного сегмента. Выбор за вами.</p>
+        </div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        
+        <div class="alert alert-warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Квест нелинейный, с возможностью провала. Следуйте указанным вариантам диалогов!</span></div>
+
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Лес: Начало квеста</h3>
+              <p>В Лесу заходим внутрь старого дома. Через секунду у входа снаружи будет стоять неизвестный сталкер, угрожающий вам ружьём.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/otec-i-syn/cover.jpg" alt="Старый дом в Лесу" loading="lazy">
+                <figcaption>Старый дом, с которого начинается квест</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>Лес: Не пойман — не вор</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с незнакомцем</span></div>
+              <p>Подойдите к незнакомцу, по ходу диалога выберите следующий вариант ответа:</p>
+              <div class="dialogue-list">
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">[Пройти за стариком]</span></div>
+              </div>
+              <div class="alert alert-warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Если выбрать второй вариант, то вы сразу же провалите квест!</span></div>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Лес: Странный дед</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Дедом</span></div>
+              <p>Говорим с <strong>Дедом</strong> в доме.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/otec-i-syn/ded.jpg" alt="Дед в доме" loading="lazy">
+                <figcaption>Дед</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>Лес: Дровосек</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Открыть сарай</span></div>
+              <p>Дед попросит вас наколоть ему дров. Подходим к сараю и выбираем любой вариант открытия.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/otec-i-syn/saray.jpg" alt="Сарай" loading="lazy">
+                <figcaption>Сарай рядом с домом</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="5">
+            <div class="step-marker">5</div>
+            <div class="step-content">
+              <h3>Лес: Подвал</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти ключ в подвале</span></div>
+              <p>Дед скажет, что ключ лежит в подвале. Зайдите в дом и подойдите ко входу в подвал — вас переместит туда. В самом подвале обыскивайте различные ящики, в одном из них будут лежать ключи. Возвращайтесь к сараю и откройте его.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/otec-i-syn/podval-vhod.jpg" alt="Вход в подвал" loading="lazy">
+                <figcaption>Вход в подвал</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="6">
+            <div class="step-marker">6</div>
+            <div class="step-content">
+              <h3>Лес: Запасы дров на исходе</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Вернуться к Деду</span></div>
+              <p>Возвращаемся к Деду и сообщаем ему, что дров не осталось. Он попросит вас нарубить дров в Лесу.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="7">
+            <div class="step-marker">7</div>
+            <div class="step-content">
+              <h3>Лес: По дрова</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Собрать дрова для Деда: Полено (0/10)</span></div>
+              <p>Сперва заберите топор в сарае, затем можете приступить к сбору дров. Всего на отмеченной территории будет <strong>5 поваленных столбов деревьев</strong>, необходимо срубить каждый.</p>
+              <div class="alert alert-tip"><i class="fa-solid fa-weight-hanging"></i><span>Учтите, что поленья весят достаточно много — убедитесь, что у вас есть <strong>30 кг</strong> свободного места в рюкзаке.</span></div>
+              <figure class="img-figure">
+                <img src="../images/quests/otec-i-syn/drova-map.jpg" alt="Карта с расположением деревьев" loading="lazy">
+                <figcaption>Расположение поваленных деревьев на карте</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="8">
+            <div class="step-marker">8</div>
+            <div class="step-content">
+              <h3>Лес: Работа топориком</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Наколоть дрова</span></div>
+              <p>Собрав все поленья, подходим к колоде и взаимодействуем с ней.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/otec-i-syn/koloda.jpg" alt="Колода для рубки дров" loading="lazy">
+                <figcaption>Колода для рубки дров</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="9">
+            <div class="step-marker">9</div>
+            <div class="step-content">
+              <h3>Лес: Будни лесоруба</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Дедом</span></div>
+              <p>Возвращаемся к Деду в дом и говорим с ним. Он расскажет о том, что его сын всё ещё не вернулся.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="10">
+            <div class="step-marker">10</div>
+            <div class="step-content">
+              <h3>Лес: Отец и сын</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти Яна</span></div>
+              <p><strong>Ян</strong> может находиться в двух точках, в зависимости от игрового времени:</p>
+              
+              <div class="alert alert-info"><i class="fa-solid fa-clock"></i><span><strong>С 14:00 до 02:00</strong> — Ян находится в Могильнике.<br><strong>С 02:00 до 14:00</strong> — Ян находится в Лесу.</span></div>
+
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--text-primary);">Вариант 1: Ян в Могильнике (14:00 – 02:00)</h4>
+              <div class="alert alert-warning"><i class="fa-solid fa-biohazard"></i><span>Возле Яна в Могильнике действует 1 ур. биозаражения и 1 ур. псизаражения.</span></div>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/otec-i-syn/yan-mogilnik-map.jpg" alt="Местоположение Яна в Могильнике на карте" loading="lazy">
+                  <figcaption>Местоположение Яна в Могильнике</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/otec-i-syn/yan-mogilnik.jpg" alt="Ян в Могильнике" loading="lazy">
+                  <figcaption>Ян в Могильнике</figcaption>
+                </figure>
+              </div>
+
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--text-primary);">Вариант 2: Ян в Лесу (02:00 – 14:00)</h4>
+              <div class="alert alert-tip"><i class="fa-solid fa-coins"></i><span>Если найдёте Яна в Лесу, то в будущем в его рюкзаке найдёте больше денег, чем за поиск в Могильнике.</span></div>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/otec-i-syn/yan-les-map.jpg" alt="Местоположение Яна в Лесу на карте" loading="lazy">
+                  <figcaption>Местоположение Яна в Лесу</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/otec-i-syn/yan-les.jpg" alt="Ян в Лесу" loading="lazy">
+                  <figcaption>Ян в Лесу</figcaption>
+                </figure>
+              </div>
+              
+              <p>Приходим к Яну и помогаем ему.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="11">
+            <div class="step-marker">11</div>
+            <div class="step-content">
+              <h3>Помощь Яну</h3>
+              
+              <h4 style="margin: 16px 0 12px; font-size: 15px; color: var(--text-primary);">Если вы пришли к Яну в Лес:</h4>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Лес: Калека — Поговорить со сталкером</span></div>
+              <p>Оказав помощь Яну, поговорите с ним. После диалога вас перенесёт в дом к Деду.</p>
+
+              <h4 style="margin: 16px 0 12px; font-size: 15px; color: var(--text-primary);">Если вы пришли к Яну в Могильник:</h4>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Лес: Знакомое лицо — Привести сталкера в чувства</span></div>
+              <p>В диалоге с Яном можете выбрать любой вариант действий. Поговорите с Яном, после разговора вас переместит в дом к Деду.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="12">
+            <div class="step-marker">12</div>
+            <div class="step-content">
+              <h3>Лес: Тяжёлый случай</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Дедом</span></div>
+              <p>Переместившись в дом, подойдите к лежащему на кровати Деду и поговорите с ним.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/otec-i-syn/ded-bolnoy.jpg" alt="Приболевший Дед" loading="lazy">
+                <figcaption>Приболевший Дед</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="13">
+            <div class="step-marker">13</div>
+            <div class="step-content">
+              <h3>Лес: Книга рецептов</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Яном</span></div>
+              <p>Поговорите с <strong>Яном</strong>, он предложит собрать растения для отвара.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="14">
+            <div class="step-marker">14</div>
+            <div class="step-content">
+              <h3>Лес: Народный метод</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Собрать растения: Крапива (0/5), Чистотел (0/4)</span></div>
+              <p>Отправляемся на отмеченную квестовую зону и собираем растения.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/otec-i-syn/rasteniya-1.jpg" alt="Первая область с растениями" loading="lazy">
+                  <figcaption>Ближайшая к дому область — 5 растений</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/otec-i-syn/rasteniya-2.jpg" alt="Вторая область с растениями" loading="lazy">
+                  <figcaption>Вторая область — 4 растения</figcaption>
+                </figure>
+              </div>
+              <p>Собрав все растения, возвращаемся к Яну. Он отправит вам координаты своего потерянного рюкзака с хабаром — его расположение зависит от того, где вы спасли Яна.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/otec-i-syn/yan-v-dome.jpg" alt="Ян в доме" loading="lazy">
+                <figcaption>Ян в доме</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="15">
+            <div class="step-marker">15</div>
+            <div class="step-content">
+              <h3>Поиск рюкзака Яна</h3>
+              
+              <h4 style="margin: 16px 0 12px; font-size: 15px; color: var(--text-primary);">Если вы спасли Яна в Лесу:</h4>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Лес: Предложение — Найти рюкзак</span></div>
+              <p>Ян пришлёт вам координаты своего рюкзака с хабаром в качестве награды.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/otec-i-syn/ryukzak-les-map.jpg" alt="Тайник на карте в Лесу" loading="lazy">
+                  <figcaption>Расположение рюкзака в Лесу</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/otec-i-syn/ryukzak-les.jpg" alt="Рюкзак в Лесу" loading="lazy">
+                  <figcaption>Рюкзак в Лесу</figcaption>
+                </figure>
+              </div>
+
+              <h4 style="margin: 16px 0 12px; font-size: 15px; color: var(--text-primary);">Если вы спасли Яна в Могильнике:</h4>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Лес: Что-то намечается — Найти рюкзак</span></div>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/otec-i-syn/ryukzak-mogilnik-map.jpg" alt="Тайник на карте в Могильнике" loading="lazy">
+                  <figcaption>Расположение рюкзака в Могильнике</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/otec-i-syn/ryukzak-mogilnik.jpg" alt="Рюкзак в Могильнике" loading="lazy">
+                  <figcaption>Рюкзак в Могильнике</figcaption>
+                </figure>
+              </div>
+              <div class="alert alert-tip"><i class="fa-solid fa-coins"></i><span>В тайнике в Лесу денежная награда будет чуть больше, чем в Могильнике.</span></div>
+            </div>
+          </div>
+
+          <div class="step" data-step="16">
+            <div class="step-marker">16</div>
+            <div class="step-content">
+              <h3>Лес: Дело</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с охотниками</span></div>
+              <p>Возвращаемся в дом и разговариваем с Дедом или с Яном. Они предложат пойти с ними на охоту — соглашаемся.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="17">
+            <div class="step-marker">17</div>
+            <div class="step-content">
+              <h3>Охота: Ночная вылазка</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Прийти к охотникам ночью</span></div>
+              <p>Ждём <strong>23:00</strong> и приходим к охотникам, говорим с ними.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="18">
+            <div class="step-marker">18</div>
+            <div class="step-content">
+              <h3>Охота: Крупная дичь</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с охотниками</span></div>
+              <p>После того как вас переместило, разговариваем с любым из охотников и отправляемся на позицию.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/otec-i-syn/ohotniki.jpg" alt="Охотники — Ян и Дед" loading="lazy">
+                <figcaption>Ян и Дед готовы к охоте</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="19">
+            <div class="step-marker">19</div>
+            <div class="step-content">
+              <h3>Охота: Развилка → Сидящий в засаде</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Прийти на позицию → Дождаться зверя</span></div>
+              <p>Отправляйтесь на указанную точку. Ждём пару секунд на точке, пока не обновится задание.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="20">
+            <div class="step-marker">20</div>
+            <div class="step-content">
+              <h3>Охота: В яблочко! — КЛЮЧЕВОЙ ВЫБОР</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Бежать к охотникам</span></div>
+              
+              <div class="alert alert-warning"><i class="fa-solid fa-code-branch"></i><span><strong>Ключевая часть квеста!</strong> От вашего решения зависит, какую награду вы получите по итогу. У вас есть два пути: прибежать к охотникам или оставить их.</span></div>
+
+              <div class="choice-selector" id="rewardChoice">
+                <button class="choice-btn active" data-target="panel-toz">
+                  <i class="fa-solid fa-handshake"></i>
+                  <span>Помочь охотникам</span>
+                  <small>ТОЗ Деда + брелок</small>
+                </button>
+                <button class="choice-btn" data-target="panel-murka">
+                  <i class="fa-solid fa-person-walking-arrow-right"></i>
+                  <span>Оставить охотников</span>
+                  <small>Мурка Яна</small>
+                </button>
+              </div>
+
+              <div class="choice-panels">
+                <div id="panel-toz" class="choice-panel active">
+                  <h4><i class="fa-solid fa-handshake"></i> Получение ТОЗа Деда </h4>
+                  <p>Если вы решили получить <strong>ТОЗ Деда</strong>, то бегите по метке к охотникам и поговорите с Дедом. После диалога вас переместит к ним в дом.</p>
+                  <figure class="img-figure">
+                    <img src="../images/quests/otec-i-syn/ded-yan-mertviy.jpg" alt="Дед и мёртвый Ян" loading="lazy">
+                    <figcaption>Дед рядом с раненым Яном</figcaption>
+                  </figure>
+                  
+                  <div class="step-objective" style="margin-top: 16px;"><i class="fa-solid fa-crosshairs"></i><span>Охота: Финал — Поговорить с Дедом</span></div>
+                  <p>Вновь разговариваем с Дедом в доме, он выдаст вам финальную награду за квест: <strong>ТОЗ Деда</strong>, <strong>брелок «Патрон 12 калибра»</strong> и немного денег.</p>
+                  <figure class="img-figure">
+                    <img src="../images/quests/otec-i-syn/ded-final.jpg" alt="Дед рядом с мёртвым сыном" loading="lazy">
+                    <figcaption>Финальный диалог с Дедом</figcaption>
+                  </figure>
+                </div>
+
+                <div id="panel-murka" class="choice-panel">
+                  <h4><i class="fa-solid fa-person-walking-arrow-right"></i> Получение Мурки Яна</h4>
+                  <p>Если вы решили получить этот дробовик, то ждите <strong>1 час реального времени</strong>, не прибегая к охотникам на помощь.</p>
+                  
+                  <div class="alert alert-info"><i class="fa-solid fa-clock"></i><span>По прохождению часа вам придёт уведомление о провале этапа квеста «Охота: В яблочко!».</span></div>
+                  
+                  <p>После этого можете возвращаться в дом к Деду. Разговаривая с Дедом, он пошлёт вас прочь. Выходим из дома и немного ждём — раздастся звук выстрела.</p>
+                  
+                  <div class="step-objective" style="margin-top: 16px;"><i class="fa-solid fa-crosshairs"></i><span>Охота: Один выстрел — Осмотреть дом Деда</span></div>
+                  <p>Возвращаемся в дом и спускаемся в подвал. В подвале обнаружите мёртвого Деда — осматриваем его и получаем дробовик <strong>«Мурка Яна»</strong> (репутация тоже выдаётся в таком же количестве).</p>
+                  <figure class="img-figure">
+                    <img src="../images/quests/otec-i-syn/ded-mertviy.jpg" alt="Мёртвый Дед в подвале" loading="lazy">
+                    <figcaption>Мёртвый Дед в подвале</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <p>Награды при выборе «Помочь охотникам» (ТОЗ Деда):</p>
+        <div class="rewards-grid">
+          <div class="reward-item rarity-newbie">
+            <img src="../../map/images/items/toz-deda.png" alt="ТОЗ Деда" />
+            <div class="reward-details"><span class="reward-name">ТОЗ Деда</span><span class="reward-rarity newbie">Новичок</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/trinket-patron-12.png" alt="Брелок Патрон 12 калибра" />
+            <div class="reward-details"><span class="reward-name">Брелок «Патрон 12 калибра»</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/pouch-medic-science.webp" alt="Подсумок с аптечками учёных" />
+            <div class="reward-details"><span class="reward-name">Подсумок с аптечками учёных</span><span class="reward-count">×2</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/morfin.webp" alt="Морфин" />
+            <div class="reward-details"><span class="reward-name">Морфин</span><span class="reward-count">×4</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/bag-drob-12x76.webp" alt="Сумка дроби 12x76 мм" />
+            <div class="reward-details"><span class="reward-name">Сумка дроби 12x76 мм</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/radost-turista.webp" alt="Радость туриста" />
+            <div class="reward-details"><span class="reward-name">«Радость туриста»</span><span class="reward-count">×4</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>21 500 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+115 репутации</span></div>
+        </div>
+        
+        <div class="alert alert-info" style="margin-top: 20px;">
+          <i class="fa-solid fa-arrows-split-up-and-left"></i>
+          <span><strong>Альтернатива:</strong> если оставить охотников, вместо ТОЗа Деда и брелока вы получите <strong>Мурку Яна</strong> — более мощный дробовик, но без коллекционного брелока.</span>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>
