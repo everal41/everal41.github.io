@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'otec-i-syn',
+    title: 'Отец и сын',
+    description: 'Зайдите в старый дом в Лесу и помогите охотникам. Выбор пути: ТОЗ Деда с брелоком или Мурка Яна.',
+    image: 'images/quests/otec-i-syn/cover.jpg',
+    url: 'quests/otec-i-syn.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'les',
+    tags: [],
+    keywords: ['отец', 'сын', 'дед', 'ян', 'охота', 'тоз', 'мурка', 'лес', 'дрова', 'охотники', 'дробовик', 'Мурка Яна', 'ТОЗ Деда'],
+    date: '2025-12-21',
+    status: 'published'
+  },
+  {
     id: 'skrytoe-sokrovishche',
     title: 'Скрытое сокровище',
     description: 'Найдите тайник погибшего сталкера в Лесу. Простой квест с хорошей наградой — артефакт Кисель и полезные ресурсы.',
