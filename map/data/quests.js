@@ -616,8 +616,8 @@ window.QUESTS_DATA = [
     preview: '../guides/images/quests/otec-i-syn/cover.jpg',
     desc: 'Зашёл в один старенький домик в Лесу, не знаю зачем.',
     rewards: [
-      { img: 'images/items/toz-deda.webp', label: 'ТОЗ Деда', rarity: 'stalker' },
-      { img: 'images/items/trinket-patron-12.webp', label: 'Брелок "Патрон 12 калибра"' },
+      { img: 'images/items/toz-deda.png', label: 'ТОЗ Деда', rarity: 'stalker' },
+      { img: 'images/items/trinket-patron-12.png', label: 'Брелок "Патрон 12 калибра"' },
       { img: 'images/items/pouch-medic-science.webp', label: 'Подсумок с аптечками учёных', qty: 2 },
       { img: 'images/items/morfin.webp', label: 'Морфин', qty: 4 },
       { img: 'images/items/bag-drob-12x76.webp', label: 'Сумка дроби 12x76 мм' },
