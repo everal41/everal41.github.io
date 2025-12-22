@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'skrytoe-sokrovishche-bandit',
+    title: 'Скрытое сокровище (Бандиты)',
+    description: 'Осмотрите труп в Яме и найдите тайник погибшего бандита.',
+    image: 'images/quests/skrytoe-sokrovishche/cover-bandit.jpg',
+    url: 'quests/skrytoe-sokrovishche-bandit.html',
+    category: 'quest',
+    faction: 'bandit',
+    location: 'yama',
+    tags: ['beginner'],
+    keywords: ['скрытое сокровище', 'труп', 'яма', 'тайник', 'рюкзак', 'вышка', 'смотровая'],
+    date: '2025-12-22',
+    status: 'published'
+  },
+  {
     id: 'svyatoy-istochnik',
     title: 'Святой источник',
     description: 'Помогите сталкеру Фурсу закрыть радиоактивный источник. Несколько путей прохождения — гайд по самому выгодному.',
@@ -608,7 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const CATEGORY_LABELS = { quest: 'Квесты', equipment: 'Снаряжение', tech: 'Технические', misc: 'Разное' };
   const CATEGORY_ICONS = { quest: 'fa-scroll', equipment: 'fa-shield-halved', tech: 'fa-gear', misc: 'fa-puzzle-piece' };
   const FACTION_LABELS = { stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции', event: 'Ивент' };
-  const LOCATION_LABELS = { bolota: 'Болота', obochina: 'Обочина', kolos: 'Колос', 'chernie-ivy': 'Черные Ивы', svalka: 'Свалка', bar: 'Бар', les: 'Лес', zavod: 'Завод' };
+  const LOCATION_LABELS = { bolota: 'Болота', obochina: 'Обочина', kolos: 'Колос', 'chernie-ivy': 'Черные Ивы', svalka: 'Свалка', bar: 'Бар', les: 'Лес', zavod: 'Завод', yama: 'Яма' };
   const TAG_LABELS = { beginner: 'Новичкам', advanced: 'Продвинутый', stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции' };
 
   const formatDate = (dateStr) => {
