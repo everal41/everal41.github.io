@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'dela-minuvshih-let',
+    title: 'Дела минувших лет',
+    description: 'Помогите охраннику бара Пижме найти вещи его матери, оставленные при эвакуации. Награда — Парадная форма.',
+    image: 'images/quests/dela-minuvshih-let/cover.jpg',
+    url: 'quests/dela-minuvshih-let.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'bar',
+    tags: ['beginner'],
+    keywords: ['дела минувших лет', 'пижма', 'бар', 'мать', 'эвакуация', 'альбом', 'парадная форма', 'пути дураков', 'лес', 'шахтная установка'],
+    date: '2025-12-22',
+    status: 'published'
+  },
+  {
     id: 'skrytoe-sokrovishche-bandit',
     title: 'Скрытое сокровище (Бандиты)',
     description: 'Осмотрите труп в Яме и найдите тайник погибшего бандита.',
