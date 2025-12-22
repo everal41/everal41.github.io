@@ -284,6 +284,8 @@
   .step-content h3 { font-size: 16px; }
 }
 
+.trait i.fa-lock { color: #f59e0b; }
+
 .reward-row.money i { color: var(--warning); }
 .reward-row.rep i { color: var(--accent); }
 
