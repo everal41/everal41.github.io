@@ -646,5 +646,26 @@ window.QUESTS_DATA = [
     money: 90000, 
     reputation: 160, 
     guideUrl: '../guides/quests/svyatoy-istochnik.html'
+  },
+  {
+    id: 'q-skrytoe-sokrovishche-bandit', 
+    title: 'Скрытое сокровище', 
+    loc: 'south', 
+    faction: 'bandit',
+    x: 675, 
+    y: 1478, 
+    preview: '../guides/images/quests/skrytoe-sokrovishche/cover-bandit.jpg',
+    desc: 'Еще один бедолага, загубленный Зоной...',
+    rewards: [
+      { img: 'images/items/art-kisel.webp', label: 'Кисель' },
+      { img: 'images/items/medic-bag-science.webp', label: 'Сумка с аптечками ученых' },
+      { img: 'images/items/standart-tools.webp', label: 'Стандартные инструменты', qty: 5 },
+      { img: 'images/items/standart-parts.webp', label: 'Стандартные запчасти', qty: 5 },
+      { img: 'images/items/vodka.webp', label: 'Водка', qty: 2 },
+      { img: 'images/items/bag-ap-545.webp', label: 'Сумка бронебойных 5.45 мм' }
+    ],
+    money: 5000, 
+    reputation: 20, 
+    guideUrl: '../guides/quests/skrytoe-sokrovishche-bandit.html'
   }
 ];
