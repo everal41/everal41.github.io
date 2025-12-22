@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Святой источник — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Святой источник» в STALCRAFT: X: как начать квест, компромат на Марина, последовательность кнопок на насосной станции и все награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Святой источник, Фурс, Марин, Гнилушка, Громозека, Завод, Бар, насосная станция, компромат, прохождение, награды" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/svyatoy-istochnik/cover.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Святой источник</span>
+      </div>
+      <h1 class="hero-title">Святой источник</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction-any"><i class="fa-solid fa-users"></i> Обе фракции</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Завод</span>
+        <span class="tag tag-type"><i class="fa-solid fa-code-branch"></i> Нелинейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-any"><i class="fa-solid fa-users"></i> Обе фракции</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Завод</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Можно провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-code-branch"></i><span>Нелинейный</span></div>
+          <div class="trait"><i class="fa-solid fa-lock"></i><span>Нужна репутация</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-ruble-sign"></i><span>90 000 руб.</span></div>
+          <div class="reward-row"><i class="fa-solid fa-star"></i><span>+160 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Чтобы появился квест, нужно иметь <strong>второй уровень репутации в Баре</strong>. Квест можно начать двумя способами: узнать об источнике у торговца <strong>Громозека</strong> или сразу же пойти к источнику.</p>
+        
+        <p>Сам квест имеет большое количество вариаций прохождения. В этом гайде я расскажу о <strong>самом коротком и выгодном</strong> пути.</p>
+        
+        <div class="alert alert-info"><i class="fa-solid fa-star"></i><span><strong>Требование:</strong> 2 уровень репутации в Баре.</span></div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        
+        <div class="alert alert-warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Квест нелинейный, с возможностью провала. Следуйте указанным вариантам диалогов!</span></div>
+
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Начало квеста</h3>
+              <p>Имея второй уровень репутации в Баре, можете сразу же идти к <strong>Марину</strong>. Получив от него воду, возвращайтесь в Бар и подойдите к <strong>Фурсу</strong>.</p>
+              
+              <div class="tip-box">
+                <i class="fa-solid fa-lightbulb"></i>
+                <p><strong>Интересное примечание:</strong> До начала полноценного прохождения квеста вы можете покупать у Марина эту уникальную воду. Как расходник она бесполезная, но в качестве коллекции можно оставить на персональном складе.</p>
+              </div>
+              
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/svyatoy-istochnik/cover.jpg" alt="Марин у источника" loading="lazy">
+                  <figcaption>Марин у источника</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/svyatoy-istochnik/furs.jpg" alt="Фурс в Баре" loading="lazy">
+                  <figcaption>Фурс в Баре</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>Брат за брата</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти способ закрыть источник</span></div>
+              <p>Сразу же подходим к сталкеру <strong>Гнилушке</strong>, сидящему в беседке, и говорим с ним. Во время диалога вас прервёт Марин и предложит вам взятку — соглашаемся на неё:</p>
+              <div class="dialogue-list">
+                <div class="dialogue-option"><span class="option-num">2</span><span class="option-text">Чёрт с тобой, я всего лишь исполнитель.</span></div>
+              </div>
+              <figure class="img-figure">
+                <img src="../images/quests/svyatoy-istochnik/gnilushka.jpg" alt="Гнилушка в беседке" loading="lazy">
+                <figcaption>Гнилушка в беседке</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Взятка</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Фурсом</span></div>
+              <p>Возвращаемся к <strong>Фурсу</strong> в Бар и говорим с ним. По ходу диалога выбираем следующий ответ:</p>
+              <div class="dialogue-list">
+                <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Хм... Ну давай, рассказывай.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>План мести</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Приостановить работу источника</span></div>
+              <p>У вас будет 3 способа остановить работу источника радиационной воды. Чтобы получить наибольшую награду, для начала идите за компроматом в землянку Марина.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/svyatoy-istochnik/zemlyanka.jpg" alt="Землянка Марина" loading="lazy">
+                <figcaption>Землянка Марина</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="5">
+            <div class="step-marker">5</div>
+            <div class="step-content">
+              <h3>Компромат на Марина</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти компромат</span></div>
+              <p>Пройдите в конец землянки и возле кровати взломайте ящик, в котором будет лежать нужный документ.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/svyatoy-istochnik/yashchik.jpg" alt="Ящик с компроматом" loading="lazy">
+                <figcaption>Ящик с компроматом</figcaption>
+              </figure>
+              
+              <div class="alert alert-tip"><i class="fa-solid fa-key"></i><span><strong>Совет по взлому:</strong> Последовательность взлома всегда случайная. Перед началом каждой попытки прожимайте <strong>[Дать натяг]</strong> — без натяга вы не взломаете замок.</span></div>
+            </div>
+          </div>
+
+          <div class="step" data-step="6">
+            <div class="step-marker">6</div>
+            <div class="step-content">
+              <h3>Неопровержимые доказательства</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Использовать компромат на Марина</span></div>
+              <p>Возвращаемся к <strong>Марину</strong> и говорим с ним. В ходе диалога выбираем:</p>
+              <div class="dialogue-list">
+                <div class="dialogue-option"><span class="option-num">2</span><span class="option-text">Но бумажку же ты игнорировать не можешь?</span></div>
+              </div>
+              <p>Теперь отправляемся к трубе и осматриваем вентиль.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/svyatoy-istochnik/ventil.jpg" alt="Вентиль на трубе" loading="lazy">
+                <figcaption>Вентиль на трубе</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="7">
+            <div class="step-marker">7</div>
+            <div class="step-content">
+              <h3>Насосная станция</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Отключить воду</span></div>
+              <p>Отправляемся по новой метке до насосной станции (на бандитской стороне Завода) и заходим внутрь. В здании нажимаем на кнопки управления — необходимо отключить все зелёные лампочки на стене.</p>
+              
+              <div class="alert alert-info"><i class="fa-solid fa-gamepad"></i><span><strong>Головоломка:</strong> Нажимайте на кнопки в определённой последовательности, чтобы погасить все зелёные лампочки.</span></div>
+              
+              <figure class="img-figure">
+                <img src="../images/quests/svyatoy-istochnik/knopki.jpg" alt="Кнопки на насосной станции" loading="lazy">
+                <figcaption>Последовательность нажатия кнопок</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="8">
+            <div class="step-marker">8</div>
+            <div class="step-content">
+              <h3>Перекрытый кран</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Фурсом</span></div>
+              <p>Возвращаемся к <strong>Фурсу</strong> в Бар и разговариваем с ним — получаем награду за квест.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <div class="rewards-grid">
+          <div class="reward-item">
+            <img src="../../map/images/items/epinefrin.webp" alt="Эпинефрин" />
+            <div class="reward-details"><span class="reward-name">Эпинефрин</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/bag-ap-762.webp" alt="Сумка бронебойных 7.62 мм" />
+            <div class="reward-details"><span class="reward-name">Сумка бронебойных 7.62 мм</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/bag-ap-556.webp" alt="Сумка бронебойных 5.56 мм" />
+            <div class="reward-details"><span class="reward-name">Сумка бронебойных 5.56 мм</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/pouch-medic-science.webp" alt="Подсумок с аптечками учёных" />
+            <div class="reward-details"><span class="reward-name">Подсумок с аптечками учёных</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/morfin.webp" alt="Морфин" />
+            <div class="reward-details"><span class="reward-name">Морфин</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>90 000 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+160 репутации</span></div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>
