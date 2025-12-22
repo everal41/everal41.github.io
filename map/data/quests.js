@@ -626,5 +626,25 @@ window.QUESTS_DATA = [
     money: 21500, 
     reputation: 115, 
     guideUrl: '../guides/quests/otec-i-syn.html'
+  },
+  {
+    id: 'q-svyatoy-istochnik', 
+    title: 'Святой источник', 
+    loc: 'south', 
+    faction: 'any',
+    x: 1334, 
+    y: 1047, 
+    preview: '../guides/images/quests/svyatoy-istochnik/cover.jpg',
+    desc: 'Сталкер Фурс столкнулся с проблемой.',
+    rewards: [
+      { img: 'images/items/epinefrin.webp', label: 'Эпинефрин' },
+      { img: 'images/items/bag-ap-762.webp', label: 'Сумка бронебойных 7.62 мм' },
+      { img: 'images/items/bag-ap-556.webp', label: 'Сумка бронебойных 5.56 мм' },
+      { img: 'images/items/pouch-medic-science.webp', label: 'Подсумок с аптечками учёных' },
+      { img: 'images/items/morfin.webp', label: 'Морфин' }
+    ],
+    money: 90000, 
+    reputation: 160, 
+    guideUrl: '../guides/quests/svyatoy-istochnik.html'
   }
 ];
