@@ -224,6 +224,30 @@
   color: #fbbf24; 
 }
 
+.tag-faction-any { 
+  background: rgba(165, 180, 252, 0.15); 
+  border-color: rgba(165, 180, 252, 0.4); 
+  color: #a5b4fc; 
+}
+
+[data-theme="light"] .tag-faction-any { 
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+  color: #4f46e5; 
+}
+
+.faction-any { 
+  color: #a5b4fc; 
+}
+
+.faction-any i { 
+  margin-right: 4px; 
+}
+
+[data-theme="light"] .faction-any { 
+  color: #4f46e5; 
+}
+
 .faction-event i { 
   margin-right: 4px; 
 }
