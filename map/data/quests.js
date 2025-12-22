@@ -667,5 +667,21 @@ window.QUESTS_DATA = [
     money: 5000, 
     reputation: 20, 
     guideUrl: '../guides/quests/skrytoe-sokrovishche-bandit.html'
+  },
+  {
+    id: 'q-dela-minuvshih-let-stalker', 
+    title: 'Дела минувших лет', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1286, 
+    y: 1250, 
+    preview: '../guides/images/quests/dela-minuvshih-let/cover.jpg',
+    desc: 'Сталкер Пижма попросил меня найти какие-нибудь вещи, которые могла оставить его мать при эвакуации.',
+    rewards: [
+      { img: 'images/items/paradnaya-forma.webp', label: 'Парадная форма' }
+    ],
+    money: 8500, 
+    reputation: 40, 
+    guideUrl: '../guides/quests/dela-minuvshih-let.html'
   }
 ];
