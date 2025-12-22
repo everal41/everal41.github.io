@@ -573,7 +573,7 @@ window.QUESTS_DATA = [
     id: 'q-legenda-zony-stalker', 
     title: 'Легенда Зоны', 
     loc: 'south', 
-    faction: 'stalker',
+    faction: 'any',
     x: 1299, 
     y: 1274, 
     preview: '../guides/images/quests/legenda-zony/cover.jpg',
