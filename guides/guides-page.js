@@ -35,11 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
     image: 'images/quests/legenda-zony/cover.jpg',
     url: 'quests/legenda-zony.html',
     category: 'quest',
-    faction: 'stalker',
+    faction: 'both',
     location: 'bar',
     tags: [],
     keywords: ['коля', 'колбаскин', 'зрячий', 'абакан', 'легенда', 'диггер', 'путь дураков', 'волк', 'шкатулка', 'блокнот', 'мёртвый город', 'свалка'],
-    date: '2025-12-20',
+    date: '2025-12-22',
     status: 'published'
   },
   {
