@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'svyatoy-istochnik',
+    title: 'Святой источник',
+    description: 'Помогите сталкеру Фурсу закрыть радиоактивный источник. Несколько путей прохождения — гайд по самому выгодному.',
+    image: 'images/quests/svyatoy-istochnik/cover.jpg',
+    url: 'quests/svyatoy-istochnik.html',
+    category: 'quest',
+    faction: 'both',
+    location: 'zavod',
+    tags: [],
+    keywords: ['святой источник', 'фурс', 'марин', 'гнилушка', 'громозека', 'завод', 'вода', 'радиация', 'компромат', 'насосная станция', 'бар'],
+    date: '2025-12-22',
+    status: 'published'
+  },
+  {
     id: 'otec-i-syn',
     title: 'Отец и сын',
     description: 'Зайдите в старый дом в Лесу и помогите охотникам. Выбор пути: ТОЗ Деда с брелоком или Мурка Яна.',
