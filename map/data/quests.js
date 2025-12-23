@@ -673,7 +673,7 @@ window.QUESTS_DATA = [
     title: 'Дела минувших лет', 
     loc: 'south', 
     faction: 'stalker',
-    x: 1286, 
+    x: 1287, 
     y: 1250, 
     preview: '../guides/images/quests/dela-minuvshih-let/cover.jpg',
     desc: 'Сталкер Пижма попросил меня найти какие-нибудь вещи, которые могла оставить его мать при эвакуации.',
