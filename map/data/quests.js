@@ -719,5 +719,27 @@ window.QUESTS_DATA = [
     money: 16000, 
     reputation: 50, 
     guideUrl: '../guides/quests/nochnaya-ohota.html'
+  },
+  {
+    id: 'q-rabota-na-uchenyh', 
+    title: 'Работа на учёных', 
+    loc: 'south', 
+    faction: 'any',
+    x: 1242, 
+    y: 1236, 
+    preview: '../guides/images/quests/rabota-na-uchenyh/cover.jpg',
+    desc: 'Недавно в Баре появилась группа учёных, которые изучают пси-излучение.',
+    rewards: [
+      { img: 'images/items/scope-elcan.webp', label: 'Прицел оптический Elcan' },
+      { img: 'images/items/medic-bag-science.webp', label: 'Сумка с аптечками учёных' },
+      { img: 'images/items/antirad-b292.webp', label: 'Антирад Б-292', qty: 3 },
+      { img: 'images/items/pouch-medic-science.webp', label: 'Подсумок с аптечками учёных' },
+      { img: 'images/items/morfin.webp', label: 'Морфин', qty: 2 },
+      { img: 'images/items/bag-ap-545.webp', label: 'Сумка бронебойных 5.45 мм' },
+      { img: 'images/items/epinefrin.webp', label: 'Эпинефрин', qty: 3 }
+    ],
+    money: 16500, 
+    reputation: 150, 
+    guideUrl: '../guides/quests/rabota-na-uchenyh.html'
   }
 ];
