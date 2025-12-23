@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'goblinskie-dela',
+    title: 'Гоблинские дела',
+    description: 'Помогите Военсталу в баре разобраться с санитарами. Нужен детектор ДШД и пройденный сюжет до прибытия Шамана в бар.',
+    image: 'images/quests/goblinskie-dela/cover.jpg',
+    url: 'quests/goblinskie-dela.html',
+    category: 'quest',
+    faction: 'both',
+    location: 'bar',
+    tags: ['beginner'],
+    keywords: ['гоблинские дела', 'военстал', 'бар', 'старьевщик', 'диггеры', 'свалка', 'гоблины', 'передатчик', 'санитары', 'шаман', 'детектор', 'сак-1'],
+    date: '2025-12-23',
+    status: 'published'
+  },
+  {
     id: 'dela-minuvshih-let',
     title: 'Дела минувших лет',
     description: 'Помогите охраннику бара Пижме найти вещи его матери, оставленные при эвакуации. Награда — Парадная форма.',
