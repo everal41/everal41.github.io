@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'nochnaya-ohota',
+    title: 'Ночная охота',
+    description: 'Помогите Егерю в Баре с охотой на мутантов. После выполнения откроется возможность продавать части мутантов Егерю.',
+    image: 'images/quests/nochnaya-ohota/cover.jpg',
+    url: 'quests/nochnaya-ohota.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'bar',
+    tags: ['beginner'],
+    keywords: ['ночная охота', 'егерь', 'бар', 'стрекулист', 'рассольник', 'яд', 'приманка', 'мутанты', 'завод', 'части мутантов'],
+    date: '2025-12-23',
+    status: 'published'
+  },
+  {
     id: 'goblinskie-dela',
     title: 'Гоблинские дела',
     description: 'Помогите Военсталу в баре разобраться с санитарами. Нужен детектор ДШД и пройденный сюжет до прибытия Шамана в бар.',
