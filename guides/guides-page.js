@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'rabota-na-uchenyh',
+    title: 'Работа на учёных',
+    description: 'Помогите профессору Бондаренко с установкой передатчиков для изучения пси-излучения. После квеста откроются повторяемые задания.',
+    image: 'images/quests/rabota-na-uchenyh/cover.jpg',
+    url: 'quests/rabota-na-uchenyh.html',
+    category: 'quest',
+    faction: 'both',
+    location: 'bar',
+    tags: [],
+    keywords: ['работа на учёных', 'бондаренко', 'николаев', 'бар', 'свалка', 'обочина', 'учёные', 'передатчики', 'пси излучение', 'прибор', 'лаборатория'],
+    date: '2025-12-23',
+    status: 'published'
+  },
+  {
     id: 'nochnaya-ohota',
     title: 'Ночная охота',
     description: 'Помогите Егерю в Баре с охотой на мутантов. После выполнения откроется возможность продавать части мутантов Егерю.',
