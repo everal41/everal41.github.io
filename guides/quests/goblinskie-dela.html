@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гоблинские дела — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Гоблинские дела» в STALCRAFT: X: где найти Военстала в Баре, зачистка аванпоста, поиск передатчика на Свалке и все награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Гоблинские дела, Военстал, Старьевщик, Бар, Свалка, гоблины, передатчик, санитары, прохождение, награды" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/goblinskie-dela/cover.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Гоблинские дела</span>
+      </div>
+      <h1 class="hero-title">Гоблинские дела</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction-any"><i class="fa-solid fa-users"></i> Обе фракции</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Бар</span>
+        <span class="tag tag-type"><i class="fa-solid fa-route"></i> Линейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-any"><i class="fa-solid fa-users"></i> Обе фракции</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Бар</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait"><i class="fa-solid fa-shield-halved"></i><span>Нельзя провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-route"></i><span>Линейный</span></div>
+          <div class="trait warning"><i class="fa-solid fa-lock"></i><span>Нужен квест</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-ruble-sign"></i><span>26 000 руб.</span></div>
+          <div class="reward-row"><i class="fa-solid fa-star"></i><span>+120 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Квест берётся у <strong>Военстала</strong> в Баре. Прежде чем он появится, необходимо пройти сюжетную линию до появления <strong>Шамана</strong> в Баре, а также нужно поговорить со <strong>Старьевщиком</strong> на базе Диггеров.</p>
+        
+        <div class="alert alert-tip"><i class="fa-solid fa-satellite-dish"></i><span>Для одного из этапов понадобится <strong>детектор широкого диапазона</strong> (САК-1 или лучше).</span></div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        
+        <div class="alert alert-info"><i class="fa-solid fa-circle-info"></i><span>Квест линейный, без возможности провала.</span></div>
+
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Подготовка к квесту</h3>
+              <p>Прежде всего отправляемся к <strong>Старьевщику</strong> на базу Диггеров и разговариваем с ним. Спрашиваем:</p>
+              <div class="dialogue-list">
+                <div class="dialogue-option"><span class="option-num">3</span><span class="option-text">Есть что интересного, Старьевщик?</span></div>
+              </div>
+              <p>Завершив диалог, можно возвращаться в Бар. После разговариваем с появившимся <strong>Военсталом</strong> в Баре.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/goblinskie-dela/starevshchik.jpg" alt="Старьевщик на базе Диггеров" loading="lazy">
+                  <figcaption>Старьевщик</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/goblinskie-dela/cover.jpg" alt="Военстал в Баре" loading="lazy">
+                  <figcaption>Военстал в Баре</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>Детектив</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Искать «подозрительные» вещи</span></div>
+              <p>Отправляемся на <strong>Свалку</strong> и осматриваем ящик в вагоне на железнодорожном тоннеле.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/goblinskie-dela/yashchik-map.jpg" alt="Местоположение ящика на карте" loading="lazy">
+                  <figcaption>Местоположение на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/goblinskie-dela/yashchik.jpg" alt="Ящик в вагоне" loading="lazy">
+                  <figcaption>Ящик в вагоне</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Поговорить с Военсталом</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Военсталом</span></div>
+              <p>Возвращаемся к <strong>Военсталу</strong> в Бар и разговариваем с ним.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>Зачистка</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Бандит/Сталкер с аванпоста (0/3)</span></div>
+              <p>Отправляемся на <strong>Свалку</strong> в выделенную квестовую область и устраняем троих противников.</p>
+              
+              <h4 style="margin: 16px 0 12px; font-size: 15px; color: var(--text-primary);"><i class="fa-solid fa-shield-halved" style="color: var(--accent); margin-right: 8px;"></i>За Сталкеров:</h4>
+              <figure class="img-figure">
+                <img src="../images/quests/goblinskie-dela/avanpost-stalker.jpg" alt="Аванпост за Сталкеров" loading="lazy">
+                <figcaption>Аванпост противника (за Сталкеров)</figcaption>
+              </figure>
+
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--text-primary);"><i class="fa-solid fa-skull" style="color: #f87171; margin-right: 8px;"></i>За Бандитов:</h4>
+              <figure class="img-figure">
+                <img src="../images/quests/goblinskie-dela/avanpost-bandit.jpg" alt="Аванпост за Бандитов" loading="lazy">
+                <figcaption>Аванпост противника (за Бандитов)</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="5">
+            <div class="step-marker">5</div>
+            <div class="step-content">
+              <h3>Обыски</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти ящик</span></div>
+              <p>Неподалёку от места зачистки появится область, в которой необходимо найти <strong>«Железный чемоданчик»</strong>.</p>
+              
+              <h4 style="margin: 16px 0 12px; font-size: 15px; color: var(--text-primary);"><i class="fa-solid fa-shield-halved" style="color: var(--accent); margin-right: 8px;"></i>За Сталкеров:</h4>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/goblinskie-dela/chemodan-map-stalker.jpg" alt="Чемодан на карте (Сталкеры)" loading="lazy">
+                  <figcaption>Местоположение на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/goblinskie-dela/chemodan-stalker.jpg" alt="Чемодан (Сталкеры)" loading="lazy">
+                  <figcaption>Железный чемоданчик</figcaption>
+                </figure>
+              </div>
+
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--text-primary);"><i class="fa-solid fa-skull" style="color: #f87171; margin-right: 8px;"></i>За Бандитов:</h4>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/goblinskie-dela/chemodan-map-bandit.jpg" alt="Чемодан на карте (Бандиты)" loading="lazy">
+                  <figcaption>Местоположение на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/goblinskie-dela/chemodan-bandit.jpg" alt="Чемодан (Бандиты)" loading="lazy">
+                  <figcaption>Железный чемоданчик</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="6">
+            <div class="step-marker">6</div>
+            <div class="step-content">
+              <h3>Со взрывчаткой в гости</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Военсталом</span></div>
+              <p>Возвращаемся к <strong>Военсталу</strong> в Бар и разговариваем с ним.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="7">
+            <div class="step-marker">7</div>
+            <div class="step-content">
+              <h3>Пеленг</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти сигнал</span></div>
+              
+              <div class="alert alert-tip"><i class="fa-solid fa-satellite-dish"></i><span>Для этого задания понадобится <strong>ДШД</strong> (САК-1 или лучше).</span></div>
+              
+              <p>Приходим на <strong>Свалку</strong> и активируем поиск сигнала на средней дистанции в области, показанной на скриншоте:</p>
+              <figure class="img-figure">
+                <img src="../images/quests/goblinskie-dela/scan-area.jpg" alt="Область для сканирования" loading="lazy">
+                <figcaption>Область для запуска сканирования</figcaption>
+              </figure>
+              <p>После завершения сканирования начните поиск сигнала и отправляйтесь по индикатору на ДШД.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="8">
+            <div class="step-marker">8</div>
+            <div class="step-content">
+              <h3>Сигнал</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти источник сигнала</span></div>
+              <p>Найдя сигнал, подходим к выделенной области и обыскиваем ящик.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/goblinskie-dela/signal-map.jpg" alt="Ящик с передатчиком на карте" loading="lazy">
+                  <figcaption>Местоположение на карте</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/goblinskie-dela/signal-box.jpg" alt="Ящик с передатчиком" loading="lazy">
+                  <figcaption>Ящик с передатчиком</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="9">
+            <div class="step-marker">9</div>
+            <div class="step-content">
+              <h3>Передатчик гоблинов</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Отдать передатчик Военсталу</span></div>
+              <p>Возвращаемся к <strong>Военсталу</strong> в Бар и отдаём ему передатчик — получаем награду за квест.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="easter-egg" class="article-section">
+        <h2><i class="fa-solid fa-skull-crossbones"></i> Интересное замечание</h2>
+        <p>После выполнения этого квеста на <strong>Свалке</strong> появится несколько трупов санитаров. При осмотре одного из них вы получите ПДА.</p>
+        
+        <div class="img-grid-2">
+          <figure class="img-figure">
+            <img src="../images/quests/goblinskie-dela/trup1-map.jpg" alt="Первый труп на карте" loading="lazy">
+            <figcaption>Первый труп на карте</figcaption>
+          </figure>
+          <figure class="img-figure">
+            <img src="../images/quests/goblinskie-dela/trup1.jpg" alt="Первый труп" loading="lazy">
+            <figcaption>Первый труп (с ПДА)</figcaption>
+          </figure>
+        </div>
+        
+        <div class="alert alert-info"><i class="fa-solid fa-question-circle"></i><span>На втором трупе почему-то висит метка доступного квеста, но при осмотре ничего не происходит.</span></div>
+        
+        <div class="img-grid-2">
+          <figure class="img-figure">
+            <img src="../images/quests/goblinskie-dela/trup2-map.jpg" alt="Второй труп на карте" loading="lazy">
+            <figcaption>Второй труп на карте</figcaption>
+          </figure>
+          <figure class="img-figure">
+            <img src="../images/quests/goblinskie-dela/trup2.jpg" alt="Второй труп" loading="lazy">
+            <figcaption>Второй труп</figcaption>
+          </figure>
+        </div>
+        
+        <div class="img-grid-2">
+          <figure class="img-figure">
+            <img src="../images/quests/goblinskie-dela/trup3-map.jpg" alt="Третий труп на карте" loading="lazy">
+            <figcaption>Третий труп на карте</figcaption>
+          </figure>
+          <figure class="img-figure">
+            <img src="../images/quests/goblinskie-dela/trup3.jpg" alt="Третий труп" loading="lazy">
+            <figcaption>Третий труп</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <div class="rewards-grid">
+          <div class="reward-item">
+            <img src="../../map/images/items/bag-ap-556.webp" alt="Сумка бронебойных 5.56 мм" />
+            <div class="reward-details"><span class="reward-name">Сумка бронебойных 5.56 мм</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/bag-ap-545.webp" alt="Сумка бронебойных 5.45 мм" />
+            <div class="reward-details"><span class="reward-name">Сумка бронебойных 5.45 мм</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/bag-ap-762.webp" alt="Сумка бронебойных 7.62 мм" />
+            <div class="reward-details"><span class="reward-name">Сумка бронебойных 7.62 мм</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/pouch-medic-science.webp" alt="Подсумок с аптечками учёных" />
+            <div class="reward-details"><span class="reward-name">Подсумок с аптечками учёных</span><span class="reward-count">×2</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>26 000 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+120 репутации</span></div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>
