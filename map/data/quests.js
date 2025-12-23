@@ -702,5 +702,22 @@ window.QUESTS_DATA = [
     money: 26000, 
     reputation: 120, 
     guideUrl: '../guides/quests/goblinskie-dela.html'
+  },
+  {
+    id: 'q-nochnaya-ohota-stalker', 
+    title: 'Ночная охота', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1286, 
+    y: 1226, 
+    preview: '../guides/images/quests/nochnaya-ohota/cover.jpg',
+    desc: 'Егерь поручил мне одно задание, для начала нужно найти сталкера в Баре по следующему описанию: "рожа у него без шрамов, виднеется щетина."',
+    rewards: [
+      { img: 'images/items/medic-bag-science.webp', label: 'Сумка с аптечками учёных', qty: 3 },
+      { img: 'images/items/box-kartetch-12x76.webp', label: 'Ящик картечи 12x76 мм' }
+    ],
+    money: 16000, 
+    reputation: 50, 
+    guideUrl: '../guides/quests/nochnaya-ohota.html'
   }
 ];
