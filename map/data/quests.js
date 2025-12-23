@@ -683,5 +683,24 @@ window.QUESTS_DATA = [
     money: 8500, 
     reputation: 40, 
     guideUrl: '../guides/quests/dela-minuvshih-let.html'
+  },
+  {
+    id: 'q-goblinskie-dela', 
+    title: 'Гоблинские дела', 
+    loc: 'south', 
+    faction: 'any',
+    x: 1285, 
+    y: 1266, 
+    preview: '../guides/images/quests/goblinskie-dela/cover.jpg',
+    desc: 'Странный парень в костюме военсталов предложил мне работу.',
+    rewards: [
+      { img: 'images/items/bag-ap-556.webp', label: 'Сумка бронебойных 5.56 мм' },
+      { img: 'images/items/bag-ap-545.webp', label: 'Сумка бронебойных 5.45 мм' },
+      { img: 'images/items/bag-ap-762.webp', label: 'Сумка бронебойных 7.62 мм' },
+      { img: 'images/items/pouch-medic-science.webp', label: 'Подсумок с аптечками учёных', qty: 2 }
+    ],
+    money: 26000, 
+    reputation: 120, 
+    guideUrl: '../guides/quests/goblinskie-dela.html'
   }
 ];
