@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Души мертвецов — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Души мертвецов» в STALCRAFT: X: где найти Капитана в Баре, как получить РПД Дикобраза или РПД Огонька, все улики в тоннеле и награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Души мертвецов, Капитан, Огонёк, Дикобраз, Щепка, Бар, Лес, Свалка, Могильник, РПД, прохождение, награды" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/dushi-mertvecov/cover.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Души мертвецов</span>
+      </div>
+      <h1 class="hero-title">Души мертвецов</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction-any"><i class="fa-solid fa-users"></i> Обе фракции</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Бар</span>
+        <span class="tag tag-type"><i class="fa-solid fa-code-branch"></i> Нелинейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-any"><i class="fa-solid fa-users"></i> Обе фракции</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Бар</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Можно провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-code-branch"></i><span>Нелинейный</span></div>
+          <div class="trait"><i class="fa-solid fa-unlock"></i><span>Без условий</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-ruble-sign"></i><span>18 750 руб.</span></div>
+          <div class="reward-row"><i class="fa-solid fa-star"></i><span>+120 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Квест берётся у сталкера <strong>Капитана</strong> возле входа в бар «Пьяный Гейгер». Вы можете пройти квест на одну из наград:</p>
+        
+        <div class="outcome-cards">
+          <div class="outcome-card">
+            <div class="outcome-icon peace"><i class="fa-solid fa-check"></i></div>
+            <div class="outcome-content">
+              <strong>Правда Огоньку</strong>
+              <span>РПД Огонька с дешёвыми обвесами</span>
+            </div>
+          </div>
+          <div class="outcome-card recommended">
+            <div class="outcome-icon kill"><i class="fa-solid fa-mask"></i></div>
+            <div class="outcome-content">
+              <strong>Солгать Огоньку</strong>
+              <span>РПД Дикобраза (лучшая награда)</span>
+            </div>
+            <span class="recommend-badge">Рекомендую</span>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <i class="fa-solid fa-lightbulb"></i>
+          <p><strong>Совет:</strong> Данный квест никак не влияет на другие квесты, так что выбор за вами. Для прохождения желательно иметь <strong>1 ур. защиты от биозаражения</strong> и <strong>пси-излучения</strong>.</p>
+        </div>
+
+        <div class="alert alert-warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Чтобы получить РПД Дикобраза, необходимо осмотреть <strong>все 3 улики</strong> в тоннеле! Если пропустите хоть одну — получите только РПД Огонька.</span></div>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        
+        <div class="alert alert-info"><i class="fa-solid fa-circle-info"></i><span>Квест нелинейный, с возможностью провала. Внимательно осматривайте все улики!</span></div>
+
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Начало квеста</h3>
+              <p>Разговариваем с <strong>Капитаном</strong> в Баре, он сидит неподалёку от входа в бар «Пьяный Гейгер».</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dushi-mertvecov/cover.jpg" alt="Капитан возле бара" loading="lazy">
+                <figcaption>Капитан возле входа в бар</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>Души Мертвецов</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти странный свет</span></div>
+              <p>Приходим на квестовую метку. <strong>С 23:30 по игровому времени</strong> и до утра появляется нужный сталкер — <strong>Огонёк</strong>. Говорим с ним.</p>
+              <div class="alert alert-tip"><i class="fa-solid fa-clock"></i><span>Огонёк появляется только ночью! Если его нет — подождите до 23:30 игрового времени.</span></div>
+              <figure class="img-figure">
+                <img src="../images/quests/dushi-mertvecov/ogonyok.jpg" alt="Огонёк" loading="lazy">
+                <figcaption>Огонёк</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Невероятная история</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Вернуться к Капитану</span></div>
+              <p>После разговора с Огоньком возвращаемся к <strong>Капитану</strong> и рассказываем ему, что узнали.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>Дело: Дикобраз</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Дикобразом</span></div>
+              <p>После диалога с Капитаном подходим к <strong>Дикобразу</strong>, который сидит неподалёку, и говорим с ним.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dushi-mertvecov/dikobraz.jpg" alt="Дикобраз" loading="lazy">
+                <figcaption>Дикобраз</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="5">
+            <div class="step-marker">5</div>
+            <div class="step-content">
+              <h3>Дело: Опрос местных</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Опросить местных</span></div>
+              <p>Поговорив с Дикобразом, опрашиваем троих местных пьянчуг.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/dushi-mertvecov/pyanica-1.jpg" alt="Пьяный бандит" loading="lazy">
+                  <figcaption>Пьяный бандит рядом с Капитаном</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/dushi-mertvecov/pyanica-2.jpg" alt="Пьяница у Громозеки" loading="lazy">
+                  <figcaption>Пьяница у Громозеки</figcaption>
+                </figure>
+              </div>
+              <figure class="img-figure">
+                <img src="../images/quests/dushi-mertvecov/pyanica-3.jpg" alt="Постоялец возле Бульбаша" loading="lazy">
+                <figcaption>Постоялец возле Бульбаша</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="6">
+            <div class="step-marker">6</div>
+            <div class="step-content">
+              <h3>Дело: Бармен</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Барменом</span></div>
+              <p>Поговорив с местными, идём к <strong>Громозеке</strong> и говорим с ним. Разговариваем на обе темы: о том, что нужна помощь с учётом продаж, и о том, не помнит ли он Щепку.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dushi-mertvecov/gromozeka.jpg" alt="Громозека" loading="lazy">
+                <figcaption>Громозека</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="7">
+            <div class="step-marker">7</div>
+            <div class="step-content">
+              <h3>Дело: Щепка со Свалки</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Капитаном</span></div>
+              <p>Поговорив с Барменом и постояльцами, отправляемся вновь к <strong>Капитану</strong> и платим ему за координаты всех сталкеров по имени Щепка.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="8">
+            <div class="step-marker">8</div>
+            <div class="step-content">
+              <h3>Дело: Братья-близнецы</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Проверить метки на Свалке техники</span></div>
+              <p>Отправляемся по квестовым меткам на <strong>Свалку</strong>. На первой метке будет труп сталкера, а на второй — обычный сталкер по кличке <strong>Щепка</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/dushi-mertvecov/trup-svalka.jpg" alt="Труп на Свалке" loading="lazy">
+                  <figcaption>Первая метка — труп сталкера</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/dushi-mertvecov/shchepka.jpg" alt="Щепка" loading="lazy">
+                  <figcaption>Вторая метка — живой Щепка</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="9">
+            <div class="step-marker">9</div>
+            <div class="step-content">
+              <h3>Дело: Улики «против»</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Вернуться к Огоньку</span></div>
+              <p>Завершив обыск на Свалке, направляемся к <strong>Огоньку</strong> в Лес и говорим с ним.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="10">
+            <div class="step-marker">10</div>
+            <div class="step-content">
+              <h3>Дело: Под землёй</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти доказательства в тоннеле</span></div>
+              <p>Отправляемся на <strong>Могильник</strong> и заходим в тоннель.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dushi-mertvecov/tunnel-vhod.jpg" alt="Вход в тоннель" loading="lazy">
+                <figcaption>Вход в тоннель</figcaption>
+              </figure>
+
+              <div class="alert alert-warning"><i class="fa-solid fa-exclamation-triangle"></i><span><strong>ВАЖНО!</strong> Для получения РПД Дикобраза необходимо осмотреть <strong>все 3 объекта</strong>. Без осмотра хотя бы одного вы получите только РПД Огонька!</span></div>
+
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--accent);">Улика 1: Остатки еды</h4>
+              <p>Сразу у входа осматриваем стол с едой (именно <strong>взаимодействуем</strong> с ним).</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dushi-mertvecov/ostatki-edy.jpg" alt="Остатки еды" loading="lazy">
+                <figcaption>Остатки еды у входа — первая улика</figcaption>
+              </figure>
+
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--accent);">Улика 2: Труп Щепки</h4>
+              <p>Продвигаемся дальше и зачищаем по пути зомби со шнырями. Взбираемся по крыше автомобиля и прыгаем в яму, в которой будет бегать упырь. В этой яме осматриваем труп настоящего <strong>Щепки</strong>.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dushi-mertvecov/mertvyy-shchepka.jpg" alt="Труп Щепки" loading="lazy">
+                <figcaption>Труп настоящего Щепки — вторая улика</figcaption>
+              </figure>
+
+              <h4 style="margin: 20px 0 12px; font-size: 15px; color: var(--accent);">Улика 3: Рюкзак</h4>
+              <p>После убийства упыря появится пузырь — чтобы попасть в него, прыгаем под батутом. Оказавшись в коридоре, заходим в левую комнату и осматриваем последний объект — <strong>рюкзак</strong>.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/dushi-mertvecov/ryukzak.jpg" alt="Рюкзак" loading="lazy">
+                <figcaption>Рюкзак — третья улика</figcaption>
+              </figure>
+
+              <p>После осмотра можете прыгать в пузырь и возвращаться в Бар к <strong>Дикобразу</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="11">
+            <div class="step-marker">11</div>
+            <div class="step-content">
+              <h3>Дело: Финал</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Разобраться в ситуации</span></div>
+              
+              <p>Возвращаемся в Бар и говорим с <strong>Дикобразом</strong> — он скажет, что отдаст вам свой РПД, если вы солжёте Огоньку о его брате Щепке.</p>
+              
+              <p>Приходим к <strong>Огоньку</strong> в Лес и выбираем, как поступить:</p>
+
+              <div class="choice-selector" id="rewardChoice">
+                <button class="choice-btn active" data-target="panel-dikobraz">
+                  <i class="fa-solid fa-mask"></i>
+                  <span>Солгать Огоньку</span>
+                  <small>РПД Дикобраза (рекомендую)</small>
+                </button>
+                <button class="choice-btn" data-target="panel-ogonyok">
+                  <i class="fa-solid fa-check"></i>
+                  <span>Сказать правду</span>
+                  <small>РПД Огонька</small>
+                </button>
+              </div>
+
+              <div class="choice-panels">
+                <div id="panel-dikobraz" class="choice-panel active">
+                  <h4><i class="fa-solid fa-mask"></i> Путь лжи — РПД Дикобраза</h4>
+                  <p>Выберите <strong>второй</strong> вариант ответа:</p>
+                  <div class="dialogue-list">
+                    <div class="dialogue-option"><span class="option-num">2</span><span class="option-text">Нет, не было Щепки никогда. В тоннеле прямых доказательств нет, а в Баре его никто не видел. Похоже, показалось тебе.</span></div>
+                  </div>
+                  <div class="alert alert-warning"><i class="fa-solid fa-triangle-exclamation"></i><span>Если вы пропустили хоть один момент при прохождении квеста (не осмотрели все 3 улики), то даже выбрав этот вариант, вы всё равно получите РПД Огонька!</span></div>
+                </div>
+
+                <div id="panel-ogonyok" class="choice-panel">
+                  <h4><i class="fa-solid fa-check"></i> Путь правды — РПД Огонька</h4>
+                  <p>Выберите <strong>первый</strong> вариант ответа:</p>
+                  <div class="dialogue-list">
+                    <div class="dialogue-option"><span class="option-num">1</span><span class="option-text">Верно, Щепка и правда был, на это указывают несколько серьёзных доказательств.</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="12">
+            <div class="step-marker">12</div>
+            <div class="step-content">
+              <h3>Души Мертвецов: Конец</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Вернуться к Капитану</span></div>
+              <p>Возвращаемся к <strong>Капитану</strong> и рассказываем о том, что случилось. Получаем финальную награду.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <div class="rewards-grid">
+          <div class="reward-item rarity-veteran">
+            <img src="../../map/images/items/rpd-dikobraza.webp" alt="РПД Дикобраза" />
+            <div class="reward-details"><span class="reward-name">РПД Дикобраза</span><span class="reward-rarity veteran">Ветеран</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/bag-ap-762.webp" alt="Сумка бронебойных 7.62 мм" />
+            <div class="reward-details"><span class="reward-name">Сумка бронебойных 7.62 мм</span><span class="reward-count">×3</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/medic-bag-science.webp" alt="Сумка с аптечками учёных" />
+            <div class="reward-details"><span class="reward-name">Сумка с аптечками учёных</span><span class="reward-count">×2</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>18 750 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+120 репутации</span></div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>
