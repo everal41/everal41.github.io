@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'dushi-mertvecov',
+    title: 'Души мертвецов',
+    description: 'Расследуйте историю о странном свете в ночном лесу. Выбор: солгать Огоньку и получить РПД Дикобраза или сказать правду ради РПД Огонька.',
+    image: 'images/quests/dushi-mertvecov/cover.jpg',
+    url: 'quests/dushi-mertvecov.html',
+    category: 'quest',
+    faction: 'both',
+    location: 'bar',
+    tags: [],
+    keywords: ['души мертвецов', 'капитан', 'огонёк', 'огонек', 'дикобраз', 'щепка', 'бар', 'лес', 'свалка', 'могильник', 'рпд', 'громозека', 'тоннель', 'улики'],
+    date: '2025-12-24',
+    status: 'published'
+  },
+  {
     id: 'veselaya-nochka',
     title: 'Весёлая ночка',
     description: 'Помогите Тополю и Грому выбраться из неприятностей после бурной ночи в баре. Квест с перемещениями по нескольким локациям.',
