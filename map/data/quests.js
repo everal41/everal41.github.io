@@ -741,5 +741,22 @@ window.QUESTS_DATA = [
     money: 16500, 
     reputation: 150, 
     guideUrl: '../guides/quests/rabota-na-uchenyh.html'
+  },
+  {
+    id: 'q-veselaya-nochka-stalker',
+    title: 'Весёлая ночка',
+    loc: 'south',
+    faction: 'stalker',
+    x: 1271,
+    y: 1215,
+    preview: '../guides/images/quests/veselaya-nochka/cover.jpg',
+    desc: 'Нихрена не помню. Вчера пил с Тополем и как его... Громом, да, Громом.',
+    rewards: [
+      { img: 'images/items/art-serdce.webp', label: 'Сердце' },
+      { img: 'images/items/pouch-medic-science.webp', label: 'Подсумок с аптечками учёных', qty: 3 }
+    ],
+    money: 10000,
+    reputation: 30,
+    guideUrl: '../guides/quests/veselaya-nochka.html'
   }
 ];
