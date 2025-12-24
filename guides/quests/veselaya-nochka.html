@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Весёлая ночка — гайд по прохождению | StalMath</title>
+  <meta name="description" content="Гайд по квесту «Весёлая ночка» в STALCRAFT: X для Сталкеров: где найти Тополя в Баре, как выбраться из камеры, поиск Грома и все награды." />
+  <meta name="keywords" content="STALCRAFT X, Сталкрафт, Весёлая ночка, Тополь, Гром, Угорь, Лепый, Бар, Лес, Свалка, Сталкеры, прохождение, награды" />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../../home.css"/>
+  <link rel="stylesheet" href="quests.css"/>
+</head>
+<body class="page-guide">
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="reading-bar" aria-hidden="true"></div>
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-brand">
+      <span class="brand-icon">SM</span>
+      <span class="brand-text">StalMath</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Главная</span></a>
+      <a href="../guides.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><span>Руководства</span></a>
+      <a href="../../map/map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Карта</span></a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" aria-expanded="false">
+          <i class="fa-solid fa-calculator"></i><span>Инструменты</span><i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-panel">
+          <a href="../../calculators/barter/barter.html" class="dropdown-link"><i class="fa-solid fa-coins"></i>Калькулятор бартера</a>
+          <a href="../../calculators/sharpening/sharpening.html" class="dropdown-link"><i class="fa-solid fa-screwdriver-wrench"></i>Калькулятор заточки</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-action" id="themeToggleBtn" aria-label="Сменить тему"><i class="fa-solid fa-moon"></i></button>
+      <button class="nav-action" data-modal-target="#about-modal" aria-label="О сайте"><i class="fa-solid fa-circle-info"></i></button>
+      <button class="nav-action" data-modal-target="#contacts-modal" aria-label="Контакты"><i class="fa-solid fa-envelope"></i></button>
+    </div>
+    <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-overlay" data-close></div>
+  <div class="mobile-drawer">
+    <div class="drawer-header"><span class="brand-icon">SM</span><span>Меню</span></div>
+    <nav class="drawer-nav">
+      <a href="../../index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Главная</a>
+      <a href="../guides.html" class="drawer-link active"><i class="fa-solid fa-book-open"></i> Руководства</a>
+      <a href="../../map/map.html" class="drawer-link"><i class="fa-solid fa-map-location-dot"></i> Карта</a>
+      <a href="../../calculators/barter/barter.html" class="drawer-link"><i class="fa-solid fa-coins"></i> Калькулятор бартера</a>
+      <a href="../../calculators/sharpening/sharpening.html" class="drawer-link"><i class="fa-solid fa-screwdriver-wrench"></i> Калькулятор заточки</a>
+    </nav>
+    <div class="drawer-footer">
+      <button class="drawer-action" data-modal-target="#about-modal"><i class="fa-solid fa-circle-info"></i> О сайте</button>
+      <button class="drawer-action" data-modal-target="#contacts-modal"><i class="fa-solid fa-envelope"></i> Связь</button>
+      <button class="drawer-action" id="themeToggleBtnMobile"><i class="fa-solid fa-moon"></i> Тема</button>
+    </div>
+  </div>
+</div>
+
+<div id="about-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>О проекте StalMath</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>StalMath — фан-проект и набор инструментов для игроков STALCRAFT: X. Моя цель — сделать вашу игру комфортнее:</p>
+      <ul class="feature-list">
+        <li><i class="fa-solid fa-check"></i> Точные калькуляторы для бартера и заточки</li>
+        <li><i class="fa-solid fa-check"></i> Интерактивная карта со всеми квестами и наградами</li>
+        <li><i class="fa-solid fa-check"></i> Подробные гайды по игровым механикам</li>
+      </ul>
+      <p class="modal-note">Проект активно развивается. Заметили ошибку или есть идеи? Свяжитесь со мной через раздел «Связь».</p>
+    </div>
+  </div>
+</div>
+
+<div id="contacts-modal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h2>Связаться со мной</h2>
+      <button class="modal-close close-button" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="contact-grid">
+        <a href="https://vk.com/hxteevery1" target="_blank" rel="noreferrer noopener" class="contact-card vk">
+          <i class="fa-brands fa-vk"></i>
+          <div class="contact-info"><span class="contact-label">ВКонтакте</span><span class="contact-value">@everal41</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://discord.gg/9hkdXxRSnr" target="_blank" rel="noreferrer noopener" class="contact-card discord">
+          <i class="fa-brands fa-discord"></i>
+          <div class="contact-info"><span class="contact-label">Discord</span><span class="contact-value">Мой сервер</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <div class="contact-card game">
+          <i class="fa-solid fa-gamepad"></i>
+          <div class="contact-info"><span class="contact-label">Ник в игре</span><span class="contact-value nick" id="gameNick">Kyvorn</span></div>
+          <button class="copy-nick-btn" id="copyNickBtn" title="Скопировать"><i class="fa-regular fa-copy"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="guide-hero">
+    <div class="hero-backdrop" style="--hero-img: url('../images/quests/veselaya-nochka/cover.jpg')"></div>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../../index.html">Главная</a><i class="fa-solid fa-chevron-right"></i>
+        <a href="../guides.html">Руководства</a><i class="fa-solid fa-chevron-right"></i>
+        <span>Весёлая ночка</span>
+      </div>
+      <h1 class="hero-title">Весёлая ночка</h1>
+      <div class="hero-tags">
+        <span class="tag tag-faction"><i class="fa-solid fa-shield-halved"></i> Сталкеры</span>
+        <span class="tag tag-location"><i class="fa-solid fa-location-dot"></i> Бар</span>
+        <span class="tag tag-type"><i class="fa-solid fa-route"></i> Линейный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="guide-layout">
+    <aside class="guide-sidebar">
+      <div class="sidebar-card quest-info">
+        <h3 class="sidebar-title">Информация о квесте</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">Фракция</span><span class="info-value faction-stalker"><i class="fa-solid fa-shield-halved"></i> Сталкеры</span></div>
+          <div class="info-item"><span class="info-label">Локация</span><span class="info-value">Бар</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="quest-traits">
+          <div class="trait"><i class="fa-solid fa-shield-halved"></i><span>Нельзя провалить</span></div>
+          <div class="trait"><i class="fa-solid fa-route"></i><span>Линейный</span></div>
+          <div class="trait"><i class="fa-solid fa-unlock"></i><span>Без условий</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="rewards-preview">
+          <div class="reward-row"><i class="fa-solid fa-ruble-sign"></i><span>10 000 руб.</span></div>
+          <div class="reward-row"><i class="fa-solid fa-star"></i><span>+30 репутации</span></div>
+        </div>
+        <a href="../../map/map.html" class="sidebar-btn"><i class="fa-solid fa-map"></i>Открыть на карте</a>
+      </div>
+      <div class="sidebar-card toc-card">
+        <h3 class="sidebar-title">Содержание</h3>
+        <nav class="toc-nav" id="toc"></nav>
+      </div>
+    </aside>
+
+    <article class="guide-article" id="article">
+      <section id="about" class="article-section">
+        <h2><i class="fa-solid fa-circle-info"></i> О квесте</h2>
+        <p>Квест берётся у сталкера <strong>Тополя</strong> возле входа в бар «Пьяный Гейгер».</p>
+      </section>
+
+      <section id="steps" class="article-section">
+        <h2><i class="fa-solid fa-list-check"></i> Прохождение</h2>
+        
+        <div class="alert alert-info"><i class="fa-solid fa-circle-info"></i><span>Квест линейный, без возможности провала.</span></div>
+
+        <div class="steps-timeline">
+          <div class="step" data-step="1">
+            <div class="step-marker">1</div>
+            <div class="step-content">
+              <h3>Начало квеста</h3>
+              <p>Разговариваем с <strong>Тополем</strong> в Баре, после диалога вас переместит в камеру.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/veselaya-nochka/cover.jpg" alt="Тополь возле бара" loading="lazy">
+                <figcaption>Тополь возле входа в бар «Пьяный Гейгер»</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="step-marker">2</div>
+            <div class="step-content">
+              <h3>После бурной ночки</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Разбудить охранника</span></div>
+              <p>Очнувшись в камере, подходим к решётке и взаимодействуем с ней.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="step-marker">3</div>
+            <div class="step-content">
+              <h3>Начальник!</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с охранником</span></div>
+              <p>После взаимодействия с решёткой с вами заговорит охранник. Закончив разговор, появитесь на заводе.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="step-marker">4</div>
+            <div class="step-content">
+              <h3>Перемирие</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Договориться с Угрём</span></div>
+              <p>Возвращаемся в Бар и находим <strong>Угря</strong>, говорим с ним и отдаём 4 000 руб. — он расскажет, куда могли уйти Тополь с Громом.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/veselaya-nochka/ugor.jpg" alt="Угорь" loading="lazy">
+                <figcaption>Угорь</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="5">
+            <div class="step-marker">5</div>
+            <div class="step-content">
+              <h3>Путь беглецов</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти нычку</span></div>
+              <p>Следуем по метке и взаимодействуем с ящиком.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/veselaya-nochka/yashchik.jpg" alt="Ящик с проходом" loading="lazy">
+                <figcaption>Ящик с проходом</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="6">
+            <div class="step-marker">6</div>
+            <div class="step-content">
+              <h3>По следам беглецов</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Найти Тополя и Грома</span></div>
+              <p>Отправляемся на локацию <strong>Лес</strong> и разговариваем с <strong>Тополем</strong>.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/veselaya-nochka/topol-les.jpg" alt="Тополь в Лесу" loading="lazy">
+                <figcaption>Тополь в Лесу</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="7">
+            <div class="step-marker">7</div>
+            <div class="step-content">
+              <h3>Световуха для Тополя</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Принести гранату Тополю</span></div>
+              <p>Неподалёку будет лежать труп, в котором есть светошумовая граната <strong>M84</strong>. Приносим гранату Тополю.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/veselaya-nochka/trup-granata.jpg" alt="Труп с гранатой" loading="lazy">
+                <figcaption>Труп с гранатой M84</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="8">
+            <div class="step-marker">8</div>
+            <div class="step-content">
+              <h3>Сделка</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с бандитом</span></div>
+              <p>Отправляемся по квестовой метке на <strong>Свалку</strong> и заходим в здание. Внутри разговариваем с <strong>Лепым</strong>.</p>
+              <div class="img-grid-2">
+                <figure class="img-figure">
+                  <img src="../images/quests/veselaya-nochka/vhod-zdanie.jpg" alt="Вход в здание" loading="lazy">
+                  <figcaption>Вход в здание</figcaption>
+                </figure>
+                <figure class="img-figure">
+                  <img src="../images/quests/veselaya-nochka/lepyy.jpg" alt="Лепый" loading="lazy">
+                  <figcaption>Лепый</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" data-step="9">
+            <div class="step-marker">9</div>
+            <div class="step-content">
+              <h3>Тихое убийство</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Убить группу Лепого</span></div>
+              <p>Устраняем всех бандитов в помещении.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="10">
+            <div class="step-marker">10</div>
+            <div class="step-content">
+              <h3>Гром и молния</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с Громом</span></div>
+              <p>Открываем клетку и разговариваем с <strong>Громом</strong>.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/veselaya-nochka/grom.jpg" alt="Гром в клетке" loading="lazy">
+                <figcaption>Гром</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="step" data-step="11">
+            <div class="step-marker">11</div>
+            <div class="step-content">
+              <h3>Заслуженная награда</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Встретиться со сталкерами в Баре</span></div>
+              <p>Выходим из здания и отправляемся обратно в <strong>Бар</strong>. Тополь и Гром будут сидеть на прежнем месте, разговариваем с <strong>Тополем</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step" data-step="12">
+            <div class="step-marker">12</div>
+            <div class="step-content">
+              <h3>Закрыть вопрос долга</h3>
+              <div class="step-objective"><i class="fa-solid fa-crosshairs"></i><span>Поговорить с охранником</span></div>
+              <p>Последним пунктом будет разговор с охранником, после чего квест будет завершён.</p>
+              <figure class="img-figure">
+                <img src="../images/quests/veselaya-nochka/ohrannik.jpg" alt="Охранник" loading="lazy">
+                <figcaption>Охранник</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rewards" class="article-section">
+        <h2><i class="fa-solid fa-gift"></i> Награды</h2>
+        <div class="rewards-grid">
+          <div class="reward-item">
+            <img src="../../map/images/items/art-serdce.webp" alt="Сердце" />
+            <div class="reward-details"><span class="reward-name">Сердце</span></div>
+          </div>
+          <div class="reward-item">
+            <img src="../../map/images/items/pouch-medic-science.webp" alt="Подсумок с аптечками учёных" />
+            <div class="reward-details"><span class="reward-name">Подсумок с аптечками учёных</span><span class="reward-count">×3</span></div>
+          </div>
+        </div>
+        <div class="rewards-summary">
+          <div class="summary-item money"><i class="fa-solid fa-coins"></i><span>10 000 ₽</span></div>
+          <div class="summary-item rep"><i class="fa-solid fa-star"></i><span>+30 репутации</span></div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="brand-icon">SM</span>
+      <div class="brand-info"><span class="brand-name">StalMath</span><span class="brand-desc">Инструменты для STALCRAFT: X</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="../../calculators/barter/barter.html">Калькулятор</a>
+      <a href="../../calculators/sharpening/sharpening.html">Заточка</a>
+      <a href="../guides.html">Руководства</a>
+      <a href="../../map/map.html">Карта</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://vk.com/hxteevery1" target="_blank" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+      <a href="https://discord.gg/9hkdXxRSnr" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 StalMath. Неофициальный фан-проект.</span></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="">
+  <div class="lb-caption"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="../../global.js"></script>
+<script src="quests-page.js"></script>
+</body>
+</html>
