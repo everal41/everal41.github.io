@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'veselaya-nochka',
+    title: 'Весёлая ночка',
+    description: 'Помогите Тополю и Грому выбраться из неприятностей после бурной ночи в баре. Квест с перемещениями по нескольким локациям.',
+    image: 'images/quests/veselaya-nochka/cover.jpg',
+    url: 'quests/veselaya-nochka.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'bar',
+    tags: ['beginner'],
+    keywords: ['весёлая ночка', 'тополь', 'гром', 'угорь', 'лепый', 'бар', 'лес', 'свалка', 'камера', 'охранник', 'граната', 'сердце'],
+    date: '2025-12-24',
+    status: 'published'
+  },
+  {
     id: 'rabota-na-uchenyh',
     title: 'Работа на учёных',
     description: 'Помогите профессору Бондаренко с установкой передатчиков для изучения пси-излучения. После квеста откроются повторяемые задания.',
