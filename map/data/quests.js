@@ -769,7 +769,7 @@ window.QUESTS_DATA = [
     preview: '../guides/images/quests/dushi-mertvecov/cover.jpg',
     desc: 'Один бывалый сталкер поведал мне байку о ярком источнике света, который он называет «Душой Мертвеца».',
     rewards: [
-      { img: 'images/items/rpd-dikobraza.webp', label: 'РПД Дикобраза', rarity: 'stalker' },
+      { img: 'images/items/rpd-dikobraza.webp', label: 'РПД Дикобраза', rarity: 'veteran' },
       { img: 'images/items/bag-ap-762.webp', label: 'Сумка бронебойных 7.62 мм', qty: 3 },
       { img: 'images/items/medic-bag-science.webp', label: 'Сумка с аптечками учёных', qty: 2 }
     ],
