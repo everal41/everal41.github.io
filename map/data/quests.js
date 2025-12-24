@@ -758,5 +758,23 @@ window.QUESTS_DATA = [
     money: 10000,
     reputation: 30,
     guideUrl: '../guides/quests/veselaya-nochka.html'
+  },
+  {
+    id: 'q-dushi-mertvecov',
+    title: 'Души мертвецов',
+    loc: 'south',
+    faction: 'any',
+    x: 1270,
+    y: 1209,
+    preview: '../guides/images/quests/dushi-mertvecov/cover.jpg',
+    desc: 'Один бывалый сталкер поведал мне байку о ярком источнике света, который он называет «Душой Мертвеца».',
+    rewards: [
+      { img: 'images/items/rpd-dikobraza.webp', label: 'РПД Дикобраза', rarity: 'stalker' },
+      { img: 'images/items/bag-ap-762.webp', label: 'Сумка бронебойных 7.62 мм', qty: 3 },
+      { img: 'images/items/medic-bag-science.webp', label: 'Сумка с аптечками учёных', qty: 2 }
+    ],
+    money: 18750,
+    reputation: 120,
+    guideUrl: '../guides/quests/dushi-mertvecov.html'
   }
 ];
