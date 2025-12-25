@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'voennye-nuzhdy',
+    title: 'Военные нужды',
+    description: 'Помогите Кутузову с поддержкой блаженных, соберите тайники и заключите сделку с Филателистом. Требуется прохождение сюжета до Шамана.',
+    image: 'images/quests/voennye-nuzhdy/cover.jpg',
+    url: 'quests/voennye-nuzhdy.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'bar',
+    tags: [],
+    keywords: ['военные нужды', 'кутузов', 'шаман', 'филателист', 'санитары', 'бар', 'шпион', 'тайники', 'вал', 'вал кутузова', 'блаженный'],
+    date: '2025-12-25',
+    status: 'published'
+  },
+  {
     id: 'dushi-mertvecov',
     title: 'Души мертвецов',
     description: 'Расследуйте историю о странном свете в ночном лесу. Выбор: солгать Огоньку и получить РПД Дикобраза или сказать правду ради РПД Огонька.',
