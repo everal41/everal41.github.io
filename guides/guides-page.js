@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'vstan-i-idi',
+    title: 'Встань и иди!',
+    description: 'Помогите Марафонцу найти деньги на лечение и выберите врача. Рекомендуется Крапива — лучшая награда без дополнительных условий.',
+    image: 'images/quests/vstan-i-idi/cover.jpg',
+    url: 'quests/vstan-i-idi.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'bar',
+    tags: ['beginner'],
+    keywords: ['встань и иди', 'марафонец', 'крапива', 'вертейко', 'корнилов', 'бар', 'полесское', 'доктор', 'врач', 'лечение', 'разряд', 'trijicon', 'прицел'],
+    date: '2025-12-25',
+    status: 'published'
+  },
+  {
     id: 'voennye-nuzhdy',
     title: 'Военные нужды',
     description: 'Помогите Кутузову с поддержкой блаженных, соберите тайники и заключите сделку с Филателистом. Требуется прохождение сюжета до Шамана.',
