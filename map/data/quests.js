@@ -776,5 +776,28 @@ window.QUESTS_DATA = [
     money: 18750,
     reputation: 120,
     guideUrl: '../guides/quests/dushi-mertvecov.html'
+  },
+  {
+    id: 'q-voennye-nuzhdy-stalker', 
+    title: 'Военные нужды', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1319, 
+    y: 1351, 
+    preview: '../guides/images/quests/voennye-nuzhdy/cover.jpg',
+    desc: 'Сталкер Кутузов, один из сподвижников Шамана, поручил мне забрать доклад у шпиона, которого они заслали в ряды Санитаров.',
+    rewards: [
+      { img: 'images/items/val-kutuzova.webp', label: '«Вал» Кутузова', rarity: 'veteran' },
+      { img: 'images/items/domestic-mre.webp', label: 'Отечественный ИРП', qty: 3 },
+      { img: 'images/items/epinefrin.webp', label: 'Эпинефрин', qty: 2 },
+      { img: 'images/items/medic-bag-science.webp', label: 'Сумка с аптечками учёных' },
+      { img: 'images/items/energy-zhiden-extra.webp', label: 'Энергетик "Жидень EXTRA"', qty: 4 },
+      { img: 'images/items/tonic-arni.webp', label: 'Тоник "Арни"', qty: 4 },
+      { img: 'images/items/bag-ap-762.webp', label: 'Сумка бронебойных 7.62 мм' },
+      { img: 'images/items/radost-turista.webp', label: '"Радость туриста"', qty: 3 }
+    ],
+    money: 33400, 
+    reputation: 70, 
+    guideUrl: '../guides/quests/voennye-nuzhdy.html'
   }
 ];
