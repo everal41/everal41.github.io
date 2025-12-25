@@ -799,5 +799,22 @@ window.QUESTS_DATA = [
     money: 33400, 
     reputation: 70, 
     guideUrl: '../guides/quests/voennye-nuzhdy.html'
+  },
+  {
+    id: 'q-vstan-i-idi-stalker', 
+    title: 'Встань и иди!', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1307, 
+    y: 1356, 
+    preview: '../guides/images/quests/vstan-i-idi/cover.jpg',
+    desc: 'Я встретил сталкера, который попал в "Разряд", после чего лишился способности нормально передвигаться.',
+    rewards: [
+      { img: 'images/items/scope-trijicon.webp', label: 'Прицел коллиматорный Trijicon' },
+      { img: 'images/items/epinefrin.webp', label: 'Эпинефрин', qty: 6 }
+    ],
+    money: 12500, 
+    reputation: 50, 
+    guideUrl: '../guides/quests/vstan-i-idi.html'
   }
 ];
