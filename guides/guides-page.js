@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'blazhennyj-potroshitel',
+    title: 'Блаженный Потрошитель',
+    description: 'Помогите Ахаву разобраться с обезумевшим блаженным Потрошителем. Квест нужен для получения достижения "Импровизация".',
+    image: 'images/quests/blazhennyj-potroshitel/cover.jpg',
+    url: 'quests/blazhennyj-potroshitel.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'polessk',
+    tags: [],
+    keywords: ['Блаженный потрошитель', 'Ахав', 'Потрошитель', 'Мустафа ответы', 'Ответы Ахав', 'Полесское', 'Импровизация', 'достижение', 'Санитар', 'блаженный'],
+    date: '2025-12-26',
+    status: 'published'
+  },
+  {
     id: 'vstan-i-idi',
     title: 'Встань и иди!',
     description: 'Помогите Марафонцу найти деньги на лечение и выберите врача. Рекомендуется Крапива — лучшая награда без дополнительных условий.',
@@ -734,7 +748,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const CATEGORY_LABELS = { quest: 'Квесты', equipment: 'Снаряжение', tech: 'Технические', misc: 'Разное' };
   const CATEGORY_ICONS = { quest: 'fa-scroll', equipment: 'fa-shield-halved', tech: 'fa-gear', misc: 'fa-puzzle-piece' };
   const FACTION_LABELS = { stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции', event: 'Ивент' };
-  const LOCATION_LABELS = { bolota: 'Болота', obochina: 'Обочина', kolos: 'Колос', 'chernie-ivy': 'Черные Ивы', svalka: 'Свалка', bar: 'Бар', les: 'Лес', zavod: 'Завод', yama: 'Яма' };
+  const LOCATION_LABELS = { bolota: 'Болота', obochina: 'Обочина', kolos: 'Колос', 'chernie-ivy': 'Черные Ивы', svalka: 'Свалка', bar: 'Бар', les: 'Лес', zavod: 'Завод', yama: 'Яма', polessk: 'Полесское' };
   const TAG_LABELS = { beginner: 'Новичкам', advanced: 'Продвинутый', stalker: 'Сталкеры', bandit: 'Бандиты', both: 'Обе фракции' };
 
   const formatDate = (dateStr) => {
