@@ -834,5 +834,22 @@ window.QUESTS_DATA = [
     money: 65500, 
     reputation: 50, 
     guideUrl: '../guides/quests/blazhennyj-potroshitel.html'
+  },
+  {
+    id: 'q-bratya-po-oruzhiyu-stalker',
+    title: 'Братья по оружию',
+    loc: 'south',
+    faction: 'stalker',
+    x: 1418,
+    y: 947,
+    preview: '../guides/images/quests/bratya-po-oruzhiyu/cover.jpg',
+    desc: 'Я столкнулся с умирающим сталкером, который отдал мне какое-то кольцо и попросил разыскать некоего Клевера.',
+    rewards: [
+      { img: 'images/items/veresk-kaplana.webp', label: '«Вереск» Каплана', rarity: 'stalker' },
+      { img: 'images/items/bag-ap-9mm.webp', label: 'Сумка бронебойных 9 мм', qty: 3 }
+    ],
+    money: 37500,
+    reputation: 50,
+    guideUrl: '../guides/quests/bratya-po-oruzhiyu.html'
   }
 ];
