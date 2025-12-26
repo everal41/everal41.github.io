@@ -816,5 +816,23 @@ window.QUESTS_DATA = [
     money: 12500, 
     reputation: 50, 
     guideUrl: '../guides/quests/vstan-i-idi.html'
+  },
+  {
+    id: 'q-blazhennyj-potroshitel-stalker', 
+    title: 'Блаженный Потрошитель', 
+    loc: 'south', 
+    faction: 'stalker',
+    x: 1818, 
+    y: 886, 
+    preview: '../guides/images/quests/blazhennyj-potroshitel/cover.jpg',
+    desc: 'Я встретил Ахава, Санитара, с которым мне уже доводилось пересекаться на Обочине.',
+    rewards: [
+      { img: 'images/items/standart-tools.webp', label: 'Стандартные инструменты', qty: 7 },
+      { img: 'images/items/standart-parts.webp', label: 'Стандартные запчасти', qty: 7 },
+      { img: 'images/items/bag-sbp-762.webp', label: 'Сумка СБП 7.62 мм', qty: 2 }
+    ],
+    money: 65500, 
+    reputation: 50, 
+    guideUrl: '../guides/quests/blazhennyj-potroshitel.html'
   }
 ];
