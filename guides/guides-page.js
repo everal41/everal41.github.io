@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     url: 'quests/bratya-po-oruzhiyu.html',
     category: 'quest',
     faction: 'stalker',
-    location: 'bar',
+    location: 'polessk',
     tags: [],
     keywords: ['братья по оружию', 'каплан', 'клевер', 'матвей', 'степаныч', 'берендей', 'слива', 'кольцо', 'полесское', 'вереск', 'мёртвый город'],
     date: '2025-12-26',
@@ -1054,3 +1054,4 @@ document.addEventListener('DOMContentLoaded', () => {
   updateStats();
   render();
 });
+
