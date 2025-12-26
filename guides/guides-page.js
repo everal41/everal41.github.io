@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const GUIDES = [
   {
+    id: 'bratya-po-oruzhiyu',
+    title: 'Братья по оружию',
+    description: 'Исполните просьбу умирающего сталкера Каплана и разыщите его друга Клевера. Линейный квест с посещением нескольких локаций.',
+    image: 'images/quests/bratya-po-oruzhiyu/cover.jpg',
+    url: 'quests/bratya-po-oruzhiyu.html',
+    category: 'quest',
+    faction: 'stalker',
+    location: 'bar',
+    tags: [],
+    keywords: ['братья по оружию', 'каплан', 'клевер', 'матвей', 'степаныч', 'берендей', 'слива', 'кольцо', 'полесское', 'вереск', 'мёртвый город'],
+    date: '2025-12-26',
+    status: 'published'
+  },
+  {
     id: 'blazhennyj-potroshitel',
     title: 'Блаженный Потрошитель',
     description: 'Помогите Ахаву разобраться с обезумевшим блаженным Потрошителем. Квест нужен для получения достижения "Импровизация".',
